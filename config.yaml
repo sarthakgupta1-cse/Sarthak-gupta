@@ -1,0 +1,79 @@
+# ---------------------------------------------------------------------------
+# What the agent looks for and how politely it behaves.
+# Override any of this per-run with CLI flags.
+# ---------------------------------------------------------------------------
+
+targeting:
+  # Free-text themes used to query discovery sources.
+  keywords:
+    - "SaaS"
+    - "B2B SaaS"
+    - "developer tools"
+    - "API platform"
+    - "vertical SaaS"
+  # Only keep people whose title matches one of these (case-insensitive substring).
+  founder_titles:
+    - founder
+    - co-founder
+    - cofounder
+    - ceo
+    - cto
+    - chief executive
+    - chief technology
+    - managing director
+  # Drop leads from companies bigger than this (headcount, when known).
+  max_headcount: 200
+  # Skip anything discovered before this many days ago. Null = no limit.
+  max_age_days: 540
+
+discovery:
+  hackernews:
+    enabled: true
+    # Launch HN and Show HN are where SaaS founders self-identify.
+    queries: ["Launch HN", "Show HN"]
+    hits_per_query: 100
+  producthunt:
+    enabled: true          # silently skipped without PRODUCTHUNT_TOKEN
+    days_back: 30
+  github:
+    enabled: true
+    min_stars: 150
+  website:
+    enabled: true
+    # Pages we look for on a company domain to find the founding team.
+    paths: ["/about", "/about-us", "/team", "/our-team", "/company", "/people", "/contact"]
+
+enrichment:
+  proxycurl: true          # LinkedIn profile data via licensed API
+  apollo: true             # people search + org enrichment
+  hunter: true             # email discovery + verification
+  socials: true            # X / GitHub / Telegram / personal site from public bios
+
+politeness:
+  # Requests per second, per host. Keep this low — you are a guest.
+  rate_limit_per_host: 1.0
+  concurrency: 5
+  timeout_seconds: 20
+  user_agent: "founder-agent/0.1 (+contact: set OUTREACH_FROM_EMAIL in .env)"
+  respect_robots_txt: true
+  cache_ttl_hours: 24
+
+scoring:
+  # Points added when a signal is present. Leads sort by total descending.
+  weights:
+    verified_email: 30
+    any_email: 15
+    linkedin_url: 20
+    is_founder_title: 20
+    twitter_handle: 8
+    telegram_handle: 8
+    github_username: 6
+    company_domain: 10
+    recent_launch: 12
+  # Leads below this score are written but flagged as low-confidence.
+  min_score: 40
+
+output:
+  sink: gsheets            # gsheets | sqlite | csv
+  sqlite_path: ./data/leads.db
+  csv_path: ./out/leads.csv

@@ -1,0 +1,52 @@
+[project]
+name = "founder-agent"
+version = "0.1.0"
+description = "An agent that discovers SaaS founders and enriches them with verified contact data."
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+    "tenacity>=8.2",
+    "typer>=0.12",
+    "rich>=13.7",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+    "tldextract>=5.1",
+    "gspread>=6.0",
+    "google-auth>=2.30",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.5"]
+
+[project.scripts]
+founder-agent = "founder_agent.cli:app"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+ignore = [
+    # Discovery, enrichment and caching must degrade rather than abort a run:
+    # one unreachable site or one failing provider should never lose the whole
+    # batch, so these layers catch broadly on purpose.
+    "BLE001",
+    "S110",
+]
+# RUF001/RUF003: en dashes and curly apostrophes are intentional here — real HN
+# titles and real surnames contain them, so flagging them is a false positive.
+extend-ignore = ["RUF001", "RUF003"]
