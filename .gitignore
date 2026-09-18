@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+data/comments_part*.csv
+data/part2.csv
+data/part3.csv
