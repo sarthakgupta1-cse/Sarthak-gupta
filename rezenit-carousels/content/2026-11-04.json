@@ -1,0 +1,70 @@
+{
+  "date": "04-11-26",
+  "carousels": [
+    {
+      "name": "No Nut November - why most guys fail by Day 7",
+      "seed": 11,
+      "theme": { "bg": "#0B1026", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 4", "title": "Most guys won't make it past [[Day 7.]]", "sub": "Not because they're weak. Because nobody told them how the urge actually works." },
+        { "type": "point", "num": "01", "title": "Willpower is a [[battery.]]", "body": "It's full at 9 AM. By 1 AM — tired, bored, alone, phone in bed — it's at <b>0%</b>.\n\nWhite-knuckling only works until the battery dies." },
+        { "type": "point", "num": "02", "title": "You're not weak.\nYou're [[wired.]]", "body": "Years of endless, on-demand novelty trained your brain to expect a hit whenever it's uncomfortable.\n\nThe urge is a habit loop firing — <b>not a character flaw.</b>" },
+        { "type": "chain", "title": "The loop that [[resets]] your streak", "steps": ["Trigger", "Urge", "Ritual", "Relapse", "Shame"], "body": "And shame doesn't stop the loop. <b>It restarts it.</b>" },
+        { "type": "list", "title": "Plan for the [[weak]] moment", "items": ["<b>Phone out of the bedroom</b> after 11 PM.", "<b>10-minute rule:</b> urges peak, then fade. Wait it out.", "<b>Know your triggers</b> — boredom, stress, late nights.", "<b>Swap the ritual:</b> cold shower, push-ups, walk."], "note": "What day are you on? Drop it in the comments 👇" },
+        { "type": "cta", "title": "Don't just survive November.\n[[Rewire for good.]]", "lead": "RezenIt's guided recovery program helps you break the loop — one day at a time." }
+      ]
+    },
+    {
+      "name": "7 signs p*rn is quietly running your life",
+      "seed": 23,
+      "theme": { "bg": "#1A1033", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "Be honest with yourself", "title": "7 signs p*rn is [[quietly running]] your life", "sub": "#4 is the one nobody wants to admit." },
+        { "type": "list", "title": "Signs [[1–2]]", "items": ["<b>You open it out of boredom</b> — not desire. It's become the default when nothing else is happening.", "<b>You need more extreme content</b> to feel the same thing you used to feel with less."] },
+        { "type": "list", "marks": ["3", "4"], "title": "Signs [[3–4]]", "items": ["<b>Real life feels dull.</b> Brain fog, low motivation, nothing feels exciting anymore.", "<b>You've said \"this is the last time\"</b> more times than you can count."] },
+        { "type": "list", "marks": ["5", "6", "7"], "title": "Signs [[5–7]]", "items": ["<b>You feel flat or anxious</b> around real people — especially attractive ones.", "<b>You lose hours</b> you never planned to lose.", "<b>You feel shame right after.</b> Every single time."] },
+        { "type": "point", "title": "Counted 3 or more?\n[[You're not alone.]]", "body": "Millions of men are fighting the same quiet battle — most of them in silence.\n\nThe good news: habits that were learned <b>can be unlearned.</b>", "note": "How many did you count? Be honest in the comments." },
+        { "type": "cta", "title": "Ready to take your\n[[life back?]]", "lead": "RezenIt gives you a daily, guided recovery program built to rewire the habit — not just count days." }
+      ]
+    },
+    {
+      "name": "What happens when you quit for 90 days",
+      "seed": 37,
+      "theme": { "bg": "#05201F", "a1": "#5EF0C8", "a2": "#7DB8FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Save this", "title": "What happens when you quit p*rn for [[90 days]]", "sub": "The timeline thousands of men in recovery describe — and the part where most give up." },
+        { "type": "point", "phase": "Days 1–7 · The storm", "progress": 1, "title": "Urges hit [[hard.]]", "body": "Restless. Irritable. Bad sleep. Thinking about it constantly.\n\nThat's your brain asking for its old hit. <b>It passes.</b>" },
+        { "type": "point", "phase": "Days 8–30 · The flatline", "progress": 2, "title": "You feel… [[nothing.]]", "body": "Low libido, numb, foggy, unmotivated. Many people report it.\n\nMost quit here because they think it's not working. <b>It is.</b>" },
+        { "type": "point", "phase": "Days 31–60 · The fog lifts", "progress": 3, "title": "Energy comes [[back.]]", "body": "Many report clearer focus, more drive, and eye contact that doesn't feel awkward anymore.\n\nUrges still show up — but <b>you're winning more of them.</b>" },
+        { "type": "point", "phase": "Days 61–90 · New baseline", "progress": 4, "title": "Small things feel [[good]] again.", "body": "Urges get quieter. Real connection feels better than a screen ever did.", "note": "Everyone's timeline is different and progress isn't linear. Save this for the day you want to give up." },
+        { "type": "cta", "title": "Your 90 days\n[[start today.]]", "lead": "RezenIt guides you through every phase — the storm, the flatline and beyond — with a daily recovery program." }
+      ]
+    },
+    {
+      "name": "It's 1 AM - the late-night relapse playbook",
+      "seed": 41,
+      "theme": { "bg": "#08080F", "a1": "#8B9BFF", "a2": "#C77DFF", "hookSize": 112 },
+      "slides": [
+        { "type": "hook", "kicker": "1:12 AM", "title": "You're in bed.\nPhone in hand.\n[[You know how this ends.]]", "sub": "Here's how to change the ending tonight." },
+        { "type": "point", "num": "!", "title": "This isn't [[random.]]", "body": "Late, tired, alone, phone in bed — it's the setup people in recovery describe most when they talk about relapse.\n\nYour willpower is at its <b>lowest right now.</b>" },
+        { "type": "point", "num": "01", "title": "Get out of bed.\n[[Right now.]]", "body": "Changing your physical location breaks the ritual.\n\nKitchen. Bathroom. Balcony. <b>Anywhere but where it usually happens.</b>" },
+        { "type": "point", "num": "02", "title": "Ride the [[10-minute]] wave.", "body": "Urges rise, peak, and fall — like a wave.\n\nSplash cold water on your face. Do 20 push-ups. Breathe slowly. <b>Watch it pass.</b>" },
+        { "type": "point", "num": "03", "title": "Fix [[tomorrow]] night.", "body": "Charger in another room. Screens off at 11. Make the easy choice the default one.", "note": "Comment \"NIGHT\" if this is your hardest hour." },
+        { "type": "cta", "title": "Next time it's 1 AM,\n[[open RezenIt instead.]]", "lead": "Guided audio sessions and a daily recovery program for the moments willpower isn't enough." }
+      ]
+    },
+    {
+      "name": "The softcore trap",
+      "seed": 53,
+      "theme": { "bg": "#260A16", "a1": "#FF8FA3", "a2": "#B98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Uncomfortable truth", "title": "You're not \"clean\" if you're [[still doing this.]]", "sub": "The softcore trap that keeps resetting your brain — without you noticing." },
+        { "type": "point", "title": "\"It's not [[technically]] p*rn.\"", "body": "Thirst traps. Suggestive reels. \"Just looking\" on Instagram at midnight.\n\nYour brain doesn't care about the label. <b>It cares about the hit.</b>" },
+        { "type": "point", "title": "Same hit.\n[[Same loop.]]", "body": "Every suggestive scroll is a small dopamine hit that keeps the craving alive.\n\nYou're not resting your brain. <b>You're keeping it hungry.</b>" },
+        { "type": "point", "title": "Most relapses [[start here.]]", "body": "People rarely jump straight to p*rn.\n\nThey peek. Then scroll. Then search. <b>The slide always starts small.</b>" },
+        { "type": "list", "title": "Close the [[back door]]", "items": ["<b>Unfollow &amp; mute</b> every account that triggers you.", "<b>Tap \"Not interested\"</b> on suggestive reels to retrain your feed.", "<b>Catch the \"just one look\" thought</b> — that's the trigger.", "<b>Close the app</b> the moment you notice it."], "note": "Agree or disagree? Tell me in the comments." },
+        { "type": "cta", "title": "Real recovery means\n[[closing every door.]]", "lead": "RezenIt helps you spot triggers before they turn into relapses — with a guided daily program." }
+      ]
+    }
+  ]
+}
