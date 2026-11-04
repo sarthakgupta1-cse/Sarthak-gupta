@@ -72,14 +72,16 @@ function css(t) {
     padding:16px 30px;border-radius:999px;letter-spacing:.5px}
   /* CTA */
   .cta{align-items:center;text-align:center}
-  .cta .logo{width:230px;height:230px;object-fit:contain;margin-bottom:6px}
+  .cta .logo{width:200px;height:200px;object-fit:contain;margin-bottom:6px}
   .cta h2{font-size:64px;margin:0 0 18px}
   .cta .lead{font-family:'Inter';font-weight:500;font-size:32px;line-height:1.38;color:rgba(238,241,255,.78);max-width:840px}
-  .phone{position:relative;width:500px;height:470px;margin:34px 0 40px;border-radius:36px;overflow:hidden;
+  .phone{position:relative;width:470px;height:400px;margin:28px 0 34px;border-radius:36px;overflow:hidden;
     border:2px solid ${t.a2}66;box-shadow:0 0 80px ${t.a2}40,0 0 0 10px rgba(255,255,255,.03)}
   .phone img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
   .btn{font-weight:800;font-size:40px;color:${t.bg};background:linear-gradient(90deg,${t.a1},${t.a2});padding:30px 64px;border-radius:999px;
     box-shadow:0 12px 50px ${t.a2}55}
+  .chips{display:flex;gap:14px;justify-content:center;margin-top:28px}
+  .chips span{font-family:'Inter';font-weight:600;font-size:24px;color:#fff;padding:12px 22px;border-radius:999px;border:2px solid ${t.a1}66;background:${t.a1}18}
   .stores{margin-top:22px;font-family:'Inter';font-weight:600;font-size:26px;color:rgba(255,255,255,.6);letter-spacing:.5px}
   `;
 }
@@ -109,6 +111,7 @@ function slideBody(s, t, i) {
         ${s.note ? `<div class="note">${fmt(s.note)}</div>` : ''}</div>`;
     case 'cta':
       return `<div class="main cta"><img class="logo" src="${LOGO}"><h2>${fmt(s.title)}</h2><div class="lead">${fmt(s.lead)}</div>
+        ${s.features ? `<div class="chips">${s.features.map(f => `<span>${esc(f)}</span>`).join('')}</div>` : ''}
         <div class="phone"><img src="${APP}"></div><div class="btn">${esc(s.button || 'Download RezenIt')}</div>
         <div class="stores">${esc(s.stores || 'Available on the App Store & Google Play')}</div></div>`;
   }

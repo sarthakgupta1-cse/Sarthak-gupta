@@ -9,6 +9,16 @@ carousels/         rendered output: "<DD-MM-YY> Carousel <n>/<1..6>.png"
 render.js          content JSON -> PNG slides (Playwright)
 ```
 
+## Brand facts (from rezenit.com — use these, don't invent features)
+- Positioning: "Break the loop. Build a life that does not need the escape." For people tired of white-knuckling it alone.
+  Shame-free, private by design, science-informed tools, real support when urges hit.
+- Features: 1-on-1 accountability (matched with real people), p*rn blocker, streak tracking, step-by-step recovery
+  program (guided audio sessions + daily actions), anonymous community, public habit tracking (partner sees progress),
+  panic button (instant tools to stop urges), AI therapist & coach, daily journaling, "Learn the truth" guides.
+- Stores: App Store and Google Play. Site CTA: "One download. A steadier week starts tomorrow."
+- RezenIt is a self-help tool, not a substitute for professional care: never make medical promises.
+- CTA slides: set `features` to 3 short chips matching the carousel's topic.
+
 ## Make a new day
 
 1. Copy the latest `content/*.json`, set `"date"` to `DD-MM-YY`, write 5 new carousels.
