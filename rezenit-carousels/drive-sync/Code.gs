@@ -1,8 +1,8 @@
 /**
  * RezenIt carousel -> Google Drive sync.
  *
- * Copies every "<DD-MM-YY> Carousel <n>" folder from the GitHub repo into the
- * Drive folder below, as "<DD-MM-YY> Carousel <n>/1.png ... 6.png".
+ * Copies every carousel folder from the GitHub repo into the Drive folder below:
+ *   <Person>/<DD-MM-YY> Carousel <n>/1.png ... 6.png   (Person = Shalini, Tanmay, Yash)
  * Safe to run any number of times: folders/files that already exist are skipped.
  *
  * It reads carousels/manifest.json and downloads files from raw.githubusercontent.com,
@@ -26,11 +26,13 @@ function syncCarousels() {
   let added = 0;
   for (const entry of manifest.folders) {
     if (!NAME_RE.test(entry.name)) continue;
-    let folder = firstOrNull_(root.getFoldersByName(entry.name));
-    if (!folder) folder = root.createFolder(entry.name);
+    // entry.owner = person folder ("Shalini", "Tanmay", "Yash"); empty for older root-level days
+    const parent = entry.owner ? getOrCreate_(root, entry.owner) : root;
+    const folder = getOrCreate_(parent, entry.name);
     for (const file of entry.files) {
       if (folder.getFilesByName(file).hasNext()) continue;
-      const blob = fetch_(`${CONFIG.PATH}/${entry.name}/${file}`).getBlob().setName(file);
+      const dir = entry.owner ? `${entry.owner}/${entry.name}` : entry.name;
+      const blob = fetch_(`${CONFIG.PATH}/${dir}/${file}`).getBlob().setName(file);
       folder.createFile(blob);
       added++;
     }
@@ -63,4 +65,4 @@ function authHeaders_() {
   return t ? { Authorization: `Bearer ${t}` } : {};
 }
 
-function firstOrNull_(it) { return it.hasNext() ? it.next() : null; }
+function getOrCreate_(parent, name) { const it = parent.getFoldersByName(name); return it.hasNext() ? it.next() : parent.createFolder(name); }

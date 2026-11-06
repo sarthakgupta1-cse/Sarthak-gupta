@@ -131,7 +131,7 @@ function html(c, s, i) {
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
   for (const [n, c] of spec.carousels.entries()) {
     if (c.slides.length !== 6) throw new Error(`carousel ${n + 1} must have 6 slides`);
-    const dir = path.join(outDir, `${spec.date} Carousel ${n + 1}`);
+    const dir = path.join(outDir, spec.owner || '', `${spec.date} Carousel ${n + 1}`); // owner = person folder, e.g. "Shalini"
     fs.mkdirSync(dir, { recursive: true });
     for (const [k, s] of c.slides.entries()) {
       await page.setContent(html(c, s, k + 1), { waitUntil: 'networkidle' });
@@ -145,10 +145,17 @@ function html(c, s, i) {
   await browser.close();
   // manifest.json lists every carousel folder + its files, so the Drive sync script
   // can work from raw.githubusercontent.com without calling the rate-limited GitHub API.
-  const folders = fs.readdirSync(outDir, { withFileTypes: true })
-    .filter(d => d.isDirectory() && /^\d{2}-\d{2}-\d{2} Carousel \d+$/.test(d.name))
-    .map(d => ({ name: d.name, files: fs.readdirSync(path.join(outDir, d.name)).filter(f => /\.png$/i.test(f)).sort() }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+  // Root-level carousel folders (older days) have owner "", person folders hold their own carousels.
+  const isCarousel = n => /^\d{2}-\d{2}-\d{2} Carousel \d+$/.test(n);
+  const pngs = d => fs.readdirSync(d).filter(f => /\.png$/i.test(f)).sort();
+  const folders = [];
+  for (const d of fs.readdirSync(outDir, { withFileTypes: true })) {
+    if (!d.isDirectory()) continue;
+    if (isCarousel(d.name)) { folders.push({ owner: '', name: d.name, files: pngs(path.join(outDir, d.name)) }); continue; }
+    for (const c of fs.readdirSync(path.join(outDir, d.name), { withFileTypes: true }))
+      if (c.isDirectory() && isCarousel(c.name)) folders.push({ owner: d.name, name: c.name, files: pngs(path.join(outDir, d.name, c.name)) });
+  }
+  folders.sort((a, b) => (a.owner + '/' + a.name).localeCompare(b.owner + '/' + b.name));
   fs.writeFileSync(path.join(outDir, 'manifest.json'), JSON.stringify({ folders }, null, 2) + '\n');
   console.log(`manifest.json: ${folders.length} folders`);
 })();

@@ -1,11 +1,12 @@
 # RezenIt daily carousels
 
-Five 6-slide carousels per day (1080×1350, 4:5) about quitting p*rn, ending in a RezenIt app CTA.
+15 carousels per day (5 each for Shalini, Tanmay and Yash), 6 slides each, (1080×1350, 4:5) about quitting p*rn, ending in a RezenIt app CTA.
 
 ```
 assets/            app.jpg (app screenshot), logo-t.png / mark-t.png (transparent logo)
 content/           <YYYY-MM-DD>.json (slide copy) + <YYYY-MM-DD>-captions.md
-carousels/         rendered output: "<DD-MM-YY> Carousel <n>/<1..6>.png"
+carousels/         rendered output: "<Person>/<DD-MM-YY> Carousel <n>/<1..6>.png" + manifest.json
+                   (Person = Shalini, Tanmay, Yash; days before 06-11 sit at the top level)
 render.js          content JSON -> PNG slides (Playwright)
 ```
 
@@ -21,11 +22,12 @@ render.js          content JSON -> PNG slides (Playwright)
 
 ## Make a new day
 
-1. Copy the latest `content/*.json`, set `"date"` to `DD-MM-YY`, write 5 new carousels.
+1. Write three files `content/<YYYY-MM-DD>-<shalini|tanmay|yash>.json`, each with `"date": "DD-MM-YY"`,
+   `"owner": "Shalini"|"Tanmay"|"Yash"` and 5 carousels. All 15 topics must be different from each other and from every earlier day.
    Each carousel: one `theme` (single background color `bg` + accents `a1`/`a2`) and exactly 6 slides.
    Slide types: `hook`, `point`, `chain`, `list`, `cta` (always last). `[[text]]` = gradient highlight,
    `<b>` = bold, `\n` = line break. Write "p*rn", never the full word.
-2. `node render.js content/<date>.json carousels`
+2. `node render.js content/<file>.json carousels` for each of the three files (also rebuilds manifest.json)
 3. Check the console for `WARN overflow`, review the PNGs, write the captions file.
 4. Commit and push to `claude/brave-davinci-pbopjl`. The Google Apps Script in `drive-sync/Code.gs`
    (running in the owner's Google account) copies new folders into the Drive folder
@@ -35,3 +37,6 @@ render.js          content JSON -> PNG slides (Playwright)
 - 04-11-26: No Nut November Day 7 · 7 signs · 90-day timeline · 1 AM relapse playbook · softcore trap
 - 05-11-26: 5 relapse excuses · performance issues at 24 · room/environment design · accountability · 6 benefits of quitting
 - 06-11-26: Relapse binge after a slip · HALT (hungry/angry/lonely/tired) · replacement addiction (doomscrolling) · secrecy vs trust in relationships · Day 31 after No Nut November
+- 06-11-26 Shalini: urge surfing · boredom trigger · weekends · signs you're healing after a relapse · streak-counter obsession
+- 06-11-26 Tanmay: morning routine · confidence & comparison · 4 lies about real relationships · dating while quitting · workout as urge-killer
+- 06-11-26 Yash: exam/deadline stress · 3 nightly journaling questions · advice to my 15-year-old self · 4 myths · identity shift ("I don't do that")
