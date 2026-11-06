@@ -143,4 +143,12 @@ function html(c, s, i) {
     console.log('rendered', dir);
   }
   await browser.close();
+  // manifest.json lists every carousel folder + its files, so the Drive sync script
+  // can work from raw.githubusercontent.com without calling the rate-limited GitHub API.
+  const folders = fs.readdirSync(outDir, { withFileTypes: true })
+    .filter(d => d.isDirectory() && /^\d{2}-\d{2}-\d{2} Carousel \d+$/.test(d.name))
+    .map(d => ({ name: d.name, files: fs.readdirSync(path.join(outDir, d.name)).filter(f => /\.png$/i.test(f)).sort() }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  fs.writeFileSync(path.join(outDir, 'manifest.json'), JSON.stringify({ folders }, null, 2) + '\n');
+  console.log(`manifest.json: ${folders.length} folders`);
 })();
