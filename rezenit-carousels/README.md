@@ -20,6 +20,11 @@ render.js          content JSON -> PNG slides (Playwright)
 - RezenIt is a self-help tool, not a substitute for professional care: never make medical promises.
 - CTA slides: set `features` to 3 short chips matching the carousel's topic.
 
+## Backgrounds per person (each posts from a different account — keep them distinct)
+- **Shalini:** the brand navy/purple/plum darks, varied per carousel (e.g. #0C1633, #1A1036, #0B1A3A, #22102E, #0A1A30). No green or teal.
+- **Tanmay:** black, `#050508`, on all 5 carousels. Accents can vary.
+- **Yash:** deep emerald green, `#04241A`, on all 5 carousels. Accents: mint/cyan `a1` with blue or lavender `a2`.
+
 ## Make a new day
 
 1. Write three files `content/<YYYY-MM-DD>-<shalini|tanmay|yash>.json`, each with `"date": "DD-MM-YY"`,

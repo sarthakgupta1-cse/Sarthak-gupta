@@ -3,7 +3,7 @@
  *
  * Copies every carousel folder from the GitHub repo into the Drive folder below:
  *   <Person>/<DD-MM-YY> Carousel <n>/1.png ... 6.png   (Person = Shalini, Tanmay, Yash)
- * Safe to run any number of times: folders/files that already exist are skipped.
+ * Safe to run any number of times: existing files are skipped, re-rendered ones are replaced.
  *
  * It reads carousels/manifest.json and downloads files from raw.githubusercontent.com,
  * so it never touches the GitHub REST API (whose anonymous limit Apps Script's shared
@@ -30,14 +30,20 @@ function syncCarousels() {
     const parent = entry.owner ? getOrCreate_(root, entry.owner) : root;
     const folder = getOrCreate_(parent, entry.name);
     for (const file of entry.files) {
-      if (folder.getFilesByName(file).hasNext()) continue;
+      const existing = folder.getFilesByName(file);
+      if (existing.hasNext()) {
+        const old = existing.next();
+        const want = entry.sizes && entry.sizes[file];
+        if (!want || old.getSize() === want) continue; // unchanged
+        old.setTrashed(true);                          // re-rendered on GitHub: replace it
+      }
       const dir = entry.owner ? `${entry.owner}/${entry.name}` : entry.name;
       const blob = fetch_(`${CONFIG.PATH}/${dir}/${file}`).getBlob().setName(file);
       folder.createFile(blob);
       added++;
     }
   }
-  console.log(`Sync done: ${added} new image(s).`);
+  console.log(`Sync done: ${added} new or updated image(s).`);
 }
 
 /** Run once: does a first sync and installs an hourly trigger. */

@@ -5,66 +5,278 @@
     {
       "name": "A morning routine that protects your night",
       "seed": 201,
-      "theme": { "bg": "#0F1531", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "theme": {
+        "bg": "#050508",
+        "a1": "#5EE7E0",
+        "a2": "#8B7BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Your night starts at 7 AM", "title": "You don't relapse at night. You lose it [[in the morning.]]", "sub": "The first hour of your day decides how strong you are at 1 AM." },
-        { "type": "point", "num": "01", "title": "No phone for [[30 minutes]]", "body": "Starting the day scrolling sets your brain up for cheap hits all day long.\n\nGive it <b>30 minutes of quiet</b> first." },
-        { "type": "point", "num": "02", "title": "Get [[sunlight]] and move", "body": "A short walk outside, some stretching, a quick workout.\n\nMany people say it's the single habit that <b>made their evenings calmer.</b>" },
-        { "type": "point", "num": "03", "title": "Decide [[tonight]] now", "body": "Write one line: <b>\"Tonight I will ___ instead.\"</b>\n\nA plan made at 8 AM beats a decision made at midnight." },
-        { "type": "list", "title": "Your [[20-minute]] morning", "items": ["<b>Water</b> before coffee.", "<b>10 minutes outside</b> or moving.", "<b>Make your bed</b> — small win, early.", "<b>Write tonight's plan</b> in one sentence."], "note": "What's the first thing you do every morning? Be honest 👇" },
-        { "type": "cta", "title": "Win the morning.\n[[Protect the night.]]", "lead": "Daily journaling, guided audio sessions and a step-by-step program that structures your day.", "features": ["Daily journal", "Guided audio", "Recovery program"] }
+        {
+          "type": "hook",
+          "kicker": "Your night starts at 7 AM",
+          "title": "You don't relapse at night. You lose it [[in the morning.]]",
+          "sub": "The first hour of your day decides how strong you are at 1 AM."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "No phone for [[30 minutes]]",
+          "body": "Starting the day scrolling sets your brain up for cheap hits all day long.\n\nGive it <b>30 minutes of quiet</b> first."
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "Get [[sunlight]] and move",
+          "body": "A short walk outside, some stretching, a quick workout.\n\nMany people say it's the single habit that <b>made their evenings calmer.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Decide [[tonight]] now",
+          "body": "Write one line: <b>\"Tonight I will ___ instead.\"</b>\n\nA plan made at 8 AM beats a decision made at midnight."
+        },
+        {
+          "type": "list",
+          "title": "Your [[20-minute]] morning",
+          "items": [
+            "<b>Water</b> before coffee.",
+            "<b>10 minutes outside</b> or moving.",
+            "<b>Make your bed</b> — small win, early.",
+            "<b>Write tonight's plan</b> in one sentence."
+          ],
+          "note": "What's the first thing you do every morning? Be honest 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Win the morning.\n[[Protect the night.]]",
+          "lead": "Daily journaling, guided audio sessions and a step-by-step program that structures your day.",
+          "features": [
+            "Daily journal",
+            "Guided audio",
+            "Recovery program"
+          ]
+        }
       ]
     },
     {
       "name": "P*rn is quietly wrecking your confidence",
       "seed": 203,
-      "theme": { "bg": "#1C0F3A", "a1": "#B9A8FF", "a2": "#72E0F0" },
+      "theme": {
+        "bg": "#050508",
+        "a1": "#B9A8FF",
+        "a2": "#72E0F0"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Why you feel \"not enough\"", "title": "P*rn is quietly [[wrecking your confidence.]]", "sub": "The comparison trap nobody warns you about." },
-        { "type": "point", "num": "01", "title": "You're comparing to [[fiction]]", "body": "Edited, scripted, performed.\n\nMeasuring yourself against it is like comparing your body to <b>a superhero movie.</b>" },
-        { "type": "point", "num": "02", "title": "The [[shame]] tax", "body": "Hiding something every day wears you down.\n\nMany people say they <b>felt lighter</b> — and stood taller — once they stopped." },
-        { "type": "point", "num": "03", "title": "Confidence is [[earned]]", "body": "Every promise you keep to yourself is a deposit.\n\nEvery relapse you hide is a withdrawal. <b>Start making deposits.</b>" },
-        { "type": "list", "title": "Rebuild it [[daily]]", "items": ["<b>Keep one small promise</b> to yourself every day.", "<b>Train your body</b> for how it feels, not how it looks.", "<b>Talk to real people</b> — awkward is fine.", "<b>Unfollow</b> anything that makes you feel smaller."], "note": "Has quitting changed how you see yourself? Share below 👇" },
-        { "type": "cta", "title": "Stop comparing.\n[[Start rebuilding.]]", "lead": "Learn the truth about p*rn's effects, block it completely and track every day you keep your word.", "features": ["Learn the truth", "P*rn blocker", "Streaks"] }
+        {
+          "type": "hook",
+          "kicker": "Why you feel \"not enough\"",
+          "title": "P*rn is quietly [[wrecking your confidence.]]",
+          "sub": "The comparison trap nobody warns you about."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "You're comparing to [[fiction]]",
+          "body": "Edited, scripted, performed.\n\nMeasuring yourself against it is like comparing your body to <b>a superhero movie.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "The [[shame]] tax",
+          "body": "Hiding something every day wears you down.\n\nMany people say they <b>felt lighter</b> — and stood taller — once they stopped."
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Confidence is [[earned]]",
+          "body": "Every promise you keep to yourself is a deposit.\n\nEvery relapse you hide is a withdrawal. <b>Start making deposits.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Rebuild it [[daily]]",
+          "items": [
+            "<b>Keep one small promise</b> to yourself every day.",
+            "<b>Train your body</b> for how it feels, not how it looks.",
+            "<b>Talk to real people</b> — awkward is fine.",
+            "<b>Unfollow</b> anything that makes you feel smaller."
+          ],
+          "note": "Has quitting changed how you see yourself? Share below 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Stop comparing.\n[[Start rebuilding.]]",
+          "lead": "Learn the truth about p*rn's effects, block it completely and track every day you keep your word.",
+          "features": [
+            "Learn the truth",
+            "P*rn blocker",
+            "Streaks"
+          ]
+        }
       ]
     },
     {
       "name": "4 lies p*rn taught you about real relationships",
       "seed": 207,
-      "theme": { "bg": "#08242A", "a1": "#7DE3F5", "a2": "#B79BFF" },
+      "theme": {
+        "bg": "#050508",
+        "a1": "#7DE3F5",
+        "a2": "#B79BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Unlearn this", "title": "4 lies p*rn taught you about [[real relationships.]]", "sub": "#3 ruins more relationships than you'd think." },
-        { "type": "list", "title": "Lies [[1–2]]", "items": ["<b>\"Intimacy is a performance.\"</b> Real connection is about trust, not a show.", "<b>\"Everyone looks like that.\"</b> Real bodies are normal. The screen isn't."] },
-        { "type": "point", "num": "03", "title": "\"Consent is [[obvious.]]\"", "body": "Real people communicate, check in and say what they want.\n\nAsking isn't awkward. <b>It's respect — and it's attractive.</b>" },
-        { "type": "point", "num": "04", "title": "\"More [[novelty]] = more happiness.\"", "body": "Endless novelty trains you to always want the next thing.\n\nDepth with one person <b>is a different, better kind of good.</b>" },
-        { "type": "point", "title": "Real is [[better]].", "body": "Real relationships are slower, messier and more human.\n\nMany people in recovery say that's exactly <b>what makes them worth it.</b>", "note": "Which lie did you believe the longest? Comment the number 👇" },
-        { "type": "cta", "title": "Unlearn the screen.\n[[Learn real connection.]]", "lead": "Quick guides about p*rn and its effects, plus an anonymous community going through the same thing.", "features": ["Learn the truth", "Community", "AI coach"] }
+        {
+          "type": "hook",
+          "kicker": "Unlearn this",
+          "title": "4 lies p*rn taught you about [[real relationships.]]",
+          "sub": "#3 ruins more relationships than you'd think."
+        },
+        {
+          "type": "list",
+          "title": "Lies [[1–2]]",
+          "items": [
+            "<b>\"Intimacy is a performance.\"</b> Real connection is about trust, not a show.",
+            "<b>\"Everyone looks like that.\"</b> Real bodies are normal. The screen isn't."
+          ]
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "\"Consent is [[obvious.]]\"",
+          "body": "Real people communicate, check in and say what they want.\n\nAsking isn't awkward. <b>It's respect — and it's attractive.</b>"
+        },
+        {
+          "type": "point",
+          "num": "04",
+          "title": "\"More [[novelty]] = more happiness.\"",
+          "body": "Endless novelty trains you to always want the next thing.\n\nDepth with one person <b>is a different, better kind of good.</b>"
+        },
+        {
+          "type": "point",
+          "title": "Real is [[better]].",
+          "body": "Real relationships are slower, messier and more human.\n\nMany people in recovery say that's exactly <b>what makes them worth it.</b>",
+          "note": "Which lie did you believe the longest? Comment the number 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Unlearn the screen.\n[[Learn real connection.]]",
+          "lead": "Quick guides about p*rn and its effects, plus an anonymous community going through the same thing.",
+          "features": [
+            "Learn the truth",
+            "Community",
+            "AI coach"
+          ]
+        }
       ]
     },
     {
       "name": "Dating while you're quitting",
       "seed": 211,
-      "theme": { "bg": "#2A0F2E", "a1": "#FFB3E6", "a2": "#8FB4FF" },
+      "theme": {
+        "bg": "#050508",
+        "a1": "#FFB3E6",
+        "a2": "#8FB4FF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Single and quitting?", "title": "Should you date [[while you're quitting?]]", "sub": "What people in recovery wish they'd known earlier." },
-        { "type": "point", "num": "01", "title": "You don't need to be [[\"fixed\"]] first", "body": "Waiting until you're perfect can mean waiting forever.\n\nBut be honest with yourself about <b>where you are.</b>" },
-        { "type": "point", "num": "02", "title": "A partner is [[not]] a cure", "body": "A relationship won't make the habit disappear.\n\nIf you're dating to escape, <b>that's the same pattern in a new outfit.</b>" },
-        { "type": "point", "num": "03", "title": "Real dates [[train]] your brain", "body": "Eye contact, conversation, real attraction.\n\nMany people say real-world dating helped them <b>reconnect with what they actually want.</b>" },
-        { "type": "list", "title": "Date the [[healthy]] way", "items": ["<b>Go slow.</b> Build connection before intensity.", "<b>Don't hide your recovery</b> once it gets serious.", "<b>Keep your support system</b> — don't replace it.", "<b>Notice</b> if you're dating to escape."], "note": "Dating while quitting: helpful or harder? Tell us 👇" },
-        { "type": "cta", "title": "Show up as\n[[the real you.]]", "lead": "1-on-1 accountability, an AI coach for the tough questions and a community that gets it.", "features": ["Accountability", "AI coach", "Community"] }
+        {
+          "type": "hook",
+          "kicker": "Single and quitting?",
+          "title": "Should you date [[while you're quitting?]]",
+          "sub": "What people in recovery wish they'd known earlier."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "You don't need to be [[\"fixed\"]] first",
+          "body": "Waiting until you're perfect can mean waiting forever.\n\nBut be honest with yourself about <b>where you are.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "A partner is [[not]] a cure",
+          "body": "A relationship won't make the habit disappear.\n\nIf you're dating to escape, <b>that's the same pattern in a new outfit.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Real dates [[train]] your brain",
+          "body": "Eye contact, conversation, real attraction.\n\nMany people say real-world dating helped them <b>reconnect with what they actually want.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Date the [[healthy]] way",
+          "items": [
+            "<b>Go slow.</b> Build connection before intensity.",
+            "<b>Don't hide your recovery</b> once it gets serious.",
+            "<b>Keep your support system</b> — don't replace it.",
+            "<b>Notice</b> if you're dating to escape."
+          ],
+          "note": "Dating while quitting: helpful or harder? Tell us 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Show up as\n[[the real you.]]",
+          "lead": "1-on-1 accountability, an AI coach for the tough questions and a community that gets it.",
+          "features": [
+            "Accountability",
+            "AI coach",
+            "Community"
+          ]
+        }
       ]
     },
     {
       "name": "Your workout is an urge-killer",
       "seed": 213,
-      "theme": { "bg": "#0B1B36", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "theme": {
+        "bg": "#050508",
+        "a1": "#9EF0C8",
+        "a2": "#7BA7FF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Use this tonight", "title": "20 push-ups can beat an urge [[better than willpower.]]", "sub": "Why moving your body is one of the strongest tools you have." },
-        { "type": "point", "num": "01", "title": "It burns the [[restlessness]]", "body": "Urges often feel like restless energy with nowhere to go.\n\nMovement gives it somewhere to go — <b>fast.</b>" },
-        { "type": "point", "num": "02", "title": "It changes your [[state]]", "body": "Many people report feeling calmer and more in control after even a short workout.\n\nA different state means <b>a different decision.</b>" },
-        { "type": "point", "num": "03", "title": "It builds [[proof]]", "body": "Every workout is evidence that you can do hard things.\n\nThat proof shows up <b>at 1 AM when you need it.</b>" },
-        { "type": "list", "title": "Your [[urge workout]]", "items": ["<b>20 push-ups</b> — right where you are.", "<b>30 squats</b> or a 1-minute plank.", "<b>Cold water</b> on your face after.", "<b>Leave the room</b> before you sit back down."], "note": "What's your go-to move when an urge hits? Comment it 👇" },
-        { "type": "cta", "title": "Turn urges into\n[[reps.]]", "lead": "A panic button with instant tools for urges, streak tracking and a coach who keeps you moving.", "features": ["Panic button", "Streaks", "AI coach"] }
+        {
+          "type": "hook",
+          "kicker": "Use this tonight",
+          "title": "20 push-ups can beat an urge [[better than willpower.]]",
+          "sub": "Why moving your body is one of the strongest tools you have."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "It burns the [[restlessness]]",
+          "body": "Urges often feel like restless energy with nowhere to go.\n\nMovement gives it somewhere to go — <b>fast.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "It changes your [[state]]",
+          "body": "Many people report feeling calmer and more in control after even a short workout.\n\nA different state means <b>a different decision.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "It builds [[proof]]",
+          "body": "Every workout is evidence that you can do hard things.\n\nThat proof shows up <b>at 1 AM when you need it.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Your [[urge workout]]",
+          "items": [
+            "<b>20 push-ups</b> — right where you are.",
+            "<b>30 squats</b> or a 1-minute plank.",
+            "<b>Cold water</b> on your face after.",
+            "<b>Leave the room</b> before you sit back down."
+          ],
+          "note": "What's your go-to move when an urge hits? Comment it 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Turn urges into\n[[reps.]]",
+          "lead": "A panic button with instant tools for urges, streak tracking and a coach who keeps you moving.",
+          "features": [
+            "Panic button",
+            "Streaks",
+            "AI coach"
+          ]
+        }
       ]
     }
   ]

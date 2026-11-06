@@ -5,66 +5,272 @@
     {
       "name": "Exam and deadline stress is a relapse trap",
       "seed": 301,
-      "theme": { "bg": "#0D1430", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#6FF0C4",
+        "a2": "#7DB8FF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Students, read this", "title": "Exam week is when your streak [[is most at risk.]]", "sub": "Stress looks for an exit. Here's how to give it a better one." },
-        { "type": "point", "num": "01", "title": "Stress wants [[relief]]", "body": "Pressure builds and your brain hunts for the fastest way out.\n\nFor many people, that has always been <b>the old habit.</b>" },
-        { "type": "point", "num": "02", "title": "\"Just a [[quick break]]\"", "body": "A break turns into a scroll, a scroll turns into a search.\n\nAn hour later, <b>you're more stressed and further behind.</b>" },
-        { "type": "point", "num": "03", "title": "Plan your [[breaks]]", "body": "Unplanned breaks are where relapses hide.\n\nDecide in advance what a break looks like — <b>and where your phone is.</b>" },
-        { "type": "list", "title": "Study-week [[rules]]", "items": ["<b>Study away</b> from your bed.", "<b>Breaks = walk, water, stretch</b> — no phone.", "<b>Blocker on</b> for the whole week.", "<b>Sleep</b> beats one more late-night hour."], "note": "Students: when is your hardest time to stay clean? 👇" },
-        { "type": "cta", "title": "Pass your exams.\n[[Keep your streak.]]", "lead": "Block p*rn completely, track your streak and get instant tools when stress turns into urges.", "features": ["P*rn blocker", "Streaks", "Panic button"] }
+        {
+          "type": "hook",
+          "kicker": "Students, read this",
+          "title": "Exam week is when your streak [[is most at risk.]]",
+          "sub": "Stress looks for an exit. Here's how to give it a better one."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "Stress wants [[relief]]",
+          "body": "Pressure builds and your brain hunts for the fastest way out.\n\nFor many people, that has always been <b>the old habit.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "\"Just a [[quick break]]\"",
+          "body": "A break turns into a scroll, a scroll turns into a search.\n\nAn hour later, <b>you're more stressed and further behind.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Plan your [[breaks]]",
+          "body": "Unplanned breaks are where relapses hide.\n\nDecide in advance what a break looks like — <b>and where your phone is.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Study-week [[rules]]",
+          "items": [
+            "<b>Study away</b> from your bed.",
+            "<b>Breaks = walk, water, stretch</b> — no phone.",
+            "<b>Blocker on</b> for the whole week.",
+            "<b>Sleep</b> beats one more late-night hour."
+          ],
+          "note": "Students: when is your hardest time to stay clean? 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Pass your exams.\n[[Keep your streak.]]",
+          "lead": "Block p*rn completely, track your streak and get instant tools when stress turns into urges.",
+          "features": [
+            "P*rn blocker",
+            "Streaks",
+            "Panic button"
+          ]
+        }
       ]
     },
     {
       "name": "3 questions to ask yourself every night",
       "seed": 303,
-      "theme": { "bg": "#1B1035", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#7FE7FF",
+        "a2": "#A98BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "2 minutes before bed", "title": "3 questions that will [[change your recovery.]]", "sub": "Ask them every night for a week. Watch what you start noticing." },
-        { "type": "point", "num": "Q1", "title": "When did I feel the [[strongest]] urge?", "body": "Time, place, mood, what you were doing.\n\nPatterns show up fast once you <b>write them down.</b>" },
-        { "type": "point", "num": "Q2", "title": "What did I [[need]] in that moment?", "body": "Rest? Company? A break? Comfort?\n\nThe urge is often <b>a signal for something else.</b>" },
-        { "type": "point", "num": "Q3", "title": "What will I do [[differently]] tomorrow?", "body": "One small change. Not a whole new life.\n\n<b>Small changes, repeated, are how habits actually break.</b>" },
-        { "type": "point", "title": "Why [[writing]] works", "body": "A thought in your head disappears. A note on paper becomes a pattern you can see.\n\nMany people say journaling showed them <b>triggers they'd missed for years.</b>", "note": "Would you try this for 7 days? Comment \"I'm in\" 👇" },
-        { "type": "cta", "title": "See your patterns.\n[[Break your patterns.]]", "lead": "Daily journaling built for recovery: reflect on urges, spot triggers and build self-awareness.", "features": ["Daily journal", "AI coach", "Streaks"] }
+        {
+          "type": "hook",
+          "kicker": "2 minutes before bed",
+          "title": "3 questions that will [[change your recovery.]]",
+          "sub": "Ask them every night for a week. Watch what you start noticing."
+        },
+        {
+          "type": "point",
+          "num": "Q1",
+          "title": "When did I feel the [[strongest]] urge?",
+          "body": "Time, place, mood, what you were doing.\n\nPatterns show up fast once you <b>write them down.</b>"
+        },
+        {
+          "type": "point",
+          "num": "Q2",
+          "title": "What did I [[need]] in that moment?",
+          "body": "Rest? Company? A break? Comfort?\n\nThe urge is often <b>a signal for something else.</b>"
+        },
+        {
+          "type": "point",
+          "num": "Q3",
+          "title": "What will I do [[differently]] tomorrow?",
+          "body": "One small change. Not a whole new life.\n\n<b>Small changes, repeated, are how habits actually break.</b>"
+        },
+        {
+          "type": "point",
+          "title": "Why [[writing]] works",
+          "body": "A thought in your head disappears. A note on paper becomes a pattern you can see.\n\nMany people say journaling showed them <b>triggers they'd missed for years.</b>",
+          "note": "Would you try this for 7 days? Comment \"I'm in\" 👇"
+        },
+        {
+          "type": "cta",
+          "title": "See your patterns.\n[[Break your patterns.]]",
+          "lead": "Daily journaling built for recovery: reflect on urges, spot triggers and build self-awareness.",
+          "features": [
+            "Daily journal",
+            "AI coach",
+            "Streaks"
+          ]
+        }
       ]
     },
     {
       "name": "What I'd tell my 15-year-old self",
       "seed": 307,
-      "theme": { "bg": "#06232A", "a1": "#6FF0C4", "a2": "#7DB8FF" },
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#9EF0C8",
+        "a2": "#7BA7FF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Send this to your younger brother", "title": "What I wish someone told me [[at 15.]]", "sub": "Nobody talks about this with teenagers. Someone should." },
-        { "type": "point", "num": "01", "title": "It's [[not]] just harmless curiosity", "body": "What starts as curiosity can quietly turn into a daily habit.\n\nMany people say theirs <b>started before they even understood it.</b>" },
-        { "type": "point", "num": "02", "title": "You're not [[the only one]]", "body": "It feels like a secret only you have.\n\nIt isn't. <b>Millions of guys are dealing with the same thing</b> in silence." },
-        { "type": "point", "num": "03", "title": "Shame won't [[fix]] it", "body": "Hating yourself doesn't make you stop. It makes you hide.\n\nWhat helps is <b>honesty, tools and support.</b>" },
-        { "type": "list", "title": "What [[actually]] helps", "items": ["<b>Talk to someone</b> you trust.", "<b>Keep screens out</b> of the bedroom at night.", "<b>Fill your time</b> with sport, friends, skills.", "<b>Start early</b> — it's easier at 15 than at 25."], "note": "What would YOU tell your younger self? Comment below 👇" },
-        { "type": "cta", "title": "It's never too\n[[early or too late.]]", "lead": "A private, shame-free recovery app with guided lessons, a blocker and anonymous support.", "features": ["Learn the truth", "P*rn blocker", "Community"] }
+        {
+          "type": "hook",
+          "kicker": "Send this to your younger brother",
+          "title": "What I wish someone told me [[at 15.]]",
+          "sub": "Nobody talks about this with teenagers. Someone should."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "It's [[not]] just harmless curiosity",
+          "body": "What starts as curiosity can quietly turn into a daily habit.\n\nMany people say theirs <b>started before they even understood it.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "You're not [[the only one]]",
+          "body": "It feels like a secret only you have.\n\nIt isn't. <b>Millions of guys are dealing with the same thing</b> in silence."
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Shame won't [[fix]] it",
+          "body": "Hating yourself doesn't make you stop. It makes you hide.\n\nWhat helps is <b>honesty, tools and support.</b>"
+        },
+        {
+          "type": "list",
+          "title": "What [[actually]] helps",
+          "items": [
+            "<b>Talk to someone</b> you trust.",
+            "<b>Keep screens out</b> of the bedroom at night.",
+            "<b>Fill your time</b> with sport, friends, skills.",
+            "<b>Start early</b> — it's easier at 15 than at 25."
+          ],
+          "note": "What would YOU tell your younger self? Comment below 👇"
+        },
+        {
+          "type": "cta",
+          "title": "It's never too\n[[early or too late.]]",
+          "lead": "A private, shame-free recovery app with guided lessons, a blocker and anonymous support.",
+          "features": [
+            "Learn the truth",
+            "P*rn blocker",
+            "Community"
+          ]
+        }
       ]
     },
     {
       "name": "4 myths that keep you stuck",
       "seed": 311,
-      "theme": { "bg": "#24102C", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#5EE7E0",
+        "a2": "#B79BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Myth vs. reality", "title": "4 myths that keep you [[stuck in the loop.]]", "sub": "Believing #2 is why most people give up." },
-        { "type": "point", "num": "01", "title": "\"It's [[just a phase.]]\"", "body": "Phases end on their own. Habits usually don't.\n\nIf you've been \"growing out of it\" for years, <b>it might be time to act.</b>" },
-        { "type": "point", "num": "02", "title": "\"I just need more [[willpower.]]\"", "body": "Willpower runs out. Systems don't.\n\nBlockers, routines and support <b>do the heavy lifting</b> when willpower is tired." },
-        { "type": "point", "num": "03", "title": "\"One slip [[ruins]] everything.\"", "body": "A slip is one moment, not a reset of everything you've learned.\n\nWhat you do <b>in the next hour</b> matters more." },
-        { "type": "point", "num": "04", "title": "\"I have to do this [[alone.]]\"", "body": "Doing it alone is the hardest way to do it.\n\nAn anonymous community or one trusted person <b>changes everything.</b>", "note": "Which myth did you believe? Comment the number 👇" },
-        { "type": "cta", "title": "Drop the myths.\n[[Use what works.]]", "lead": "Systems, not just willpower: a blocker, 1-on-1 accountability and a step-by-step recovery program.", "features": ["P*rn blocker", "Accountability", "Recovery program"] }
+        {
+          "type": "hook",
+          "kicker": "Myth vs. reality",
+          "title": "4 myths that keep you [[stuck in the loop.]]",
+          "sub": "Believing #2 is why most people give up."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "\"It's [[just a phase.]]\"",
+          "body": "Phases end on their own. Habits usually don't.\n\nIf you've been \"growing out of it\" for years, <b>it might be time to act.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "\"I just need more [[willpower.]]\"",
+          "body": "Willpower runs out. Systems don't.\n\nBlockers, routines and support <b>do the heavy lifting</b> when willpower is tired."
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "\"One slip [[ruins]] everything.\"",
+          "body": "A slip is one moment, not a reset of everything you've learned.\n\nWhat you do <b>in the next hour</b> matters more."
+        },
+        {
+          "type": "point",
+          "num": "04",
+          "title": "\"I have to do this [[alone.]]\"",
+          "body": "Doing it alone is the hardest way to do it.\n\nAn anonymous community or one trusted person <b>changes everything.</b>",
+          "note": "Which myth did you believe? Comment the number 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Drop the myths.\n[[Use what works.]]",
+          "lead": "Systems, not just willpower: a blocker, 1-on-1 accountability and a step-by-step recovery program.",
+          "features": [
+            "P*rn blocker",
+            "Accountability",
+            "Recovery program"
+          ]
+        }
       ]
     },
     {
       "name": "From 'trying to quit' to 'I don't do that'",
       "seed": 313,
-      "theme": { "bg": "#091A35", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#7DE3F5",
+        "a2": "#8B7BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "The mindset shift", "title": "Stop saying \"I'm trying to quit.\" Start saying [[\"I don't do that.\"]]", "sub": "Why identity beats motivation." },
-        { "type": "point", "num": "01", "title": "\"Trying\" leaves the [[door open]]", "body": "\"I'm trying to quit\" quietly means \"I still do it.\"\n\nYour brain hears <b>a maybe.</b>" },
-        { "type": "point", "num": "02", "title": "Identity [[decides]] for you", "body": "A non-smoker doesn't debate every cigarette. They just don't smoke.\n\n<b>The decision is already made.</b>" },
-        { "type": "point", "num": "03", "title": "Every day is a [[vote]]", "body": "Each clean day is a vote for the person you're becoming.\n\nYou don't need to win every vote — <b>just most of them.</b>" },
-        { "type": "list", "title": "Build the [[new you]]", "items": ["<b>Change your language:</b> \"I don't watch that.\"", "<b>Act like him</b> — how does he spend his evenings?", "<b>Collect proof:</b> track every win.", "<b>Forgive slips</b> without changing who you are."], "note": "Type it in the comments: \"I don't do that.\" 👇" },
-        { "type": "cta", "title": "Become someone who\n[[doesn't need the escape.]]", "lead": "Streaks, daily journaling and a step-by-step program that turns new habits into who you are.", "features": ["Streaks", "Daily journal", "Recovery program"] }
+        {
+          "type": "hook",
+          "kicker": "The mindset shift",
+          "title": "Stop saying \"I'm trying to quit.\" Start saying [[\"I don't do that.\"]]",
+          "sub": "Why identity beats motivation."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "\"Trying\" leaves the [[door open]]",
+          "body": "\"I'm trying to quit\" quietly means \"I still do it.\"\n\nYour brain hears <b>a maybe.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "Identity [[decides]] for you",
+          "body": "A non-smoker doesn't debate every cigarette. They just don't smoke.\n\n<b>The decision is already made.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Every day is a [[vote]]",
+          "body": "Each clean day is a vote for the person you're becoming.\n\nYou don't need to win every vote — <b>just most of them.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Build the [[new you]]",
+          "items": [
+            "<b>Change your language:</b> \"I don't watch that.\"",
+            "<b>Act like him</b> — how does he spend his evenings?",
+            "<b>Collect proof:</b> track every win.",
+            "<b>Forgive slips</b> without changing who you are."
+          ],
+          "note": "Type it in the comments: \"I don't do that.\" 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Become someone who\n[[doesn't need the escape.]]",
+          "lead": "Streaks, daily journaling and a step-by-step program that turns new habits into who you are.",
+          "features": [
+            "Streaks",
+            "Daily journal",
+            "Recovery program"
+          ]
+        }
       ]
     }
   ]

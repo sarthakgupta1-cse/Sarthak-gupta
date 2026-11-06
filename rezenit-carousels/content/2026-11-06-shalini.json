@@ -5,66 +5,284 @@
     {
       "name": "Urge surfing - ride the craving instead of fighting it",
       "seed": 101,
-      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "theme": {
+        "bg": "#0C1633",
+        "a1": "#6FE3F0",
+        "a2": "#9B87FF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Try this next time", "title": "Stop fighting the urge. [[Surf it.]]", "sub": "The technique therapists use for cravings — and it takes about 10 minutes." },
-        { "type": "point", "num": "01", "title": "Urges are [[waves]]", "body": "They build, peak, and fade — even if you do nothing.\n\nFighting makes the wave feel bigger. <b>Watching it lets it pass.</b>" },
-        { "type": "point", "num": "02", "title": "Notice it in your [[body]]", "body": "Where do you feel it? Chest, stomach, hands?\n\nName it plainly: <b>\"Tight chest. Restless legs.\"</b> Describing it puts you back in the driver's seat." },
-        { "type": "point", "num": "03", "title": "Breathe [[with]] it", "body": "Slow breath in for 4, out for 6.\n\nRate the urge 1–10 every minute. Many people are surprised how fast <b>the number drops.</b>" },
-        { "type": "list", "title": "Your [[surf]] checklist", "items": ["<b>Pause.</b> Don't decide anything yet.", "<b>Locate</b> the urge in your body.", "<b>Breathe slowly</b> and rate it 1–10.", "<b>Wait</b> until it drops below 3."], "note": "What number does your urge usually start at? Comment it 👇" },
-        { "type": "cta", "title": "Ride the wave.\n[[Don't drown in it.]]", "lead": "Hit the panic button for instant tools that stop urges, right in the moment.", "features": ["Panic button", "Guided audio", "AI coach"] }
+        {
+          "type": "hook",
+          "kicker": "Try this next time",
+          "title": "Stop fighting the urge. [[Surf it.]]",
+          "sub": "The technique therapists use for cravings — and it takes about 10 minutes."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "Urges are [[waves]]",
+          "body": "They build, peak, and fade — even if you do nothing.\n\nFighting makes the wave feel bigger. <b>Watching it lets it pass.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "Notice it in your [[body]]",
+          "body": "Where do you feel it? Chest, stomach, hands?\n\nName it plainly: <b>\"Tight chest. Restless legs.\"</b> Describing it puts you back in the driver's seat."
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Breathe [[with]] it",
+          "body": "Slow breath in for 4, out for 6.\n\nRate the urge 1–10 every minute. Many people are surprised how fast <b>the number drops.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Your [[surf]] checklist",
+          "items": [
+            "<b>Pause.</b> Don't decide anything yet.",
+            "<b>Locate</b> the urge in your body.",
+            "<b>Breathe slowly</b> and rate it 1–10.",
+            "<b>Wait</b> until it drops below 3."
+          ],
+          "note": "What number does your urge usually start at? Comment it 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Ride the wave.\n[[Don't drown in it.]]",
+          "lead": "Hit the panic button for instant tools that stop urges, right in the moment.",
+          "features": [
+            "Panic button",
+            "Guided audio",
+            "AI coach"
+          ]
+        }
       ]
     },
     {
       "name": "Boredom - the most underrated trigger",
       "seed": 103,
-      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "theme": {
+        "bg": "#1A1036",
+        "a1": "#C4B5FF",
+        "a2": "#7DE3F5"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Not stress. Not lust.", "title": "Most relapses start with [[\"I'm bored.\"]]", "sub": "The trigger nobody takes seriously — until it gets them." },
-        { "type": "point", "num": "01", "title": "Boredom wants a [[fast]] fix", "body": "An empty evening feels uncomfortable.\n\nYour brain reaches for the quickest hit it remembers — <b>and it remembers this one well.</b>" },
-        { "type": "point", "num": "02", "title": "Free time is [[risky]] time", "body": "Many people say their streak is safest on busy days and most fragile on lazy Sundays.\n\n<b>Unplanned time is where the habit lives.</b>" },
-        { "type": "point", "num": "03", "title": "Plan the [[empty hours]]", "body": "You don't need a perfect schedule.\n\nYou need <b>one thing to do</b> when the evening goes quiet." },
-        { "type": "list", "title": "Your [[boredom]] menu", "items": ["<b>Move:</b> walk, gym, 20 push-ups.", "<b>Make:</b> cook, draw, play an instrument.", "<b>Meet:</b> call a friend, go somewhere public.", "<b>Learn:</b> one video, one chapter, one skill."], "note": "What's on your boredom menu? Share one idea 👇" },
-        { "type": "cta", "title": "Fill the gap\n[[before the habit does.]]", "lead": "A step-by-step recovery program with daily actions, so quiet evenings have a plan.", "features": ["Recovery program", "Daily actions", "Streaks"] }
+        {
+          "type": "hook",
+          "kicker": "Not stress. Not lust.",
+          "title": "Most relapses start with [[\"I'm bored.\"]]",
+          "sub": "The trigger nobody takes seriously — until it gets them."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "Boredom wants a [[fast]] fix",
+          "body": "An empty evening feels uncomfortable.\n\nYour brain reaches for the quickest hit it remembers — <b>and it remembers this one well.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "Free time is [[risky]] time",
+          "body": "Many people say their streak is safest on busy days and most fragile on lazy Sundays.\n\n<b>Unplanned time is where the habit lives.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Plan the [[empty hours]]",
+          "body": "You don't need a perfect schedule.\n\nYou need <b>one thing to do</b> when the evening goes quiet."
+        },
+        {
+          "type": "list",
+          "title": "Your [[boredom]] menu",
+          "items": [
+            "<b>Move:</b> walk, gym, 20 push-ups.",
+            "<b>Make:</b> cook, draw, play an instrument.",
+            "<b>Meet:</b> call a friend, go somewhere public.",
+            "<b>Learn:</b> one video, one chapter, one skill."
+          ],
+          "note": "What's on your boredom menu? Share one idea 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Fill the gap\n[[before the habit does.]]",
+          "lead": "A step-by-step recovery program with daily actions, so quiet evenings have a plan.",
+          "features": [
+            "Recovery program",
+            "Daily actions",
+            "Streaks"
+          ]
+        }
       ]
     },
     {
       "name": "Weekends are the danger zone",
       "seed": 107,
-      "theme": { "bg": "#062326", "a1": "#6FF0C4", "a2": "#7DB8FF" },
+      "theme": {
+        "bg": "#0B1A3A",
+        "a1": "#6FF0C4",
+        "a2": "#7DB8FF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Friday night warning", "title": "Your streak doesn't die on Monday. [[It dies on Saturday.]]", "sub": "Why weekends are when most guys slip — and how to protect yours." },
-        { "type": "point", "num": "01", "title": "No [[structure]]", "body": "No work, no schedule, no one expecting you anywhere.\n\nThe guardrails that held you all week <b>quietly disappear.</b>" },
-        { "type": "point", "num": "02", "title": "Late nights, [[later]] mornings", "body": "Staying up late, sleeping in, lying in bed with your phone.\n\nIt's the exact setup <b>many people describe before a relapse.</b>" },
-        { "type": "point", "num": "03", "title": "The \"I [[deserve]] it\" mood", "body": "After a hard week, your brain bargains for a reward.\n\nRemind it: <b>a real rest beats a cheap hit.</b>" },
-        { "type": "list", "title": "Weekend [[game plan]]", "items": ["<b>Plan Saturday morning</b> on Friday night.", "<b>Get outside</b> before noon both days.", "<b>Keep a bedtime</b> — even on weekends.", "<b>Book one social plan</b> every weekend."], "note": "Which day is hardest for you? Comment SAT or SUN 👇" },
-        { "type": "cta", "title": "Make it to\n[[Monday clean.]]", "lead": "Track your streak, check in with your accountability partner and hit the panic button when it gets hard.", "features": ["Streaks", "Accountability", "Panic button"] }
+        {
+          "type": "hook",
+          "kicker": "Friday night warning",
+          "title": "Your streak doesn't die on Monday. [[It dies on Saturday.]]",
+          "sub": "Why weekends are when most guys slip — and how to protect yours."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "No [[structure]]",
+          "body": "No work, no schedule, no one expecting you anywhere.\n\nThe guardrails that held you all week <b>quietly disappear.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "Late nights, [[later]] mornings",
+          "body": "Staying up late, sleeping in, lying in bed with your phone.\n\nIt's the exact setup <b>many people describe before a relapse.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "The \"I [[deserve]] it\" mood",
+          "body": "After a hard week, your brain bargains for a reward.\n\nRemind it: <b>a real rest beats a cheap hit.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Weekend [[game plan]]",
+          "items": [
+            "<b>Plan Saturday morning</b> on Friday night.",
+            "<b>Get outside</b> before noon both days.",
+            "<b>Keep a bedtime</b> — even on weekends.",
+            "<b>Book one social plan</b> every weekend."
+          ],
+          "note": "Which day is hardest for you? Comment SAT or SUN 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Make it to\n[[Monday clean.]]",
+          "lead": "Track your streak, check in with your accountability partner and hit the panic button when it gets hard.",
+          "features": [
+            "Streaks",
+            "Accountability",
+            "Panic button"
+          ]
+        }
       ]
     },
     {
       "name": "Signs you're healing even if you relapsed",
       "seed": 109,
-      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "theme": {
+        "bg": "#22102E",
+        "a1": "#FF9EDB",
+        "a2": "#9B8CFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "For anyone who slipped this week", "title": "You relapsed. But you're [[still healing.]]", "sub": "5 signs your progress is real, even if the counter says Day 0." },
-        { "type": "list", "title": "Signs [[1–2]]", "items": ["<b>The gaps are getting longer.</b> Three days used to be hard. Now it's three weeks.", "<b>You notice triggers</b> before they hit, not after."] },
-        { "type": "list", "marks": ["3", "4"], "title": "Signs [[3–4]]", "items": ["<b>You feel worse after.</b> It used to feel normal. Now it feels wrong — that's growth.", "<b>You bounce back faster.</b> One slip doesn't become a lost week anymore."] },
-        { "type": "point", "num": "05", "title": "You're [[still here.]]", "body": "You're reading this. You haven't given up on yourself.\n\nThat's not nothing. <b>That's the whole game.</b>" },
-        { "type": "point", "title": "Progress isn't a [[straight line.]]", "body": "Most people in recovery describe a zig-zag, not a staircase.\n\nJudge the trend, <b>not one bad day.</b>", "note": "Which sign do you see in yourself? Comment the number 👇" },
-        { "type": "cta", "title": "A slip is a step.\n[[Not the end.]]", "lead": "Shame-free progress: journal your patterns, track every streak and see how far you've really come.", "features": ["Journaling", "Streaks", "Community"] }
+        {
+          "type": "hook",
+          "kicker": "For anyone who slipped this week",
+          "title": "You relapsed. But you're [[still healing.]]",
+          "sub": "5 signs your progress is real, even if the counter says Day 0."
+        },
+        {
+          "type": "list",
+          "title": "Signs [[1–2]]",
+          "items": [
+            "<b>The gaps are getting longer.</b> Three days used to be hard. Now it's three weeks.",
+            "<b>You notice triggers</b> before they hit, not after."
+          ]
+        },
+        {
+          "type": "list",
+          "marks": [
+            "3",
+            "4"
+          ],
+          "title": "Signs [[3–4]]",
+          "items": [
+            "<b>You feel worse after.</b> It used to feel normal. Now it feels wrong — that's growth.",
+            "<b>You bounce back faster.</b> One slip doesn't become a lost week anymore."
+          ]
+        },
+        {
+          "type": "point",
+          "num": "05",
+          "title": "You're [[still here.]]",
+          "body": "You're reading this. You haven't given up on yourself.\n\nThat's not nothing. <b>That's the whole game.</b>"
+        },
+        {
+          "type": "point",
+          "title": "Progress isn't a [[straight line.]]",
+          "body": "Most people in recovery describe a zig-zag, not a staircase.\n\nJudge the trend, <b>not one bad day.</b>",
+          "note": "Which sign do you see in yourself? Comment the number 👇"
+        },
+        {
+          "type": "cta",
+          "title": "A slip is a step.\n[[Not the end.]]",
+          "lead": "Shame-free progress: journal your patterns, track every streak and see how far you've really come.",
+          "features": [
+            "Journaling",
+            "Streaks",
+            "Community"
+          ]
+        }
       ]
     },
     {
       "name": "Stop obsessing over your streak number",
       "seed": 113,
-      "theme": { "bg": "#0A1A30", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "theme": {
+        "bg": "#0A1A30",
+        "a1": "#7FE7FF",
+        "a2": "#A98BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Unpopular opinion", "title": "Your streak counter might be [[hurting you.]]", "sub": "Why some people do better when they stop staring at the number." },
-        { "type": "point", "num": "01", "title": "All or [[nothing]]", "body": "Day 47 feels like everything. Day 0 feels like you lost it all.\n\nThat pressure makes the <b>\"screw it\" binge</b> more likely after a slip." },
-        { "type": "point", "num": "02", "title": "The number isn't [[the point]]", "body": "The point is a life you don't want to escape from.\n\nSleep, friends, goals, confidence — <b>that's the real scoreboard.</b>" },
-        { "type": "point", "num": "03", "title": "Track [[more]] than days", "body": "Urges beaten. Triggers spotted. Hours reclaimed. Good days in a row.\n\nThese keep counting <b>even after a bad night.</b>" },
-        { "type": "list", "title": "A [[healthier]] scoreboard", "items": ["<b>Clean days this month</b> — not just in a row.", "<b>Urges you rode out</b> without giving in.", "<b>Triggers you spotted</b> and wrote down.", "<b>One thing you built</b> with the time you got back."], "note": "Do streaks motivate you or stress you out? Tell us 👇" },
-        { "type": "cta", "title": "Count what\n[[actually matters.]]", "lead": "Streaks, journaling and daily progress tracking — built for shame-free progress.", "features": ["Streaks", "Daily journal", "Habit tracking"] }
+        {
+          "type": "hook",
+          "kicker": "Unpopular opinion",
+          "title": "Your streak counter might be [[hurting you.]]",
+          "sub": "Why some people do better when they stop staring at the number."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "All or [[nothing]]",
+          "body": "Day 47 feels like everything. Day 0 feels like you lost it all.\n\nThat pressure makes the <b>\"screw it\" binge</b> more likely after a slip."
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "The number isn't [[the point]]",
+          "body": "The point is a life you don't want to escape from.\n\nSleep, friends, goals, confidence — <b>that's the real scoreboard.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Track [[more]] than days",
+          "body": "Urges beaten. Triggers spotted. Hours reclaimed. Good days in a row.\n\nThese keep counting <b>even after a bad night.</b>"
+        },
+        {
+          "type": "list",
+          "title": "A [[healthier]] scoreboard",
+          "items": [
+            "<b>Clean days this month</b> — not just in a row.",
+            "<b>Urges you rode out</b> without giving in.",
+            "<b>Triggers you spotted</b> and wrote down.",
+            "<b>One thing you built</b> with the time you got back."
+          ],
+          "note": "Do streaks motivate you or stress you out? Tell us 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Count what\n[[actually matters.]]",
+          "lead": "Streaks, journaling and daily progress tracking — built for shame-free progress.",
+          "features": [
+            "Streaks",
+            "Daily journal",
+            "Habit tracking"
+          ]
+        }
       ]
     }
   ]

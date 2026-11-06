@@ -148,12 +148,14 @@ function html(c, s, i) {
   // Root-level carousel folders (older days) have owner "", person folders hold their own carousels.
   const isCarousel = n => /^\d{2}-\d{2}-\d{2} Carousel \d+$/.test(n);
   const pngs = d => fs.readdirSync(d).filter(f => /\.png$/i.test(f)).sort();
+  // sizes let the Drive script spot re-rendered images and replace them
+  const entry = (owner, name, d) => { const files = pngs(d); return { owner, name, files, sizes: Object.fromEntries(files.map(f => [f, fs.statSync(path.join(d, f)).size])) }; };
   const folders = [];
   for (const d of fs.readdirSync(outDir, { withFileTypes: true })) {
     if (!d.isDirectory()) continue;
-    if (isCarousel(d.name)) { folders.push({ owner: '', name: d.name, files: pngs(path.join(outDir, d.name)) }); continue; }
+    if (isCarousel(d.name)) { folders.push(entry('', d.name, path.join(outDir, d.name))); continue; }
     for (const c of fs.readdirSync(path.join(outDir, d.name), { withFileTypes: true }))
-      if (c.isDirectory() && isCarousel(c.name)) folders.push({ owner: d.name, name: c.name, files: pngs(path.join(outDir, d.name, c.name)) });
+      if (c.isDirectory() && isCarousel(c.name)) folders.push(entry(d.name, c.name, path.join(outDir, d.name, c.name)));
   }
   folders.sort((a, b) => (a.owner + '/' + a.name).localeCompare(b.owner + '/' + b.name));
   fs.writeFileSync(path.join(outDir, 'manifest.json'), JSON.stringify({ folders }, null, 2) + '\n');
