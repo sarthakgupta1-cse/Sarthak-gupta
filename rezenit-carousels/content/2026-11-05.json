@@ -1,0 +1,70 @@
+{
+  "date": "05-11-26",
+  "carousels": [
+    {
+      "name": "5 excuses your brain uses right before a relapse",
+      "seed": 61,
+      "theme": { "bg": "#0E1430", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Read this before you give in", "title": "Your brain has [[5 favorite excuses.]]", "sub": "You've used at least 3 of them this week." },
+        { "type": "list", "title": "Excuses [[1–2]]", "items": ["<b>\"Just once won't hurt.\"</b> It's never once. It's the start of the next loop.", "<b>\"I'm stressed, I deserve it.\"</b> You deserve relief. This isn't relief, it's a delay."] },
+        { "type": "list", "marks": ["3", "4"], "title": "Excuses [[3–4]]", "items": ["<b>\"I'll start fresh on Monday.\"</b> Monday never comes for a habit that's planning its comeback.", "<b>\"Everyone does it.\"</b> Everyone doing it doesn't make it good for <b>you</b>."] },
+        { "type": "point", "num": "05", "title": "\"I already [[ruined]] today.\"", "body": "The most dangerous one. It turns one slip into a lost night.\n\nA bad hour doesn't have to become <b>a bad day.</b>" },
+        { "type": "point", "title": "Name it to [[tame it.]]", "body": "When the thought shows up, say it out loud: <b>\"That's excuse #2.\"</b>\n\nSeeing it as a script, not the truth, takes away a lot of its power.", "note": "Which excuse gets you most? Comment the number 👇" },
+        { "type": "cta", "title": "Catch the excuse\n[[before it catches you.]]", "lead": "A panic button for the moment, journaling to spot your patterns, and a coach on call.", "features": ["Panic button", "Journaling", "AI coach"] }
+      ]
+    },
+    {
+      "name": "Struggling in bed at 24? Many guys never connect it",
+      "seed": 67,
+      "theme": { "bg": "#15123A", "a1": "#B9A8FF", "a2": "#72E0F0" },
+      "slides": [
+        { "type": "hook", "kicker": "Nobody talks about this", "title": "Struggling in bed at 24 isn't [[\"just stress.\"]]", "sub": "Many young guys never connect it to their screen habit." },
+        { "type": "point", "num": "01", "title": "Real life vs. [[the screen]]", "body": "A screen offers endless novelty, on demand, with zero pressure.\n\nReal intimacy can start to feel <b>less exciting by comparison.</b>" },
+        { "type": "point", "num": "02", "title": "You're [[not]] broken.", "body": "Many men in recovery forums describe this exact thing — and describe it improving after they cut back.\n\nIt's often a <b>conditioning</b> issue, not a body issue." },
+        { "type": "point", "num": "03", "title": "Don't skip the [[doctor.]]", "body": "Performance problems can have many causes: physical, emotional, medical.\n\nIf it keeps happening, <b>talk to a doctor.</b> It's common and nothing to be ashamed of." },
+        { "type": "list", "title": "What many guys [[try]]", "items": ["<b>A full break</b> from p*rn — not just \"less\".", "<b>Sleep, training and less alcohol.</b>", "<b>Honest talk</b> with your partner instead of hiding it.", "<b>Patience:</b> many report it takes weeks, not days."], "note": "Send this to a friend who needs it — anonymously if you have to." },
+        { "type": "cta", "title": "Get back to\n[[the real thing.]]", "lead": "Block p*rn completely, track your streak and learn the truth about what it does to you.", "features": ["P*rn blocker", "Streaks", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "Your room is set up for a relapse",
+      "seed": 71,
+      "theme": { "bg": "#0A2228", "a1": "#6FF0C4", "a2": "#7DB8FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Look around you", "title": "Your room is [[set up for a relapse.]]", "sub": "Willpower loses to environment almost every time. Fix the room." },
+        { "type": "point", "num": "01", "title": "The [[bed]] problem", "body": "If your bed is where you scroll, work, eat and relapse, your brain learns: <b>bed = screen time.</b>\n\nMake the bed for sleep only." },
+        { "type": "point", "num": "02", "title": "Make it [[hard]] to start", "body": "Every extra step between you and the habit is a chance to stop.\n\nA blocker, a locked app, a phone in another room — <b>friction is your friend.</b>" },
+        { "type": "point", "num": "03", "title": "Make the good stuff [[easy]]", "body": "Book on the pillow. Gym bag by the door. Journal on the desk.\n\nPut the better choice <b>where your hand already goes.</b>" },
+        { "type": "list", "title": "Tonight's [[10-minute]] reset", "items": ["<b>Charger</b> moves outside the bedroom.", "<b>Blocker</b> goes on every device.", "<b>Laptop</b> stays on the desk, never the bed.", "<b>Door open</b> when you're on a screen late."], "note": "Which one are you doing tonight? Comment the number 👇" },
+        { "type": "cta", "title": "Build a space that\n[[doesn't need the escape.]]", "lead": "Turn your phone into a safe, distraction-free space and track every day you stay clean.", "features": ["P*rn blocker", "Streaks", "Daily journal"] }
+      ]
+    },
+    {
+      "name": "The guys who quit for good all did this",
+      "seed": 79,
+      "theme": { "bg": "#24102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "slides": [
+        { "type": "hook", "kicker": "The part nobody wants to do", "title": "The guys who quit for good [[didn't do it alone.]]", "sub": "Secrecy is the habit's best friend." },
+        { "type": "point", "num": "01", "title": "Why alone [[fails]]", "body": "When nobody knows, a relapse costs nothing but guilt.\n\nAnd guilt, alone at 1 AM, <b>usually makes the next one easier.</b>" },
+        { "type": "point", "num": "02", "title": "One person [[changes]] the math", "body": "Knowing someone will ask \"how's it going?\" tomorrow makes tonight's choice different.\n\nMany people in recovery call it <b>the turning point.</b>" },
+        { "type": "point", "num": "03", "title": "It doesn't have to be [[awkward]]", "body": "It doesn't have to be your parents or your partner.\n\nA trusted friend, an anonymous community or an accountability match <b>all count.</b>" },
+        { "type": "list", "title": "Start [[small]] this week", "items": ["<b>Pick one person</b> or one anonymous group.", "<b>Share one sentence:</b> \"I'm trying to quit p*rn.\"", "<b>Agree on a check-in:</b> daily text, weekly call.", "<b>Tell them about slips</b> too, not just wins."], "note": "Who's your accountability partner? Tag them — or comment \"need one\" 👇" },
+        { "type": "cta", "title": "Find your people.\n[[Stay anonymous.]]", "lead": "Get matched with real people for daily check-ins, plus a community walking the same road.", "features": ["1-on-1 accountability", "Community", "Check-ins"] }
+      ]
+    },
+    {
+      "name": "What gets better when you quit",
+      "seed": 83,
+      "theme": { "bg": "#081A33", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Save this for motivation", "title": "6 things that get [[better]] when you quit p*rn", "sub": "What people in recovery say they noticed first." },
+        { "type": "list", "title": "Your [[mind]]", "items": ["<b>Clearer head.</b> Many describe the brain fog lifting after the first few weeks.", "<b>More drive.</b> Goals stop feeling like a chore."] },
+        { "type": "list", "marks": ["3", "4"], "title": "Your [[confidence]]", "items": ["<b>Eye contact gets easier.</b> No more feeling like you're hiding something.", "<b>Self-respect returns.</b> Every day kept is a promise kept to yourself."] },
+        { "type": "list", "marks": ["5", "6"], "title": "Your [[life]]", "items": ["<b>Real connection</b> starts to feel better than any screen.", "<b>Hours back.</b> Time you lost now goes to training, work and people."] },
+        { "type": "point", "title": "It won't be [[instant.]]", "body": "Everyone's timeline is different and the first weeks are the hardest.\n\nBut the people who stick with it <b>rarely want to go back.</b>", "note": "Already quit? What got better first for you? Tell us 👇" },
+        { "type": "cta", "title": "One download.\n[[A steadier week starts tomorrow.]]", "lead": "A step-by-step recovery program with guided audio, streaks and support when urges hit.", "features": ["Recovery program", "Guided audio", "Streaks"] }
+      ]
+    }
+  ]
+}

@@ -27,8 +27,11 @@ render.js          content JSON -> PNG slides (Playwright)
    `<b>` = bold, `\n` = line break. Write "p*rn", never the full word.
 2. `node render.js content/<date>.json carousels`
 3. Check the console for `WARN overflow`, review the PNGs, write the captions file.
-4. Upload the five `carousels/<DD-MM-YY> Carousel N` folders into the Drive folder
-   "Rezenit TikTok Carousel" (drag the folders into Drive in the browser).
+4. Commit and push to `claude/brave-davinci-pbopjl`. The Google Apps Script in `drive-sync/Code.gs`
+   (running in the owner's Google account) copies new folders into the Drive folder
+   "Rezenit TikTok Carousel" every hour. Nothing to upload by hand.
 
 ## Topics already used
 - 04-11-26: No Nut November Day 7 · 7 signs · 90-day timeline · 1 AM relapse playbook · softcore trap
+- 05-11-26: 5 relapse excuses · performance issues at 24 · room/environment design · accountability · 6 benefits of quitting
+- 06-11-26: Relapse binge after a slip · HALT (hungry/angry/lonely/tired) · replacement addiction (doomscrolling) · secrecy vs trust in relationships · Day 31 after No Nut November
