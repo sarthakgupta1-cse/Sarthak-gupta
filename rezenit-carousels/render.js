@@ -152,6 +152,13 @@ function writeManifest(outDir) {
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
   for (const [n, c] of spec.carousels.entries()) {
     if (c.slides.length !== 6) throw new Error(`carousel ${n + 1} must have 6 slides`);
+    // Copy rules: say "p*rn" openly (never the uncensored word), in the hook and across the carousel.
+    const text = sl => [sl.kicker, sl.title, sl.sub, sl.body, sl.note, sl.lead, ...(sl.items || [])].filter(Boolean).join(' ');
+    const said = sl => /p\*rn/i.test(text(sl));
+    if (c.slides.some(sl => /\bporn/i.test(text(sl)))) console.warn(`WARN uncensored word: carousel ${n + 1} — write "p*rn"`);
+    if (!said(c.slides[0])) console.warn(`WARN hook doesn't say p*rn: carousel ${n + 1} — name the topic on slide 1`);
+    const mentions = c.slides.slice(1, 5).filter(said).length;
+    if (mentions < 2) console.warn(`WARN only ${mentions} of slides 2–5 mention p*rn: carousel ${n + 1} — make it explicit`);
     const dir = path.join(outDir, spec.owner || '', `${spec.date} Carousel ${n + 1}`); // owner = person folder, e.g. "Shalini"
     fs.mkdirSync(dir, { recursive: true });
     for (const [k, s] of c.slides.entries()) {

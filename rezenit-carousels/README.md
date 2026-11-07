@@ -25,6 +25,13 @@ render.js          content JSON -> PNG slides (Playwright)
 - **Tanmay:** black, `#050508`, on all 5 carousels. Accents can vary.
 - **Yash:** deep emerald green, `#04241A`, on all 5 carousels. Accents: mint/cyan `a1` with blue or lavender `a2`.
 
+## Copy rule: name it openly
+Every carousel is about **p*rn addiction** and must say so — nobody should have to guess the topic.
+- Slide 1 (hook) always contains "p*rn" or "p*rn addiction" ("P*rn" at the start of a sentence).
+- At least 2 of slides 2–5 mention p*rn by name; don't hide behind "the habit", "it", "this" or "the screen".
+- CTA and captions name it too ("quit p*rn", "p*rn addiction recovery").
+- Never write the uncensored word. render.js prints `WARN` lines if any of these are broken — fix them before pushing.
+
 ## Make a new day
 
 1. Write three files `content/<YYYY-MM-DD>-<shalini|tanmay|yash>.json`, each with `"date": "DD-MM-YY"`,
