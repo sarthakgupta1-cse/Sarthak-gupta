@@ -124,7 +124,28 @@ function html(c, s, i) {
   <div class="slide">${stars(c.seed || 7)}${s.type === 'cta' ? '' : header(t, i)}${slideBody(s, t, i)}${s.type === 'cta' ? '' : footer(t, i)}</div></body></html>`;
 }
 
+function writeManifest(outDir) {
+  // manifest.json lists every carousel folder + its files, so the Drive sync script
+  // can work from raw.githubusercontent.com without calling the rate-limited GitHub API.
+  // Root-level carousel folders (older days) have owner "", person folders hold their own carousels.
+  const isCarousel = n => /^\d{2}-\d{2}-\d{2} Carousel \d+$/.test(n);
+  const pngs = d => fs.readdirSync(d).filter(f => /\.png$/i.test(f)).sort();
+  // sizes let the Drive script spot re-rendered images and replace them
+  const entry = (owner, name, d) => { const files = pngs(d); return { owner, name, files, sizes: Object.fromEntries(files.map(f => [f, fs.statSync(path.join(d, f)).size])) }; };
+  const folders = [];
+  for (const d of fs.readdirSync(outDir, { withFileTypes: true })) {
+    if (!d.isDirectory()) continue;
+    if (isCarousel(d.name)) { folders.push(entry('', d.name, path.join(outDir, d.name))); continue; }
+    for (const c of fs.readdirSync(path.join(outDir, d.name), { withFileTypes: true }))
+      if (c.isDirectory() && isCarousel(c.name)) folders.push(entry(d.name, c.name, path.join(outDir, d.name, c.name)));
+  }
+  folders.sort((a, b) => (a.owner + '/' + a.name).localeCompare(b.owner + '/' + b.name));
+  fs.writeFileSync(path.join(outDir, 'manifest.json'), JSON.stringify({ folders }, null, 2) + '\n');
+  console.log(`manifest.json: ${folders.length} folders`);
+}
+
 (async () => {
+  if (process.argv[2] === '--manifest') { writeManifest(process.argv[3] || path.join(__dirname, 'out')); return; }
   const [contentFile, outDir = path.join(__dirname, 'out')] = process.argv.slice(2);
   const spec = JSON.parse(fs.readFileSync(contentFile, 'utf8'));
   const browser = await chromium.launch();
@@ -143,21 +164,5 @@ function html(c, s, i) {
     console.log('rendered', dir);
   }
   await browser.close();
-  // manifest.json lists every carousel folder + its files, so the Drive sync script
-  // can work from raw.githubusercontent.com without calling the rate-limited GitHub API.
-  // Root-level carousel folders (older days) have owner "", person folders hold their own carousels.
-  const isCarousel = n => /^\d{2}-\d{2}-\d{2} Carousel \d+$/.test(n);
-  const pngs = d => fs.readdirSync(d).filter(f => /\.png$/i.test(f)).sort();
-  // sizes let the Drive script spot re-rendered images and replace them
-  const entry = (owner, name, d) => { const files = pngs(d); return { owner, name, files, sizes: Object.fromEntries(files.map(f => [f, fs.statSync(path.join(d, f)).size])) }; };
-  const folders = [];
-  for (const d of fs.readdirSync(outDir, { withFileTypes: true })) {
-    if (!d.isDirectory()) continue;
-    if (isCarousel(d.name)) { folders.push(entry('', d.name, path.join(outDir, d.name))); continue; }
-    for (const c of fs.readdirSync(path.join(outDir, d.name), { withFileTypes: true }))
-      if (c.isDirectory() && isCarousel(c.name)) folders.push(entry(d.name, c.name, path.join(outDir, d.name, c.name)));
-  }
-  folders.sort((a, b) => (a.owner + '/' + a.name).localeCompare(b.owner + '/' + b.name));
-  fs.writeFileSync(path.join(outDir, 'manifest.json'), JSON.stringify({ folders }, null, 2) + '\n');
-  console.log(`manifest.json: ${folders.length} folders`);
+  writeManifest(outDir);
 })();

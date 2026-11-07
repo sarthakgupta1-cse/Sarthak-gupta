@@ -4,6 +4,7 @@
  * Copies every carousel folder from the GitHub repo into the Drive folder below:
  *   <Person>/<DD-MM-YY> Carousel <n>/1.png ... 6.png   (Person = Shalini, Tanmay, Yash)
  * Safe to run any number of times: existing files are skipped, re-rendered ones are replaced.
+ * Only today's carousels are copied, so days you delete after posting stay deleted.
  *
  * It reads carousels/manifest.json and downloads files from raw.githubusercontent.com,
  * so it never touches the GitHub REST API (whose anonymous limit Apps Script's shared
@@ -17,6 +18,9 @@ const CONFIG = {
   BRANCH: 'claude/brave-davinci-pbopjl',
   PATH: 'rezenit-carousels/carousels',
   DRIVE_FOLDER_ID: '1Jb5AKe1BpI15Kb4NYMPf9ulE-6iC3tl5', // "Rezenit TikTok Carousel"
+  // Only copy carousels dated within the last N days (1 = today only), so a day you
+  // delete from Drive after posting never comes back. Uses the project's time zone (IST).
+  DAYS_TO_SYNC: 1,
 };
 const NAME_RE = /^\d{2}-\d{2}-\d{2} Carousel \d+$/;
 
@@ -25,7 +29,7 @@ function syncCarousels() {
   const manifest = JSON.parse(fetch_(`${CONFIG.PATH}/manifest.json?t=${Date.now()}`).getContentText());
   let added = 0;
   for (const entry of manifest.folders) {
-    if (!NAME_RE.test(entry.name)) continue;
+    if (!NAME_RE.test(entry.name) || !isRecent_(entry.name)) continue;
     // entry.owner = person folder ("Shalini", "Tanmay", "Yash"); empty for older root-level days
     const parent = entry.owner ? getOrCreate_(root, entry.owner) : root;
     const folder = getOrCreate_(parent, entry.name);
@@ -72,3 +76,11 @@ function authHeaders_() {
 }
 
 function getOrCreate_(parent, name) { const it = parent.getFoldersByName(name); return it.hasNext() ? it.next() : parent.createFolder(name); }
+
+// "07-11-26 Carousel 1" -> true if 07-11-26 is within the last CONFIG.DAYS_TO_SYNC days.
+function isRecent_(name) {
+  const [dd, mm, yy] = name.slice(0, 8).split('-').map(Number);
+  const today = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd').split('-').map(Number);
+  const days = (Date.UTC(today[0], today[1] - 1, today[2]) - Date.UTC(2000 + yy, mm - 1, dd)) / 86400000;
+  return days >= 0 && days < CONFIG.DAYS_TO_SYNC;
+}
