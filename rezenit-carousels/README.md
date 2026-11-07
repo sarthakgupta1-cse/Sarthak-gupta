@@ -32,11 +32,14 @@ render.js          content JSON -> PNG slides (Playwright)
    Each carousel: one `theme` (single background color `bg` + accents `a1`/`a2`) and exactly 6 slides.
    Slide types: `hook`, `point`, `chain`, `list`, `cta` (always last). `[[text]]` = gradient highlight,
    `<b>` = bold, `\n` = line break. Write "p*rn", never the full word.
-2. `node render.js content/<file>.json carousels` for each of the three files (also rebuilds manifest.json)
+2. Remove previous days' image folders first (`git rm -r carousels/*/<old date> Carousel *`); the content JSON
+   and captions stay as the record. Then `node render.js content/<file>.json carousels` for each of the three
+   files (also rebuilds manifest.json; `node render.js --manifest carousels` rebuilds it alone).
 3. Check the console for `WARN overflow`, review the PNGs, write the captions file.
 4. Commit and push to `claude/brave-davinci-pbopjl`. The Google Apps Script in `drive-sync/Code.gs`
    (running in the owner's Google account) copies new folders into the Drive folder
-   "Rezenit TikTok Carousel" every hour. Nothing to upload by hand.
+   "Rezenit TikTok Carousel" every hour, and moves folders whose date has passed to the Drive Trash.
+   Nothing to upload or delete by hand.
 
 ## Topics already used
 - 04-11-26: No Nut November Day 7 · 7 signs · 90-day timeline · 1 AM relapse playbook · softcore trap

@@ -4,7 +4,7 @@
  * Copies every carousel folder from the GitHub repo into the Drive folder below:
  *   <Person>/<DD-MM-YY> Carousel <n>/1.png ... 6.png   (Person = Shalini, Tanmay, Yash)
  * Safe to run any number of times: existing files are skipped, re-rendered ones are replaced.
- * Only today's carousels are copied, so days you delete after posting stay deleted.
+ * Only today's carousels are kept: once a date has passed, its folders are moved to the Trash.
  *
  * It reads carousels/manifest.json and downloads files from raw.githubusercontent.com,
  * so it never touches the GitHub REST API (whose anonymous limit Apps Script's shared
@@ -18,8 +18,9 @@ const CONFIG = {
   BRANCH: 'claude/brave-davinci-pbopjl',
   PATH: 'rezenit-carousels/carousels',
   DRIVE_FOLDER_ID: '1Jb5AKe1BpI15Kb4NYMPf9ulE-6iC3tl5', // "Rezenit TikTok Carousel"
-  // Only copy carousels dated within the last N days (1 = today only), so a day you
-  // delete from Drive after posting never comes back. Uses the project's time zone (IST).
+  // Carousels are kept for N days (1 = today only), in the project's time zone (IST).
+  // Older ones are never copied, and any already in Drive are moved to the Trash
+  // automatically once their date has passed. Already deleted? Nothing happens.
   DAYS_TO_SYNC: 1,
 };
 const NAME_RE = /^\d{2}-\d{2}-\d{2} Carousel \d+$/;
@@ -47,7 +48,8 @@ function syncCarousels() {
       added++;
     }
   }
-  console.log(`Sync done: ${added} new or updated image(s).`);
+  const removed = cleanupOld_(root);
+  console.log(`Sync done: ${added} new or updated image(s), ${removed} old carousel folder(s) moved to Trash.`);
 }
 
 /** Run once: does a first sync and installs an hourly trigger. */
@@ -75,12 +77,36 @@ function authHeaders_() {
   return t ? { Authorization: `Bearer ${t}` } : {};
 }
 
-function getOrCreate_(parent, name) { const it = parent.getFoldersByName(name); return it.hasNext() ? it.next() : parent.createFolder(name); }
+function getOrCreate_(parent, name) {
+  const it = parent.getFoldersByName(name);
+  while (it.hasNext()) { const f = it.next(); if (!f.isTrashed()) return f; }
+  return parent.createFolder(name);
+}
+
+/** Trash every "<DD-MM-YY> Carousel <n>" folder whose date has passed, in the main folder and each person folder. */
+function cleanupOld_(root) {
+  const parents = [root];
+  const people = root.getFolders();
+  while (people.hasNext()) { const f = people.next(); if (!f.isTrashed() && !NAME_RE.test(f.getName())) parents.push(f); }
+  let removed = 0;
+  for (const parent of parents) {
+    const it = parent.getFolders();
+    while (it.hasNext()) {
+      const f = it.next();
+      if (f.isTrashed() || !NAME_RE.test(f.getName()) || !isPast_(f.getName())) continue;
+      f.setTrashed(true);
+      removed++;
+    }
+  }
+  return removed;
+}
 
 // "07-11-26 Carousel 1" -> true if 07-11-26 is within the last CONFIG.DAYS_TO_SYNC days.
-function isRecent_(name) {
+function isRecent_(name) { const d = ageInDays_(name); return d >= 0 && d < CONFIG.DAYS_TO_SYNC; }
+// true once the carousel's date is older than the keep window (future dates are never past)
+function isPast_(name) { return ageInDays_(name) >= CONFIG.DAYS_TO_SYNC; }
+function ageInDays_(name) {
   const [dd, mm, yy] = name.slice(0, 8).split('-').map(Number);
   const today = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd').split('-').map(Number);
-  const days = (Date.UTC(today[0], today[1] - 1, today[2]) - Date.UTC(2000 + yy, mm - 1, dd)) / 86400000;
-  return days >= 0 && days < CONFIG.DAYS_TO_SYNC;
+  return (Date.UTC(today[0], today[1] - 1, today[2]) - Date.UTC(2000 + yy, mm - 1, dd)) / 86400000;
 }
