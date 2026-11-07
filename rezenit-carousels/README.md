@@ -38,7 +38,7 @@ render.js          content JSON -> PNG slides (Playwright)
 3. Check the console for `WARN overflow`, review the PNGs, write the captions file.
 4. Commit and push to `claude/brave-davinci-pbopjl`. The Google Apps Script in `drive-sync/Code.gs`
    (running in the owner's Google account) copies new folders into the Drive folder
-   "Rezenit TikTok Carousel" every hour, and moves folders whose date has passed to the Drive Trash.
+   "Rezenit TikTok Carousel" every hour. Yesterday's folders stay until 11 AM IST, then go to the Drive Trash.
    Nothing to upload or delete by hand.
 
 ## Topics already used

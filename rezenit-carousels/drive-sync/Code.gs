@@ -4,7 +4,7 @@
  * Copies every carousel folder from the GitHub repo into the Drive folder below:
  *   <Person>/<DD-MM-YY> Carousel <n>/1.png ... 6.png   (Person = Shalini, Tanmay, Yash)
  * Safe to run any number of times: existing files are skipped, re-rendered ones are replaced.
- * Only today's carousels are kept: once a date has passed, its folders are moved to the Trash.
+ * Only today's carousels are copied. Yesterday's are kept until 11 AM, then moved to the Trash.
  *
  * It reads carousels/manifest.json and downloads files from raw.githubusercontent.com,
  * so it never touches the GitHub REST API (whose anonymous limit Apps Script's shared
@@ -18,10 +18,11 @@ const CONFIG = {
   BRANCH: 'claude/brave-davinci-pbopjl',
   PATH: 'rezenit-carousels/carousels',
   DRIVE_FOLDER_ID: '1Jb5AKe1BpI15Kb4NYMPf9ulE-6iC3tl5', // "Rezenit TikTok Carousel"
-  // Carousels are kept for N days (1 = today only), in the project's time zone (IST).
-  // Older ones are never copied, and any already in Drive are moved to the Trash
-  // automatically once their date has passed. Already deleted? Nothing happens.
+  // Only today's carousels are copied (time zone = the project's, IST).
+  // Yesterday's stay in Drive until KEEP_UNTIL_HOUR (11 = 11 AM) so missed posts can still
+  // go out, then they're moved to the Trash. Already deleted? Nothing happens.
   DAYS_TO_SYNC: 1,
+  KEEP_UNTIL_HOUR: 11,
 };
 const NAME_RE = /^\d{2}-\d{2}-\d{2} Carousel \d+$/;
 
@@ -103,8 +104,14 @@ function cleanupOld_(root) {
 
 // "07-11-26 Carousel 1" -> true if 07-11-26 is within the last CONFIG.DAYS_TO_SYNC days.
 function isRecent_(name) { const d = ageInDays_(name); return d >= 0 && d < CONFIG.DAYS_TO_SYNC; }
-// true once the carousel's date is older than the keep window (future dates are never past)
-function isPast_(name) { return ageInDays_(name) >= CONFIG.DAYS_TO_SYNC; }
+// Yesterday's carousels are past only from KEEP_UNTIL_HOUR today; older ones always; future ones never.
+function isPast_(name) {
+  const age = ageInDays_(name);
+  if (age > CONFIG.DAYS_TO_SYNC) return true;
+  if (age < CONFIG.DAYS_TO_SYNC) return false;
+  const hour = Number(Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'H'));
+  return hour >= CONFIG.KEEP_UNTIL_HOUR;
+}
 function ageInDays_(name) {
   const [dd, mm, yy] = name.slice(0, 8).split('-').map(Number);
   const today = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd').split('-').map(Number);
