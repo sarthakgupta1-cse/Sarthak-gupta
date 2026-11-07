@@ -45,3 +45,6 @@ render.js          content JSON -> PNG slides (Playwright)
 - 06-11-26 Shalini: urge surfing · boredom trigger · weekends · signs you're healing after a relapse · streak-counter obsession
 - 06-11-26 Tanmay: morning routine · confidence & comparison · 4 lies about real relationships · dating while quitting · workout as urge-killer
 - 06-11-26 Yash: exam/deadline stress · 3 nightly journaling questions · advice to my 15-year-old self · 4 myths · identity shift ("I don't do that")
+- 07-11-26 Shalini: overconfidence / day-5 wave · flatline vs depression (when to get help) · self-compassion vs shame · isolation & building connection · working from home alone
+- 07-11-26 Tanmay: extinction burst (urges louder before quieter) · hours p*rn costs per year · disciplined everywhere but here · mental replay / fantasies · therapy isn't weakness
+- 07-11-26 Yash: 5 phone settings · 3-second rule for surprise triggers · your "why" · learn a skill for the rest of November · helping a friend who's struggling
