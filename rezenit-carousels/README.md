@@ -58,3 +58,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 07-11-26 Shalini: overconfidence / day-5 wave · flatline vs depression (when to get help) · self-compassion vs shame · isolation & building connection · working from home alone
 - 07-11-26 Tanmay: extinction burst (urges louder before quieter) · hours p*rn costs per year · disciplined everywhere but here · mental replay / fantasies · therapy isn't weakness
 - 07-11-26 Yash: 5 phone settings · 3-second rule for surprise triggers · your "why" · learn a skill for the rest of November · helping a friend who's struggling
+- 08-11-26 Shalini: 3 p*rn habits linked to addiction (binge, tab-jumping, tolerance) · relapse starts days before · coming-home trigger · is p*rn addiction real (ICD-11) · p*rn for anxiety relief
+- 08-11-26 Tanmay: wanting vs enjoying p*rn · p*rn & sleep loop · telling your partner · p*rn addiction at 30+ · 5-step starter kit
+- 08-11-26 Yash: side doors (Reddit, games, anime, image search) · money spent on p*rn · p*rn & procrastination · 5 questions before you open p*rn · incognito/hiding rituals
