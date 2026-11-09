@@ -61,3 +61,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 08-11-26 Shalini: 3 p*rn habits linked to addiction (binge, tab-jumping, tolerance) · relapse starts days before · coming-home trigger · is p*rn addiction real (ICD-11) · p*rn for anxiety relief
 - 08-11-26 Tanmay: wanting vs enjoying p*rn · p*rn & sleep loop · telling your partner · p*rn addiction at 30+ · 5-step starter kit
 - 08-11-26 Yash: side doors (Reddit, games, anime, image search) · money spent on p*rn · p*rn & procrastination · 5 questions before you open p*rn · incognito/hiding rituals
+- 09-11-26 Shalini: 4 CBT tools for p*rn addiction · partner's self-esteem · Sunday-night relapse · why we need to talk about p*rn addiction · a good p*rn-free day routine
+- 09-11-26 Tanmay: "dopamine reset" myths · 4 needs p*rn fills · group chats sending p*rn · 4 p*rn blocker loopholes · map your p*rn triggers
+- 09-11-26 Yash: breakups & p*rn relapse · travel/hotel rooms · moderation vs quitting · new city loneliness · craving p*rn after a big win

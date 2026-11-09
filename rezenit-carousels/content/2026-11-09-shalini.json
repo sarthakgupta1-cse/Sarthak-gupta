@@ -1,0 +1,71 @@
+{
+  "date": "09-11-26",
+  "owner": "Shalini",
+  "carousels": [
+    {
+      "name": "4 CBT tools therapists use for p*rn addiction",
+      "seed": 1001,
+      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Borrow these from therapy", "title": "4 tools therapists use to treat [[p*rn addiction.]]", "sub": "You can start using them tonight." },
+        { "type": "point", "num": "01", "title": "Thought [[tracking]]", "body": "Write down the exact thought before a p*rn urge: \"I'm bored.\" \"I deserve it.\"\n\nSeeing the thought on paper <b>makes it easier to question.</b>" },
+        { "type": "point", "num": "02", "title": "Reframing", "body": "Swap \"I need p*rn to relax\" for \"I want to relax — what else works?\"\n\nCognitive behavioral therapy (CBT) teaches this <b>one thought at a time.</b>" },
+        { "type": "point", "num": "03", "title": "Exposure & [[response]] prevention", "body": "Notice the trigger, feel the p*rn urge, and <b>don't act on it</b> — on purpose.\n\nEach time, the urge loses a little of its pull." },
+        { "type": "point", "num": "04", "title": "A written [[coping plan]]", "body": "Decide in advance: \"When a p*rn urge hits, I will ___.\"\n\nA plan made calmly beats a decision made mid-craving.", "note": "Which tool will you try first? Comment 1, 2, 3 or 4 👇" },
+        { "type": "cta", "title": "Therapy-style tools\n[[for quitting p*rn.]]", "lead": "Daily journaling for thought tracking, an AI coach for reframes and a step-by-step p*rn recovery program.", "features": ["Journaling", "AI coach", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "Your p*rn use affects her self-esteem too",
+      "seed": 1003,
+      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "In a relationship?", "title": "Your p*rn addiction isn't only [[hurting you.]]", "sub": "What partners say it does to how they see themselves." },
+        { "type": "point", "num": "01", "title": "\"Am I [[not enough?]]\"", "body": "Many partners say discovering p*rn use made them compare themselves to what's on the screen.\n\n<b>That comparison hurts.</b>" },
+        { "type": "point", "num": "02", "title": "Research [[agrees]]", "body": "One university study of 308 women linked a partner's frequent p*rn use to lower relationship satisfaction — partly through lower self-esteem.\n\nIt doesn't prove cause, but <b>the pattern is real for many couples.</b>" },
+        { "type": "point", "num": "03", "title": "It's [[not]] about them", "body": "P*rn addiction is about the addiction, not your partner's worth.\n\nSay that out loud: <b>\"This is my struggle, not your fault.\"</b>" },
+        { "type": "list", "title": "Rebuild her [[confidence]]", "items": ["<b>Be honest</b> about your p*rn use, without excuses.", "<b>Reassure her</b> — often, not once.", "<b>Show progress</b> in quitting p*rn, don't just promise it.", "<b>Get support</b> together if you need it."], "note": "Partners: what helped you feel secure again? Share below 👇" },
+        { "type": "cta", "title": "Quit p*rn\n[[for both of you.]]", "lead": "Public habit tracking your partner can see, a p*rn blocker and 1-on-1 accountability.", "features": ["Habit tracking", "P*rn blocker", "Accountability"] }
+      ]
+    },
+    {
+      "name": "The Sunday-night p*rn relapse",
+      "seed": 1007,
+      "theme": { "bg": "#0B1A3A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Sunday scaries", "title": "Sunday night anxiety is [[a p*rn relapse trap.]]", "sub": "Why the night before Monday hits so hard." },
+        { "type": "point", "num": "01", "title": "The Monday [[dread]]", "body": "Work, deadlines, a whole week ahead — and anxiety builds all evening.\n\nFor many people, p*rn becomes <b>the way to escape that dread.</b>" },
+        { "type": "point", "num": "02", "title": "The \"[[fresh start]]\" lie", "body": "\"I'll watch p*rn tonight and start clean on Monday.\"\n\nThat thought has <b>restarted more streaks than any other.</b>" },
+        { "type": "point", "num": "03", "title": "Make Sunday [[lighter]]", "body": "Plan the week on Sunday afternoon, not at midnight.\n\nA clear head on Sunday evening makes p*rn <b>far less tempting.</b>" },
+        { "type": "list", "title": "Your Sunday [[plan]]", "items": ["<b>Plan Monday</b> before 6 PM.", "<b>Do something social</b> on Sunday evening.", "<b>Early night</b> — phone outside the room.", "<b>Blocker on</b> and no \"last p*rn before Monday.\""], "note": "Is Sunday your hardest p*rn night? Comment YES or NO 👇" },
+        { "type": "cta", "title": "Start Monday\n[[p*rn-free.]]", "lead": "Guided audio to calm Sunday anxiety, a p*rn blocker and streaks that carry into the week.", "features": ["Guided audio", "P*rn blocker", "Streaks"] }
+      ]
+    },
+    {
+      "name": "Why we need to talk about p*rn addiction",
+      "seed": 1009,
+      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Stop laughing it off", "title": "We joke about p*rn. [[We never talk about p*rn addiction.]]", "sub": "And that silence keeps so many people stuck." },
+        { "type": "point", "num": "01", "title": "Jokes [[hide]] the problem", "body": "Memes and jokes make p*rn seem harmless and universal.\n\nMeanwhile, people struggling with p*rn addiction <b>feel like they can't say anything.</b>" },
+        { "type": "point", "num": "02", "title": "Silence [[feeds]] shame", "body": "When nobody talks about p*rn addiction, everyone thinks they're the only one.\n\nThat isolation is <b>exactly what keeps the loop going.</b>" },
+        { "type": "point", "num": "03", "title": "Talking [[helps]]", "body": "Support groups work largely because they remove that isolation.\n\nOne honest conversation about p*rn <b>can change someone's year.</b>" },
+        { "type": "list", "title": "How to [[start]] the conversation", "items": ["<b>Share this post</b> — it opens the door.", "<b>Don't laugh</b> when someone mentions p*rn struggles.", "<b>Say \"same here\"</b> if it's true.", "<b>Point people</b> to real help, not shame."], "note": "Why do you think nobody talks about p*rn addiction? 👇" },
+        { "type": "cta", "title": "Break the silence\n[[on p*rn addiction.]]", "lead": "An anonymous community where you can talk about p*rn openly — no names, no judgment.", "features": ["Community", "AI coach", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "What a good p*rn-free day looks like",
+      "seed": 1011,
+      "theme": { "bg": "#0A1A30", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Copy this routine", "title": "What a good [[p*rn-free day]] actually looks like.", "sub": "Not perfect. Just protected." },
+        { "type": "point", "phase": "Morning", "progress": 1, "title": "Start [[offline]]", "body": "No phone for 30 minutes. Sunlight, water, movement.\n\nA calm morning makes p*rn urges <b>easier to handle later.</b>" },
+        { "type": "point", "phase": "Afternoon", "progress": 2, "title": "Plan the [[danger hours]]", "body": "Know when your p*rn urges usually hit — and put something there: gym, a call, a walk." },
+        { "type": "point", "phase": "Evening", "progress": 3, "title": "Wind [[down]], not out", "body": "Screens off by a set time. P*rn blocker on. Phone charging outside the bedroom.\n\n<b>The night is where most p*rn relapses happen.</b>" },
+        { "type": "point", "phase": "Before bed", "progress": 4, "title": "Two-minute [[check-in]]", "body": "Did I feel any p*rn urges today? What helped? What's tomorrow's plan?\n\nSmall reflections <b>add up to big change.</b>", "note": "Which part of the day is hardest for you? 👇" },
+        { "type": "cta", "title": "Build your\n[[p*rn-free routine.]]", "lead": "Daily actions, a p*rn blocker for evenings and daily check-ins to keep you on track.", "features": ["Daily actions", "P*rn blocker", "Check-ins"] }
+      ]
+    }
+  ]
+}
