@@ -64,3 +64,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 09-11-26 Shalini: 4 CBT tools for p*rn addiction · partner's self-esteem · Sunday-night relapse · why we need to talk about p*rn addiction · a good p*rn-free day routine
 - 09-11-26 Tanmay: "dopamine reset" myths · 4 needs p*rn fills · group chats sending p*rn · 4 p*rn blocker loopholes · map your p*rn triggers
 - 09-11-26 Yash: breakups & p*rn relapse · travel/hotel rooms · moderation vs quitting · new city loneliness · craving p*rn after a big win
+- 10-11-26 Shalini: early exposure (54% by 13) · "I'm not enough" shame cycle · quitting vs recovering · what to say in the first minute of an urge · p*rn & attention span
+- 10-11-26 Tanmay: recovery isn't a leaderboard · p*rn addiction in your 20s · reading about it isn't recovery · p*rn shaping your "type" · 10-item urge emergency list
+- 10-11-26 Yash: "I'll quit when life calms down" · in a relationship but still watching · women and p*rn addiction · channeling energy after quitting · morning wake-up p*rn trap
