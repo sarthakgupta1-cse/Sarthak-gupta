@@ -67,15 +67,23 @@ function css(t) {
   .note{margin-top:44px;font-family:'Inter';font-weight:600;font-size:32px;line-height:1.4;color:#fff;
     padding:28px 34px;border-radius:24px;background:rgba(255,255,255,.06);border-left:6px solid ${t.a1}}
   .bottom{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .savepill{font-family:'Inter';font-weight:700;font-size:24px;color:${t.a1};border:2px solid ${t.a1}55;padding:10px 20px;border-radius:999px}
+  .share{font-family:'Inter';font-weight:700;font-size:26px;color:${t.a1}}
   .site{font-family:'Inter';font-weight:600;font-size:24px;color:rgba(255,255,255,.45);letter-spacing:1px}
   .swipe{font-family:'Inter';font-weight:700;font-size:26px;color:${t.bg};background:linear-gradient(90deg,${t.a1},${t.a2});
     padding:16px 30px;border-radius:999px;letter-spacing:.5px}
   /* CTA */
   .cta{align-items:center;text-align:center}
-  .cta .logo{width:200px;height:200px;object-fit:contain;margin-bottom:6px}
+  .cta .logo{width:170px;height:170px;object-fit:contain;margin-bottom:4px}
+  .ctabrand{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+  .ctabrand img{width:84px;height:106px;object-fit:contain}
+  .ctabrand span{font-weight:700;font-size:64px;letter-spacing:.5px;background:linear-gradient(90deg,${t.a1},${t.a2});-webkit-background-clip:text;color:transparent}
+  .slide.ctaslide{padding:60px 92px 56px}
+  .trust{margin-top:18px;font-family:'Inter';font-weight:600;font-size:24px;color:${t.a1}}
+  .saveshare{margin-top:18px;font-family:'Inter';font-weight:600;font-size:24px;color:rgba(255,255,255,.75);padding:12px 24px;border-radius:999px;background:rgba(255,255,255,.07)}
   .cta h2{font-size:64px;margin:0 0 18px}
   .cta .lead{font-family:'Inter';font-weight:500;font-size:32px;line-height:1.38;color:rgba(238,241,255,.78);max-width:840px}
-  .phone{position:relative;width:470px;height:400px;margin:28px 0 34px;border-radius:36px;overflow:hidden;
+  .phone{position:relative;width:470px;height:360px;margin:24px 0 28px;border-radius:36px;overflow:hidden;
     border:2px solid ${t.a2}66;box-shadow:0 0 80px ${t.a2}40,0 0 0 10px rgba(255,255,255,.03)}
   .phone img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
   .btn{font-weight:800;font-size:40px;color:${t.bg};background:linear-gradient(90deg,${t.a1},${t.a2});padding:30px 64px;border-radius:999px;
@@ -86,11 +94,15 @@ function css(t) {
   `;
 }
 
+// Slides 1–5 carry no branding (value only); RezenIt appears only on the CTA slide.
 function header(t, i) {
-  return `<div class="top"><div class="brand"><img src="${MARK}">RezenIt</div><div class="count">${i}/6</div></div>`;
+  const left = i === 1 ? `<div class="savepill">🔖 Save this</div>` : '<div></div>';
+  return `<div class="top">${left}<div class="count">${i}/6</div></div>`;
 }
 function footer(t, i) {
-  return `<div class="bottom"><div class="site">rezenit.com</div>${i < 6 ? `<div class="swipe">${i === 1 ? 'Swipe →' : 'Keep going →'}</div>` : ''}</div>`;
+  const left = i === 5 ? `<div class="share">↗ Send this to someone who's struggling</div>`
+    : i > 1 ? `<div class="site">🔖 Save this for later</div>` : '<div></div>';
+  return `<div class="bottom">${left}<div class="swipe">${i === 1 ? 'Swipe →' : 'Keep going →'}</div></div>`;
 }
 
 function slideBody(s, t, i) {
@@ -110,10 +122,12 @@ function slideBody(s, t, i) {
         `<li><span class="n">${s.marks ? esc(s.marks[k]) : k + 1}</span><span>${fmt(x)}</span></li>`).join('')}</ul>
         ${s.note ? `<div class="note">${fmt(s.note)}</div>` : ''}</div>`;
     case 'cta':
-      return `<div class="main cta"><img class="logo" src="${LOGO}"><h2>${fmt(s.title)}</h2><div class="lead">${fmt(s.lead)}</div>
+      return `<div class="main cta"><div class="ctabrand"><img src="${MARK}"><span>RezenIt</span></div><h2>${fmt(s.title)}</h2><div class="lead">${fmt(s.lead)}</div>
         ${s.features ? `<div class="chips">${s.features.map(f => `<span>${esc(f)}</span>`).join('')}</div>` : ''}
         <div class="phone"><img src="${APP}"></div><div class="btn">${esc(s.button || 'Download RezenIt')}</div>
-        <div class="stores">${esc(s.stores || 'Available on the App Store & Google Play')}</div></div>`;
+        <div class="stores">${esc(s.stores || 'App Store & Google Play')} · rezenit.com</div>
+        <div class="trust">Private by design · Science-informed · Shame-free</div>
+        <div class="saveshare">🔖 Save this · ↗ Share it with someone who's struggling</div></div>`;
   }
   throw new Error('unknown slide type ' + s.type);
 }
@@ -121,7 +135,7 @@ function slideBody(s, t, i) {
 function html(c, s, i) {
   const t = c.theme;
   return `<!doctype html><html><head><meta charset="utf-8"><style>${css(t)}</style></head><body>
-  <div class="slide">${stars(c.seed || 7)}${s.type === 'cta' ? '' : header(t, i)}${slideBody(s, t, i)}${s.type === 'cta' ? '' : footer(t, i)}</div></body></html>`;
+  <div class="slide${s.type === 'cta' ? ' ctaslide' : ''}">${stars(c.seed || 7)}${s.type === 'cta' ? '' : header(t, i)}${slideBody(s, t, i)}${s.type === 'cta' ? '' : footer(t, i)}</div></body></html>`;
 }
 
 function writeManifest(outDir) {
@@ -157,6 +171,8 @@ function writeManifest(outDir) {
     const said = sl => /p\*rn/i.test(text(sl));
     if (c.slides.some(sl => /\bporn/i.test(text(sl)))) console.warn(`WARN uncensored word: carousel ${n + 1} — write "p*rn"`);
     if (!said(c.slides[0])) console.warn(`WARN hook doesn't say p*rn: carousel ${n + 1} — name the topic on slide 1`);
+    // Slides 1–5 must help, not sell: no app or feature promotion before the CTA slide.
+    c.slides.slice(0, 5).forEach((sl, k) => { if (/rezenit|panic button|in (your|the) app|download/i.test(text(sl))) console.warn(`WARN promo on slide ${k + 1}: carousel ${n + 1} — keep the app for slide 6`); });
     const mentions = c.slides.slice(1, 5).filter(said).length;
     if (mentions < 2) console.warn(`WARN only ${mentions} of slides 2–5 mention p*rn: carousel ${n + 1} — make it explicit`);
     const dir = path.join(outDir, spec.owner || '', `${spec.date} Carousel ${n + 1}`); // owner = person folder, e.g. "Shalini"

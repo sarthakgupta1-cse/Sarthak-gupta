@@ -25,6 +25,42 @@ render.js          content JSON -> PNG slides (Playwright)
 - **Tanmay:** black, `#050508`, on all 5 carousels. Accents can vary.
 - **Yash:** deep emerald green, `#04241A`, on all 5 carousels. Accents: mint/cyan `a1` with blue or lavender `a2`.
 
+## Content strategy (user feedback, 10-11-26) — follow on every run
+**What performed best so far:** "7 signs p*rn is quietly running your life" (239 views, 2 saves) and
+"What happens when you quit p*rn for 90 days" (202 views). Checklists/"signs" listicles and timelines win.
+Make more in those formats, and better: "9 signs…", "Day 1 → Day 30 of No Nut November", "What p*rn does to
+you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages of quitting p*rn".
+
+1. **No Nut November (all of November):** at least 2 of each person's 5 carousels (6+ of 15) are framed around
+   NNN — the day number ("Day 11 of NNN"), the mid-month wall, "you failed NNN, now what", "after NNN ends".
+2. **Proven formats:** at least 2 per person are a signs/checklist listicle or a timeline.
+3. **Not promotional:** slides 1–5 are 100% help for the community. No app, no features, no "RezenIt", no
+   "panic button / in your app". Generic advice ("block p*rn", "tell a friend") is fine. The template already
+   removes branding from slides 1–5. Slide 6 is 100% promotional (logo, name, app image, features, download).
+4. **Real numbers:** at least 1 carousel per person uses a number from the stats bank below, with its source named
+   on the slide. Never invent a stat; if you find a new one, add it to the bank with its source first.
+5. **Bold and direct — very harsh is allowed:** drill-sergeant tone, call out excuses, lies and wasted time
+   ("Stop lying to yourself." "You're not tired. You're avoiding your life."). Aim the harshness at the habit and the
+   excuses, never at the person's worth — no "you're worthless/disgusting", nothing about self-harm. Mix 1–2 harsh
+   carousels per person with supportive ones.
+6. **Built to be saved and shared:** write things people want to keep (checklists, timelines, scripts, numbers)
+   and send to a friend. The template adds "Save this" on slide 1, "Save for later" on 2–4 and "Send this to someone
+   who's struggling" on slide 5; slide 5's note can also ask for a save/share instead of a comment.
+7. CTA (slide 6) title must fit on 2 lines; render.js warns on overflow.
+
+## Stats bank (verified — cite the source on the slide, keep the wording hedged)
+- ~13% of web searches were for erotic content — analysis of ~400 million searches (Ogas & Gaddam, "A Billion Wicked Thoughts", 2011).
+- Pornhub alone had 42 billion visits in 2019 — about 115 million a day; average visit 10 min 28 sec (Pornhub 2019 Year in Review).
+- Pornhub recorded 39 billion searches in 2019 (Pornhub 2019 Year in Review).
+- 54% of U.S. teens had seen p*rn by age 13; 15% at 10 or younger (Common Sense Media, 2023, ~1,300 teens).
+- Earlier first exposure is linked to more frequent use and higher risk of compulsive use (University of Glasgow systematic review, 2025).
+- 10.3% of men and 7.0% of women reported clinically relevant distress from trouble controlling sexual urges/behaviour; 8.6% of adults screened positive (Dickenson et al., JAMA Network Open, 2018, 2,325 U.S. adults).
+- 3.2% of 82,243 people across 42 countries were at risk of problematic p*rn use on a conservative measure (up to 16.6% on others); men highest (Bőthe et al., Addiction, 2024, International Sex Survey).
+- Only 4–10% of people with problematic p*rn use had ever sought treatment (same study).
+- A 2025 study of 2,000+ men linked binge sessions, tab-jumping and tolerance to losing control over p*rn use (Addictive Behaviors, 2025).
+- WHO's ICD-11 includes compulsive sexual behaviour disorder (since 2019).
+- Arithmetic is fine: 30 min/day = ~182 hours/year.
+
 ## Copy rule: name it openly
 Every carousel is about **p*rn addiction** and must say so — nobody should have to guess the topic.
 - Slide 1 (hook) always contains "p*rn" or "p*rn addiction" ("P*rn" at the start of a sentence).
