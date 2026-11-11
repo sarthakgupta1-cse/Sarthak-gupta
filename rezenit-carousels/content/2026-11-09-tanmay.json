@@ -1,0 +1,71 @@
+{
+  "date": "09-11-26",
+  "owner": "Tanmay",
+  "carousels": [
+    {
+      "name": "P*rn 'dopamine reset' myths",
+      "seed": 1101,
+      "theme": { "bg": "#050508", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Myth-busting", "title": "Cold showers won't \"reset\" your p*rn brain. [[Here's what actually helps.]]", "sub": "Stop falling for internet hacks." },
+        { "type": "point", "num": "01", "title": "The [[hype]]", "body": "\"Cold showers boost dopamine 250%.\" \"7-day dopamine detox.\"\n\nMany viral p*rn-quitting claims <b>aren't backed by solid research.</b>" },
+        { "type": "point", "num": "02", "title": "Hacks aren't a [[plan]]", "body": "A cold shower can help you ride out one p*rn urge. Great.\n\nBut no single trick <b>fixes p*rn addiction on its own.</b>" },
+        { "type": "point", "num": "03", "title": "What [[does]] help", "body": "Removing easy access to p*rn, knowing your triggers, support from other people and time.\n\n<b>Boring? Yes. Effective? Also yes.</b>" },
+        { "type": "list", "title": "Quit p*rn the [[boring]] way", "items": ["<b>Block p*rn</b> on every device.", "<b>Plan for triggers</b> before they hit.", "<b>Get accountability</b> — one person or a group.", "<b>Give it time:</b> weeks, not days."], "note": "What p*rn-quitting hack did you fall for? Comment it 👇" },
+        { "type": "cta", "title": "Skip the hacks.\n[[Quit p*rn for real.]]", "lead": "Science-informed tools: a p*rn blocker, a step-by-step recovery program and real accountability.", "features": ["P*rn blocker", "Recovery program", "Accountability"] }
+      ]
+    },
+    {
+      "name": "The 4 needs p*rn is filling",
+      "seed": 1103,
+      "theme": { "bg": "#050508", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "The real reason", "title": "P*rn is filling [[one of these 4 needs.]]", "sub": "Fix the need, and the p*rn urge gets quieter." },
+        { "type": "point", "num": "01", "title": "[[Rest]]", "body": "Exhausted and drained, p*rn feels like switching off.\n\nWhat you actually need: <b>sleep, a real break, doing nothing for a while.</b>" },
+        { "type": "point", "num": "02", "title": "[[Connection]]", "body": "Lonely or disconnected, p*rn offers fake closeness.\n\nWhat you actually need: <b>a call, a friend, people who know you.</b>" },
+        { "type": "point", "num": "03", "title": "[[Relief]]", "body": "Stressed or anxious, p*rn is a quick escape.\n\nWhat you actually need: <b>movement, breathing, talking it out.</b>" },
+        { "type": "point", "num": "04", "title": "[[Excitement]]", "body": "Bored with life, p*rn gives instant novelty.\n\nWhat you actually need: <b>a challenge, a goal, something to build.</b>", "note": "Which need does p*rn fill for you? Comment the number 👇" },
+        { "type": "cta", "title": "Meet the need.\n[[Lose the p*rn.]]", "lead": "Journal what you really need, use guided audio for rest and stress, and lean on a community.", "features": ["Journaling", "Guided audio", "Community"] }
+      ]
+    },
+    {
+      "name": "When your group chat sends p*rn",
+      "seed": 1107,
+      "theme": { "bg": "#050508", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "The awkward one", "title": "Quitting p*rn — but your group chat [[keeps sending it.]]", "sub": "How to handle friends without losing them." },
+        { "type": "point", "num": "01", "title": "It's a real [[trigger]]", "body": "Memes, clips, \"look at this\" links. One tap and you're back on p*rn.\n\nIt counts as a trigger, <b>even when it's \"just a joke.\"</b>" },
+        { "type": "point", "num": "02", "title": "Mute, don't [[leave]]", "body": "You don't need to quit your friends to quit p*rn.\n\nMute the chat, turn off media auto-download and <b>check it on your terms.</b>" },
+        { "type": "point", "num": "03", "title": "Say [[something]]", "body": "\"I'm off p*rn for a while — keep that stuff out of here for me?\"\n\nGood friends will respect it. <b>Some might even join you.</b>" },
+        { "type": "list", "title": "Your group-chat [[setup]]", "items": ["<b>Turn off</b> media auto-download.", "<b>Mute</b> the chats that send p*rn.", "<b>Don't open links</b> without context.", "<b>Tell one friend</b> you're quitting p*rn."], "note": "Has a group chat ever triggered a p*rn relapse for you? 👇" },
+        { "type": "cta", "title": "Keep your friends.\n[[Lose the p*rn.]]", "lead": "A p*rn blocker that catches links from chats too, plus a panic button when one slips through.", "features": ["P*rn blocker", "Panic button", "Streaks"] }
+      ]
+    },
+    {
+      "name": "4 loopholes in your p*rn blocker",
+      "seed": 1109,
+      "theme": { "bg": "#050508", "a1": "#FFB3E6", "a2": "#8FB4FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Check yours today", "title": "Your p*rn blocker has [[holes in it.]]", "sub": "4 loopholes your brain will find at 1 AM." },
+        { "type": "point", "num": "01", "title": "[[Mobile data]]", "body": "Some network-level p*rn filters only work on Wi-Fi.\n\nSwitch to mobile data and <b>the block is gone.</b>" },
+        { "type": "point", "num": "02", "title": "\"Restricted\" [[isn't blocked]]", "body": "Restricted modes on video apps filter some content — they're <b>not a full p*rn blocker.</b>\n\nDon't rely on them alone." },
+        { "type": "point", "num": "03", "title": "Other [[browsers]] & apps", "body": "A second browser, a private window, an app you forgot about.\n\nIf your p*rn blocker only covers one, <b>you'll find the other.</b>" },
+        { "type": "point", "num": "04", "title": "You know the [[password]]", "body": "If you can switch off your own p*rn blocker in 10 seconds, so can your 1 AM self.\n\n<b>Let someone else hold the passcode.</b>", "note": "Which loophole have you used before? Be honest 👇" },
+        { "type": "cta", "title": "Close every loophole\n[[to p*rn.]]", "lead": "RezenIt turns your phone into a safe, distraction-free space — with accountability built in.", "features": ["P*rn blocker", "Accountability", "Panic button"] }
+      ]
+    },
+    {
+      "name": "Map your p*rn triggers",
+      "seed": 1111,
+      "theme": { "bg": "#050508", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Save this worksheet", "title": "Map your p*rn triggers in [[4 categories.]]", "sub": "You can't avoid what you can't see." },
+        { "type": "point", "num": "01", "title": "[[Times]]", "body": "Late night? After work? Sunday evening?\n\nWrite down the hours when p*rn urges hit hardest." },
+        { "type": "point", "num": "02", "title": "[[Places]]", "body": "Bed? Bathroom? Desk with the door closed?\n\nThe places where you usually watch p*rn <b>become triggers on their own.</b>" },
+        { "type": "point", "num": "03", "title": "[[Feelings]]", "body": "Bored, stressed, lonely, rejected, celebrating.\n\nMost p*rn urges are <b>a feeling looking for an exit.</b>" },
+        { "type": "point", "num": "04", "title": "[[Content]]", "body": "Certain apps, accounts, shows or searches that lead you toward p*rn.\n\nNo shame — just notice and write it down.", "note": "What's your #1 p*rn trigger? Comment it 👇" },
+        { "type": "cta", "title": "See your triggers.\n[[Beat p*rn.]]", "lead": "Daily journaling to map your p*rn triggers, plus an AI coach to build a plan around them.", "features": ["Journaling", "AI coach", "Streaks"] }
+      ]
+    }
+  ]
+}

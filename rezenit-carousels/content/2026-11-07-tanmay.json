@@ -1,0 +1,71 @@
+{
+  "date": "07-11-26",
+  "owner": "Tanmay",
+  "carousels": [
+    {
+      "name": "Urges get louder before they get quieter",
+      "seed": 501,
+      "theme": { "bg": "#050508", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "If this week feels harder", "title": "The urges are getting worse? [[That can be a good sign.]]", "sub": "Why habits often fight back hardest right before they fade." },
+        { "type": "point", "num": "01", "title": "The [[last push]]", "body": "Psychologists call it an <b>extinction burst</b>: when a habit stops getting rewarded, it often gets louder for a while before it fades." },
+        { "type": "point", "num": "02", "title": "Your brain is [[testing]] you", "body": "\"Are you sure? Really sure? What about now?\"\n\nThe louder phase is the habit <b>checking if you'll give in.</b>" },
+        { "type": "point", "num": "03", "title": "Giving in [[resets]] the test", "body": "If the burst gets rewarded, the brain learns: <b>push harder next time.</b>\n\nRiding it out teaches the opposite." },
+        { "type": "list", "title": "Get through the [[burst]]", "items": ["<b>Expect it</b> — it's part of the process, not failure.", "<b>Double your guardrails</b> this week.", "<b>Move your body</b> when it spikes.", "<b>Tell someone</b> it's a hard week."], "note": "Is this week harder than last? Comment YES or NO 👇" },
+        { "type": "cta", "title": "Outlast the burst.\n[[Win the war.]]", "lead": "A panic button for the spikes, guided audio sessions and streaks that show how far you've come.", "features": ["Panic button", "Guided audio", "Streaks"] }
+      ]
+    },
+    {
+      "name": "What p*rn actually costs you in hours",
+      "seed": 503,
+      "theme": { "bg": "#050508", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "Do the math", "title": "30 minutes a day is [[182 hours a year.]]", "sub": "That's more than 7 full days. Here's what else that time could be." },
+        { "type": "point", "num": "01", "title": "Count it [[honestly]]", "body": "Not just the minutes watching. The searching, the scrolling, the time lost after feeling flat.\n\nFor many people, <b>it's a lot more than 30 minutes.</b>" },
+        { "type": "point", "num": "02", "title": "Time is the [[hidden]] cost", "body": "Nobody budgets for it. It just disappears, a little every night.\n\n<b>Hours you'll never get back.</b>" },
+        { "type": "list", "title": "182 hours [[could be]]", "items": ["<b>A new language</b> to conversation level.", "<b>A fitness transformation</b> — 3 workouts a week, all year.", "<b>A side project</b> or a skill that pays.", "<b>Dozens of books</b>, or nights out with friends."] },
+        { "type": "point", "title": "Get the hours [[back.]]", "body": "Pick one thing from that list and give it the time the habit used to take.\n\n<b>Same hours. Completely different life.</b>", "note": "What would you do with 182 extra hours? Comment it 👇" },
+        { "type": "cta", "title": "Take your\n[[time back.]]", "lead": "Block p*rn completely, track every day and follow a recovery program that fills the time with purpose.", "features": ["P*rn blocker", "Streaks", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "Disciplined everywhere except here",
+      "seed": 507,
+      "theme": { "bg": "#050508", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "For the disciplined guys", "title": "Gym at 6 AM. Clean diet. [[Still can't quit this.]]", "sub": "Why discipline in one area doesn't automatically transfer." },
+        { "type": "point", "num": "01", "title": "It's not a [[character]] problem", "body": "If you can train, work hard and keep promises elsewhere, you're not lazy or weak.\n\nThis habit just <b>works differently.</b>" },
+        { "type": "point", "num": "02", "title": "Different [[trigger]], different fight", "body": "The gym is planned. This habit ambushes you — tired, alone, late at night.\n\n<b>Discipline works best with a plan.</b> Most guys don't have one for this." },
+        { "type": "point", "num": "03", "title": "Use what [[already works]]", "body": "You already know how to build a habit: schedule, track, show up.\n\n<b>Apply the same system here.</b>" },
+        { "type": "list", "title": "Train it like the [[gym]]", "items": ["<b>Have a program</b>, not just motivation.", "<b>Track it daily</b> like your workouts.", "<b>Plan the hard sessions:</b> late nights, weekends.", "<b>Get a spotter:</b> an accountability partner."], "note": "Disciplined guys: what's the hardest part for you? 👇" },
+        { "type": "cta", "title": "You already have the discipline.\n[[Now get the system.]]", "lead": "A step-by-step recovery program, daily habit tracking and 1-on-1 accountability.", "features": ["Recovery program", "Habit tracking", "Accountability"] }
+      ]
+    },
+    {
+      "name": "You stopped watching but you're still replaying",
+      "seed": 509,
+      "theme": { "bg": "#050508", "a1": "#FFB3E6", "a2": "#8FB4FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Nobody mentions this part", "title": "You stopped watching. But your mind [[keeps hitting replay.]]", "sub": "What to do with the memories and fantasies that pop up." },
+        { "type": "point", "num": "01", "title": "It's [[normal]]", "body": "Years of images don't vanish in a week.\n\nMany people describe flashbacks or fantasies popping up early on. <b>It doesn't mean you're failing.</b>" },
+        { "type": "point", "num": "02", "title": "Don't [[fight]] the thought", "body": "Trying hard not to think about something often makes it louder.\n\nNotice it, name it — <b>\"just a memory\"</b> — and shift your attention." },
+        { "type": "point", "num": "03", "title": "Don't [[feed]] it either", "body": "Lingering on the fantasy is like rewatching in your head.\n\nThe goal: <b>notice, don't entertain.</b>" },
+        { "type": "list", "title": "When it [[pops up]]", "items": ["<b>Label it:</b> \"That's an old memory.\"", "<b>Change your focus:</b> stand up, move, talk.", "<b>Engage your hands:</b> cook, write, train.", "<b>Expect it to fade</b> as the weeks go on."], "note": "Does this happen to you too? Comment \"same\" 👇" },
+        { "type": "cta", "title": "Clear the screen\n[[in your head too.]]", "lead": "Guided audio sessions, journaling for patterns and an AI coach when your mind won't quiet down.", "features": ["Guided audio", "Journaling", "AI coach"] }
+      ]
+    },
+    {
+      "name": "Therapy isn't weakness",
+      "seed": 511,
+      "theme": { "bg": "#050508", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Real men ask for help", "title": "Seeing a therapist about this [[isn't weakness.]]", "sub": "It's one of the smartest moves you can make." },
+        { "type": "point", "num": "01", "title": "It's not [[just]] about p*rn", "body": "For many people, the habit sits on top of something: stress, loneliness, anxiety, old pain.\n\nA therapist helps you <b>work on what's underneath.</b>" },
+        { "type": "point", "num": "02", "title": "Athletes have [[coaches]]", "body": "Nobody calls a pro athlete weak for having a coach.\n\nA therapist is <b>a coach for your mind.</b>" },
+        { "type": "point", "num": "03", "title": "They've heard it [[before]]", "body": "You won't shock them. Compulsive sexual behavior is something many clinicians work with.\n\n<b>No judgment — that's the job.</b>" },
+        { "type": "list", "title": "Getting [[started]]", "items": ["<b>Look for</b> therapists who work with compulsive behaviors.", "<b>Ask about</b> online sessions if in-person feels like too much.", "<b>Be honest</b> in the first session — it saves time.", "<b>Use self-help tools</b> alongside, not instead."], "note": "Would you ever consider therapy for this? Be honest 👇" },
+        { "type": "cta", "title": "Support between\n[[sessions.]]", "lead": "An AI coach for anytime guidance, daily journaling and a community — alongside professional care, not instead of it.", "features": ["AI coach", "Journaling", "Community"] }
+      ]
+    }
+  ]
+}
