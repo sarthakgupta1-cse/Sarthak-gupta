@@ -50,8 +50,8 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
 
 ## Stats bank (verified — cite the source on the slide, keep the wording hedged)
 - ~13% of web searches were for erotic content — analysis of ~400 million searches (Ogas & Gaddam, "A Billion Wicked Thoughts", 2011).
-- Pornhub alone had 42 billion visits in 2019 — about 115 million a day; average visit 10 min 28 sec (Pornhub 2019 Year in Review).
-- Pornhub recorded 39 billion searches in 2019 (Pornhub 2019 Year in Review).
+- P*rnhub alone had 42 billion visits in 2019 — about 115 million a day; average visit 10 min 28 sec (P*rnhub 2019 Year in Review).
+- P*rnhub recorded 39 billion searches in 2019 (P*rnhub 2019 Year in Review).
 - 54% of U.S. teens had seen p*rn by age 13; 15% at 10 or younger (Common Sense Media, 2023, ~1,300 teens).
 - Earlier first exposure is linked to more frequent use and higher risk of compulsive use (University of Glasgow systematic review, 2025).
 - 10.3% of men and 7.0% of women reported clinically relevant distress from trouble controlling sexual urges/behaviour; 8.6% of adults screened positive (Dickenson et al., JAMA Network Open, 2018, 2,325 U.S. adults).
@@ -103,3 +103,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 10-11-26 Shalini: early exposure (54% by 13) · "I'm not enough" shame cycle · quitting vs recovering · what to say in the first minute of an urge · p*rn & attention span
 - 10-11-26 Tanmay: recovery isn't a leaderboard · p*rn addiction in your 20s · reading about it isn't recovery · p*rn shaping your "type" · 10-item urge emergency list
 - 10-11-26 Yash: "I'll quit when life calms down" · in a relationship but still watching · women and p*rn addiction · channeling energy after quitting · morning wake-up p*rn trap
+- 11-11-26 Shalini: NNN week-by-week timeline · failed NNN (harsh) · 9 signs you're more addicted than you think · only 4–10% seek help (Bőthe 2024) · week 2 of NNN is the hardest
+- 11-11-26 Tanmay: 115M visits a day / 13% of searches (stats) · NNN isn't a joke (harsh) · what daily p*rn does 1 week → 5 years · 8 signs you're escaping your life (harsh) · 11 rules for the rest of NNN
+- 11-11-26 Yash: NNN halfway check-in (10 questions) · 1 in 10 men (JAMA 2018) · 7 signs you're ready to quit · nobody is coming to save you (harsh) · first 72 hours after an NNN relapse
