@@ -1,0 +1,71 @@
+{
+  "date": "12-11-26",
+  "owner": "Yash",
+  "carousels": [
+    {
+      "name": "12 things to do instead of p*rn tonight",
+      "seed": 2101,
+      "theme": { "bg": "#04241A", "a1": "#6FF0C4", "a2": "#7DB8FF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 12", "title": "12 things to do tonight [[instead of p*rn.]]", "sub": "Day 12 = 12 options. Pick three." },
+        { "type": "list", "title": "Move [[1–4]]", "items": ["<b>Gym or home workout.</b>", "<b>Night walk</b> with music or a podcast.", "<b>Cold shower</b> when the p*rn urge spikes.", "<b>Stretch</b> for 15 minutes."] },
+        { "type": "list", "marks": ["5", "6", "7", "8"], "title": "Build [[5–8]]", "items": ["<b>Cook</b> a real meal.", "<b>Learn</b> one skill for 30 minutes.", "<b>Work</b> on a side project.", "<b>Read</b> 20 pages — paper, not phone."] },
+        { "type": "list", "marks": ["9", "10", "11", "12"], "title": "Connect [[9–12]]", "items": ["<b>Call</b> a friend or family member.", "<b>Play</b> a game with people, not alone.", "<b>Journal</b> what you're feeling instead of opening p*rn.", "<b>Sleep early.</b> Seriously."] },
+        { "type": "point", "title": "Decide [[before]] 9 PM.", "body": "Choosing at midnight never works. Pick your three now.\n\n<b>A planned evening beats a p*rn urge.</b>", "note": "Which 3 are you picking tonight? Comment the numbers 👇" },
+        { "type": "cta", "title": "Make tonight count\n[[with RezenIt.]]", "lead": "Daily actions for your evenings, a p*rn blocker and streaks for every night you stay strong.", "features": ["Daily actions", "P*rn blocker", "Streaks"] }
+      ]
+    },
+    {
+      "name": "5 signs you're about to relapse in NNN",
+      "seed": 2103,
+      "theme": { "bg": "#04241A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November warning", "title": "5 signs you're about to relapse on p*rn [[this week.]]", "sub": "Catch them now — not after." },
+        { "type": "list", "title": "Warning signs [[1–3]]", "items": ["<b>You're \"just browsing\"</b> things you know lead to p*rn.", "<b>You've started bargaining:</b> \"one time won't reset everything.\"", "<b>You're skipping</b> the routines that kept you clean."] },
+        { "type": "list", "marks": ["4", "5"], "title": "Warning signs [[4–5]]", "items": ["<b>You're isolating</b> — staying in, avoiding people.", "<b>You've loosened a guardrail</b> \"just for tonight\" — phone in bed, blocker off."] },
+        { "type": "point", "title": "Two or more? [[Act today.]]", "body": "Relapses rarely come out of nowhere. They build for days.\n\n<b>If you see the signs, the p*rn relapse has already started.</b>" },
+        { "type": "list", "title": "Stop it [[now]]", "items": ["<b>Put every guardrail</b> back tonight.", "<b>Tell someone</b> it's a rough week.", "<b>Get out of the house</b> tomorrow.", "<b>Remember why</b> you started No Nut November."], "note": "Send this to your NNN partner before it's too late ↗" },
+        { "type": "cta", "title": "Catch the relapse\n[[before p*rn wins.]]", "lead": "RezenIt's daily check-ins, journaling and a panic button help you spot and stop the slide.", "features": ["Check-ins", "Journaling", "Panic button"] }
+      ]
+    },
+    {
+      "name": "1 in 13 young adults screened positive for p*rn addiction",
+      "seed": 2107,
+      "theme": { "bg": "#04241A", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "A 2025 study of 1,008 young adults", "title": "About [[1 in 13]] young adults screened positive for p*rn addiction.", "sub": "And one of the biggest links was sleep." },
+        { "type": "point", "num": "56.7%", "title": "Had watched [[p*rn]]", "body": "In a study of 1,008 young adults in Rhode Island (2024 data, published 2025), <b>56.7% had viewed p*rn.</b>" },
+        { "type": "point", "num": "7.9%", "title": "Screened [[positive]]", "body": "<b>7.9% screened positive for p*rn addiction</b> on a standard scale — roughly 1 in 13 young adults." },
+        { "type": "point", "num": "01", "title": "The [[sleep]] link", "body": "Insomnia was linked to higher odds of p*rn addiction — mainly among heterosexual men.\n\nIt's a link, not proof — but <b>bad nights and p*rn often travel together.</b>" },
+        { "type": "list", "title": "What to do [[with this]]", "items": ["<b>If you're the 1 in 13</b> — you're not alone.", "<b>Protect your sleep</b> — it protects you from p*rn.", "<b>Screen yourself honestly.</b>", "<b>Ask for help</b> early, not years later."], "note": "Send this to a friend. Statistically, someone in your group chat is the 1 in 13 ↗" },
+        { "type": "cta", "title": "Are you the 1 in 13?\n[[RezenIt can help.]]", "lead": "A private, shame-free p*rn recovery app with a blocker, guided audio for sleep and an AI coach.", "features": ["P*rn blocker", "Guided audio", "AI coach"] }
+      ]
+    },
+    {
+      "name": "P*rn is not self-care",
+      "seed": 2109,
+      "theme": { "bg": "#04241A", "a1": "#5EE7E0", "a2": "#B79BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Stop calling it that", "title": "P*rn is not \"self-care.\" [[It's self-sabotage with good marketing.]]", "sub": "\"I deserve it\" is the lie that keeps you stuck." },
+        { "type": "point", "num": "01", "title": "Self-care makes you [[better]]", "body": "Sleep, food, rest, people — you feel better after.\n\nAfter p*rn, most people feel <b>worse, emptier and more tired.</b>" },
+        { "type": "point", "num": "02", "title": "\"I [[deserve]] it.\"", "body": "You deserve rest. You deserve relief. You deserve pleasure.\n\n<b>P*rn gives you none of those for long.</b>" },
+        { "type": "point", "num": "03", "title": "Call it what it [[is]]", "body": "Avoiding stress. Numbing loneliness. Killing time.\n\n<b>Name what p*rn is really doing for you — honestly.</b>" },
+        { "type": "list", "title": "Real [[self-care]]", "items": ["<b>Sleep</b> 7–8 hours.", "<b>Move</b> your body daily.", "<b>Talk</b> to someone who cares.", "<b>Rest</b> without a screen."], "note": "Save this for the next time you tell yourself you \"deserve\" p*rn 🔖" },
+        { "type": "cta", "title": "Real self-care\n[[starts without p*rn.]]", "lead": "RezenIt helps you replace p*rn with real recovery: guided audio, daily actions and a blocker.", "features": ["Guided audio", "Daily actions", "P*rn blocker"] }
+      ]
+    },
+    {
+      "name": "Your p*rn-free year: month 1, 3, 6, 12",
+      "seed": 2111,
+      "theme": { "bg": "#04241A", "a1": "#7DE3F5", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Think bigger than November", "title": "Your first p*rn-free year: [[month 1 → month 12.]]", "sub": "What people in long-term recovery describe." },
+        { "type": "point", "phase": "Month 1", "progress": 1, "title": "The [[fight]]", "body": "Urges, restlessness, doubt. Learning your triggers.\n\n<b>It's the hardest month — and the most important.</b>" },
+        { "type": "point", "phase": "Month 3", "progress": 2, "title": "The [[shift]]", "body": "Many describe p*rn urges getting weaker and less frequent.\n\n<b>You start to trust yourself again.</b>" },
+        { "type": "point", "phase": "Month 6", "progress": 3, "title": "The [[new normal]]", "body": "Your routines feel natural. P*rn isn't your default anymore.\n\nSlips can still happen — <b>but you bounce back faster.</b>" },
+        { "type": "point", "phase": "Month 12", "progress": 4, "title": "The [[proof]]", "body": "A whole year without p*rn. Many describe more confidence, deeper relationships and a clearer head.\n\nEveryone's path differs — <b>but the direction is worth it.</b>", "note": "Save this and check where you are in 3 months 🔖" },
+        { "type": "cta", "title": "Start your p*rn-free year\n[[with RezenIt.]]", "lead": "A step-by-step recovery program, streaks that count to 365 and support at every stage.", "features": ["Recovery program", "Streaks", "Community"] }
+      ]
+    }
+  ]
+}

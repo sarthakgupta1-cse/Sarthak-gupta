@@ -59,6 +59,8 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
 - Only 4–10% of people with problematic p*rn use had ever sought treatment (same study).
 - A 2025 study of 2,000+ men linked binge sessions, tab-jumping and tolerance to losing control over p*rn use (Addictive Behaviors, 2025).
 - WHO's ICD-11 includes compulsive sexual behaviour disorder (since 2019).
+- 56.7% of 1,008 young adults (Rhode Island) had viewed p*rn and 7.9% (~1 in 13) screened positive for p*rn addiction; insomnia was linked to higher odds, mainly in heterosexual men (2024 survey data, published 2025).
+- Each extra hour of screen time after going to bed was tied to 59% higher odds of insomnia symptoms (Frontiers in Psychiatry, 2025, ~40,000 Norwegian students). Screens in general, not p*rn specifically — say so.
 - Arithmetic is fine: 30 min/day = ~182 hours/year.
 
 ## Copy rule: name it openly
@@ -106,3 +108,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 11-11-26 Shalini: NNN week-by-week timeline · failed NNN (harsh) · 9 signs you're more addicted than you think · only 4–10% seek help (Bőthe 2024) · week 2 of NNN is the hardest
 - 11-11-26 Tanmay: 115M visits a day / 13% of searches (stats) · NNN isn't a joke (harsh) · what daily p*rn does 1 week → 5 years · 8 signs you're escaping your life (harsh) · 11 rules for the rest of NNN
 - 11-11-26 Yash: NNN halfway check-in (10 questions) · 1 in 10 men (JAMA 2018) · 7 signs you're ready to quit · nobody is coming to save you (harsh) · first 72 hours after an NNN relapse
+- 12-11-26 Shalini: 6 signs NNN is working · can't go 12 days = p*rn is the boss (harsh) · 3.2% is millions (Bőthe 2024) · what you get back 1 day → 1 month · 7 things nobody tells you about quitting
+- 12-11-26 Tanmay: not tempted, bored (harsh, NNN) · phone in bed +59% insomnia (Frontiers 2025) · 8 signs p*rn is hurting your relationship · NNN plan Day 12 → 30 · brutal audit of what p*rn cost this year (harsh)
+- 12-11-26 Yash: 12 things instead of p*rn tonight (NNN) · 5 signs you're about to relapse (NNN) · 1 in 13 young adults (Rhode Island 2025) · p*rn is not self-care (harsh) · p*rn-free year month 1 → 12

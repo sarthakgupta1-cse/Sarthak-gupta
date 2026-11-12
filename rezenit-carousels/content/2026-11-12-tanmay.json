@@ -1,0 +1,71 @@
+{
+  "date": "12-11-26",
+  "owner": "Tanmay",
+  "carousels": [
+    {
+      "name": "You're not tempted. You're bored.",
+      "seed": 2001,
+      "theme": { "bg": "#050508", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 12", "title": "You're not \"tempted\" by p*rn. [[You're bored. Fix your day.]]", "sub": "Most Day 12 relapses aren't about desire at all." },
+        { "type": "point", "num": "01", "title": "Boredom [[dressed up]]", "body": "An empty evening, nothing planned, phone in hand.\n\nThat \"urge\" is often just <b>boredom looking for the easiest hit — p*rn.</b>" },
+        { "type": "point", "num": "02", "title": "Your day is [[empty]]", "body": "No training. No plans. No goals for tonight.\n\nIf your day has nothing in it, <b>p*rn will fill it.</b>" },
+        { "type": "point", "num": "03", "title": "Stop blaming [[willpower]]", "body": "You don't need more willpower. You need a fuller day.\n\n<b>Busy people relapse less.</b>" },
+        { "type": "list", "title": "Fill tonight [[now]]", "items": ["<b>Train</b> — gym, run, push-ups.", "<b>Learn</b> one thing for 30 minutes.", "<b>See someone</b> — in person.", "<b>Plan tomorrow</b> before bed, phone out of the room."], "note": "Bored right now? Comment what you're doing instead of p*rn tonight 👇" },
+        { "type": "cta", "title": "Fill your days.\n[[Starve the p*rn habit.]]", "lead": "RezenIt gives you daily actions, a p*rn blocker and streaks that make every full day count.", "features": ["Daily actions", "P*rn blocker", "Streaks"] }
+      ]
+    },
+    {
+      "name": "Every hour on your phone in bed",
+      "seed": 2003,
+      "theme": { "bg": "#050508", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "40,000 students studied", "title": "Every extra hour on your phone in bed [[raised the odds of insomnia by 59%.]]", "sub": "And late-night scrolling is where most p*rn starts." },
+        { "type": "point", "num": "59%", "title": "Per [[hour]] in bed", "body": "A Frontiers in Psychiatry study (2025) of ~40,000 students found each extra hour of screen use after going to bed was tied to <b>59% higher odds of insomnia symptoms.</b>\n\nThat's screens in general — not just p*rn." },
+        { "type": "point", "num": "01", "title": "Bed + phone = [[p*rn risk]]", "body": "Late night, alone, tired, phone in hand — the exact setup many people describe before p*rn.\n\n<b>Worse sleep. Weaker brakes. More p*rn.</b>" },
+        { "type": "point", "num": "02", "title": "The [[loop]]", "body": "Bad sleep makes you tired and impulsive tomorrow — which makes p*rn harder to resist tomorrow night.\n\n<b>Break it at the bed.</b>" },
+        { "type": "list", "title": "The [[bed rule]]", "items": ["<b>Phone charges</b> outside the bedroom.", "<b>Bed is for sleep</b> — not scrolling, not p*rn.", "<b>Screens off</b> 30 minutes before bed.", "<b>Old-school alarm clock</b> if you need one."], "note": "Save this and try the bed rule for 7 nights 🔖" },
+        { "type": "cta", "title": "Better nights.\n[[No p*rn.]]", "lead": "RezenIt's p*rn blocker, guided audio for winding down and streaks that reward every good night.", "features": ["P*rn blocker", "Guided audio", "Streaks"] }
+      ]
+    },
+    {
+      "name": "8 signs p*rn is hurting your relationship",
+      "seed": 2007,
+      "theme": { "bg": "#050508", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "In a relationship?", "title": "8 signs p*rn is [[hurting your relationship]] — even if she doesn't know.", "sub": "Count honestly." },
+        { "type": "list", "title": "Signs [[1–4]]", "items": ["<b>You'd rather watch p*rn</b> than be intimate.", "<b>You wait for them</b> to fall asleep or leave.", "<b>You compare</b> your partner to what's on the screen.", "<b>You feel distant</b> after watching p*rn."] },
+        { "type": "list", "marks": ["5", "6", "7", "8"], "title": "Signs [[5–8]]", "items": ["<b>You get defensive</b> when they touch your phone.", "<b>Intimacy feels</b> like work instead of connection.", "<b>You've lied</b> about deleting p*rn.", "<b>You're more irritable</b> with them for no clear reason."] },
+        { "type": "point", "title": "It's [[fixable]].", "body": "Many couples rebuild trust and closeness after p*rn — with honesty, time and effort.\n\n<b>But it starts with you seeing it clearly.</b>" },
+        { "type": "list", "title": "Start [[repairing]]", "items": ["<b>Stop p*rn completely</b> — not \"less.\"", "<b>Invest</b> in real time together.", "<b>Consider honesty</b> with support.", "<b>Couples therapy</b> if trust is already damaged."], "note": "How many signs did you count? Be honest with yourself 👇" },
+        { "type": "cta", "title": "Choose real love\n[[over p*rn.]]", "lead": "RezenIt helps you quit p*rn with a blocker, habit tracking your partner can see and 1-on-1 accountability.", "features": ["P*rn blocker", "Habit tracking", "Accountability"] }
+      ]
+    },
+    {
+      "name": "Your NNN plan: Day 12 to Day 30",
+      "seed": 2009,
+      "theme": { "bg": "#050508", "a1": "#FFB3E6", "a2": "#8FB4FF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 12", "title": "18 days of No Nut November left. [[Here's your p*rn-free plan.]]", "sub": "Screenshot it. Follow it. Finish strong." },
+        { "type": "point", "phase": "Days 12–15", "progress": 1, "title": "[[Lock]] the doors", "body": "Block p*rn on every device. Delete the apps that lead you there. Phone out of the bedroom.\n\n<b>Make relapse hard.</b>" },
+        { "type": "point", "phase": "Days 16–20", "progress": 2, "title": "Fill the [[gaps]]", "body": "Mid-month boredom is real. Plan your evenings: training, people, one new skill.\n\n<b>Empty evenings are where p*rn wins.</b>" },
+        { "type": "point", "phase": "Days 21–25", "progress": 3, "title": "Watch for [[complacency]]", "body": "\"I've got this\" is the most dangerous thought in week 4.\n\n<b>Keep every guardrail up.</b>" },
+        { "type": "point", "phase": "Days 26–30", "progress": 4, "title": "Plan [[December]]", "body": "Set your next goal: 60 or 90 days without p*rn. Don't celebrate Nov 30 by going back.\n\n<b>The finish line is the starting line.</b>", "note": "Save this and send it to your NNN partner ↗" },
+        { "type": "cta", "title": "Finish NNN.\n[[Keep going with RezenIt.]]", "lead": "A p*rn blocker for the next 18 days, streaks to Day 30 and a recovery program for everything after.", "features": ["P*rn blocker", "Streaks", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "What p*rn cost you this year: a brutal audit",
+      "seed": 2011,
+      "theme": { "bg": "#050508", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Brutal audit", "title": "What p*rn cost you this year. [[Add it up. Don't look away.]]", "sub": "Most people never do this math." },
+        { "type": "point", "num": "182h", "title": "Your [[time]]", "body": "30 minutes of p*rn a day is about <b>182 hours a year</b>. An hour a day is 365.\n\nThat's weeks of your life — every year." },
+        { "type": "point", "num": "02", "title": "Your [[sleep]]", "body": "How many nights did p*rn keep you up past 1 AM?\n\nCount them. <b>Then count the mornings you felt wrecked.</b>" },
+        { "type": "point", "num": "03", "title": "Your [[people]]", "body": "Plans you skipped. Calls you ignored. Partners you pushed away.\n\n<b>P*rn rarely costs only you.</b>" },
+        { "type": "list", "title": "Finish the [[audit]]", "items": ["<b>Money</b> spent on p*rn subscriptions.", "<b>Goals</b> you didn't start.", "<b>Confidence</b> you lost keeping the secret.", "<b>Then decide:</b> is p*rn worth another year?"], "note": "Did the audit hit hard? Save it and reread it next time you're tempted 🔖" },
+        { "type": "cta", "title": "Don't give p*rn\n[[another year.]]", "lead": "RezenIt blocks p*rn, tracks every hour you take back and guides you through recovery.", "features": ["P*rn blocker", "Habit tracking", "Recovery program"] }
+      ]
+    }
+  ]
+}
