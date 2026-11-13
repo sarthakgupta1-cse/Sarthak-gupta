@@ -1,0 +1,71 @@
+{
+  "date": "13-11-26",
+  "owner": "Yash",
+  "carousels": [
+    {
+      "name": "Day 15 is halfway. Don't quit 2 days before.",
+      "seed": 2401,
+      "theme": { "bg": "#04241A", "a1": "#6FF0C4", "a2": "#7DB8FF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 13", "title": "You're 2 days from halfway. [[Don't hand it back to p*rn now.]]", "sub": "Day 15 is the halfway mark. Get there." },
+        { "type": "point", "num": "13", "title": "Days you've [[already won]]", "body": "13 nights you said no to p*rn. 13 mornings without that guilt.\n\n<b>That's not luck. That's you.</b>" },
+        { "type": "point", "num": "01", "title": "The [[almost-halfway]] slump", "body": "Motivation dips right before milestones. Your brain says \"you've proved your point.\"\n\n<b>That's the p*rn habit negotiating.</b>" },
+        { "type": "point", "num": "02", "title": "Make halfway [[count]]", "body": "Plan something for Day 15: a meal out, a new book, a workout PR.\n\n<b>Give yourself a reason to cross the line.</b>" },
+        { "type": "list", "title": "Next [[48 hours]]", "items": ["<b>Double your guardrails</b> this weekend.", "<b>Plan both evenings</b> now.", "<b>Tell one person</b> your Day 15 goal.", "<b>Don't negotiate</b> with p*rn urges — leave the room."], "note": "Who's making it to Day 15? Comment \"15\" 👇" },
+        { "type": "cta", "title": "Halfway is close.\n[[RezenIt gets you there.]]", "lead": "Streaks that count every p*rn-free day, daily check-ins and a panic button for this weekend.", "features": ["Streaks", "Check-ins", "Panic button"] }
+      ]
+    },
+    {
+      "name": "7 signs you need to talk to someone about your p*rn use",
+      "seed": 2403,
+      "theme": { "bg": "#04241A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Don't carry it alone", "title": "7 signs it's time to talk to someone [[about your p*rn use.]]", "sub": "A friend, a group or a professional — just someone." },
+        { "type": "list", "title": "Signs [[1–4]]", "items": ["<b>You've tried to quit p*rn</b> many times alone.", "<b>The shame</b> is affecting your mood every day.", "<b>Your relationship</b> is being hurt by it.", "<b>You're hiding it</b> from everyone in your life."] },
+        { "type": "list", "marks": ["5", "6", "7"], "title": "Signs [[5–7]]", "items": ["<b>P*rn is affecting</b> work, school or sleep.", "<b>You use p*rn</b> to cope with anxiety or low mood.", "<b>You feel hopeless</b> about ever changing."] },
+        { "type": "point", "title": "Who to [[talk to]]", "body": "A trusted friend. An anonymous support group. A therapist who works with compulsive behaviors.\n\nIf you feel hopeless or unsafe, <b>reach out to a professional or helpline today.</b>" },
+        { "type": "list", "title": "Make it [[easier]]", "items": ["<b>Start small:</b> \"I've been struggling with p*rn.\"", "<b>Anonymous is fine</b> to begin with.", "<b>Write it down</b> first if speaking feels hard.", "<b>One conversation</b> can change everything."], "note": "Save this. Send it to someone who's been silent too long ↗" },
+        { "type": "cta", "title": "Someone to talk to.\n[[Anytime, with RezenIt.]]", "lead": "An anonymous community, 1-on-1 accountability with real people and an AI coach — private by design.", "features": ["Community", "Accountability", "AI coach"] }
+      ]
+    },
+    {
+      "name": "Your little brother has probably already seen p*rn",
+      "seed": 2407,
+      "theme": { "bg": "#04241A", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "For older brothers, cousins & parents", "title": "Your little brother has [[probably already seen p*rn.]]", "sub": "The numbers are worse than you think." },
+        { "type": "point", "num": "54%", "title": "By age [[13]]", "body": "In a 2023 Common Sense Media survey of U.S. teens, <b>54% had seen p*rn by age 13.</b>" },
+        { "type": "point", "num": "15%", "title": "At [[10 or younger]]", "body": "The same survey found <b>15% had seen p*rn at 10 or younger.</b>\n\nThey didn't go looking. It found them." },
+        { "type": "point", "num": "01", "title": "Be the person [[you needed]]", "body": "Most of us had nobody to talk to about p*rn at that age.\n\n<b>You can be the person who makes it normal to talk.</b>" },
+        { "type": "list", "title": "How to [[help]]", "items": ["<b>Talk early</b> — calm, no shame.", "<b>Set up filters</b> on their devices.", "<b>Keep screens</b> out of bedrooms at night.", "<b>Quit p*rn yourself</b> — they watch what you do."], "note": "Send this to a parent or older sibling who needs to see it ↗" },
+        { "type": "cta", "title": "Protect them.\n[[Start with you.]]", "lead": "RezenIt helps you quit p*rn with a blocker, a guided recovery program and lessons on what p*rn does.", "features": ["P*rn blocker", "Recovery program", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "Your last time was dozens of times ago",
+      "seed": 2409,
+      "theme": { "bg": "#04241A", "a1": "#5EE7E0", "a2": "#B79BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Brutal honesty", "title": "\"This is the last time.\" [[You've said that to p*rn dozens of times.]]", "sub": "Promises without a plan are just stories." },
+        { "type": "point", "num": "01", "title": "The \"last time\" [[lie]]", "body": "Every \"last time\" ends the same: tomorrow night, same p*rn, same guilt.\n\n<b>You don't need another promise. You need a different setup.</b>" },
+        { "type": "point", "num": "02", "title": "Promises vs. [[systems]]", "body": "A promise needs you to be strong at 1 AM.\n\nA system works <b>even when you're weak</b> — p*rn blocked, phone out of the room." },
+        { "type": "point", "num": "03", "title": "Change [[one thing]]", "body": "Same evening + same phone + same room = same p*rn relapse.\n\n<b>Change at least one of them tonight.</b>" },
+        { "type": "list", "title": "Make tonight [[different]]", "items": ["<b>Block p*rn</b> instead of promising.", "<b>Move your phone</b> out of the bedroom.", "<b>Plan your evening</b> before it starts.", "<b>Tell someone</b> — promises to others last longer."], "note": "How many \"last times\" have you had? Save this so tonight is different 🔖" },
+        { "type": "cta", "title": "No more \"last times.\"\n[[Real change with RezenIt.]]", "lead": "Systems, not promises: a p*rn blocker, daily check-ins and accountability that works when willpower doesn't.", "features": ["P*rn blocker", "Check-ins", "Accountability"] }
+      ]
+    },
+    {
+      "name": "NNN weekend survival: Friday 6 PM to Monday 8 AM",
+      "seed": 2411,
+      "theme": { "bg": "#04241A", "a1": "#7DE3F5", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Weekend", "title": "Your p*rn-free weekend plan: [[Friday 6 PM → Monday 8 AM.]]", "sub": "Many people say weekends are where NNN streaks break." },
+        { "type": "point", "phase": "Friday night", "progress": 1, "title": "Go out — [[carefully]]", "body": "See people. Set a drink limit. Don't go home alone straight to bed with your phone.\n\n<b>Many people say Friday night is their riskiest p*rn night.</b>" },
+        { "type": "point", "phase": "Saturday", "progress": 2, "title": "Fill the [[day]]", "body": "Get outside before noon. Train. Run errands. Meet a friend.\n\n<b>Empty Saturdays are p*rn's favorite day.</b>" },
+        { "type": "point", "phase": "Sunday", "progress": 3, "title": "Calm the [[dread]]", "body": "Plan Monday by 6 PM. Do something social in the evening. Early night.\n\n<b>No \"last p*rn before the week.\"</b>" },
+        { "type": "point", "phase": "Monday 8 AM", "progress": 4, "title": "You [[made it]]", "body": "A full weekend without p*rn — the hardest stretch of the week.\n\n<b>Now you know you can do it.</b>", "note": "Save this and send it to your NNN partner before tonight ↗" },
+        { "type": "cta", "title": "Win the weekend\n[[with RezenIt.]]", "lead": "A p*rn blocker for every night, daily actions for empty days and streaks that survive the weekend.", "features": ["P*rn blocker", "Daily actions", "Streaks"] }
+      ]
+    }
+  ]
+}

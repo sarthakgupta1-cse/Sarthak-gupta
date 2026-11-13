@@ -111,3 +111,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 12-11-26 Shalini: 6 signs NNN is working · can't go 12 days = p*rn is the boss (harsh) · 3.2% is millions (Bőthe 2024) · what you get back 1 day → 1 month · 7 things nobody tells you about quitting
 - 12-11-26 Tanmay: not tempted, bored (harsh, NNN) · phone in bed +59% insomnia (Frontiers 2025) · 8 signs p*rn is hurting your relationship · NNN plan Day 12 → 30 · brutal audit of what p*rn cost this year (harsh)
 - 12-11-26 Yash: 12 things instead of p*rn tonight (NNN) · 5 signs you're about to relapse (NNN) · 1 in 13 young adults (Rhode Island 2025) · p*rn is not self-care (harsh) · p*rn-free year month 1 → 12
+- 13-11-26 Shalini: 13 truths (Friday 13th, NNN) · 7 signs you're doing NNN wrong · ICD-11 + 8.6% (stop calling it a habit) · 20 minutes of an urge, minute by minute · what to say to a friend who relapsed
+- 13-11-26 Tanmay: peeking isn't NNN (harsh) · 39B searches (P*rnhub 2019) · 9 signs p*rn hurts work/studies · drinks + Friday night (NNN) · "how long until I'm over it" (harsh)
+- 13-11-26 Yash: 2 days from halfway (NNN) · 7 signs it's time to talk to someone · little brother 54% by 13 · "last time" dozens of times (harsh) · NNN weekend plan Fri → Mon
