@@ -1,0 +1,71 @@
+{
+  "date": "14-11-26",
+  "owner": "Shalini",
+  "carousels": [
+    {
+      "name": "Two weeks without p*rn: what changed",
+      "seed": 2501,
+      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 14", "title": "Two weeks without p*rn. [[Here's what people say changed.]]", "sub": "If you made it this far — read this. If you didn't — read it twice." },
+        { "type": "point", "phase": "Days 1–3", "progress": 1, "title": "The [[itch]]", "body": "Constant thoughts about p*rn. Restless evenings. \"Is it really this hard?\"\n\n<b>Yes. And it passes.</b>" },
+        { "type": "point", "phase": "Days 4–7", "progress": 2, "title": "The [[wave]]", "body": "Many people describe the strongest p*rn urges here — plus irritability and bad sleep.\n\n<b>Many people say this is where their NNN ended.</b>" },
+        { "type": "point", "phase": "Days 8–11", "progress": 3, "title": "The [[boredom]]", "body": "Fewer spikes, more emptiness. Evenings feel long without p*rn.\n\n<b>This is where new habits get built.</b>" },
+        { "type": "point", "phase": "Days 12–14", "progress": 4, "title": "The first [[clarity]]", "body": "Many describe small wins: better mornings, less guilt, catching urges earlier.\n\nEveryone's different — <b>but two weeks is real proof you can do it.</b>", "note": "Made it to Day 14? Comment \"14\" so others see it's possible 👇" },
+        { "type": "cta", "title": "Two weeks down.\n[[Keep going with RezenIt.]]", "lead": "Streaks that count every p*rn-free day, journaling for what's changing and a guided program beyond November.", "features": ["Streaks", "Journaling", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "Saturday is NNN's most dangerous day",
+      "seed": 2503,
+      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Saturday", "title": "No work. No plans. Phone in hand. [[Today is p*rn's favorite day.]]", "sub": "Plan your Saturday — or p*rn will plan it for you." },
+        { "type": "point", "num": "01", "title": "The [[lie-in]] trap", "body": "Waking late, scrolling in bed, nowhere to be.\n\n<b>Many people say their Saturday p*rn relapses start before they get up.</b>" },
+        { "type": "point", "num": "02", "title": "The [[3 PM]] slump", "body": "Bored, alone, nothing on. The afternoon is wide open — for p*rn." },
+        { "type": "point", "num": "03", "title": "The [[late]] night", "body": "No alarm tomorrow, so you stay up. Tired + alone + late = <b>the classic p*rn setup.</b>" },
+        { "type": "list", "title": "Your Saturday [[plan]]", "items": ["<b>Up before 9</b> — out of bed, phone down.", "<b>Out of the house</b> by noon.", "<b>One plan with people</b> in the afternoon or evening.", "<b>Phone charges</b> outside the bedroom tonight."], "note": "Save this and use it every Saturday until December 🔖" },
+        { "type": "cta", "title": "Win Saturday.\n[[RezenIt helps.]]", "lead": "Daily actions for empty days, a p*rn blocker that works on weekends and a panic button for the slump.", "features": ["Daily actions", "P*rn blocker", "Panic button"] }
+      ]
+    },
+    {
+      "name": "8 signs your brain is healing from p*rn",
+      "seed": 2507,
+      "theme": { "bg": "#0B1A3A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Save this for a hard day", "title": "8 signs you're [[healing from p*rn addiction]] — even if it doesn't feel like it.", "sub": "Recovery is quiet. Look for these." },
+        { "type": "list", "title": "Signs [[1–4]]", "items": ["<b>Urges feel weaker</b> or shorter than before.", "<b>You can sit with boredom</b> without reaching for p*rn.", "<b>You feel emotions</b> you used to numb.", "<b>Real people</b> feel more interesting."] },
+        { "type": "list", "marks": ["5", "6", "7", "8"], "title": "Signs [[5–8]]", "items": ["<b>You notice triggers</b> in real time.", "<b>Slips feel wrong</b> instead of normal.", "<b>You've stopped lying</b> about your p*rn use.", "<b>You're thinking</b> about who you want to be."] },
+        { "type": "point", "title": "Healing isn't [[loud]].", "body": "No single day where everything clicks. Just a slow shift away from p*rn.\n\n<b>Count the quiet signs.</b>" },
+        { "type": "point", "title": "Seeing [[3 or more]]?", "body": "Then quitting p*rn is working — even if the urges still show up.\n\n<b>Keep going. This is what progress looks like.</b>", "note": "How many signs do you see? Send this to someone who thinks they're not improving ↗" },
+        { "type": "cta", "title": "Keep healing\n[[with RezenIt.]]", "lead": "Journal the quiet wins, track your streak and follow a guided p*rn recovery program step by step.", "features": ["Journaling", "Streaks", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "You're not too busy to quit p*rn",
+      "seed": 2509,
+      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Harsh truth", "title": "\"I'm too busy to work on it.\" [[You found time for p*rn every night.]]", "sub": "You're not busy. You're avoiding." },
+        { "type": "point", "num": "182h", "title": "The time you [[already have]]", "body": "30 minutes of p*rn a day is about <b>182 hours a year</b>.\n\nYou don't need extra time to quit. <b>You need to take that time back.</b>" },
+        { "type": "point", "num": "01", "title": "Busy is a [[shield]]", "body": "\"After this deadline.\" \"When things calm down.\"\n\n<b>Meanwhile, p*rn never misses a night.</b>" },
+        { "type": "point", "num": "02", "title": "Quitting takes [[minutes]]", "body": "Blocking p*rn: 2 minutes. Phone out of the bedroom: 10 seconds. Telling a friend: one text.\n\n<b>No calendar needed.</b>" },
+        { "type": "list", "title": "Do it [[now]]", "items": ["<b>Block p*rn</b> — right now.", "<b>Move your charger</b> out of the bedroom.", "<b>Text one person</b> you're quitting p*rn.", "<b>Stop saying \"busy.\"</b>"], "note": "Done one of them? Comment ✅ and tag someone who uses the \"busy\" excuse ↗" },
+        { "type": "cta", "title": "2 minutes to start.\n[[Quit p*rn with RezenIt.]]", "lead": "Set up a p*rn blocker, a panic button and a step-by-step recovery program in minutes.", "features": ["P*rn blocker", "Panic button", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "The 10.3% you never hear about",
+      "seed": 2511,
+      "theme": { "bg": "#0A1A30", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "2,325 adults studied", "title": "1 in 10 men struggle to control sexual urges. [[Almost none of them talk about it.]]", "sub": "The silence around p*rn addiction, in numbers." },
+        { "type": "point", "num": "10.3%", "title": "Of [[men]]", "body": "A JAMA Network Open study (2018) found <b>10.3% of men and 7% of women</b> reported real distress from trouble controlling sexual urges and behavior — p*rn use often included." },
+        { "type": "point", "num": "4–10%", "title": "Ever [[get help]]", "body": "The International Sex Survey (Bőthe et al., 2024) found only <b>4–10% of people with problematic p*rn use</b> had ever sought treatment." },
+        { "type": "point", "num": "01", "title": "Why the [[gap]]?", "body": "Shame. Jokes. \"Everyone watches p*rn.\" Not knowing help exists.\n\n<b>Millions struggle. Few speak.</b>" },
+        { "type": "list", "title": "Close the [[gap]]", "items": ["<b>Share this</b> — make the topic normal.", "<b>Tell one person</b> if it's you.", "<b>Find support</b> — a group, an app, a professional.", "<b>Don't wait</b> until it's worse."], "note": "Send this to one friend. It might be the conversation they need ↗" },
+        { "type": "cta", "title": "Be one who speaks up.\n[[RezenIt listens.]]", "lead": "An anonymous community, 1-on-1 accountability and an AI coach — private, shame-free p*rn recovery.", "features": ["Community", "Accountability", "AI coach"] }
+      ]
+    }
+  ]
+}

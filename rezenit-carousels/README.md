@@ -114,3 +114,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 13-11-26 Shalini: 13 truths (Friday 13th, NNN) · 7 signs you're doing NNN wrong · ICD-11 + 8.6% (stop calling it a habit) · 20 minutes of an urge, minute by minute · what to say to a friend who relapsed
 - 13-11-26 Tanmay: peeking isn't NNN (harsh) · 39B searches (P*rnhub 2019) · 9 signs p*rn hurts work/studies · drinks + Friday night (NNN) · "how long until I'm over it" (harsh)
 - 13-11-26 Yash: 2 days from halfway (NNN) · 7 signs it's time to talk to someone · little brother 54% by 13 · "last time" dozens of times (harsh) · NNN weekend plan Fri → Mon
+- 14-11-26 Shalini: two weeks without p*rn timeline (NNN) · Saturday is p*rn's favorite day (NNN) · 8 signs your brain is healing · "too busy" (harsh, 182h) · 10.3% + 4–10% silence gap
+- 14-11-26 Tanmay: quit today, regret on Nov 30 (NNN) · 6 signs you're one night from relapse (NNN) · running on empty, not weak · 13% of searches / 1 in 8 · first 5 minutes after waking
+- 14-11-26 Yash: halfway, update your defenses (NNN) · 7 lies during NNN · 8 signs p*rn kills confidence · 15% at 10 or younger · "I'm a guy, it's natural" (harsh)
