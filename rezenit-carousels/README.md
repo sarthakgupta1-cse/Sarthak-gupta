@@ -120,3 +120,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 15-11-26 Shalini: halfway 15 days (NNN, harsh) · 7 signs you'll finish NNN · 3 escalation behaviors (Addictive Behaviors 2025) · Sunday 30-minute reset · p*rn as a reward (harsh)
 - 15-11-26 Tanmay: half of you wants p*rn back (NNN) · what a just-once relapse costs (NNN timeline) · 8 signs your use is getting worse · "high sex drive" label (harsh) · 90%+ never get help (Bőthe 2024)
 - 15-11-26 Yash: second-half NNN game plan · 9 things you'll stop doing · Day 15 still thinking about p*rn (NNN) · 60+ hours a year on one site (P*rnhub 2019) · your excuses are expired (harsh)
+- 16-11-26 Shalini: past halfway, p*rn works harder (NNN) · 6 signs you swapped p*rn for another escape (NNN) · parents: 54% by 13 · Monday reset after a bad weekend · p*rn isn't on your side (harsh)
+- 16-11-26 Tanmay: week 3 is boring (NNN) · 7 signs you'll stay free after November (NNN) · "just a phase" for years (harsh) · 1 in 12 adults (JAMA 2018) · 10 small wins in month 1
+- 16-11-26 Yash: 14 days left, build one thing (NNN) · 8 signs NNN is changing you · phone = p*rn delivery machine (115M/day) · "just curious" (harsh) · what to tell yourself at 1 AM
