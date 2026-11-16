@@ -73,6 +73,37 @@ What makes them land — copy the *patterns*, never quote usernames or reproduce
 7. **Debate hooks drive comments.** "How often is too often?", "Is it cheating if you're in a relationship?",
    "Is it OK if your partner is fine with it?" — ask the question on slide 1, give a clear take, invite replies.
 
+### Round 2 — threads that went big (user says these worked "like crazy"; adapt them, they travel to IG/TikTok)
+- **"I overcame 16 years of p*rn addiction, clean for 6 years" (r/PornAddiction, 136↑).** Format = long-haul
+  recovery story: started at 14 when the internet got fast → escalated through his 20s → symptoms list (social
+  anxiety, performance problems, brain fog, insomnia, numbing with weed, constant lying) → his marriage ended
+  *"not because of the p*rn, but because I lied"* → lessons: hiding keeps it alive; transparency is freedom;
+  grace and forgiveness free you from shame. Comments asked "what's life like 6 years later?" → answer: real
+  relationship, no more performance issues, own business. → Make "X years in, Y years out: what I learned"
+  carousels (composite voice) and "what life looks like after quitting" carousels. Hiding/lying > the act itself.
+- **"How I made the p*rn addiction go away" (r/selfimprovement, 563↑ — the biggest).** The turning point:
+  *"It's ALL THE SAME. It doesn't matter how many videos, how many different people, or how much you pay — it
+  never gives you what you actually want."* He'd spent thousands on custom content and realised every "type" he
+  chased mirrored a feeling he was avoiding. What he really wanted was connection — someone to say he's good
+  enough. Urges faded in ~2 weeks after that realisation. Top comments: "It's a search for connection" (78↑),
+  "P*rn isn't really about sex — it numbs underlying pain" (60↑), "P*rn is a coping mechanism, a symptom of
+  something else" (30↑). → The single strongest angle: **what you're really looking for isn't p*rn.** Use it
+  often, in different words: chasing novelty never lands; your "type" points to the feeling you avoid; paying more
+  doesn't fill it.
+- **"People with p*rn addiction, this may help u" (r/PornAddiction, 201↑).** Plain numbered tips that anyone can do
+  tonight: (1) urge hits → phone down, stare at a wall for 10–20 min and do nothing; (2) **reset your feed** —
+  deliberately search wholesome/cute/funny content so the algorithm stops serving suggestive posts; (3) use a
+  blocker; (4) have a purpose: *"I love someone and I don't want them to see me as an addict."* A top comment:
+  the feed reset is underrated — people quit p*rn but keep every soft trigger in their feed; outside reasons beat
+  willpower. → Short, practical, numbered "do this tonight" carousels are highly saveable.
+- **r/PornIsMisogyny caption post (326↑).** Angle: p*rn trains contempt and objectification, and partners feel it —
+  insecurity, comparing their bodies, feeling targeted. → Carousels on how p*rn changes the way you see women and
+  how partners experience it. Keep it about the viewer's habit, never shame performers or women.
+- **"My p*rn addiction led me somewhere I never imagined" (r/PornAddiction).** The *lesson only*: escalation can take
+  you places you never thought you'd go, and the shame afterwards can feel unbearable. NEVER reference minors,
+  illegal content or details. If a carousel touches despair or hopelessness, include: "If you're thinking about
+  hurting yourself, contact a crisis line or emergency services now."
+
 ## Stats bank (verified — cite the source on the slide, keep the wording hedged)
 - ~13% of web searches were for erotic content — analysis of ~400 million searches (Ogas & Gaddam, "A Billion Wicked Thoughts", 2011).
 - P*rnhub alone had 42 billion visits in 2019 — about 115 million a day; average visit 10 min 28 sec (P*rnhub 2019 Year in Review).
