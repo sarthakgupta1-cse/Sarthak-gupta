@@ -48,6 +48,31 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
    who's struggling" on slide 5; slide 5's note can also ask for a save/share instead of a comment.
 7. CTA (slide 6) title must fit on 2 lines; render.js warns on overflow.
 
+## Reddit inspiration (user-supplied threads, 16-11-26) — use these angles and voices
+Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
+p*rn addiction, what do I do?" (557 upvotes, 2K comments), r/selfimprovement "How I made the p*rn addiction go away",
+r/PornAddiction confessions ("destroyed my marriage", "led me to something I regret"), r/PornIsMisogyny.
+What makes them land — copy the *patterns*, never quote usernames or reproduce posts word for word:
+1. **Real-world tests, not theory.** Top AskMen answers were concrete: "choosing p*rn over a willing partner",
+   "can't stay aroused with a real person" (top comment), "watching it at work / while driving", "multiple times a
+   day", "if it interferes with your life", "a constant fight against your own mind". Make "signs" carousels this
+   specific and blunt.
+2. **The partner's side is huge.** The girlfriend thread got 2K comments. Partners' questions: Is it my fault? Why
+   does he hide accounts? Why does he get defensive? Should I stay? Make carousels *for partners* (Shalini's account
+   suits this) and *for men about what partners feel*. Thread insight: "the addiction is one thing — getting
+   defensive and dismissive when confronted is another." Don't tell people to leave or stay; give questions/signs.
+3. **Excuses called out.** "I watch it for your safety", "it's private, nothing to do with you", "it's just a
+   phase", "I can stop whenever" — commenters tore these apart. Turn each into a harsh myth-buster.
+4. **First-person recovery voice.** "How I made it go away" style: honest, specific, a turning point ("I realised it
+   wasn't p*rn I wanted, it was connection"). Write some carousels as an anonymous composite "what recovered guys
+   say" — never present it as one real person's story or invent quotes as real.
+5. **Comfort doesn't create change.** "We don't change unless we're uncomfortable"; "rock bottom is usually the
+   catalyst"; "replace the habit, one day at a time". Good harsh-but-hopeful lines.
+6. **Consequences escalate.** Confessions about broken marriages and regret drew big engagement. Use the *idea*
+   (p*rn quietly costs relationships, trust, self-respect) — no graphic or illegal-content details, ever.
+7. **Debate hooks drive comments.** "How often is too often?", "Is it cheating if you're in a relationship?",
+   "Is it OK if your partner is fine with it?" — ask the question on slide 1, give a clear take, invite replies.
+
 ## Stats bank (verified — cite the source on the slide, keep the wording hedged)
 - ~13% of web searches were for erotic content — analysis of ~400 million searches (Ogas & Gaddam, "A Billion Wicked Thoughts", 2011).
 - P*rnhub alone had 42 billion visits in 2019 — about 115 million a day; average visit 10 min 28 sec (P*rnhub 2019 Year in Review).
