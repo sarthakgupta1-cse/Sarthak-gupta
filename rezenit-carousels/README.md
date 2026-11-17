@@ -179,3 +179,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 16-11-26 Shalini: past halfway, p*rn works harder (NNN) · 6 signs you swapped p*rn for another escape (NNN) · parents: 54% by 13 · Monday reset after a bad weekend · p*rn isn't on your side (harsh)
 - 16-11-26 Tanmay: week 3 is boring (NNN) · 7 signs you'll stay free after November (NNN) · "just a phase" for years (harsh) · 1 in 12 adults (JAMA 2018) · 10 small wins in month 1
 - 16-11-26 Yash: 14 days left, build one thing (NNN) · 8 signs NNN is changing you · phone = p*rn delivery machine (115M/day) · "just curious" (harsh) · what to tell yourself at 1 AM
+- 17-11-26 Shalini: 5 excuses partners hear (myth-buster) · 8 things partners feel · NNN debate: watch but don't finish · 1 in 10 men (JAMA, NNN) · 15 years in, 5 out: 7 lessons (composite)
+- 17-11-26 Tanmay: it's all the same — what you're chasing isn't p*rn · "I can stop whenever" Day 17 (harsh) · 24 hours after saying no (NNN) · can't sleep without p*rn (Rhode Island 2025) · how often is too often: 5 tests (debate)
+- 17-11-26 Yash: 5 things to do tonight (wall stare, feed reset) · 5 signs your feed sabotages NNN (39B) · your boyfriend has a p*rn problem (partners) · p*rn changes how you see women · is p*rn cheating? (debate)
