@@ -3,68 +3,295 @@
   "owner": "Tanmay",
   "carousels": [
     {
-      "name": "It's all the same: what you're really looking for isn't p*rn",
-      "seed": 4101,
-      "theme": { "bg": "#050508", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "name": "P*rn made you insecure about your own body",
+      "seed": 4301,
+      "theme": {
+        "bg": "#050508",
+        "a1": "#5EE7E0",
+        "a2": "#8B7BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Read this twice", "title": "Every p*rn video is the same video. [[What you're chasing was never in it.]]", "sub": "The realization that makes p*rn urges lose their grip." },
-        { "type": "point", "num": "01", "title": "It's [[all the same]]", "body": "New tab. New video. New \"type.\" Paid content, custom content, more extreme content.\n\nMany guys who quit say the same thing: <b>none of it ever actually satisfied them.</b>" },
-        { "type": "point", "num": "02", "title": "Your \"type\" is a [[clue]]", "body": "Look at what you keep searching for in p*rn. It often mirrors a feeling you're avoiding — rejection, loneliness, feeling not good enough.\n\n<b>The search isn't random. It's pointing at a wound.</b>" },
-        { "type": "point", "num": "03", "title": "What you [[actually]] want", "body": "To feel wanted. To feel close to someone. To hear you're good enough as you are.\n\n<b>P*rn imitates those feelings for ten minutes — then leaves you emptier.</b>" },
-        { "type": "list", "title": "When the urge hits, [[ask]]", "items": ["<b>What am I feeling</b> right now — bored, lonely, rejected, stressed?", "<b>What do I actually need?</b> A person? Rest? Reassurance?", "<b>Can p*rn give me that?</b> (It never has.)", "<b>What's one real step</b> toward it tonight?"], "note": "Did this hit? Send it to someone who keeps chasing the next video ↗" },
-        { "type": "cta", "title": "What you're missing\n[[isn't p*rn.]]", "lead": "Journal what's underneath the urge, talk it through with an AI coach and connect with people who get it.", "features": ["Journaling", "AI coach", "Community"] }
+        {
+          "type": "hook",
+          "kicker": "Nobody admits this one",
+          "title": "P*rn didn't just change what you want. [[It made you insecure about yourself.]]",
+          "sub": "6 comparisons p*rn quietly trains into men."
+        },
+        {
+          "type": "list",
+          "title": "Comparisons [[1–3]]",
+          "items": [
+            "<b>Your body</b> vs. men picked and filmed for the camera.",
+            "<b>Your stamina</b> vs. edited, cut and re-shot scenes.",
+            "<b>Your partner's reactions</b> vs. scripted performances."
+          ]
+        },
+        {
+          "type": "list",
+          "marks": [
+            "4",
+            "5",
+            "6"
+          ],
+          "title": "Comparisons [[4–6]]",
+          "items": [
+            "<b>Your confidence</b> vs. actors who never look nervous.",
+            "<b>Real intimacy</b> vs. a show built for viewers.",
+            "<b>Yourself</b> vs. a fantasy no real man matches."
+          ]
+        },
+        {
+          "type": "point",
+          "title": "You're comparing to [[fiction]].",
+          "body": "P*rn is produced, edited and performed. Measuring yourself against it is like judging your face against a filtered ad.\n\n<b>The insecurity is real. The standard isn't.</b>"
+        },
+        {
+          "type": "point",
+          "title": "What [[helps]]",
+          "body": "Time away from p*rn. Real conversations with a partner. Training for how you feel, not how you look.\n\n<b>Many men say the insecurity faded once the comparison stopped.</b>",
+          "note": "Did p*rn make you feel \"not enough\"? You're not the only one 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Stop comparing.\n[[Quit p*rn with RezenIt.]]",
+          "lead": "Learn how p*rn distorts what's normal, block it completely and rebuild real confidence.",
+          "features": [
+            "Learn the truth",
+            "P*rn blocker",
+            "Streaks"
+          ]
+        }
       ]
     },
     {
       "name": "'I can stop whenever.' Prove it.",
       "seed": 4303,
-      "theme": { "bg": "#050508", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "theme": {
+        "bg": "#050508",
+        "a1": "#C4B5FF",
+        "a2": "#7DE3F5"
+      },
       "slides": [
-        { "type": "hook", "kicker": "No Nut November · Day 17", "title": "\"I can stop p*rn whenever I want.\" [[It's Day 17. Prove it.]]", "sub": "The excuse every addicted guy uses — and how to test it." },
-        { "type": "point", "num": "01", "title": "Then why [[haven't]] you?", "body": "If you could stop whenever, you'd have stopped the first time it cost you sleep, focus or a relationship.\n\n<b>\"Whenever\" never comes.</b>" },
-        { "type": "point", "num": "02", "title": "The [[test]]", "body": "30 days. No p*rn. No \"almost p*rn.\" No loopholes.\n\nIf it's easy, great — you were right. <b>If it isn't, you've learned something important.</b>" },
-        { "type": "point", "num": "03", "title": "Failing isn't [[shameful]]", "body": "Failing the test doesn't make you weak. It means p*rn has more control than you thought.\n\n<b>That's when the real work starts.</b>" },
-        { "type": "list", "title": "Take the [[test]] properly", "items": ["<b>Write down</b> your start date.", "<b>Block p*rn</b> — don't rely on \"I can stop.\"", "<b>Track every day</b> honestly.", "<b>Tell one person</b> so you can't fake it."], "note": "Still in NNN on Day 17? Comment \"PROVEN\" 👇" },
-        { "type": "cta", "title": "Stop saying it.\n[[Prove it with RezenIt.]]", "lead": "Honest streak tracking, a p*rn blocker and accountability that shows whether you really can stop.", "features": ["Streaks", "P*rn blocker", "Accountability"] }
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Day 17",
+          "title": "\"I can stop p*rn whenever I want.\" [[It's Day 17. Prove it.]]",
+          "sub": "The excuse every addicted guy uses — and how to test it."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "Then why [[haven't]] you?",
+          "body": "If you could stop whenever, you'd have stopped the first time it cost you sleep, focus or a relationship.\n\n<b>\"Whenever\" never comes.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "The [[test]]",
+          "body": "30 days. No p*rn. No \"almost p*rn.\" No loopholes.\n\nIf it's easy, great — you were right. <b>If it isn't, you've learned something important.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Failing isn't [[shameful]]",
+          "body": "Failing the test doesn't make you weak. It means p*rn has more control than you thought.\n\n<b>That's when the real work starts.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Take the [[test]] properly",
+          "items": [
+            "<b>Write down</b> your start date.",
+            "<b>Block p*rn</b> — don't rely on \"I can stop.\"",
+            "<b>Track every day</b> honestly.",
+            "<b>Tell one person</b> so you can't fake it."
+          ],
+          "note": "Still in NNN on Day 17? Comment \"PROVEN\" 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Stop saying it.\n[[Prove it with RezenIt.]]",
+          "lead": "Honest streak tracking, a p*rn blocker and accountability that shows whether you really can stop.",
+          "features": [
+            "Streaks",
+            "P*rn blocker",
+            "Accountability"
+          ]
+        }
       ]
     },
     {
       "name": "The 24 hours after you say no to a p*rn urge",
       "seed": 4307,
-      "theme": { "bg": "#050508", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "theme": {
+        "bg": "#050508",
+        "a1": "#9EF0C8",
+        "a2": "#7BA7FF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "No Nut November · Day 17", "title": "What happens in the 24 hours [[after you say no to p*rn.]]", "sub": "One \"no\" changes more than one night." },
-        { "type": "point", "phase": "Minute 1", "progress": 1, "title": "The [[push]]", "body": "The p*rn urge peaks. Your brain bargains. You leave the room anyway.\n\n<b>That's the hardest minute of the day.</b>" },
-        { "type": "point", "phase": "Minute 20", "progress": 2, "title": "The [[fade]]", "body": "The urge drops. You realize it passed without p*rn.\n\n<b>Your brain just learned it can survive the wave.</b>" },
-        { "type": "point", "phase": "Next morning", "progress": 3, "title": "The [[clean]] start", "body": "No guilt. No hiding your phone. No \"why did I do that.\"\n\n<b>Many guys say this feeling is what keeps them going.</b>" },
-        { "type": "point", "phase": "24 hours", "progress": 4, "title": "The [[proof]]", "body": "One full day you chose something other than p*rn.\n\nStack those days and they become a different life.", "note": "Save this for the next minute 1 🔖" },
-        { "type": "cta", "title": "Win minute 1\n[[with RezenIt.]]", "lead": "Hit the panic button for instant tools when a p*rn urge peaks, then watch your streak grow.", "features": ["Panic button", "Guided audio", "Streaks"] }
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Day 17",
+          "title": "What happens in the 24 hours [[after you say no to p*rn.]]",
+          "sub": "One \"no\" changes more than one night."
+        },
+        {
+          "type": "point",
+          "phase": "Minute 1",
+          "progress": 1,
+          "title": "The [[push]]",
+          "body": "The p*rn urge peaks. Your brain bargains. You leave the room anyway.\n\n<b>That's the hardest minute of the day.</b>"
+        },
+        {
+          "type": "point",
+          "phase": "Minute 20",
+          "progress": 2,
+          "title": "The [[fade]]",
+          "body": "The urge drops. You realize it passed without p*rn.\n\n<b>Your brain just learned it can survive the wave.</b>"
+        },
+        {
+          "type": "point",
+          "phase": "Next morning",
+          "progress": 3,
+          "title": "The [[clean]] start",
+          "body": "No guilt. No hiding your phone. No \"why did I do that.\"\n\n<b>Many guys say this feeling is what keeps them going.</b>"
+        },
+        {
+          "type": "point",
+          "phase": "24 hours",
+          "progress": 4,
+          "title": "The [[proof]]",
+          "body": "One full day you chose something other than p*rn.\n\nStack those days and they become a different life.",
+          "note": "Save this for the next minute 1 🔖"
+        },
+        {
+          "type": "cta",
+          "title": "Win minute 1\n[[with RezenIt.]]",
+          "lead": "Hit the panic button for instant tools when a p*rn urge peaks, then watch your streak grow.",
+          "features": [
+            "Panic button",
+            "Guided audio",
+            "Streaks"
+          ]
+        }
       ]
     },
     {
-      "name": "Can't sleep without p*rn?",
-      "seed": 4309,
-      "theme": { "bg": "#050508", "a1": "#FFB3E6", "a2": "#8FB4FF" },
+      "name": "Rejected? Why that's when you open p*rn",
+      "seed": 4310,
+      "theme": {
+        "bg": "#050508",
+        "a1": "#FFB3E6",
+        "a2": "#8FB4FF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "1,008 young adults studied", "title": "Can't fall asleep without p*rn? [[A 2025 study found a link.]]", "sub": "Insomnia and p*rn addiction often travel together." },
-        { "type": "point", "num": "7.9%", "title": "Screened [[positive]]", "body": "In a study of 1,008 young adults (Rhode Island, 2024 data, published 2025), <b>7.9% screened positive for p*rn addiction</b> — about 1 in 13." },
-        { "type": "point", "num": "01", "title": "The sleep [[link]]", "body": "Insomnia was linked to higher odds of p*rn addiction, mainly in heterosexual men.\n\nIt's a link, not proof of cause — <b>but the loop is familiar to many.</b>" },
-        { "type": "point", "num": "02", "title": "P*rn as a [[sleeping pill]]", "body": "Many guys use p*rn to switch off at night. It \"works\" — until you can't sleep without it.\n\n<b>That's dependence, not relaxation.</b>" },
-        { "type": "list", "title": "Fall asleep [[without]] it", "items": ["<b>Phone out</b> of the bedroom.", "<b>Same bedtime</b> every night.", "<b>Read or breathe slowly</b> instead of scrolling.", "<b>Expect a few rough nights</b> — then it gets easier."], "note": "Use p*rn to fall asleep? Save this and try it for 7 nights 🔖" },
-        { "type": "cta", "title": "Sleep without p*rn\n[[with RezenIt.]]", "lead": "Guided audio sessions for winding down, a p*rn blocker for late nights and streaks for every good night.", "features": ["Guided audio", "P*rn blocker", "Streaks"] }
+        {
+          "type": "hook",
+          "kicker": "The trigger nobody names",
+          "title": "She left you on read. [[Ten minutes later you're on p*rn.]]",
+          "sub": "Why rejection is one of the fastest routes back."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "Rejection [[stings]]",
+          "body": "A no, a ghosting, a bad date, getting ignored in a group chat.\n\nIt hits the exact feeling of \"not enough.\""
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "P*rn [[fakes]] acceptance",
+          "body": "On the screen, nobody rejects you. Everyone's available, everyone wants you.\n\n<b>It's instant fake acceptance — and it numbs the sting for a few minutes.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Then it [[costs]] you",
+          "body": "You wake up still rejected — plus guilty, plus a little less willing to put yourself out there again.\n\n<b>P*rn makes the next rejection feel even scarier.</b>"
+        },
+        {
+          "type": "list",
+          "title": "After a [[rejection]]",
+          "items": [
+            "<b>Name it:</b> \"That hurt. I feel rejected.\"",
+            "<b>Call a friend</b> who actually likes you.",
+            "<b>Do something you're good at</b> — real proof you matter.",
+            "<b>Try again</b> later. Real people are worth the risk."
+          ],
+          "note": "Has rejection ever sent you back to p*rn? Comment \"same\" 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Handle rejection\n[[without p*rn.]]",
+          "lead": "An AI coach for the rough nights, a panic button for urges and a community that has your back.",
+          "features": [
+            "AI coach",
+            "Panic button",
+            "Community"
+          ]
+        }
       ]
     },
     {
       "name": "How often is too often? 5 honest tests",
       "seed": 4311,
-      "theme": { "bg": "#050508", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "theme": {
+        "bg": "#050508",
+        "a1": "#7FE7FF",
+        "a2": "#A98BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "The question everyone asks", "title": "How often is too often with p*rn? [[Forget the number. Take these 5 tests.]]", "sub": "The answers that got the most upvotes on Reddit." },
-        { "type": "list", "title": "Tests [[1–2]]", "items": ["<b>Do you choose p*rn over a willing partner?</b> If yes, it's a problem.", "<b>Can you stay aroused with a real person?</b> Many men say this was their first warning sign."] },
-        { "type": "list", "marks": ["3", "4"], "title": "Tests [[3–4]]", "items": ["<b>Have you watched p*rn somewhere you shouldn't</b> — at work, in class, in the car?", "<b>Do you watch multiple times a day</b> and can't stop when you try?"] },
-        { "type": "list", "marks": ["5"], "title": "Test [[5]]", "items": ["<b>Is it interfering with your life</b> — sleep, work, relationships, confidence? That's the line most people draw."] },
-        { "type": "point", "title": "Failed [[one]]?", "body": "Then it's not about the number anymore. P*rn is costing you something.\n\n<b>Take that seriously.</b>", "note": "How many tests did you fail? Comment the number — no judgment 👇" },
-        { "type": "cta", "title": "Failed a test?\n[[RezenIt can help.]]", "lead": "A p*rn blocker, a guided recovery program and lessons on how p*rn addiction works.", "features": ["P*rn blocker", "Recovery program", "Learn the truth"] }
+        {
+          "type": "hook",
+          "kicker": "The question everyone asks",
+          "title": "How often is too often with p*rn? [[Forget the number. Take these 5 tests.]]",
+          "sub": "The answers that got the most upvotes on Reddit."
+        },
+        {
+          "type": "list",
+          "title": "Tests [[1–2]]",
+          "items": [
+            "<b>Do you choose p*rn over a willing partner?</b> If yes, it's a problem.",
+            "<b>Can you stay aroused with a real person?</b> Many men say this was their first warning sign."
+          ]
+        },
+        {
+          "type": "list",
+          "marks": [
+            "3",
+            "4"
+          ],
+          "title": "Tests [[3–4]]",
+          "items": [
+            "<b>Have you watched p*rn somewhere you shouldn't</b> — at work, in class, in the car?",
+            "<b>Do you watch multiple times a day</b> and can't stop when you try?"
+          ]
+        },
+        {
+          "type": "list",
+          "marks": [
+            "5"
+          ],
+          "title": "Test [[5]]",
+          "items": [
+            "<b>Is it interfering with your life</b> — sleep, work, relationships, confidence? That's the line most people draw."
+          ]
+        },
+        {
+          "type": "point",
+          "title": "Failed [[one]]?",
+          "body": "Then it's not about the number anymore. P*rn is costing you something.\n\n<b>Take that seriously.</b>",
+          "note": "How many tests did you fail? Comment the number — no judgment 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Failed a test?\n[[RezenIt can help.]]",
+          "lead": "A p*rn blocker, a guided recovery program and lessons on how p*rn addiction works.",
+          "features": [
+            "P*rn blocker",
+            "Recovery program",
+            "Learn the truth"
+          ]
+        }
       ]
     }
   ]

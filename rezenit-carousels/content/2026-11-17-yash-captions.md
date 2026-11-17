@@ -1,9 +1,9 @@
 # 17-11-26 — Yash — Captions & hashtags
 
-## Carousel 1 — 5 things to do tonight when the p*rn urge hits
-5 things to do tonight when the p*rn urge hits. Simple, weird, and they work for a lot of people.
+## Carousel 1 — Your friends quit NNN. Keep going without them.
+Your whole group quit No Nut November. You don't have to go back to p*rn with them. Doing it alone is harder. Not impossible.
 
-Which one are you trying tonight? Save this and send it to your NNN partner ↗
+Still in while your friends quit? Comment "STILL IN" 👇
 
 🔖 Save this for later and ↗ send it to someone who's struggling with p*rn.
 
@@ -11,10 +11,10 @@ Ready to quit p*rn for good? RezenIt — link in bio.
 
 #nonutnovember #nnn #quitp0rn #p0rnaddiction #nofap #pornfree #selfimprovement #rezenit
 
-## Carousel 2 — 39 billion searches: 5 signs your feed is sabotaging NNN
-5 signs your feed is sabotaging your No Nut November. You quit p*rn. Your phone didn't.
+## Carousel 2 — Day 17: write a letter to your Day 1 self
+Write a letter to the guy who quit p*rn on Day 1. He needs to hear from you. A 10-minute exercise that makes the last 13 days easier.
 
-How many signs? Save this and clean your feed tonight 🔖
+Share one line from your letter in the comments 👇
 
 🔖 Save this for later and ↗ send it to someone who's struggling with p*rn.
 

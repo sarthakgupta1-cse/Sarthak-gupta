@@ -1,9 +1,9 @@
 # 17-11-26 — Tanmay — Captions & hashtags
 
-## Carousel 1 — It's all the same: what you're really looking for isn't p*rn
-Every p*rn video is the same video. What you're chasing was never in it. The realization that makes p*rn urges lose their grip.
+## Carousel 1 — P*rn made you insecure about your own body
+P*rn didn't just change what you want. It made you insecure about yourself. 6 comparisons p*rn quietly trains into men.
 
-Did this hit? Send it to someone who keeps chasing the next video ↗
+Did p*rn make you feel "not enough"? You're not the only one 👇
 
 🔖 Save this for later and ↗ send it to someone who's struggling with p*rn.
 
@@ -33,10 +33,10 @@ Ready to quit p*rn for good? RezenIt — link in bio.
 
 #nonutnovember #nnn #quitp0rn #p0rnaddiction #nofap #pornfree #selfimprovement #rezenit
 
-## Carousel 4 — Can't sleep without p*rn?
-Can't fall asleep without p*rn? A 2025 study found a link. Insomnia and p*rn addiction often travel together.
+## Carousel 4 — Rejected? Why that's when you open p*rn
+She left you on read. Ten minutes later you're on p*rn. Why rejection is one of the fastest routes back.
 
-Use p*rn to fall asleep? Save this and try it for 7 nights 🔖
+Has rejection ever sent you back to p*rn? Comment "same" 👇
 
 🔖 Save this for later and ↗ send it to someone who's struggling with p*rn.
 

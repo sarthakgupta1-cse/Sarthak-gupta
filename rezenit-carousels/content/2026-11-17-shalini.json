@@ -5,66 +5,302 @@
     {
       "name": "5 excuses partners hear about p*rn, and what they really mean",
       "seed": 4201,
-      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "theme": {
+        "bg": "#0C1633",
+        "a1": "#6FE3F0",
+        "a2": "#9B87FF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "For partners", "title": "\"I watch p*rn for your safety.\" [[5 excuses partners hear — decoded.]]", "sub": "If you've heard one of these, read till the end." },
-        { "type": "point", "num": "01", "title": "\"It's for [[your]] safety.\"", "body": "Turning a partner's boundary into the reason for p*rn shifts the blame onto them.\n\n<b>Nobody's safety requires secret accounts.</b>" },
-        { "type": "point", "num": "02", "title": "\"It's [[private]]. It has nothing to do with you.\"", "body": "In a relationship, something that affects trust, intimacy and time together isn't fully private.\n\n<b>Privacy is fine. Secrecy that hurts someone isn't.</b>" },
-        { "type": "list", "title": "Excuses [[3–5]]", "items": ["<b>\"Every guy watches p*rn.\"</b> — Common isn't the same as harmless.", "<b>\"I can stop whenever.\"</b> — Then the question is why he hasn't.", "<b>\"You're overreacting.\"</b> — Feelings about broken trust aren't overreacting."] },
-        { "type": "point", "title": "The real red flag [[isn't]] the p*rn.", "body": "On the biggest Reddit threads about this, people kept saying the same thing: the struggle is one thing — <b>getting defensive and dismissive when asked is another.</b>", "note": "Send this to someone who keeps hearing these excuses ↗" },
-        { "type": "cta", "title": "Recovery works better\n[[when it's honest.]]", "lead": "RezenIt gives men 1-on-1 accountability, habit tracking a partner can see and a guided p*rn recovery program.", "features": ["Accountability", "Habit tracking", "Recovery program"] }
+        {
+          "type": "hook",
+          "kicker": "For partners",
+          "title": "\"I watch p*rn for your safety.\" [[5 excuses partners hear — decoded.]]",
+          "sub": "If you've heard one of these, read till the end."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "\"It's for [[your]] safety.\"",
+          "body": "Turning a partner's boundary into the reason for p*rn shifts the blame onto them.\n\n<b>Nobody's safety requires secret accounts.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "\"It's [[private]]. It has nothing to do with you.\"",
+          "body": "In a relationship, something that affects trust, intimacy and time together isn't fully private.\n\n<b>Privacy is fine. Secrecy that hurts someone isn't.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Excuses [[3–5]]",
+          "items": [
+            "<b>\"Every guy watches p*rn.\"</b> — Common isn't the same as harmless.",
+            "<b>\"I can stop whenever.\"</b> — Then the question is why he hasn't.",
+            "<b>\"You're overreacting.\"</b> — Feelings about broken trust aren't overreacting."
+          ]
+        },
+        {
+          "type": "point",
+          "title": "The real red flag [[isn't]] the p*rn.",
+          "body": "On the biggest Reddit threads about this, people kept saying the same thing: the struggle is one thing — <b>getting defensive and dismissive when asked is another.</b>",
+          "note": "Send this to someone who keeps hearing these excuses ↗"
+        },
+        {
+          "type": "cta",
+          "title": "Recovery works better\n[[when it's honest.]]",
+          "lead": "RezenIt gives men 1-on-1 accountability, habit tracking a partner can see and a guided p*rn recovery program.",
+          "features": [
+            "Accountability",
+            "Habit tracking",
+            "Recovery program"
+          ]
+        }
       ]
     },
     {
       "name": "8 things partners feel when they find out about p*rn",
       "seed": 4203,
-      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "theme": {
+        "bg": "#1A1036",
+        "a1": "#C4B5FF",
+        "a2": "#7DE3F5"
+      },
       "slides": [
-        { "type": "hook", "kicker": "Men, read this one", "title": "8 things your partner feels [[when she finds your p*rn.]]", "sub": "What partners say on the threads men never read." },
-        { "type": "list", "title": "Feelings [[1–4]]", "items": ["<b>\"Am I not enough?\"</b> — comparing herself to a screen.", "<b>Betrayed</b> — more by the hiding than the p*rn.", "<b>Confused</b> — \"he says he loves me, so why?\"", "<b>Embarrassed</b> to tell anyone."] },
-        { "type": "list", "marks": ["5", "6", "7", "8"], "title": "Feelings [[5–8]]", "items": ["<b>Watched</b> — wondering what he thinks of real women now.", "<b>Lonely</b> — he's there, but not really present.", "<b>Guilty</b> for even being upset.", "<b>Hopeful</b> — if he's honest and actually changes."] },
-        { "type": "point", "title": "Her feelings are [[valid]].", "body": "You don't have to agree with every reaction. But brushing them off is how trust breaks completely.\n\n<b>Listen before you defend.</b>" },
-        { "type": "list", "title": "What [[helps]]", "items": ["<b>Tell the truth</b> — all of it, once.", "<b>Show a plan</b> to quit p*rn, not just promises.", "<b>Let progress be visible.</b>", "<b>Get support</b> — together or separately."], "note": "Partners: which one did you feel most? Share below 👇" },
-        { "type": "cta", "title": "Rebuild her trust.\n[[Quit p*rn with RezenIt.]]", "lead": "Habit tracking she can see, 1-on-1 accountability and a step-by-step p*rn recovery program.", "features": ["Habit tracking", "Accountability", "Recovery program"] }
+        {
+          "type": "hook",
+          "kicker": "Men, read this one",
+          "title": "8 things your partner feels [[when she finds your p*rn.]]",
+          "sub": "What partners say on the threads men never read."
+        },
+        {
+          "type": "list",
+          "title": "Feelings [[1–4]]",
+          "items": [
+            "<b>\"Am I not enough?\"</b> — comparing herself to a screen.",
+            "<b>Betrayed</b> — more by the hiding than the p*rn.",
+            "<b>Confused</b> — \"he says he loves me, so why?\"",
+            "<b>Embarrassed</b> to tell anyone."
+          ]
+        },
+        {
+          "type": "list",
+          "marks": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "title": "Feelings [[5–8]]",
+          "items": [
+            "<b>Watched</b> — wondering what he thinks of real women now.",
+            "<b>Lonely</b> — he's there, but not really present.",
+            "<b>Guilty</b> for even being upset.",
+            "<b>Hopeful</b> — if he's honest and actually changes."
+          ]
+        },
+        {
+          "type": "point",
+          "title": "Her feelings are [[valid]].",
+          "body": "You don't have to agree with every reaction. But brushing them off is how trust breaks completely.\n\n<b>Listen before you defend.</b>"
+        },
+        {
+          "type": "list",
+          "title": "What [[helps]]",
+          "items": [
+            "<b>Tell the truth</b> — all of it, once.",
+            "<b>Show a plan</b> to quit p*rn, not just promises.",
+            "<b>Let progress be visible.</b>",
+            "<b>Get support</b> — together or separately."
+          ],
+          "note": "Partners: which one did you feel most? Share below 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Rebuild her trust.\n[[Quit p*rn with RezenIt.]]",
+          "lead": "Habit tracking she can see, 1-on-1 accountability and a step-by-step p*rn recovery program.",
+          "features": [
+            "Habit tracking",
+            "Accountability",
+            "Recovery program"
+          ]
+        }
       ]
     },
     {
       "name": "Is it still No Nut November if you watch p*rn but don't finish?",
       "seed": 4207,
-      "theme": { "bg": "#0B1A3A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "theme": {
+        "bg": "#0B1A3A",
+        "a1": "#7FE7FF",
+        "a2": "#A98BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "No Nut November · Day 17 · Debate", "title": "Is it still No Nut November if you [[watch p*rn but don't finish?]]", "sub": "Our answer is below. Tell us yours." },
-        { "type": "point", "num": "01", "title": "The [[technicality]]", "body": "By the meme's rules, maybe you're still \"in.\"\n\nBut ask yourself honestly: <b>why do you want the loophole?</b>" },
-        { "type": "point", "num": "02", "title": "Your brain doesn't [[care]]", "body": "Watching p*rn — finished or not — still feeds the habit, the cravings and the late nights.\n\n<b>You're keeping the loop warm.</b>" },
-        { "type": "point", "num": "03", "title": "Our [[answer]]", "body": "If the goal is a meme, sure, technically it counts.\n\nIf the goal is breaking p*rn addiction: <b>no. Watching is the habit.</b>" },
-        { "type": "list", "title": "If you've been [[doing this]]", "items": ["<b>Reset your rules:</b> no p*rn, no edging, no \"just looking.\"", "<b>Block p*rn</b> instead of negotiating.", "<b>Count from today</b> — 13 days left.", "<b>Be honest</b> with your NNN partner."], "note": "Does it count or not? Comment YES or NO and defend it 👇" },
-        { "type": "cta", "title": "No loopholes.\n[[Real NNN with RezenIt.]]", "lead": "A p*rn blocker that closes the loopholes, honest streak tracking and a panic button for weak moments.", "features": ["P*rn blocker", "Streaks", "Panic button"] }
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Day 17 · Debate",
+          "title": "Is it still No Nut November if you [[watch p*rn but don't finish?]]",
+          "sub": "Our answer is below. Tell us yours."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "The [[technicality]]",
+          "body": "By the meme's rules, maybe you're still \"in.\"\n\nBut ask yourself honestly: <b>why do you want the loophole?</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "Your brain doesn't [[care]]",
+          "body": "Watching p*rn — finished or not — still feeds the habit, the cravings and the late nights.\n\n<b>You're keeping the loop warm.</b>"
+        },
+        {
+          "type": "point",
+          "num": "03",
+          "title": "Our [[answer]]",
+          "body": "If the goal is a meme, sure, technically it counts.\n\nIf the goal is breaking p*rn addiction: <b>no. Watching is the habit.</b>"
+        },
+        {
+          "type": "list",
+          "title": "If you've been [[doing this]]",
+          "items": [
+            "<b>Reset your rules:</b> no p*rn, no edging, no \"just looking.\"",
+            "<b>Block p*rn</b> instead of negotiating.",
+            "<b>Count from today</b> — 13 days left.",
+            "<b>Be honest</b> with your NNN partner."
+          ],
+          "note": "Does it count or not? Comment YES or NO and defend it 👇"
+        },
+        {
+          "type": "cta",
+          "title": "No loopholes.\n[[Real NNN with RezenIt.]]",
+          "lead": "A p*rn blocker that closes the loopholes, honest streak tracking and a panic button for weak moments.",
+          "features": [
+            "P*rn blocker",
+            "Streaks",
+            "Panic button"
+          ]
+        }
       ]
     },
     {
-      "name": "1 in 10 men struggle to control urges - NNN shows you if you're one",
-      "seed": 4209,
-      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "name": "42% of young men watch p*rn daily or several times a week",
+      "seed": 4210,
+      "theme": {
+        "bg": "#22102E",
+        "a1": "#FF9EDB",
+        "a2": "#9B8CFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "No Nut November · Day 17", "title": "1 in 10 men can't control their urges. [[NNN shows if p*rn has you.]]", "sub": "What a major study found — and what your November is telling you." },
-        { "type": "point", "num": "10.3%", "title": "Of men [[struggle]]", "body": "A JAMA Network Open study (2018) of 2,325 U.S. adults found <b>10.3% of men</b> reported real distress from trouble controlling sexual urges and behavior — p*rn use often included." },
-        { "type": "point", "num": "01", "title": "NNN is a [[test]]", "body": "If you've reset Day 1 three times this month, that's not bad luck.\n\n<b>It's information about how much control p*rn has.</b>" },
-        { "type": "point", "num": "02", "title": "Read the [[results]]", "body": "Couldn't stop even when you badly wanted to? Bargained every night? Hid it?\n\n<b>Those are the signs worth taking seriously.</b>" },
-        { "type": "list", "title": "If it's [[you]]", "items": ["<b>Drop the shame</b> — you're one of millions.", "<b>Stop relying on willpower</b> alone.", "<b>Get real support</b> — a group, a coach, a professional.", "<b>Keep going</b> after November."], "note": "Send this to someone who keeps \"failing\" NNN ↗" },
-        { "type": "cta", "title": "1 in 10 struggle.\n[[RezenIt helps.]]", "lead": "A science-informed p*rn recovery program, an anonymous community and an AI coach.", "features": ["Recovery program", "Community", "AI coach"] }
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Day 17",
+          "title": "42% of young men watch p*rn almost every day. [[Normal isn't the same as fine.]]",
+          "sub": "What a 2026 survey of 2,000 young men found."
+        },
+        {
+          "type": "point",
+          "num": "42%",
+          "title": "Daily or [[several times a week]]",
+          "body": "An Institute for Family Studies / YouGov survey (2026) of 2,000 men aged 18–29 found <b>42% watch p*rn daily or several times a week.</b>"
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "\"Everyone does it\" is [[true]]",
+          "body": "That's exactly the problem. When almost half your friends are on p*rn most days, nobody notices what it's costing.\n\n<b>Common makes it invisible — not harmless.</b>"
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "Ask a [[different]] question",
+          "body": "Not \"is this normal?\" but \"is p*rn giving me the life I want?\"\n\n<b>Sleep, focus, confidence, relationships — that's the real scoreboard.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Be in the [[other 58%]]",
+          "items": [
+            "<b>Finish NNN</b> — 13 days left.",
+            "<b>Notice</b> what changed when p*rn wasn't daily.",
+            "<b>Decide</b> what December looks like.",
+            "<b>Bring one friend</b> with you."
+          ],
+          "note": "Send this to a friend who says \"everyone watches p*rn\" ↗"
+        },
+        {
+          "type": "cta",
+          "title": "Be the exception.\n[[Quit p*rn with RezenIt.]]",
+          "lead": "A p*rn blocker, streaks past November and a guided recovery program for what comes after.",
+          "features": [
+            "P*rn blocker",
+            "Streaks",
+            "Recovery program"
+          ]
+        }
       ]
     },
     {
       "name": "Years in, years out: 7 lessons from men who quit p*rn",
       "seed": 4211,
-      "theme": { "bg": "#0A1A30", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "theme": {
+        "bg": "#0A1A30",
+        "a1": "#5EE7E0",
+        "a2": "#8B7BFF"
+      },
       "slides": [
-        { "type": "hook", "kicker": "What long-term quitters say", "title": "15 years addicted. 5 years free. [[7 lessons men who quit p*rn keep repeating.]]", "sub": "Pulled from recovery stories that went viral on Reddit." },
-        { "type": "list", "title": "Lessons [[1–3]]", "items": ["<b>The lying hurt more than the p*rn.</b> Many say relationships ended over the hiding, not the habit.", "<b>Denial is the longest phase.</b> \"It's not p*rn causing this\" can last years.", "<b>Symptoms show up everywhere</b> — anxiety, brain fog, bad sleep, low confidence."] },
-        { "type": "list", "marks": ["4", "5"], "title": "Lessons [[4–5]]", "items": ["<b>Hiding keeps p*rn alive.</b> Telling one person is often the turning point.", "<b>Shame doesn't heal you.</b> Grace and forgiveness do — for yourself too."] },
-        { "type": "list", "marks": ["6", "7"], "title": "Lessons [[6–7]]", "items": ["<b>Quitting p*rn takes time.</b> Months, not days — with setbacks.", "<b>Life after is real.</b> Many describe deeper relationships, more confidence, work they're proud of."] },
-        { "type": "point", "title": "You can [[skip]] the 15 years.", "body": "Every lesson above was learned the hard way.\n\n<b>You can start using them tonight.</b>", "note": "Which lesson hit hardest? Save this and come back to it 🔖" },
-        { "type": "cta", "title": "Learn from them.\n[[Start with RezenIt.]]", "lead": "A step-by-step p*rn recovery program, a community of people further along and an AI coach for the hard days.", "features": ["Recovery program", "Community", "AI coach"] }
+        {
+          "type": "hook",
+          "kicker": "What long-term quitters say",
+          "title": "15 years addicted. 5 years free. [[7 lessons men who quit p*rn keep repeating.]]",
+          "sub": "Pulled from recovery stories that went viral on Reddit."
+        },
+        {
+          "type": "list",
+          "title": "Lessons [[1–3]]",
+          "items": [
+            "<b>The lying hurt more than the p*rn.</b> Many say relationships ended over the hiding, not the habit.",
+            "<b>Denial is the longest phase.</b> \"It's not p*rn causing this\" can last years.",
+            "<b>Symptoms show up everywhere</b> — anxiety, brain fog, bad sleep, low confidence."
+          ]
+        },
+        {
+          "type": "list",
+          "marks": [
+            "4",
+            "5"
+          ],
+          "title": "Lessons [[4–5]]",
+          "items": [
+            "<b>Hiding keeps p*rn alive.</b> Telling one person is often the turning point.",
+            "<b>Shame doesn't heal you.</b> Grace and forgiveness do — for yourself too."
+          ]
+        },
+        {
+          "type": "list",
+          "marks": [
+            "6",
+            "7"
+          ],
+          "title": "Lessons [[6–7]]",
+          "items": [
+            "<b>Quitting p*rn takes time.</b> Months, not days — with setbacks.",
+            "<b>Life after is real.</b> Many describe deeper relationships, more confidence, work they're proud of."
+          ]
+        },
+        {
+          "type": "point",
+          "title": "You can [[skip]] the 15 years.",
+          "body": "Every lesson above was learned the hard way.\n\n<b>You can start using them tonight.</b>",
+          "note": "Which lesson hit hardest? Save this and come back to it 🔖"
+        },
+        {
+          "type": "cta",
+          "title": "Learn from them.\n[[Start with RezenIt.]]",
+          "lead": "A step-by-step p*rn recovery program, a community of people further along and an AI coach for the hard days.",
+          "features": [
+            "Recovery program",
+            "Community",
+            "AI coach"
+          ]
+        }
       ]
     }
   ]

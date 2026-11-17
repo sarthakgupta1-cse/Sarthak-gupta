@@ -118,6 +118,15 @@ What makes them land — copy the *patterns*, never quote usernames or reproduce
 - 56.7% of 1,008 young adults (Rhode Island) had viewed p*rn and 7.9% (~1 in 13) screened positive for p*rn addiction; insomnia was linked to higher odds, mainly in heterosexual men (2024 survey data, published 2025).
 - Each extra hour of screen time after going to bed was tied to 59% higher odds of insomnia symptoms (Frontiers in Psychiatry, 2025, ~40,000 Norwegian students). Screens in general, not p*rn specifically — say so.
 - Arithmetic is fine: 30 min/day = ~182 hours/year.
+- 46% of men aged 18–39 intentionally viewed p*rn in a given week (Journal of Sex Research, nationally representative samples, 2014 data).
+- 42% of men aged 18–29 watch p*rn daily or several times a week; another 26% weekly or less (Institute for Family Studies / YouGov, 2026, 2,000 young men — advocacy-linked, say so if asked).
+- 21–37% of people with problematic p*rn use wanted treatment but didn't get it, e.g. because of cost (Bőthe et al., Addiction, 2024).
+
+## No repeats (user feedback 17-11-26)
+The user noticed repeated posts. Before committing, run `python3 check_repeats.py content/<today>-*.json` — it must
+print 0 problems. It flags: topic/hook overlap with any earlier carousel, a stat reused within 7 days, a tip already
+used in 2+ carousels, and two carousels on the same day sharing a stat or angle. Never reuse a sample or earlier
+carousel. When stats run dry, research and add new verified ones to the stats bank rather than reuse.
 
 ## Copy rule: name it openly
 Every carousel is about **p*rn addiction** and must say so — nobody should have to guess the topic.
@@ -179,6 +188,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 16-11-26 Shalini: past halfway, p*rn works harder (NNN) · 6 signs you swapped p*rn for another escape (NNN) · parents: 54% by 13 · Monday reset after a bad weekend · p*rn isn't on your side (harsh)
 - 16-11-26 Tanmay: week 3 is boring (NNN) · 7 signs you'll stay free after November (NNN) · "just a phase" for years (harsh) · 1 in 12 adults (JAMA 2018) · 10 small wins in month 1
 - 16-11-26 Yash: 14 days left, build one thing (NNN) · 8 signs NNN is changing you · phone = p*rn delivery machine (115M/day) · "just curious" (harsh) · what to tell yourself at 1 AM
-- 17-11-26 Shalini: 5 excuses partners hear (myth-buster) · 8 things partners feel · NNN debate: watch but don't finish · 1 in 10 men (JAMA, NNN) · 15 years in, 5 out: 7 lessons (composite)
-- 17-11-26 Tanmay: it's all the same — what you're chasing isn't p*rn · "I can stop whenever" Day 17 (harsh) · 24 hours after saying no (NNN) · can't sleep without p*rn (Rhode Island 2025) · how often is too often: 5 tests (debate)
-- 17-11-26 Yash: 5 things to do tonight (wall stare, feed reset) · 5 signs your feed sabotages NNN (39B) · your boyfriend has a p*rn problem (partners) · p*rn changes how you see women · is p*rn cheating? (debate)
+- 17-11-26 Shalini: 5 excuses partners hear (myth-buster) · 8 things partners feel · NNN debate: watch but don't finish · 42% of young men almost daily (IFS 2026, NNN) · 15 years in, 5 out: 7 lessons (composite)
+- 17-11-26 Tanmay: p*rn made you insecure about your body · "I can stop whenever" Day 17 (harsh) · 24 hours after saying no (NNN) · rejection → p*rn · how often is too often: 5 tests (debate)
+- 17-11-26 Yash: friends quit NNN, keep going solo · letter to your Day 1 self (NNN) · your boyfriend has a p*rn problem (partners) · p*rn changes how you see women · is p*rn cheating? (debate)

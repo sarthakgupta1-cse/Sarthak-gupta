@@ -33,10 +33,10 @@ Ready to quit p*rn for good? RezenIt — link in bio.
 
 #nonutnovember #nnn #quitp0rn #p0rnaddiction #nofap #pornfree #selfimprovement #rezenit
 
-## Carousel 4 — 1 in 10 men struggle to control urges - NNN shows you if you're one
-1 in 10 men can't control their urges. NNN shows if p*rn has you. What a major study found — and what your November is telling you.
+## Carousel 4 — 42% of young men watch p*rn daily or several times a week
+42% of young men watch p*rn almost every day. Normal isn't the same as fine. What a 2026 survey of 2,000 young men found.
 
-Send this to someone who keeps "failing" NNN ↗
+Send this to a friend who says "everyone watches p*rn" ↗
 
 🔖 Save this for later and ↗ send it to someone who's struggling with p*rn.
 
