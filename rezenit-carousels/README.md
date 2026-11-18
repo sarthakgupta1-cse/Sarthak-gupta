@@ -121,6 +121,9 @@ What makes them land — copy the *patterns*, never quote usernames or reproduce
 - 46% of men aged 18–39 intentionally viewed p*rn in a given week (Journal of Sex Research, nationally representative samples, 2014 data).
 - 42% of men aged 18–29 watch p*rn daily or several times a week; another 26% weekly or less (Institute for Family Studies / YouGov, 2026, 2,000 young men — advocacy-linked, say so if asked).
 - 21–37% of people with problematic p*rn use wanted treatment but didn't get it, e.g. because of cost (Bőthe et al., Addiction, 2024).
+- 26% (about 1 in 4) of men seeking help for new erectile dysfunction at one clinic were 40 or younger (Capogrosso et al., Journal of Sexual Medicine, 2013, 439 patients). One clinic, not population prevalence; doesn't prove p*rn causes ED — always say "see a doctor".
+- In 1,755 couples, bigger differences in partners' p*rn use were linked to lower relationship satisfaction and stability, less positive communication and more conflict (Willoughby et al., 2016).
+- Secret ("unknown to partner") p*rn use was linked to the user reporting lower relationship satisfaction and intimacy that day (Vaillancourt-Morel et al., 2023, daily-diary study). Short-term effect — say so.
 
 ## No repeats (user feedback 17-11-26)
 The user noticed repeated posts. Before committing, run `python3 check_repeats.py content/<today>-*.json` — it must
@@ -191,3 +194,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 17-11-26 Shalini: 5 excuses partners hear (myth-buster) · 8 things partners feel · NNN debate: watch but don't finish · 42% of young men almost daily (IFS 2026, NNN) · 15 years in, 5 out: 7 lessons (composite)
 - 17-11-26 Tanmay: p*rn made you insecure about your body · "I can stop whenever" Day 17 (harsh) · 24 hours after saying no (NNN) · rejection → p*rn · how often is too often: 5 tests (debate)
 - 17-11-26 Yash: friends quit NNN, keep going solo · letter to your Day 1 self (NNN) · your boyfriend has a p*rn problem (partners) · p*rn changes how you see women · is p*rn cheating? (debate)
+- 18-11-26 Shalini: wet dream isn't a relapse (NNN myth-buster) · NNN in a relationship: 5 things to tell her (partners) · p*rn gap in couples (Willoughby 2016) · daytime urge at work: 5 tips · stop googling "is p*rn bad" (harsh)
+- 18-11-26 Tanmay: 7 things for restless hands (NNN) · No P*rn November instead? (debate) · the conversation p*rn lets you skip · 1 in 4 new ED under 40 (Capogrosso 2013) · your excuse at 14/18/22/26 (harsh timeline)
+- 18-11-26 Yash: turning points in recovery stories (NNN, composite) · 30-second NNN check-in text · secret p*rn hits your own intimacy (2023 study) · 6 signs p*rn crept into how you talk about women · deleting the app isn't quitting (harsh)
