@@ -25,6 +25,20 @@ render.js          content JSON -> PNG slides (Playwright)
 - **Tanmay:** black, `#050508`, on all 5 carousels. Accents can vary.
 - **Yash:** deep emerald green, `#04241A`, on all 5 carousels. Accents: mint/cyan `a1` with blue or lavender `a2`.
 
+## NUMBER-LED FORMAT — the main format (user feedback 19-11-26, overrides everything below it)
+The Reddit-thread style (16–19 Nov) did not perform and is retired — don't use composite stories, debate posts or
+"what you're really looking for" essays as the default. Go back to the 10-11 style, and make EVERY carousel number-led:
+- **Slide 1 starts with a number + a list word**, then frames the problem: "5 things…", "7 ways…", "6 facts…",
+  "9 signs…", "4 mistakes…", "8 habits…", "3 reasons…", "10 lies…", "6 questions…", "5 rules…", "7 truths…",
+  "4 stages…", "5 myths…", "6 triggers…". Vary the number and the list word across the 15.
+- **Structure:** slide 1 = number hook naming the p*rn problem · slides 2–4 = the numbered points that explain
+  (interpret) the problem · slide 5 = the solution / what to do (plus save/share or comment note) · slide 6 = CTA.
+  For "facts"/"signs" lists the points are the problem and slide 5 gives the fix; for "ways"/"rules" lists slides
+  2–4 can be the steps and slide 5 the "do this tonight" summary.
+- Keep everything else from the content strategy: No Nut November framing (2+ per person through Nov 30), a real
+  number from the stats bank per person, harsh/direct tone 1–2 per person, no promotion on slides 1–5, p*rn named.
+- render.js warns "hook doesn't start with a number" — fix it.
+
 ## Content strategy (user feedback, 10-11-26) — follow on every run
 **What performed best so far:** "7 signs p*rn is quietly running your life" (239 views, 2 saves) and
 "What happens when you quit p*rn for 90 days" (202 views). Checklists/"signs" listicles and timelines win.
@@ -47,62 +61,6 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
    and send to a friend. The template adds "Save this" on slide 1, "Save for later" on 2–4 and "Send this to someone
    who's struggling" on slide 5; slide 5's note can also ask for a save/share instead of a comment.
 7. CTA (slide 6) title must fit on 2 lines; render.js warns on overflow.
-
-## Reddit inspiration (user-supplied threads, 16-11-26) — use these angles and voices
-Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
-p*rn addiction, what do I do?" (557 upvotes, 2K comments), r/selfimprovement "How I made the p*rn addiction go away",
-r/PornAddiction confessions ("destroyed my marriage", "led me to something I regret"), r/PornIsMisogyny.
-What makes them land — copy the *patterns*, never quote usernames or reproduce posts word for word:
-1. **Real-world tests, not theory.** Top AskMen answers were concrete: "choosing p*rn over a willing partner",
-   "can't stay aroused with a real person" (top comment), "watching it at work / while driving", "multiple times a
-   day", "if it interferes with your life", "a constant fight against your own mind". Make "signs" carousels this
-   specific and blunt.
-2. **The partner's side is huge.** The girlfriend thread got 2K comments. Partners' questions: Is it my fault? Why
-   does he hide accounts? Why does he get defensive? Should I stay? Make carousels *for partners* (Shalini's account
-   suits this) and *for men about what partners feel*. Thread insight: "the addiction is one thing — getting
-   defensive and dismissive when confronted is another." Don't tell people to leave or stay; give questions/signs.
-3. **Excuses called out.** "I watch it for your safety", "it's private, nothing to do with you", "it's just a
-   phase", "I can stop whenever" — commenters tore these apart. Turn each into a harsh myth-buster.
-4. **First-person recovery voice.** "How I made it go away" style: honest, specific, a turning point ("I realised it
-   wasn't p*rn I wanted, it was connection"). Write some carousels as an anonymous composite "what recovered guys
-   say" — never present it as one real person's story or invent quotes as real.
-5. **Comfort doesn't create change.** "We don't change unless we're uncomfortable"; "rock bottom is usually the
-   catalyst"; "replace the habit, one day at a time". Good harsh-but-hopeful lines.
-6. **Consequences escalate.** Confessions about broken marriages and regret drew big engagement. Use the *idea*
-   (p*rn quietly costs relationships, trust, self-respect) — no graphic or illegal-content details, ever.
-7. **Debate hooks drive comments.** "How often is too often?", "Is it cheating if you're in a relationship?",
-   "Is it OK if your partner is fine with it?" — ask the question on slide 1, give a clear take, invite replies.
-
-### Round 2 — threads that went big (user says these worked "like crazy"; adapt them, they travel to IG/TikTok)
-- **"I overcame 16 years of p*rn addiction, clean for 6 years" (r/PornAddiction, 136↑).** Format = long-haul
-  recovery story: started at 14 when the internet got fast → escalated through his 20s → symptoms list (social
-  anxiety, performance problems, brain fog, insomnia, numbing with weed, constant lying) → his marriage ended
-  *"not because of the p*rn, but because I lied"* → lessons: hiding keeps it alive; transparency is freedom;
-  grace and forgiveness free you from shame. Comments asked "what's life like 6 years later?" → answer: real
-  relationship, no more performance issues, own business. → Make "X years in, Y years out: what I learned"
-  carousels (composite voice) and "what life looks like after quitting" carousels. Hiding/lying > the act itself.
-- **"How I made the p*rn addiction go away" (r/selfimprovement, 563↑ — the biggest).** The turning point:
-  *"It's ALL THE SAME. It doesn't matter how many videos, how many different people, or how much you pay — it
-  never gives you what you actually want."* He'd spent thousands on custom content and realised every "type" he
-  chased mirrored a feeling he was avoiding. What he really wanted was connection — someone to say he's good
-  enough. Urges faded in ~2 weeks after that realisation. Top comments: "It's a search for connection" (78↑),
-  "P*rn isn't really about sex — it numbs underlying pain" (60↑), "P*rn is a coping mechanism, a symptom of
-  something else" (30↑). → The single strongest angle: **what you're really looking for isn't p*rn.** Use it
-  often, in different words: chasing novelty never lands; your "type" points to the feeling you avoid; paying more
-  doesn't fill it.
-- **"People with p*rn addiction, this may help u" (r/PornAddiction, 201↑).** Plain numbered tips that anyone can do
-  tonight: (1) urge hits → phone down, stare at a wall for 10–20 min and do nothing; (2) **reset your feed** —
-  deliberately search wholesome/cute/funny content so the algorithm stops serving suggestive posts; (3) use a
-  blocker; (4) have a purpose: *"I love someone and I don't want them to see me as an addict."* A top comment:
-  the feed reset is underrated — people quit p*rn but keep every soft trigger in their feed; outside reasons beat
-  willpower. → Short, practical, numbered "do this tonight" carousels are highly saveable.
-- **r/PornIsMisogyny caption post (326↑).** Angle: p*rn trains contempt and objectification, and partners feel it —
-  insecurity, comparing their bodies, feeling targeted. → Carousels on how p*rn changes the way you see women and
-  how partners experience it. Keep it about the viewer's habit, never shame performers or women.
-- **"My p*rn addiction led me somewhere I never imagined" (r/PornAddiction).** The *lesson only*: escalation can take
-  you places you never thought you'd go, and the shame afterwards can feel unbearable. NEVER reference minors,
-  illegal content or details. If a carousel touches despair or hopelessness, include: "If you're thinking about
-  hurting yourself, contact a crisis line or emergency services now."
 
 ## Stats bank (verified — cite the source on the slide, keep the wording hedged)
 - ~13% of web searches were for erotic content — analysis of ~400 million searches (Ogas & Gaddam, "A Billion Wicked Thoughts", 2011).
@@ -201,3 +159,60 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 19-11-26 Shalini: 36% of daily users lonely (IFS 2024, NNN) · partners: support without babysitting (NNN) · you want to feel nothing, not p*rn · healing vs self-punishment: 7 tells (NNN) · "waiting for the right moment" to tell her (harsh)
 - 19-11-26 Tanmay: 3 AM wake-up urge (NNN) · 46% of men weekly / 3 weeks off (JSR, NNN) · the 3-line urge log · 6 signs your partner already knows · "slip" every weekend = schedule (harsh myth-buster)
 - 19-11-26 Yash: holiday trips home / childhood bedroom (NNN) · tell people or keep NNN private? (debate) · 3.2–16.6% screening questions (Bőthe 2024) · the "scan" reflex · too tired to train, not for p*rn (harsh)
+
+## Archive: Reddit inspiration (retired 19-11-26 — did not perform; reference only)
+Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
+p*rn addiction, what do I do?" (557 upvotes, 2K comments), r/selfimprovement "How I made the p*rn addiction go away",
+r/PornAddiction confessions ("destroyed my marriage", "led me to something I regret"), r/PornIsMisogyny.
+What makes them land — copy the *patterns*, never quote usernames or reproduce posts word for word:
+1. **Real-world tests, not theory.** Top AskMen answers were concrete: "choosing p*rn over a willing partner",
+   "can't stay aroused with a real person" (top comment), "watching it at work / while driving", "multiple times a
+   day", "if it interferes with your life", "a constant fight against your own mind". Make "signs" carousels this
+   specific and blunt.
+2. **The partner's side is huge.** The girlfriend thread got 2K comments. Partners' questions: Is it my fault? Why
+   does he hide accounts? Why does he get defensive? Should I stay? Make carousels *for partners* (Shalini's account
+   suits this) and *for men about what partners feel*. Thread insight: "the addiction is one thing — getting
+   defensive and dismissive when confronted is another." Don't tell people to leave or stay; give questions/signs.
+3. **Excuses called out.** "I watch it for your safety", "it's private, nothing to do with you", "it's just a
+   phase", "I can stop whenever" — commenters tore these apart. Turn each into a harsh myth-buster.
+4. **First-person recovery voice.** "How I made it go away" style: honest, specific, a turning point ("I realised it
+   wasn't p*rn I wanted, it was connection"). Write some carousels as an anonymous composite "what recovered guys
+   say" — never present it as one real person's story or invent quotes as real.
+5. **Comfort doesn't create change.** "We don't change unless we're uncomfortable"; "rock bottom is usually the
+   catalyst"; "replace the habit, one day at a time". Good harsh-but-hopeful lines.
+6. **Consequences escalate.** Confessions about broken marriages and regret drew big engagement. Use the *idea*
+   (p*rn quietly costs relationships, trust, self-respect) — no graphic or illegal-content details, ever.
+7. **Debate hooks drive comments.** "How often is too often?", "Is it cheating if you're in a relationship?",
+   "Is it OK if your partner is fine with it?" — ask the question on slide 1, give a clear take, invite replies.
+
+### Round 2 — threads that went big (user says these worked "like crazy"; adapt them, they travel to IG/TikTok)
+- **"I overcame 16 years of p*rn addiction, clean for 6 years" (r/PornAddiction, 136↑).** Format = long-haul
+  recovery story: started at 14 when the internet got fast → escalated through his 20s → symptoms list (social
+  anxiety, performance problems, brain fog, insomnia, numbing with weed, constant lying) → his marriage ended
+  *"not because of the p*rn, but because I lied"* → lessons: hiding keeps it alive; transparency is freedom;
+  grace and forgiveness free you from shame. Comments asked "what's life like 6 years later?" → answer: real
+  relationship, no more performance issues, own business. → Make "X years in, Y years out: what I learned"
+  carousels (composite voice) and "what life looks like after quitting" carousels. Hiding/lying > the act itself.
+- **"How I made the p*rn addiction go away" (r/selfimprovement, 563↑ — the biggest).** The turning point:
+  *"It's ALL THE SAME. It doesn't matter how many videos, how many different people, or how much you pay — it
+  never gives you what you actually want."* He'd spent thousands on custom content and realised every "type" he
+  chased mirrored a feeling he was avoiding. What he really wanted was connection — someone to say he's good
+  enough. Urges faded in ~2 weeks after that realisation. Top comments: "It's a search for connection" (78↑),
+  "P*rn isn't really about sex — it numbs underlying pain" (60↑), "P*rn is a coping mechanism, a symptom of
+  something else" (30↑). → The single strongest angle: **what you're really looking for isn't p*rn.** Use it
+  often, in different words: chasing novelty never lands; your "type" points to the feeling you avoid; paying more
+  doesn't fill it.
+- **"People with p*rn addiction, this may help u" (r/PornAddiction, 201↑).** Plain numbered tips that anyone can do
+  tonight: (1) urge hits → phone down, stare at a wall for 10–20 min and do nothing; (2) **reset your feed** —
+  deliberately search wholesome/cute/funny content so the algorithm stops serving suggestive posts; (3) use a
+  blocker; (4) have a purpose: *"I love someone and I don't want them to see me as an addict."* A top comment:
+  the feed reset is underrated — people quit p*rn but keep every soft trigger in their feed; outside reasons beat
+  willpower. → Short, practical, numbered "do this tonight" carousels are highly saveable.
+- **r/PornIsMisogyny caption post (326↑).** Angle: p*rn trains contempt and objectification, and partners feel it —
+  insecurity, comparing their bodies, feeling targeted. → Carousels on how p*rn changes the way you see women and
+  how partners experience it. Keep it about the viewer's habit, never shame performers or women.
+- **"My p*rn addiction led me somewhere I never imagined" (r/PornAddiction).** The *lesson only*: escalation can take
+  you places you never thought you'd go, and the shame afterwards can feel unbearable. NEVER reference minors,
+  illegal content or details. If a carousel touches despair or hopelessness, include: "If you're thinking about
+  hurting yourself, contact a crisis line or emergency services now."
+

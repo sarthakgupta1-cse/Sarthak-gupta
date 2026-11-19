@@ -171,6 +171,8 @@ function writeManifest(outDir) {
     const said = sl => /p\*rn/i.test(text(sl));
     if (c.slides.some(sl => /\bporn/i.test(text(sl)))) console.warn(`WARN uncensored word: carousel ${n + 1} — write "p*rn"`);
     if (!said(c.slides[0])) console.warn(`WARN hook doesn't say p*rn: carousel ${n + 1} — name the topic on slide 1`);
+    // Number-led hooks perform best ("5 things…", "7 ways…", "6 facts…"): the hook must start with a number.
+    if (!/^\s*["“]?\d/.test(text({ title: c.slides[0].title }).replace(/\[\[|\]\]/g, ''))) console.warn(`WARN hook doesn't start with a number: carousel ${n + 1} — use "N ways/things/facts…"`);
     // Slides 1–5 must help, not sell: no app or feature promotion before the CTA slide.
     c.slides.slice(0, 5).forEach((sl, k) => { if (/rezenit|panic button|in (your|the) app|download/i.test(text(sl))) console.warn(`WARN promo on slide ${k + 1}: carousel ${n + 1} — keep the app for slide 6`); });
     const mentions = c.slides.slice(1, 5).filter(said).length;
