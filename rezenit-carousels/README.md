@@ -124,6 +124,7 @@ What makes them land — copy the *patterns*, never quote usernames or reproduce
 - 26% (about 1 in 4) of men seeking help for new erectile dysfunction at one clinic were 40 or younger (Capogrosso et al., Journal of Sexual Medicine, 2013, 439 patients). One clinic, not population prevalence; doesn't prove p*rn causes ED — always say "see a doctor".
 - In 1,755 couples, bigger differences in partners' p*rn use were linked to lower relationship satisfaction and stability, less positive communication and more conflict (Willoughby et al., 2016).
 - Secret ("unknown to partner") p*rn use was linked to the user reporting lower relationship satisfaction and intimacy that day (Vaillancourt-Morel et al., 2023, daily-diary study). Short-term effect — say so.
+- 36% of daily p*rn users said they feel lonely all or most of the time, vs 20% of those who rarely or never watch (Institute for Family Studies / YouGov, Sept 2024). Correlational — loneliness and p*rn may feed each other.
 
 ## No repeats (user feedback 17-11-26)
 The user noticed repeated posts. Before committing, run `python3 check_repeats.py content/<today>-*.json` — it must
@@ -197,3 +198,6 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 18-11-26 Shalini: wet dream isn't a relapse (NNN myth-buster) · NNN in a relationship: 5 things to tell her (partners) · p*rn gap in couples (Willoughby 2016) · daytime urge at work: 5 tips · stop googling "is p*rn bad" (harsh)
 - 18-11-26 Tanmay: 7 things for restless hands (NNN) · No P*rn November instead? (debate) · the conversation p*rn lets you skip · 1 in 4 new ED under 40 (Capogrosso 2013) · your excuse at 14/18/22/26 (harsh timeline)
 - 18-11-26 Yash: turning points in recovery stories (NNN, composite) · 30-second NNN check-in text · secret p*rn hits your own intimacy (2023 study) · 6 signs p*rn crept into how you talk about women · deleting the app isn't quitting (harsh)
+- 19-11-26 Shalini: 36% of daily users lonely (IFS 2024, NNN) · partners: support without babysitting (NNN) · you want to feel nothing, not p*rn · healing vs self-punishment: 7 tells (NNN) · "waiting for the right moment" to tell her (harsh)
+- 19-11-26 Tanmay: 3 AM wake-up urge (NNN) · 46% of men weekly / 3 weeks off (JSR, NNN) · the 3-line urge log · 6 signs your partner already knows · "slip" every weekend = schedule (harsh myth-buster)
+- 19-11-26 Yash: holiday trips home / childhood bedroom (NNN) · tell people or keep NNN private? (debate) · 3.2–16.6% screening questions (Bőthe 2024) · the "scan" reflex · too tired to train, not for p*rn (harsh)
