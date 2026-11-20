@@ -1,0 +1,71 @@
+{
+  "date": "14-11-26",
+  "owner": "Tanmay",
+  "carousels": [
+    {
+      "name": "If you quit NNN now you'll regret it on Nov 30",
+      "seed": 2601,
+      "theme": { "bg": "#050508", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 14", "title": "Quit today and on November 30 [[you'll wish you hadn't.]]", "sub": "Two weeks of work. Don't trade it for ten minutes of p*rn." },
+        { "type": "point", "num": "14", "title": "Days of [[proof]]", "body": "14 days without p*rn means you've already beaten the hardest week.\n\n<b>Throwing that away isn't a break. It's a reset to zero.</b>" },
+        { "type": "point", "num": "01", "title": "The [[math]]", "body": "P*rn: 10 minutes of relief.\nCost: 14 days, your confidence, and the guilt tomorrow.\n\n<b>Worst trade you'll make all month.</b>" },
+        { "type": "point", "num": "02", "title": "Picture [[Day 30]]", "body": "November 30. You made it. Clean month without p*rn.\n\n<b>Or November 30, starting over again. You choose tonight.</b>" },
+        { "type": "list", "title": "When the urge [[hits]]", "items": ["<b>Say it out loud:</b> \"14 days. Not for this.\"", "<b>Leave the room</b> immediately.", "<b>Do 20 push-ups.</b>", "<b>Text your NNN partner.</b>"], "note": "Still in at Day 14? Comment \"16 TO GO\" 👇" },
+        { "type": "cta", "title": "Protect your streak\n[[with RezenIt.]]", "lead": "A p*rn blocker, streaks you'll hate to lose and a panic button for the moment you want to quit.", "features": ["P*rn blocker", "Streaks", "Panic button"] }
+      ]
+    },
+    {
+      "name": "6 signs you're on the edge of an NNN relapse",
+      "seed": 2603,
+      "theme": { "bg": "#050508", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Halfway", "title": "6 signs you're one bad night from [[a p*rn relapse.]]", "sub": "Halfway is where people get careless. Check yourself." },
+        { "type": "list", "title": "Signs [[1–3]]", "items": ["<b>You're thinking about p*rn</b> more than last week, not less.", "<b>You've started saying</b> \"I've proved my point.\"", "<b>You're staying up later</b> every night."] },
+        { "type": "list", "marks": ["4", "5", "6"], "title": "Signs [[4–6]]", "items": ["<b>You stopped working out</b> or going out.", "<b>You turned off</b> a blocker \"temporarily.\"", "<b>You're looking at</b> \"almost p*rn\" again."] },
+        { "type": "point", "title": "Two or more = [[red alert]].", "body": "A p*rn relapse isn't a sudden event. It's the end of a slide you didn't stop.\n\n<b>Stop it tonight.</b>" },
+        { "type": "list", "title": "Emergency [[reset]]", "items": ["<b>Turn every blocker</b> back on.", "<b>Plan tonight hour by hour.</b>", "<b>Tell someone</b> you're struggling.", "<b>Sleep early</b> — tiredness feeds p*rn urges."], "note": "Send this to your NNN partner — check each other tonight ↗" },
+        { "type": "cta", "title": "Stop the slide\n[[before p*rn wins.]]", "lead": "RezenIt's daily check-ins, journaling and panic button catch the warning signs early.", "features": ["Check-ins", "Journaling", "Panic button"] }
+      ]
+    },
+    {
+      "name": "Weak men watch p*rn? No. Tired men do.",
+      "seed": 2607,
+      "theme": { "bg": "#050508", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Uncomfortable truth", "title": "You're not weak for watching p*rn. [[You're running on empty.]]", "sub": "Exhaustion makes p*rn hard to resist. Fix the tank." },
+        { "type": "point", "num": "01", "title": "Tired = [[impulsive]]", "body": "When you're exhausted, impulse control drops.\n\n<b>Few people relapse on p*rn at 10 AM. Many do at 2 AM.</b>" },
+        { "type": "point", "num": "02", "title": "Stress [[drains]] you", "body": "A hard day empties your willpower before evening.\n\nBy night, p*rn feels like the only easy thing left." },
+        { "type": "point", "num": "03", "title": "Fill the [[tank]]", "body": "Sleep, food, movement, real breaks.\n\n<b>A rested man says no to p*rn far more easily than a drained one.</b>" },
+        { "type": "list", "title": "Refuel [[daily]]", "items": ["<b>Sleep 7–8 hours</b> — non-negotiable.", "<b>Eat real meals</b>, not snacks at midnight.", "<b>Move</b> for 20 minutes.", "<b>Take one real break</b> — no screen."], "note": "Save this for the next night you're running on empty 🔖" },
+        { "type": "cta", "title": "Refuel.\n[[Quit p*rn with RezenIt.]]", "lead": "Guided audio for rest, daily actions for energy and a p*rn blocker for the nights you're drained.", "features": ["Guided audio", "Daily actions", "P*rn blocker"] }
+      ]
+    },
+    {
+      "name": "13% of all web searches",
+      "seed": 2609,
+      "theme": { "bg": "#050508", "a1": "#FFB3E6", "a2": "#8FB4FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Real numbers", "title": "About [[1 in 8]] web searches were for p*rn-type content.", "sub": "That's why quitting feels like swimming against the internet." },
+        { "type": "point", "num": "13%", "title": "Of all [[searches]]", "body": "An analysis of ~400 million web searches found about <b>13% were for erotic content</b> (Ogas & Gaddam, A Billion Wicked Thoughts, 2011)." },
+        { "type": "point", "num": "01", "title": "It's [[everywhere]]", "body": "Search bars, feeds, ads, suggested videos.\n\nP*rn isn't hiding. <b>You have to build your own walls.</b>" },
+        { "type": "point", "num": "02", "title": "It's [[not]] just you", "body": "If the whole internet leans this way, struggling with p*rn isn't a personal defect.\n\n<b>But fighting back is still your job.</b>" },
+        { "type": "list", "title": "Build your [[walls]]", "items": ["<b>Block p*rn</b> on every device.", "<b>SafeSearch</b> on every browser.", "<b>Mute</b> accounts that drift toward p*rn.", "<b>Phone out</b> of the bedroom."], "note": "Save this and send it to someone who thinks quitting p*rn should be easy ↗" },
+        { "type": "cta", "title": "Build your walls\n[[with RezenIt.]]", "lead": "RezenIt's p*rn blocker turns your phone into a safe space, with streaks for every day you stay clear.", "features": ["P*rn blocker", "Streaks", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "What to do in the first 5 minutes after waking up",
+      "seed": 2611,
+      "theme": { "bg": "#050508", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Weekend mornings", "title": "Your first 5 minutes awake decide [[whether p*rn gets your morning.]]", "sub": "Minute by minute. Save it for tomorrow." },
+        { "type": "point", "phase": "Minute 1", "progress": 1, "title": "Feet on the [[floor]]", "body": "Don't reach for your phone. Don't lie there scrolling.\n\n<b>Lying in bed with your phone is how morning p*rn starts.</b>" },
+        { "type": "point", "phase": "Minute 2", "progress": 2, "title": "Light and [[water]]", "body": "Open the curtains. Drink a glass of water.\n\nWake your body up before your phone wakes your cravings." },
+        { "type": "point", "phase": "Minutes 3–4", "progress": 3, "title": "[[Move]]", "body": "20 push-ups, a stretch, a quick walk.\n\n<b>Movement shifts your state fast.</b>" },
+        { "type": "point", "phase": "Minute 5", "progress": 4, "title": "One [[intention]]", "body": "\"Today I will ___ instead of p*rn.\"\n\nThen — and only then — pick up your phone.", "note": "Try it tomorrow morning and comment how it went 👇" },
+        { "type": "cta", "title": "Own your mornings\n[[with RezenIt.]]", "lead": "Daily actions for your morning routine, a 24/7 p*rn blocker and streaks from the moment you wake up.", "features": ["Daily actions", "P*rn blocker", "Streaks"] }
+      ]
+    }
+  ]
+}

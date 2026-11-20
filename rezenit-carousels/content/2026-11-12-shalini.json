@@ -1,0 +1,71 @@
+{
+  "date": "12-11-26",
+  "owner": "Shalini",
+  "carousels": [
+    {
+      "name": "6 signs No Nut November is working",
+      "seed": 1901,
+      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 12", "title": "6 signs quitting p*rn this month [[is actually working.]]", "sub": "Day 12 and doubting it? Check these first." },
+        { "type": "list", "title": "Signs [[1–3]]", "items": ["<b>P*rn urges come in waves</b> now — not all day.", "<b>You catch yourself</b> before opening a tab, not after.", "<b>Mornings feel lighter</b> without the guilt."] },
+        { "type": "list", "marks": ["4", "5", "6"], "title": "Signs [[4–6]]", "items": ["<b>You notice triggers</b> you never saw before.", "<b>Real conversations</b> feel a little easier.", "<b>You're thinking about life after NNN</b> — not just counting days."] },
+        { "type": "point", "title": "Small signs [[count]].", "body": "The big changes people describe come later. Right now, the wins are quiet.\n\n<b>Quiet wins are still wins against p*rn.</b>" },
+        { "type": "point", "title": "Don't stop at [[the good part]].", "body": "Many people quit right when the signs start showing — because it suddenly feels \"under control.\"\n\n<b>That's exactly when p*rn sneaks back.</b>", "note": "How many signs do you see? Save this and recheck on Day 30 🔖" },
+        { "type": "cta", "title": "Keep the signs coming\n[[with RezenIt.]]", "lead": "Track every p*rn-free day, journal your wins and follow a guided recovery program past November.", "features": ["Streaks", "Journaling", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "If you can't go 12 days, p*rn is the boss",
+      "seed": 1903,
+      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 12", "title": "Can't go 12 days without p*rn? [[Then you're not in charge. P*rn is.]]", "sub": "Harsh? Yes. Also true." },
+        { "type": "point", "num": "01", "title": "\"I [[could]] stop if I wanted.\"", "body": "Then why haven't you?\n\nIf you've tried to quit p*rn and failed, <b>\"I could stop\" is just a story.</b>" },
+        { "type": "point", "num": "02", "title": "Who [[decides]] your nights?", "body": "You plan to sleep early. P*rn decides you're up until 2.\n\n<b>That's not freedom. That's taking orders.</b>" },
+        { "type": "point", "num": "03", "title": "Take the [[power]] back", "body": "Control isn't a feeling. It's a set of decisions you make before the urge shows up.\n\n<b>Blocks, routines, people. Not hope.</b>" },
+        { "type": "list", "title": "Be the [[boss]] again", "items": ["<b>Admit it:</b> p*rn has been in charge.", "<b>Make p*rn hard to reach</b> — block it tonight.", "<b>Decide your evenings</b> in the morning.", "<b>Answer to someone</b> who'll ask how you're doing."], "note": "Who's in charge tonight — you or p*rn? Comment \"ME\" and mean it 👇" },
+        { "type": "cta", "title": "Take back control\n[[with RezenIt.]]", "lead": "A p*rn blocker, daily check-ins and 1-on-1 accountability so you call the shots — not p*rn.", "features": ["P*rn blocker", "Check-ins", "Accountability"] }
+      ]
+    },
+    {
+      "name": "3.2% sounds small. It's millions of people.",
+      "seed": 1907,
+      "theme": { "bg": "#0B1A3A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "82,243 people · 42 countries", "title": "\"Only\" 3.2% are at risk of p*rn addiction. [[That's millions of people.]]", "sub": "What the largest international study really means." },
+        { "type": "point", "num": "3.2%", "title": "The [[conservative]] number", "body": "In the International Sex Survey (Bőthe et al., 2024), <b>3.2% of 82,243 people</b> were at risk of problematic p*rn use — on the strictest measure." },
+        { "type": "point", "num": "16.6%", "title": "On [[other]] measures", "body": "Using other screening tools, the same study found rates <b>up to 16.6%</b> — with men reporting the highest levels of problematic p*rn use." },
+        { "type": "point", "num": "01", "title": "Percentages [[hide]] people", "body": "Even 3% of adults worldwide is tens of millions of people struggling with p*rn.\n\n<b>You're not a rare case. You're one of many.</b>" },
+        { "type": "point", "title": "Numbers don't [[heal]] you.", "body": "Knowing you're not alone helps. Doing something about p*rn helps more.\n\n<b>Be a statistic that recovers.</b>", "note": "Send this to someone who thinks they're the only one ↗" },
+        { "type": "cta", "title": "One of millions.\n[[Ready to recover?]]", "lead": "RezenIt: a science-informed p*rn recovery program, an anonymous community and tools that work.", "features": ["Recovery program", "Community", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "What you get back: 1 day, 1 week, 1 month without p*rn",
+      "seed": 1909,
+      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Save this for motivation", "title": "What you get back after [[1 day, 1 week and 1 month]] without p*rn.", "sub": "What people in recovery say they noticed first." },
+        { "type": "point", "phase": "1 day", "progress": 1, "title": "Your [[night]]", "body": "One evening that's actually yours. Sleep without the 2 AM scroll.\n\n<b>Small — but it's the first brick.</b>" },
+        { "type": "point", "phase": "1 week", "progress": 2, "title": "Your [[mornings]]", "body": "No starting the day with guilt. Many people describe waking up a little lighter after a week without p*rn." },
+        { "type": "point", "phase": "2 weeks", "progress": 3, "title": "Your [[attention]]", "body": "Fewer hours lost to p*rn means more time for training, work, people.\n\n<b>You notice how much time you actually had.</b>" },
+        { "type": "point", "phase": "1 month", "progress": 4, "title": "Your [[self-respect]]", "body": "30 days of keeping a promise to yourself changes how you see yourself.\n\nMany say that's <b>the biggest win of quitting p*rn.</b>", "note": "What have you gotten back so far? Comment it 👇" },
+        { "type": "cta", "title": "Get your life back\n[[from p*rn.]]", "lead": "RezenIt tracks every p*rn-free day and shows how far you've come — with a guided program for each step.", "features": ["Streaks", "Habit tracking", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "7 things nobody tells you about quitting p*rn",
+      "seed": 1911,
+      "theme": { "bg": "#0A1A30", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "The honest version", "title": "7 things nobody tells you about [[quitting p*rn.]]", "sub": "#5 surprises almost everyone." },
+        { "type": "list", "title": "Things [[1–3]]", "items": ["<b>It gets boring</b> before it gets better.", "<b>You'll miss p*rn</b> — and that's normal, not failure.", "<b>Your emotions get louder</b> without p*rn to numb them."] },
+        { "type": "list", "marks": ["4", "5"], "title": "Things [[4–5]]", "items": ["<b>Your sleep may feel weird</b> for a while.", "<b>You'll realize how often</b> you used p*rn without even wanting it."] },
+        { "type": "list", "marks": ["6", "7"], "title": "Things [[6–7]]", "items": ["<b>The benefits are quiet</b> — no fireworks, just a better life.", "<b>You'll want to tell people</b> — and some of them will say \"me too.\""] },
+        { "type": "point", "title": "Expect it. [[Push through.]]", "body": "Knowing what's coming makes it less scary.\n\n<b>None of these mean quitting p*rn isn't working.</b>", "note": "Which one surprised you most? Send this to someone starting today ↗" },
+        { "type": "cta", "title": "Quit p*rn\n[[with your eyes open.]]", "lead": "RezenIt's lessons explain every stage of quitting p*rn, with an AI coach for the surprises.", "features": ["Learn the truth", "AI coach", "Recovery program"] }
+      ]
+    }
+  ]
+}

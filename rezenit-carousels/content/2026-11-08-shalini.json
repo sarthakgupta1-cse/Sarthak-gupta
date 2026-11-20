@@ -1,0 +1,71 @@
+{
+  "date": "08-11-26",
+  "owner": "Shalini",
+  "carousels": [
+    {
+      "name": "3 p*rn habits researchers link to addiction",
+      "seed": 701,
+      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "slides": [
+        { "type": "hook", "kicker": "What the research says", "title": "3 p*rn habits researchers link to [[p*rn addiction.]]", "sub": "If you do #2, you'll recognize yourself instantly." },
+        { "type": "point", "num": "01", "title": "[[Binge]] sessions", "body": "Not a few minutes — hours of p*rn in one sitting, often late at night.\n\nResearchers studying problematic p*rn use see this pattern again and again." },
+        { "type": "point", "num": "02", "title": "Tab [[jumping]]", "body": "Ten tabs open. Never finishing one video before searching for the next.\n\nThat endless hunt for something newer is <b>a key marker of compulsive p*rn use.</b>" },
+        { "type": "point", "num": "03", "title": "Needing [[more]]", "body": "More time, more videos, more intense p*rn to feel the same thing.\n\nA 2025 study of over 2,000 men linked this kind of tolerance to <b>losing control over p*rn use.</b>" },
+        { "type": "point", "title": "Recognize [[yourself?]]", "body": "These patterns don't make you broken. They're signals that p*rn has more control than you'd like.\n\n<b>Signals can be acted on.</b>", "note": "Which of the 3 do you see in yourself? Comment the number 👇" },
+        { "type": "cta", "title": "Spot the pattern.\n[[Break the p*rn loop.]]", "lead": "Block p*rn completely, track your streak and learn what p*rn addiction does to your brain.", "features": ["P*rn blocker", "Streaks", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "A p*rn relapse starts days before the screen",
+      "seed": 703,
+      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "Catch it early", "title": "Your p*rn relapse started [[3 days before]] you opened the tab.", "sub": "The warning signs nobody notices — until it's too late." },
+        { "type": "point", "num": "01", "title": "It starts with [[feelings]]", "body": "Stress builds. You feel lonely, irritable or flat.\n\nAddiction clinics describe this emotional stage as what <b>often comes before a p*rn relapse.</b>" },
+        { "type": "point", "num": "02", "title": "Then the [[thinking]] changes", "body": "\"I've been good, I deserve a break.\" \"Just a quick look won't hurt.\"\n\nYour brain starts <b>making the case for p*rn.</b>" },
+        { "type": "point", "num": "03", "title": "Then the [[guard]] drops", "body": "Phone back in bed. Blocker \"just for a minute\" off. Skipping check-ins.\n\nBy the time you open p*rn, <b>the relapse is already halfway done.</b>" },
+        { "type": "list", "title": "Stop it [[early]]", "items": ["<b>Notice your mood</b> dropping for 2+ days.", "<b>Catch the \"I deserve it\"</b> thoughts about p*rn.", "<b>Never loosen guardrails</b> on a bad week.", "<b>Tell someone</b> before it gets to the screen."], "note": "What's YOUR early warning sign? Share it below 👇" },
+        { "type": "cta", "title": "Catch the p*rn relapse\n[[before it starts.]]", "lead": "Daily journaling to spot your patterns, check-ins with real people and a panic button for the urge.", "features": ["Journaling", "Check-ins", "Panic button"] }
+      ]
+    },
+    {
+      "name": "The 6 PM p*rn trigger: coming home",
+      "seed": 707,
+      "theme": { "bg": "#0B1A3A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "The trigger nobody names", "title": "You walk in the door. Bag down. [[P*rn urge on.]]", "sub": "Why getting home is one of the riskiest moments of the day." },
+        { "type": "point", "num": "01", "title": "The [[switch-off]] moment", "body": "All day you hold it together. The second you're home, the pressure drops.\n\nFor many people, that's exactly when <b>the p*rn urge shows up.</b>" },
+        { "type": "point", "num": "02", "title": "Empty room, [[empty]] evening", "body": "Nobody around, nothing planned, phone in your hand.\n\nP*rn becomes the default way to <b>\"decompress\" after work.</b>" },
+        { "type": "point", "num": "03", "title": "Build a new [[ritual]]", "body": "Your brain needs a different signal that the day is over.\n\nReplace the p*rn ritual with one you choose — <b>before you even sit down.</b>" },
+        { "type": "list", "title": "Your [[coming-home]] routine", "items": ["<b>Change clothes</b> the moment you walk in.", "<b>Shower or work out</b> before touching your phone.", "<b>Leave the phone</b> charging by the door for 30 minutes.", "<b>Plan the evening</b> on your way home."], "note": "When does your p*rn urge hit hardest? Comment the time 👇" },
+        { "type": "cta", "title": "Come home to yourself,\n[[not to p*rn.]]", "lead": "Daily actions, a p*rn blocker for your evenings and streaks that grow every night you stay clean.", "features": ["Daily actions", "P*rn blocker", "Streaks"] }
+      ]
+    },
+    {
+      "name": "Is p*rn addiction real? What science says",
+      "seed": 709,
+      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "slides": [
+        { "type": "hook", "kicker": "The honest answer", "title": "\"P*rn addiction isn't real.\" [[Here's what science actually says.]]", "sub": "And why the label matters less than you think." },
+        { "type": "point", "num": "01", "title": "It's [[officially]] recognized", "body": "The WHO's ICD-11 includes <b>compulsive sexual behaviour disorder</b> — and compulsive p*rn use is one of the ways it shows up." },
+        { "type": "point", "num": "02", "title": "The [[debate]] is about the word", "body": "Researchers still argue whether to call it \"p*rn addiction\" or \"problematic p*rn use.\"\n\nWhat they agree on: <b>loss of control is real for many people.</b>" },
+        { "type": "point", "num": "03", "title": "You don't need a [[label]]", "body": "If p*rn takes time, energy or confidence you want back, that's reason enough.\n\n<b>You don't need a diagnosis to decide to stop.</b>" },
+        { "type": "list", "title": "Ask yourself [[honestly]]", "items": ["<b>Have I tried to quit p*rn</b> and failed?", "<b>Do I watch more p*rn</b> than I planned?", "<b>Does p*rn affect</b> my mood, sleep or relationships?", "<b>Do I hide it</b> from people close to me?"], "note": "Do you think p*rn addiction is real? Tell us why 👇" },
+        { "type": "cta", "title": "Real or not —\n[[you can quit p*rn.]]", "lead": "Science-informed tools and guided lessons about p*rn addiction, built for shame-free progress.", "features": ["Learn the truth", "Recovery program", "AI coach"] }
+      ]
+    },
+    {
+      "name": "P*rn for anxiety: the relief that makes it worse",
+      "seed": 711,
+      "theme": { "bg": "#0A1A30", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "If you use it to calm down", "title": "You watch p*rn to calm your anxiety. [[It's making it worse.]]", "sub": "The relief loop that keeps so many people stuck." },
+        { "type": "point", "num": "01", "title": "Quick [[relief]]", "body": "Anxious, overwhelmed, can't switch off — p*rn gives a few minutes of escape.\n\nThat relief is real. <b>That's why it's so hard to stop.</b>" },
+        { "type": "point", "num": "02", "title": "Then the [[crash]]", "body": "Guilt, shame, wasted time — and the original worry is still there.\n\nMany people say they feel <b>more anxious after p*rn</b>, not less." },
+        { "type": "chain", "title": "The anxiety–p*rn [[loop]]", "steps": ["Anxiety", "P*rn", "Shame", "More anxiety", "More p*rn"], "body": "P*rn doesn't fix the anxiety. <b>It feeds it.</b>" },
+        { "type": "list", "title": "Calm down [[without]] p*rn", "items": ["<b>Breathe slowly:</b> in for 4, out for 6.", "<b>Move</b> for 10 minutes.", "<b>Write down</b> what you're anxious about.", "<b>Talk to someone</b> — or a professional if it's constant."], "note": "Do you use p*rn when you're anxious? Be honest 👇" },
+        { "type": "cta", "title": "Real calm.\n[[No p*rn needed.]]", "lead": "Guided audio sessions for anxious moments, a panic button for urges and an AI coach to talk it through.", "features": ["Guided audio", "Panic button", "AI coach"] }
+      ]
+    }
+  ]
+}

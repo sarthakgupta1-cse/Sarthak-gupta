@@ -1,0 +1,71 @@
+{
+  "date": "10-11-26",
+  "owner": "Tanmay",
+  "carousels": [
+    {
+      "name": "Your p*rn recovery isn't a leaderboard",
+      "seed": 1401,
+      "theme": { "bg": "#050508", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "For the comparison guys", "title": "Someone's on Day 300. You're on Day 3. [[Quitting p*rn isn't a race.]]", "sub": "Why comparing streaks can hurt your recovery." },
+        { "type": "point", "num": "01", "title": "The [[comparison]] trap", "body": "Scrolling other people's p*rn-free streaks can make your own progress feel worthless.\n\n<b>That feeling pushes people toward relapse, not away from it.</b>" },
+        { "type": "point", "num": "02", "title": "You don't see their [[story]]", "body": "Their triggers, their past, their support — all different from yours.\n\n<b>Day 3 after 10 years of p*rn is a big deal.</b>" },
+        { "type": "point", "num": "03", "title": "Compete with [[yesterday]]", "body": "The only fair comparison: you vs. you last month.\n\nFewer p*rn urges? Faster bounce-back? <b>That's progress.</b>" },
+        { "type": "list", "title": "Use community [[right]]", "items": ["<b>Share struggles</b>, not just streak numbers.", "<b>Celebrate others</b> without measuring yourself.", "<b>Mute</b> anything that makes you feel behind.", "<b>Track your own</b> p*rn recovery wins."], "note": "What day are you on? Every number is welcome here 👇" },
+        { "type": "cta", "title": "Your p*rn recovery.\n[[Your pace.]]", "lead": "An anonymous, supportive community and private streaks that measure you against you.", "features": ["Community", "Streaks", "Journaling"] }
+      ]
+    },
+    {
+      "name": "P*rn addiction in your 20s: the decade it steals",
+      "seed": 1403,
+      "theme": { "bg": "#050508", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "Read this in your 20s", "title": "Your 20s are too important [[to lose to p*rn.]]", "sub": "The decade you build everything — don't spend it alone with a screen." },
+        { "type": "point", "num": "01", "title": "The [[building]] decade", "body": "Career, friendships, relationships, health, confidence — most of it gets built in your 20s.\n\nP*rn addiction <b>quietly takes hours from all of it.</b>" },
+        { "type": "point", "num": "02", "title": "Real life feels [[harder]]", "body": "Dating, risk, rejection — real life is messy.\n\nP*rn is easy. That's exactly why it can <b>keep you from the real thing.</b>" },
+        { "type": "point", "num": "03", "title": "Habits [[harden]]", "body": "The p*rn habits you build at 22 tend to follow you to 32.\n\n<b>The earlier you quit, the easier it usually is.</b>" },
+        { "type": "list", "title": "Invest your 20s [[instead]]", "items": ["<b>Your body:</b> train 3x a week.", "<b>Your skills:</b> one thing you get paid for.", "<b>Your people:</b> friends who push you.", "<b>Your mind:</b> quit p*rn and get clear."], "note": "How old are you, and when did you decide to quit p*rn? 👇" },
+        { "type": "cta", "title": "Take your 20s\n[[back from p*rn.]]", "lead": "A step-by-step recovery program, a p*rn blocker and streaks for every day you invest in yourself.", "features": ["Recovery program", "P*rn blocker", "Streaks"] }
+      ]
+    },
+    {
+      "name": "Reading about p*rn addiction isn't recovery",
+      "seed": 1407,
+      "theme": { "bg": "#050508", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Uncomfortable but true", "title": "You've watched 50 videos about quitting p*rn. [[Have you blocked it yet?]]", "sub": "Learning feels like progress. It isn't — until you act." },
+        { "type": "point", "num": "01", "title": "Research [[mode]]", "body": "Reading, watching, saving posts about p*rn addiction feels productive.\n\nBut it can become <b>a way to avoid actually changing.</b>" },
+        { "type": "point", "num": "02", "title": "Knowledge isn't [[action]]", "body": "You already know enough to start: block p*rn, know your triggers, tell someone.\n\n<b>The missing piece is doing it.</b>" },
+        { "type": "point", "num": "03", "title": "One action [[beats]] ten posts", "body": "Installing a p*rn blocker today does more than reading ten more carousels.\n\n<b>Including this one.</b>" },
+        { "type": "list", "title": "Do [[one]] thing now", "items": ["<b>Install a p*rn blocker</b> on your phone.", "<b>Delete</b> one app that leads you to p*rn.", "<b>Text one person:</b> \"I'm quitting p*rn.\"", "<b>Write</b> your top 3 triggers."], "note": "Which one are you doing right now? Comment it when it's done ✅" },
+        { "type": "cta", "title": "Stop reading.\n[[Start quitting p*rn.]]", "lead": "Everything in one place: a p*rn blocker, a step-by-step program and a panic button. Start in 2 minutes.", "features": ["P*rn blocker", "Recovery program", "Panic button"] }
+      ]
+    },
+    {
+      "name": "P*rn is shaping your 'type'",
+      "seed": 1409,
+      "theme": { "bg": "#050508", "a1": "#FFB3E6", "a2": "#8FB4FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Think about this", "title": "Did you choose your \"type\" — or [[did p*rn choose it for you?]]", "sub": "How p*rn can shape what you find attractive." },
+        { "type": "point", "num": "01", "title": "Repetition [[shapes]] taste", "body": "What you watch over and over can shape what excites you.\n\nYears of p*rn means <b>years of training your attraction.</b>" },
+        { "type": "point", "num": "02", "title": "Real people [[don't match]]", "body": "Many men in recovery say p*rn left them less drawn to real partners — who don't look or act like a screen.\n\n<b>That gap can hurt real relationships.</b>" },
+        { "type": "point", "num": "03", "title": "It can [[shift]] back", "body": "Many people describe their attraction to real people growing after time away from p*rn.\n\nEveryone's different — <b>but change is common.</b>" },
+        { "type": "list", "title": "Reconnect with [[real]] attraction", "items": ["<b>Take a full break</b> from p*rn.", "<b>Spend time</b> with real people, in real places.", "<b>Notice</b> what you appreciate beyond looks.", "<b>Be patient</b> — weeks, not days."], "note": "Has quitting p*rn changed what you find attractive? 👇" },
+        { "type": "cta", "title": "Real connection\n[[over p*rn.]]", "lead": "Learn how p*rn affects attraction, block it completely and track your progress back to real life.", "features": ["Learn the truth", "P*rn blocker", "Streaks"] }
+      ]
+    },
+    {
+      "name": "Your p*rn urge emergency list",
+      "seed": 1411,
+      "theme": { "bg": "#050508", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Save this. Seriously.", "title": "10 things to do the moment [[a p*rn urge hits.]]", "sub": "Pick one. Do it now. Think later." },
+        { "type": "list", "title": "Move your [[body]]", "items": ["<b>20 push-ups</b> or squats.", "<b>Walk outside</b> — even 5 minutes.", "<b>Cold water</b> on your face."] },
+        { "type": "list", "marks": ["4", "5", "6"], "title": "Change your [[place]]", "items": ["<b>Leave the room</b> you're in.", "<b>Go somewhere public</b> — kitchen, café, street.", "<b>Put your phone</b> in another room."] },
+        { "type": "list", "marks": ["7", "8", "9", "10"], "title": "Reach [[out]]", "items": ["<b>Text a friend</b> — about anything.", "<b>Call family.</b>", "<b>Hit the panic button</b> in your app.", "<b>Write</b> what you're feeling instead of opening p*rn."] },
+        { "type": "point", "title": "Speed [[wins]].", "body": "The longer you sit with a p*rn urge and your phone, the stronger it gets.\n\n<b>Act in the first minute.</b>", "note": "What's YOUR #1 move when a p*rn urge hits? 👇" },
+        { "type": "cta", "title": "Have a plan\n[[before the p*rn urge.]]", "lead": "One tap on the panic button gives you instant tools to stop p*rn urges in the moment.", "features": ["Panic button", "Guided audio", "Streaks"] }
+      ]
+    }
+  ]
+}

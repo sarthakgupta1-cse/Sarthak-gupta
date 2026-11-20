@@ -1,0 +1,71 @@
+{
+  "date": "14-11-26",
+  "owner": "Yash",
+  "carousels": [
+    {
+      "name": "Halfway through NNN: rewrite your rules",
+      "seed": 2701,
+      "theme": { "bg": "#04241A", "a1": "#6FF0C4", "a2": "#7DB8FF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 14", "title": "Halfway through No Nut November. [[Update your p*rn defenses now.]]", "sub": "What worked in week 1 won't be enough for week 3." },
+        { "type": "point", "num": "01", "title": "Review your [[close calls]]", "body": "When did you almost open p*rn these two weeks? What time, what place, what mood?\n\n<b>That's where your next relapse is waiting.</b>" },
+        { "type": "point", "num": "02", "title": "Keep what [[worked]]", "body": "The blocker? The gym? Phone out of the bedroom?\n\n<b>Make those permanent — not just November rules.</b>" },
+        { "type": "point", "num": "03", "title": "Plug the [[new]] holes", "body": "Week 3 brings boredom and overconfidence.\n\n<b>Add one new defense against p*rn for each.</b>" },
+        { "type": "list", "title": "Your [[halfway]] update", "items": ["<b>Write down</b> your 2 closest calls.", "<b>Fix both</b> this weekend.", "<b>Add a new evening plan</b> for week 3.", "<b>Decide</b> your goal after Nov 30."], "note": "Halfway there? Save this and do the update tonight 🔖" },
+        { "type": "cta", "title": "Second half.\n[[Stronger with RezenIt.]]", "lead": "Journaling to find your close calls, a p*rn blocker to fix them and streaks to Day 30.", "features": ["Journaling", "P*rn blocker", "Streaks"] }
+      ]
+    },
+    {
+      "name": "7 lies you tell yourself during No Nut November",
+      "seed": 2703,
+      "theme": { "bg": "#04241A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Call them out", "title": "7 lies your brain tells you [[to get you back to p*rn.]]", "sub": "You've heard at least 4 this week." },
+        { "type": "list", "title": "Lies [[1–4]]", "items": ["<b>\"You've earned a break.\"</b>", "<b>\"Just one look, no big deal.\"</b>", "<b>\"NNN is just a meme anyway.\"</b>", "<b>\"You'll restart tomorrow.\"</b>"] },
+        { "type": "list", "marks": ["5", "6", "7"], "title": "Lies [[5–7]]", "items": ["<b>\"Everyone else already quit.\"</b>", "<b>\"It's not even real p*rn.\"</b>", "<b>\"You can't sleep without it.\"</b>"] },
+        { "type": "point", "title": "Name the [[lie]].", "body": "When the thought shows up, say: \"That's lie #3.\"\n\nNaming it takes away much of its power. <b>P*rn relies on you believing it.</b>" },
+        { "type": "point", "title": "Then [[move]].", "body": "Don't argue with the lie for 20 minutes. Leave the room, train, call someone.\n\n<b>Action beats debate.</b>", "note": "Which lie gets you most? Comment the number 👇" },
+        { "type": "cta", "title": "See through the lies\n[[with RezenIt.]]", "lead": "An AI coach to talk back to the lies, a panic button for urges and lessons on how p*rn hooks you.", "features": ["AI coach", "Panic button", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "8 signs p*rn is affecting your confidence",
+      "seed": 2707,
+      "theme": { "bg": "#04241A", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Be honest", "title": "8 signs p*rn is [[quietly killing your confidence.]]", "sub": "Count them." },
+        { "type": "list", "title": "Signs [[1–4]]", "items": ["<b>You avoid eye contact</b> more than you used to.", "<b>You feel like</b> you're hiding something — because you are.", "<b>You compare yourself</b> to what you see in p*rn.", "<b>Approaching people</b> feels terrifying."] },
+        { "type": "list", "marks": ["5", "6", "7", "8"], "title": "Signs [[5–8]]", "items": ["<b>You break promises</b> to yourself every night.", "<b>Compliments</b> feel fake.", "<b>You feel flat</b> after watching p*rn.", "<b>You don't trust yourself</b> anymore."] },
+        { "type": "point", "title": "Confidence is [[kept promises]].", "body": "Every night you choose p*rn after saying you wouldn't, you teach yourself you can't be trusted.\n\n<b>Every night you don't, you rebuild it.</b>" },
+        { "type": "list", "title": "Rebuild it [[daily]]", "items": ["<b>One promise a day</b> — and keep it.", "<b>Train</b> — strength builds confidence.", "<b>Talk to real people</b>, awkward is fine.", "<b>Stay away from p*rn</b> — one day at a time."], "note": "How many signs did you count? Save this and recount in 30 days 🔖" },
+        { "type": "cta", "title": "Get your confidence back\n[[from p*rn.]]", "lead": "RezenIt tracks every promise you keep: streaks, habit tracking and a step-by-step recovery program.", "features": ["Streaks", "Habit tracking", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "15% saw p*rn at 10 or younger",
+      "seed": 2709,
+      "theme": { "bg": "#04241A", "a1": "#5EE7E0", "a2": "#B79BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "It started before you understood it", "title": "15% of teens saw p*rn [[at 10 or younger.]]", "sub": "If that was you — this explains a lot." },
+        { "type": "point", "num": "15%", "title": "At [[10 or younger]]", "body": "In Common Sense Media's 2023 survey of U.S. teens, <b>15% had seen p*rn at 10 or younger</b> — and 54% by 13." },
+        { "type": "point", "num": "01", "title": "Wired [[early]]", "body": "A University of Glasgow review linked earlier first exposure to p*rn with more frequent use and a higher risk of compulsive use later.\n\n<b>A link — not destiny.</b>" },
+        { "type": "point", "num": "02", "title": "It's [[not]] an excuse", "body": "How it started explains it. It doesn't excuse staying stuck.\n\n<b>You can't change age 10. You can change tonight.</b>" },
+        { "type": "list", "title": "Rewrite the [[story]]", "items": ["<b>Drop the shame</b> about how it started.", "<b>Take ownership</b> of how it ends.", "<b>Block p*rn</b> and build new habits.", "<b>Protect younger people</b> around you."], "note": "Send this to someone who started young and feels broken ↗" },
+        { "type": "cta", "title": "It started early.\n[[You can end it now.]]", "lead": "RezenIt's shame-free recovery program, p*rn blocker and lessons on how p*rn addiction forms.", "features": ["Recovery program", "P*rn blocker", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "Stop blaming your hormones",
+      "seed": 2711,
+      "theme": { "bg": "#04241A", "a1": "#7DE3F5", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Tough love", "title": "\"I'm a guy, it's natural.\" [[P*rn addiction isn't.]]", "sub": "Desire is normal. Losing control to p*rn isn't." },
+        { "type": "point", "num": "01", "title": "Desire ≠ [[addiction]]", "body": "Having a sex drive is normal and healthy.\n\nNeeding p*rn every night, hiding it and failing to stop <b>is something else.</b>" },
+        { "type": "point", "num": "02", "title": "\"Natural\" is an [[excuse]]", "body": "Hunger is natural too. Eating junk until you're sick isn't.\n\n<b>Biology explains the urge. It doesn't make p*rn the answer.</b>" },
+        { "type": "point", "num": "03", "title": "You [[decide]]", "body": "Your hormones don't open the tab. Your thumb does.\n\n<b>Own the choice — that's where the power is.</b>" },
+        { "type": "list", "title": "Handle desire [[well]]", "items": ["<b>Accept</b> desire as normal.", "<b>Reject</b> p*rn as the default outlet.", "<b>Channel energy</b> into training and goals.", "<b>Build real connection</b> with real people."], "note": "Save this for the next time you use \"it's natural\" as an excuse 🔖" },
+        { "type": "cta", "title": "Own your choices.\n[[Quit p*rn with RezenIt.]]", "lead": "A p*rn blocker, daily actions to channel your energy and an AI coach for the honest questions.", "features": ["P*rn blocker", "Daily actions", "AI coach"] }
+      ]
+    }
+  ]
+}

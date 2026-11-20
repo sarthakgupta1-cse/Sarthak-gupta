@@ -1,0 +1,71 @@
+{
+  "date": "07-11-26",
+  "owner": "Yash",
+  "carousels": [
+    {
+      "name": "5 phone settings that make relapse harder",
+      "seed": 601,
+      "theme": { "bg": "#04241A", "a1": "#6FF0C4", "a2": "#7DB8FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Do this in 5 minutes", "title": "5 phone settings that make relapse [[way harder.]]", "sub": "Your phone is set up for the habit by default. Change that." },
+        { "type": "list", "title": "Settings [[1–2]]", "items": ["<b>Turn on content restrictions</b> in Screen Time (iPhone) or Digital Wellbeing (Android).", "<b>Let someone else set the passcode</b> so you can't switch it off at 1 AM."] },
+        { "type": "list", "marks": ["3", "4"], "title": "Settings [[3–4]]", "items": ["<b>Set app limits</b> on the apps you scroll late at night.", "<b>Turn on grayscale</b> after 10 PM — a dull screen is far less tempting."] },
+        { "type": "point", "num": "05", "title": "Use [[Bedtime]] mode", "body": "Schedule Sleep or Bedtime mode so notifications and apps go quiet at night.\n\n<b>The phone tells you when it's time to stop</b> — not the other way around." },
+        { "type": "point", "title": "Friction [[wins.]]", "body": "Every extra step between you and the habit is a moment to choose differently.\n\nSet it up <b>once, while you're strong.</b>", "note": "Which setting are you turning on tonight? Comment the number 👇" },
+        { "type": "cta", "title": "Make your phone\n[[work for you.]]", "lead": "Turn your phone into a safe, distraction-free space with RezenIt's blocker, plus streaks to track every day.", "features": ["P*rn blocker", "Streaks", "Panic button"] }
+      ]
+    },
+    {
+      "name": "Ambushed by a trigger: the 3-second rule",
+      "seed": 603,
+      "theme": { "bg": "#04241A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "When it comes out of nowhere", "title": "A scene. An ad. A post. [[Use the 3-second rule.]]", "sub": "What to do when a trigger ambushes you." },
+        { "type": "point", "num": "01", "title": "Look [[away]]", "body": "The first glance isn't your fault. The second look is a choice.\n\n<b>Eyes off the screen within 3 seconds.</b>" },
+        { "type": "point", "num": "02", "title": "Name [[it]]", "body": "Say it in your head: <b>\"That's a trigger.\"</b>\n\nLabeling it puts you back in control, instead of on autopilot." },
+        { "type": "point", "num": "03", "title": "Do something [[physical]]", "body": "Stand up. Walk to another room. Splash water on your face.\n\n<b>A body in motion breaks the spell.</b>" },
+        { "type": "list", "title": "Prevent the [[next]] ambush", "items": ["<b>Skip the scene</b> or switch shows — no shame in it.", "<b>Tap \"Not interested\"</b> on triggering posts.", "<b>Mute accounts</b> that keep showing up.", "<b>Notice where</b> ambushes usually happen."], "note": "Where do triggers ambush you most? Comment it 👇" },
+        { "type": "cta", "title": "Three seconds.\n[[Then a plan.]]", "lead": "Hit the panic button for instant tools the moment a trigger hits, and journal it to spot the pattern.", "features": ["Panic button", "Journaling", "AI coach"] }
+      ]
+    },
+    {
+      "name": "Your why has to be bigger than the urge",
+      "seed": 607,
+      "theme": { "bg": "#04241A", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Before anything else", "title": "If your \"why\" is weak, [[the urge will win.]]", "sub": "The reason you're quitting needs to be bigger than the moment." },
+        { "type": "point", "num": "01", "title": "\"Because I [[should]]\" isn't enough", "body": "Vague reasons collapse at 1 AM.\n\nYou need something that <b>actually matters to you.</b>" },
+        { "type": "point", "num": "02", "title": "Make it [[personal]]", "body": "The partner you want to be present for. The confidence you want back. The man you want to become.\n\n<b>Specific beats general.</b>" },
+        { "type": "point", "num": "03", "title": "Keep it [[visible]]", "body": "A reason you can't see is a reason you'll forget.\n\nPut it on your lock screen, your mirror, your journal's first page." },
+        { "type": "list", "title": "Write your [[why]]", "items": ["<b>Finish this sentence:</b> \"I'm quitting because…\"", "<b>Add who it's for</b> — you, a partner, your future self.", "<b>Write what you'll gain</b>, not just what you'll lose.", "<b>Read it</b> when an urge hits."], "note": "Share your why in one sentence. It might help someone else 👇" },
+        { "type": "cta", "title": "Remember why\n[[you started.]]", "lead": "Journal your reasons, track your progress and get support when your why feels far away.", "features": ["Daily journal", "Streaks", "Community"] }
+      ]
+    },
+    {
+      "name": "23 days left in November: learn a skill",
+      "seed": 609,
+      "theme": { "bg": "#04241A", "a1": "#5EE7E0", "a2": "#B79BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "November challenge upgrade", "title": "Don't just avoid it this month. [[Build something.]]", "sub": "Turn the rest of November into a skill you'll keep." },
+        { "type": "point", "num": "01", "title": "Avoiding isn't [[enough]]", "body": "\"Don't do it\" leaves an empty space.\n\nA new skill gives your evenings <b>something to say yes to.</b>" },
+        { "type": "point", "num": "02", "title": "Pick [[one]] thing", "body": "Guitar. Cooking. Coding. A language. Drawing. Training for a run.\n\nOne skill, <b>20 minutes a day</b>, for the rest of the month." },
+        { "type": "point", "num": "03", "title": "Do it at your [[danger hour]]", "body": "Schedule practice for the time urges usually hit.\n\n<b>Your hardest hour becomes your growth hour.</b>" },
+        { "type": "list", "title": "Make it [[stick]]", "items": ["<b>Choose today</b> — don't wait for Monday.", "<b>Keep it small:</b> 20 minutes, not 2 hours.", "<b>Track it</b> next to your streak.", "<b>Share your progress</b> on the 30th."], "note": "What skill are you learning this month? Comment it — we'll check in 👇" },
+        { "type": "cta", "title": "Quit the habit.\n[[Build the man.]]", "lead": "Daily actions, habit tracking and streaks to keep both going all month.", "features": ["Daily actions", "Habit tracking", "Streaks"] }
+      ]
+    },
+    {
+      "name": "How to help a friend who's struggling",
+      "seed": 611,
+      "theme": { "bg": "#04241A", "a1": "#7DE3F5", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Send this to your group chat", "title": "Your friend might be [[fighting this in silence.]]", "sub": "How to help without making it weird." },
+        { "type": "point", "num": "01", "title": "It's more [[common]] than you think", "body": "Plenty of guys struggle with this and never mention it.\n\nYour friend might be one of them — <b>and waiting for someone to make it safe to talk.</b>" },
+        { "type": "point", "num": "02", "title": "Go [[first]]", "body": "Share something real about your own struggles, whatever they are.\n\n<b>Openness invites openness.</b>" },
+        { "type": "point", "num": "03", "title": "Don't [[judge]] or joke", "body": "If he opens up, don't laugh it off or lecture.\n\nSay: <b>\"Respect for telling me. How can I help?\"</b>" },
+        { "type": "list", "title": "Ways to [[help]]", "items": ["<b>Check in</b> without making it a big deal.", "<b>Invite him out</b> — gym, food, games.", "<b>Offer to be</b> his accountability partner.", "<b>Point him to tools</b> and support, not shame."], "note": "Tag a friend you'd always have the back of 👇" },
+        { "type": "cta", "title": "Quit together.\n[[Win together.]]", "lead": "1-on-1 accountability, public habit tracking a friend can see and an anonymous community.", "features": ["Accountability", "Habit tracking", "Community"] }
+      ]
+    }
+  ]
+}

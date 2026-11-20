@@ -1,0 +1,71 @@
+{
+  "date": "15-11-26",
+  "owner": "Shalini",
+  "carousels": [
+    {
+      "name": "Halfway: 15 days without p*rn",
+      "seed": 2801,
+      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 15 · Halfway", "title": "15 days without p*rn. [[You're halfway. Don't you dare stop.]]", "sub": "Read this before tonight." },
+        { "type": "point", "num": "15", "title": "Days [[behind]] you", "body": "15 nights you chose something other than p*rn.\n\n<b>The second half is easier — because you've already done the hard part.</b>" },
+        { "type": "point", "num": "01", "title": "The [[halfway]] trap", "body": "\"I've proved I can do it. One night won't matter.\"\n\n<b>Many people say that thought is what ended their NNN.</b>" },
+        { "type": "point", "num": "02", "title": "Look [[back]]", "body": "Remember Day 1? Restless, doubting, thinking about p*rn all day.\n\n<b>You're not that person anymore. Don't go back to him.</b>" },
+        { "type": "list", "title": "Second half [[rules]]", "items": ["<b>Celebrate</b> halfway — but not with p*rn.", "<b>Keep every guardrail</b> exactly as it is.", "<b>Plan week 3</b> evenings today.", "<b>Set your post-NNN goal</b>: 60 or 90 days."], "note": "Halfway? Comment \"15/30\" and keep each other going 👇" },
+        { "type": "cta", "title": "Halfway there.\n[[Finish with RezenIt.]]", "lead": "Streaks to Day 30 and beyond, daily check-ins and a panic button for the second half.", "features": ["Streaks", "Check-ins", "Panic button"] }
+      ]
+    },
+    {
+      "name": "7 signs you'll finish No Nut November",
+      "seed": 2803,
+      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Halfway check", "title": "7 signs you'll make it to Day 30 [[without p*rn.]]", "sub": "And what it means if you don't see them." },
+        { "type": "list", "title": "Signs [[1–4]]", "items": ["<b>You have a reason</b> bigger than \"it's November.\"", "<b>P*rn is blocked</b> — not just avoided.", "<b>Someone knows</b> you're doing it.", "<b>Your evenings</b> have a plan."] },
+        { "type": "list", "marks": ["5", "6", "7"], "title": "Signs [[5–7]]", "items": ["<b>You know</b> your top triggers.", "<b>You leave the room</b> when urges hit.", "<b>You've decided</b> what happens after Nov 30."] },
+        { "type": "point", "title": "Fewer than [[4]]?", "body": "You're running on willpower alone — and willpower runs out.\n\n<b>Add the missing ones today, not after a relapse.</b>" },
+        { "type": "point", "title": "Signs = [[systems]].", "body": "People who finish don't have more willpower. They have more systems between them and p*rn.\n\n<b>Build yours.</b>", "note": "How many do you have? Save this and fix the gaps tonight 🔖" },
+        { "type": "cta", "title": "Build your system\n[[with RezenIt.]]", "lead": "A p*rn blocker, accountability with real people and a recovery program that lasts past November.", "features": ["P*rn blocker", "Accountability", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "Binge, tab-jump, escalate: the 2025 study",
+      "seed": 2807,
+      "theme": { "bg": "#0B1A3A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "2,000+ men studied", "title": "Researchers found [[3 behaviors]] that predict losing control over p*rn.", "sub": "Do you do any of them?" },
+        { "type": "point", "num": "2,000+", "title": "Men [[studied]]", "body": "A 2025 study in Addictive Behaviors of <b>over 2,000 men</b> looked at which p*rn habits went with losing control." },
+        { "type": "list", "title": "The [[3 behaviors]]", "items": ["<b>Binge sessions</b> — hours of p*rn in one sitting.", "<b>Tab-jumping</b> — always searching for the next video.", "<b>Tolerance</b> — needing more, or more intense, p*rn to feel the same."] },
+        { "type": "point", "num": "01", "title": "Why it [[matters]]", "body": "These aren't just \"bad nights.\" Researchers found them strongly linked to problematic p*rn use.\n\n<b>They're early warning signs.</b>" },
+        { "type": "list", "title": "If you [[do these]]", "items": ["<b>Set a hard stop</b> — block p*rn completely.", "<b>Notice the hunt</b> — the search is the trap.", "<b>Track how often</b> you binge.", "<b>Get support</b> before it escalates further."], "note": "Send this to someone who thinks their p*rn use is \"under control\" ↗" },
+        { "type": "cta", "title": "Stop the escalation\n[[with RezenIt.]]", "lead": "Block p*rn completely, track every day and learn how p*rn addiction escalates — and how to reverse it.", "features": ["P*rn blocker", "Habit tracking", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "Sunday night reset for the p*rn-free week",
+      "seed": 2809,
+      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Do this tonight", "title": "Your 30-minute Sunday reset for [[a p*rn-free week.]]", "sub": "Step by step. Save it for every Sunday." },
+        { "type": "point", "phase": "Minutes 0–10", "progress": 1, "title": "[[Review]] the week", "body": "When did p*rn urges hit? What helped? What almost broke you?\n\n<b>Write 3 lines. That's it.</b>" },
+        { "type": "point", "phase": "Minutes 10–20", "progress": 2, "title": "Plan the [[danger zones]]", "body": "Which evenings are empty? Which nights are late?\n\n<b>Put a plan in each one before p*rn does.</b>" },
+        { "type": "point", "phase": "Minutes 20–25", "progress": 3, "title": "Check your [[guardrails]]", "body": "Blocker on every device? Phone charger out of the bedroom? Accountability person updated?" },
+        { "type": "point", "phase": "Minutes 25–30", "progress": 4, "title": "Set [[one goal]]", "body": "Not \"don't watch p*rn.\" Something to build: a workout, a skill, a call.\n\n<b>Give the week a direction.</b>", "note": "Save this and do it every Sunday night 🔖" },
+        { "type": "cta", "title": "Reset every Sunday\n[[with RezenIt.]]", "lead": "Journaling for your weekly review, daily actions to plan your week and a p*rn blocker that keeps it safe.", "features": ["Journaling", "Daily actions", "P*rn blocker"] }
+      ]
+    },
+    {
+      "name": "Stop treating p*rn like a reward",
+      "seed": 2811,
+      "theme": { "bg": "#0A1A30", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Harsh truth", "title": "You \"reward\" yourself with p*rn. [[That's like rewarding a diet with a binge.]]", "sub": "P*rn isn't a prize. It's the thing you're trying to escape." },
+        { "type": "point", "num": "01", "title": "\"I [[earned]] it\"", "body": "Good week? Hard week? Finished a task? Your brain says p*rn is the prize.\n\n<b>That's the habit talking, not you.</b>" },
+        { "type": "point", "num": "02", "title": "It [[undoes]] the win", "body": "You worked hard all week — then end it with guilt and a reset streak.\n\n<b>The \"reward\" erases the very thing you earned.</b>" },
+        { "type": "point", "num": "03", "title": "Pick [[real]] rewards", "body": "A great meal. A day out. Something you've wanted. Time with people.\n\n<b>Rewards should leave you better — not worse.</b>" },
+        { "type": "list", "title": "Your new [[reward list]]", "items": ["<b>Write 5 rewards</b> that aren't p*rn.", "<b>Use them</b> for every milestone.", "<b>Day 15?</b> Treat yourself today.", "<b>Day 30?</b> Plan something big."], "note": "What's your Day 15 reward? Comment it 👇" },
+        { "type": "cta", "title": "Reward progress,\n[[not p*rn.]]", "lead": "RezenIt tracks every milestone with streaks and habit tracking — so you can celebrate the right way.", "features": ["Streaks", "Habit tracking", "Daily actions"] }
+      ]
+    }
+  ]
+}

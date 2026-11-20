@@ -1,0 +1,71 @@
+{
+  "date": "11-11-26",
+  "owner": "Yash",
+  "carousels": [
+    {
+      "name": "No Nut November halfway check-in: 10 questions",
+      "seed": 1801,
+      "theme": { "bg": "#04241A", "a1": "#6FF0C4", "a2": "#7DB8FF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 11", "title": "Your NNN check-in: [[10 questions]] about your p*rn habit.", "sub": "Answer honestly. Save this and redo it on Day 30." },
+        { "type": "list", "title": "The [[urges]]", "items": ["<b>When do my p*rn urges hit hardest?</b>", "<b>Where am I</b> when they hit?", "<b>What am I feeling</b> right before?"] },
+        { "type": "list", "marks": ["4", "5", "6"], "title": "The [[changes]]", "items": ["<b>Am I sleeping better</b> than on Day 1?", "<b>Do I feel</b> more focused, or more restless?", "<b>Have I been</b> more present with people?"] },
+        { "type": "list", "marks": ["7", "8", "9", "10"], "title": "The [[honest]] part", "items": ["<b>Have I used</b> \"almost p*rn\" to cheat?", "<b>What nearly broke me</b> this week?", "<b>What actually helped?</b>", "<b>Do I want to stop p*rn</b> after November too?"] },
+        { "type": "point", "title": "Answers [[are]] the plan.", "body": "Every answer tells you where your p*rn defenses are weak — and where they're strong.\n\n<b>Fix one weak spot this week.</b>", "note": "Save this and do it again on Day 30 🔖" },
+        { "type": "cta", "title": "Track your answers\n[[in RezenIt.]]", "lead": "Daily journaling to answer these questions, streaks for every p*rn-free day and an AI coach to build your plan.", "features": ["Journaling", "Streaks", "AI coach"] }
+      ]
+    },
+    {
+      "name": "1 in 10 men struggle to control sexual urges",
+      "seed": 1803,
+      "theme": { "bg": "#04241A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "You are not the only one", "title": "About [[1 in 10 men]] say they can't control their sexual urges — p*rn included.", "sub": "What a major U.S. study found." },
+        { "type": "point", "num": "10.3%", "title": "Of men [[struggle]]", "body": "In a JAMA Network Open study (2018) of 2,325 U.S. adults, <b>10.3% of men and 7% of women</b> reported real distress from trouble controlling sexual urges and behavior." },
+        { "type": "point", "num": "01", "title": "Look around [[the room]]", "body": "In a class of 30 guys, statistically about 3 are fighting this — many with p*rn as the main outlet.\n\n<b>Most will never say a word.</b>" },
+        { "type": "point", "num": "02", "title": "Common ≠ [[okay]]", "body": "Being normal doesn't mean it's fine. If p*rn is hurting your sleep, focus or relationships, it's worth fixing.\n\n<b>Common problems still need real solutions.</b>" },
+        { "type": "list", "title": "What to [[do]]", "items": ["<b>Stop hiding</b> — you're one of millions.", "<b>Get screened</b> by a professional if it's severe.", "<b>Remove easy access</b> to p*rn.", "<b>Find your people</b> — groups, friends, communities."], "note": "Send this to one friend. Statistically, it might be him ↗" },
+        { "type": "cta", "title": "1 in 10 struggle.\n[[RezenIt helps.]]", "lead": "An anonymous community of people quitting p*rn, 1-on-1 accountability and a guided recovery program.", "features": ["Community", "Accountability", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "7 signs you're ready to quit p*rn for good",
+      "seed": 1807,
+      "theme": { "bg": "#04241A", "a1": "#9EF0C8", "a2": "#7BA7FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Something's different this time", "title": "7 signs you're finally ready [[to quit p*rn for good.]]", "sub": "If you see yourself here, don't waste the moment." },
+        { "type": "list", "title": "Signs [[1–4]]", "items": ["<b>You're tired of the cycle</b>, not just the guilt.", "<b>You've stopped pretending</b> p*rn is harmless.", "<b>You're thinking about</b> who you want to become.", "<b>You've started</b> looking for real help."] },
+        { "type": "list", "marks": ["5", "6", "7"], "title": "Signs [[5–7]]", "items": ["<b>You're willing to be uncomfortable</b> for a while.", "<b>You'd rather tell someone</b> than keep hiding.", "<b>You're reading this</b> instead of scrolling past."] },
+        { "type": "point", "title": "Readiness [[expires]]", "body": "That \"enough is enough\" feeling doesn't last forever. If you wait, it fades — and p*rn wins again.\n\n<b>Act while you feel it.</b>" },
+        { "type": "list", "title": "Act [[today]]", "items": ["<b>Write down</b> why you're quitting p*rn.", "<b>Block it</b> on every device right now.", "<b>Tell one person</b> today.", "<b>Plan your first 7 days.</b>"], "note": "Feeling ready? Comment \"READY\" and make it public 👇" },
+        { "type": "cta", "title": "You're ready.\n[[Start with RezenIt.]]", "lead": "Set up in minutes: a p*rn blocker, a panic button and a step-by-step recovery program built for this moment.", "features": ["P*rn blocker", "Panic button", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "Nobody is coming to save you from p*rn",
+      "seed": 1809,
+      "theme": { "bg": "#04241A", "a1": "#5EE7E0", "a2": "#B79BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Tough love", "title": "Nobody is coming to save you from p*rn. [[Get up.]]", "sub": "Not a partner. Not a perfect morning. Not next Monday." },
+        { "type": "point", "num": "01", "title": "No perfect [[partner]]", "body": "A relationship won't magically fix your p*rn addiction.\n\n<b>You'll bring it with you.</b>" },
+        { "type": "point", "num": "02", "title": "No perfect [[moment]]", "body": "There's no day you'll wake up and stop wanting p*rn.\n\n<b>You decide — and then you keep deciding.</b>" },
+        { "type": "point", "num": "03", "title": "No more [[excuses]]", "body": "Stressed. Tired. Busy. Lonely. All true. None of them make p*rn the answer.\n\n<b>Your excuses are real. So is your responsibility.</b>" },
+        { "type": "point", "title": "But you're [[not alone]].", "body": "Nobody will do it for you — but plenty of people will do it <b>with</b> you.\n\nTake the first step. Then ask for help with the next one.", "note": "Needed to hear this? Save it for the next time p*rn tempts you 🔖" },
+        { "type": "cta", "title": "Save yourself.\n[[RezenIt has your back.]]", "lead": "You take the step — RezenIt gives you the tools: a p*rn blocker, accountability and a community.", "features": ["P*rn blocker", "Accountability", "Community"] }
+      ]
+    },
+    {
+      "name": "Relapsed during NNN? Your next 72 hours",
+      "seed": 1811,
+      "theme": { "bg": "#04241A", "a1": "#7DE3F5", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Relapsed during No Nut November?", "title": "Your next [[72 hours]] after a p*rn relapse decide everything.", "sub": "Hour by hour. Save this for when you need it." },
+        { "type": "point", "phase": "Hour 0–1", "progress": 1, "title": "Stop the [[spiral]]", "body": "Close the tab. Leave the room. Drink water.\n\n<b>One p*rn relapse is a moment. A binge is a choice.</b>" },
+        { "type": "point", "phase": "Hours 1–24", "progress": 2, "title": "Find the [[trigger]]", "body": "Write it down: time, place, mood, what happened before you opened p*rn.\n\n<b>No shame — just data.</b>" },
+        { "type": "point", "phase": "Hours 24–48", "progress": 3, "title": "Close the [[gap]]", "body": "Fix the exact thing that let p*rn in: block that site, move the phone, plan that hour differently." },
+        { "type": "point", "phase": "Hours 48–72", "progress": 4, "title": "Get [[back on track]]", "body": "Restart your count. Rejoin NNN — 19 days is still a real streak.\n\n<b>Day 3 after a relapse beats Day 0 forever.</b>", "note": "Send this to someone who just relapsed. They need it more than a lecture ↗" },
+        { "type": "cta", "title": "Relapsed?\n[[Restart with RezenIt.]]", "lead": "Journaling to find your p*rn triggers, a blocker to close the gaps and shame-free streak tracking.", "features": ["Journaling", "P*rn blocker", "Streaks"] }
+      ]
+    }
+  ]
+}
