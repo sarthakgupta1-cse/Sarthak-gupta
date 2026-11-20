@@ -19,7 +19,8 @@ STOP = set("""the a an to of and you your is it in for on with that this not are
 by from do no p*rn porn nnn november nut day days was were can will just more than its it's into about why""".split())
 STATS = ['10.3%', '1 in 10', '4–10%', '4-10%', '90%', '3.2%', '16.6%', '54%', '15%', '8.6%', '1 in 12', '7.9%',
          '1 in 13', '56.7%', '13%', '1 in 8', '42 billion', '115 million', '115m', '39 billion', '39b', '10:28',
-         '59%', '2,000+', '182 hours', '182h', 'icd-11']
+         '59%', '2,000+', '182 hours', '182h', 'icd-11', '46%', '42%', '36%', '26%', '1 in 4', '1,755', '21–37%',
+         '61%', '84%', '39%']
 COOLDOWN_DAYS = 7
 THRESHOLD = 0.30
 

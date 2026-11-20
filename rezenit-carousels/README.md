@@ -83,6 +83,7 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
 - In 1,755 couples, bigger differences in partners' p*rn use were linked to lower relationship satisfaction and stability, less positive communication and more conflict (Willoughby et al., 2016).
 - Secret ("unknown to partner") p*rn use was linked to the user reporting lower relationship satisfaction and intimacy that day (Vaillancourt-Morel et al., 2023, daily-diary study). Short-term effect — say so.
 - 36% of daily p*rn users said they feel lonely all or most of the time, vs 20% of those who rarely or never watch (Institute for Family Studies / YouGov, Sept 2024). Correlational — loneliness and p*rn may feed each other.
+- 61% of U.S. adults said they view p*rn, up from 55% in 2015; half of users say "no one" knows about their use; 84% say no one helps them avoid it; 39% of Gen Z adults view it daily or weekly (Barna / Pure Desire, "Beyond the Porn Phenomenon", 2,976 U.S. adults surveyed Oct 2023, published 2024; faith-based publisher — fine to cite, name the source).
 
 ## No repeats (user feedback 17-11-26)
 The user noticed repeated posts. Before committing, run `python3 check_repeats.py content/<today>-*.json` — it must
@@ -159,6 +160,9 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 19-11-26 Shalini: 36% of daily users lonely (IFS 2024, NNN) · partners: support without babysitting (NNN) · you want to feel nothing, not p*rn · healing vs self-punishment: 7 tells (NNN) · "waiting for the right moment" to tell her (harsh)
 - 19-11-26 Tanmay: 3 AM wake-up urge (NNN) · 46% of men weekly / 3 weeks off (JSR, NNN) · the 3-line urge log · 6 signs your partner already knows · "slip" every weekend = schedule (harsh myth-buster)
 - 19-11-26 Yash: holiday trips home / childhood bedroom (NNN) · tell people or keep NNN private? (debate) · 3.2–16.6% screening questions (Bőthe 2024) · the "scan" reflex · too tired to train, not for p*rn (harsh)
+- 20-11-26 Shalini: 5 mistakes in the last 10 days (NNN) · 6 reasons secrecy keeps it alive (Barna 2024: half say no one knows, 84%) · 6 things p*rn taught you about sex · 3 reasons you'll go back with 10 days left (NNN, harsh) · 7 habits of people who quit for good
+- 20-11-26 Tanmay: 4 reasons December is harder (NNN) · 5 reasons p*rn feels normal to Gen Z (Barna 39%/61%) · 5 reasons willpower alone fails (harsh) · 5 ways to clean your feed · 8 questions for your accountability partner (NNN)
+- 20-11-26 Yash: 10 reasons to finish NNN · 6 kinds of free help (Bőthe 21–37%) · 6 signs your reason won't last · 4 mistakes that kill streaks (NNN, harsh) · 5 myths about men who don't watch p*rn (harsh)
 
 ## Archive: Reddit inspiration (retired 19-11-26 — did not perform; reference only)
 Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
