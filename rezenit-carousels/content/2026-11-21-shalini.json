@@ -1,0 +1,324 @@
+{
+  "date": "21-11-26",
+  "owner": "Shalini",
+  "carousels": [
+    {
+      "name": "6 lessons from 3 weeks without p*rn",
+      "seed": 6701,
+      "theme": {
+        "bg": "#0C1633",
+        "a1": "#6FE3F0",
+        "a2": "#9B87FF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Day 21",
+          "title": "6 lessons from 3 weeks [[without p*rn.]]",
+          "sub": "Day 21. What many people say this stretch teaches them."
+        },
+        {
+          "type": "list",
+          "title": "Lessons [[1–2]]",
+          "items": [
+            "<b>Urges pass.</b> Every one so far ended without p*rn.",
+            "<b>Boredom was the real trigger</b> more often than desire."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Lessons [[3–4]]",
+          "items": [
+            "<b>Sleep matters.</b> Tired nights were the hardest ones.",
+            "<b>Your phone was the doorway</b>, not your willpower."
+          ],
+          "marks": [
+            "3",
+            "4"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Lessons [[5–6]]",
+          "items": [
+            "<b>Shame never helped.</b> Honesty did.",
+            "<b>You're more capable</b> than your old p*rn habit said you were."
+          ],
+          "marks": [
+            "5",
+            "6"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Use them for [[the last 9 days]]",
+          "items": [
+            "<b>Circle your top lesson</b> and act on it tonight.",
+            "<b>Protect your sleep</b> through Nov 30.",
+            "<b>Plan for boredom</b> — have one thing ready for empty hours.",
+            "<b>Keep your phone out of reach</b> in your risky hours."
+          ],
+          "note": "3 weeks without p*rn? Comment your biggest lesson 👇"
+        },
+        {
+          "type": "cta",
+          "title": "3 weeks down.\n[[Keep the lessons.]]",
+          "lead": "RezenIt's journaling, streaks and AI coach help you remember what's working — past November.",
+          "features": [
+            "Journaling",
+            "Streaks",
+            "AI coach"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4 facts about p*rn and erection problems most guys get wrong",
+      "seed": 6703,
+      "theme": {
+        "bg": "#1A1036",
+        "a1": "#C4B5FF",
+        "a2": "#7DE3F5"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "JMIR · 3,419 men aged 18–35",
+          "title": "4 facts about p*rn and erection problems [[most guys get wrong.]]",
+          "sub": "It's not just how much you watch."
+        },
+        {
+          "type": "point",
+          "title": "Had [[some]] ED",
+          "body": "In a study of 3,419 men aged 18–35 (JMIR Public Health and Surveillance), about <b>21%</b> of those who'd tried sex in the past 4 weeks reported some degree of erectile dysfunction.",
+          "num": "~21%"
+        },
+        {
+          "type": "list",
+          "title": "Facts [[1–2]]",
+          "items": [
+            "<b>How often you watched</b> wasn't linked to ED in that study.",
+            "<b>Problematic use was</b> — feeling out of control of your p*rn use."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Facts [[3–4]]",
+          "items": [
+            "<b>One study can't prove cause</b> — ED has many reasons, from stress to health.",
+            "<b>Young doesn't mean immune.</b> Erection problems happen in your 20s too."
+          ],
+          "marks": [
+            "3",
+            "4"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "What to [[do]]",
+          "items": [
+            "<b>See a doctor</b> — rule out physical causes first.",
+            "<b>Be honest</b> with them about your p*rn use.",
+            "<b>Take a break from p*rn</b> and notice what changes.",
+            "<b>Ease the pressure</b> — anxiety makes it worse."
+          ],
+          "note": "Save this — and send it to a friend who's too embarrassed to ask 🔖"
+        },
+        {
+          "type": "cta",
+          "title": "Feel in control again.\n[[Try RezenIt.]]",
+          "lead": "A science-informed p*rn recovery program, an AI coach for the questions you can't ask anyone and streaks to track progress.",
+          "features": [
+            "Recovery program",
+            "AI coach",
+            "Streaks"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3 types of p*rn urges and how to beat each",
+      "seed": 6707,
+      "theme": {
+        "bg": "#0B1A3A",
+        "a1": "#7FE7FF",
+        "a2": "#A98BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Know your enemy",
+          "title": "3 types of p*rn urges [[— and how to beat each one.]]",
+          "sub": "Not every urge is the same. Don't fight them the same way."
+        },
+        {
+          "type": "point",
+          "title": "The [[bored]] urge",
+          "body": "Nothing to do, phone in hand, p*rn one tap away.\n\n<b>Fix: give your hands a job — move, cook, build, call.</b>",
+          "num": "01"
+        },
+        {
+          "type": "point",
+          "title": "The [[stressed]] urge",
+          "body": "A bad day wants an off switch, and p*rn feels like one.\n\n<b>Fix: deal with the stress directly — walk, shower, write it down.</b>",
+          "num": "02"
+        },
+        {
+          "type": "point",
+          "title": "The [[autopilot]] urge",
+          "body": "Same time, same place, same routine — your brain just runs the script.\n\n<b>Fix: change the setting — the room, the time, what's in your hand.</b>",
+          "num": "03"
+        },
+        {
+          "type": "list",
+          "title": "Name it [[first]]",
+          "items": [
+            "<b>Ask:</b> bored, stressed or autopilot?",
+            "<b>Pick the matching fix</b> from this list.",
+            "<b>Give it 10 minutes</b> before deciding anything.",
+            "<b>Note which type wins most</b> this week."
+          ],
+          "note": "Which type hits you most? Comment 1, 2 or 3 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Know the urge.\n[[Beat the urge.]]",
+          "lead": "RezenIt's panic button gives you instant tools for any urge, plus journaling to spot patterns and an AI coach.",
+          "features": [
+            "Panic button",
+            "Journaling",
+            "AI coach"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5 rules for when you're home alone (NNN Day 21)",
+      "seed": 6709,
+      "theme": {
+        "bg": "#22102E",
+        "a1": "#FF9EDB",
+        "a2": "#9B8CFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Harsh truth",
+          "title": "5 rules for when you're home alone [[and p*rn starts calling.]]",
+          "sub": "Day 21. An empty house is an invitation — don't accept it."
+        },
+        {
+          "type": "list",
+          "title": "Rules [[1–2]]",
+          "items": [
+            "<b>Leave the house first.</b> Gym, café, walk — be out when the urge peaks.",
+            "<b>No devices in the bedroom.</b> Not \"just for a minute.\""
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Rules [[3–4]]",
+          "items": [
+            "<b>Doors open, curtains open.</b> Hiding is where p*rn lives.",
+            "<b>Tell someone</b> you're home alone today — let them check in."
+          ],
+          "marks": [
+            "3",
+            "4"
+          ]
+        },
+        {
+          "type": "point",
+          "title": "Don't [[test]] yourself",
+          "body": "\"I'll be fine\" is what everyone says right before they open p*rn.\n\n<b>An empty house isn't a test. It's a trap. Plan around it.</b>",
+          "num": "05"
+        },
+        {
+          "type": "list",
+          "title": "Before everyone [[leaves]]",
+          "items": [
+            "<b>Plan every block</b> of empty hours.",
+            "<b>Book something social</b> for the evening.",
+            "<b>Set a screen-time limit</b> for the day.",
+            "<b>Go to bed on time</b> — late nights alone are the worst."
+          ],
+          "note": "Send this to a friend who's home alone this weekend ↗"
+        },
+        {
+          "type": "cta",
+          "title": "Alone, not unprotected.\n[[RezenIt has you.]]",
+          "lead": "A p*rn blocker on every device, a panic button for empty-house moments and accountability with real people.",
+          "features": [
+            "P*rn blocker",
+            "Panic button",
+            "Accountability"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5 signs p*rn is affecting your mental health",
+      "seed": 6711,
+      "theme": {
+        "bg": "#0A1A30",
+        "a1": "#5EE7E0",
+        "a2": "#8B7BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Check in with yourself",
+          "title": "5 signs p*rn is affecting [[your mental health.]]",
+          "sub": "Not just your time. Your mood too."
+        },
+        {
+          "type": "list",
+          "title": "Signs [[1–3]]",
+          "items": [
+            "<b>You feel low</b> or flat for hours after watching p*rn.",
+            "<b>Your anxiety spikes</b> when you try to stop.",
+            "<b>You reach for p*rn</b> every time a hard feeling shows up."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Signs [[4–5]]",
+          "items": [
+            "<b>You've pulled away</b> from people and things you used to enjoy.",
+            "<b>Guilt and shame</b> follow you into the next day."
+          ],
+          "marks": [
+            "4",
+            "5"
+          ]
+        },
+        {
+          "type": "point",
+          "title": "Research [[links]] them",
+          "body": "Studies have linked problematic p*rn use with more depression symptoms.\n\nThey can't prove which comes first — <b>but the two often feed each other.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Look after [[yourself]]",
+          "items": [
+            "<b>Talk to a professional</b> — a GP or counselor is a good start.",
+            "<b>Tell one person</b> how you've really been feeling.",
+            "<b>Add one daily thing</b> that lifts your mood — sunlight, movement, people.",
+            "<b>If things feel dark,</b> contact a crisis line or emergency services now."
+          ],
+          "note": "Save this. Your mental health is worth checking 🔖"
+        },
+        {
+          "type": "cta",
+          "title": "Mind first.\n[[Then the habit.]]",
+          "lead": "RezenIt adds guided audio, journaling and an AI coach to your p*rn recovery — alongside professional care, not instead of it.",
+          "features": [
+            "Guided audio",
+            "Journaling",
+            "AI coach"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -83,7 +83,9 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
 - In 1,755 couples, bigger differences in partners' p*rn use were linked to lower relationship satisfaction and stability, less positive communication and more conflict (Willoughby et al., 2016).
 - Secret ("unknown to partner") p*rn use was linked to the user reporting lower relationship satisfaction and intimacy that day (Vaillancourt-Morel et al., 2023, daily-diary study). Short-term effect — say so.
 - 36% of daily p*rn users said they feel lonely all or most of the time, vs 20% of those who rarely or never watch (Institute for Family Studies / YouGov, Sept 2024). Correlational — loneliness and p*rn may feed each other.
-- 61% of U.S. adults said they view p*rn, up from 55% in 2015; half of users say "no one" knows about their use; 84% say no one helps them avoid it; 39% of Gen Z adults view it daily or weekly (Barna / Pure Desire, "Beyond the Porn Phenomenon", 2,976 U.S. adults surveyed Oct 2023, published 2024; faith-based publisher — fine to cite, name the source).
+- 61% of U.S. adults said they view p*rn, up from 55% in 2015; half of users say "no one" knows about their use; 84% say no one helps them avoid it; 39% of Gen Z adults view it daily or weekly (Barna / Pure Desire, "Beyond the P*rn Phenomenon", 2,976 U.S. adults surveyed Oct 2023, published 2024; faith-based publisher — fine to cite, name the source).
+- About 21% of 3,419 men aged 18–35 who'd tried sex in the past 4 weeks reported some degree of erectile dysfunction; how often they watched p*rn was NOT linked to ED, but problematic (out-of-control) use was (JMIR Public Health and Surveillance, Belgian survey, 2021/22).
+- A 2025 meta-analysis of 21 studies (138,192 adults, North America/Europe/Asia): men who used p*rn reported worse sexual function and lower satisfaction than women who used it. Can't prove cause — say so.
 
 ## No repeats (user feedback 17-11-26)
 The user noticed repeated posts. Before committing, run `python3 check_repeats.py content/<today>-*.json` — it must
@@ -163,6 +165,9 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 20-11-26 Shalini: 5 mistakes in the last 10 days (NNN) · 6 reasons secrecy keeps it alive (Barna 2024: half say no one knows, 84%) · 6 things p*rn taught you about sex · 3 reasons you'll go back with 10 days left (NNN, harsh) · 7 habits of people who quit for good
 - 20-11-26 Tanmay: 4 reasons December is harder (NNN) · 5 reasons p*rn feels normal to Gen Z (Barna 39%/61%) · 5 reasons willpower alone fails (harsh) · 5 ways to clean your feed · 8 questions for your accountability partner (NNN)
 - 20-11-26 Yash: 10 reasons to finish NNN · 6 kinds of free help (Bőthe 21–37%) · 6 signs your reason won't last · 4 mistakes that kill streaks (NNN, harsh) · 5 myths about men who don't watch p*rn (harsh)
+- 21-11-26 Shalini: 6 lessons from 3 weeks (NNN) · 4 facts about p*rn and ED (JMIR 3,419 men, ~21%) · 3 types of urges (bored/stressed/autopilot) · 5 rules home alone (NNN, harsh) · 5 signs p*rn affects your mental health
+- 21-11-26 Tanmay: 5 reasons you're irritable at 3 weeks (NNN) · 4 reasons you keep searching for something new (39B searches) · 6 ways p*rn steals your weekend (harsh) · 4 kinds of friends who make quitting harder · 8 numbers to track for the last 9 days (NNN)
+- 21-11-26 Yash: 5 skills built in 21 days (NNN) · 4 things research says about p*rn and your sex life (meta-analysis 138,192) · 6 phrases when negotiating with p*rn addiction (harsh) · 6 p*rn backdoors to delete before NNN ends (NNN) · 6 ways p*rn kills your ambition (harsh)
 
 ## Archive: Reddit inspiration (retired 19-11-26 — did not perform; reference only)
 Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
