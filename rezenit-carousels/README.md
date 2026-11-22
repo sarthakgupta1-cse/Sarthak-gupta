@@ -86,6 +86,7 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
 - 61% of U.S. adults said they view p*rn, up from 55% in 2015; half of users say "no one" knows about their use; 84% say no one helps them avoid it; 39% of Gen Z adults view it daily or weekly (Barna / Pure Desire, "Beyond the P*rn Phenomenon", 2,976 U.S. adults surveyed Oct 2023, published 2024; faith-based publisher — fine to cite, name the source).
 - About 21% of 3,419 men aged 18–35 who'd tried sex in the past 4 weeks reported some degree of erectile dysfunction; how often they watched p*rn was NOT linked to ED, but problematic (out-of-control) use was (JMIR Public Health and Surveillance, Belgian survey, 2021/22).
 - A 2025 meta-analysis of 21 studies (138,192 adults, North America/Europe/Asia): men who used p*rn reported worse sexual function and lower satisfaction than women who used it. Can't prove cause — say so.
+- About 14% of 1,298 men said they were interested in treatment for their p*rn use, but only 6.4% had ever sought it; more past quit attempts went with more interest in treatment (Kraus et al., 2016, "Clinical characteristics of men interested in seeking treatment for use of pornography").
 
 ## No repeats (user feedback 17-11-26)
 The user noticed repeated posts. Before committing, run `python3 check_repeats.py content/<today>-*.json` — it must
@@ -168,6 +169,9 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 21-11-26 Shalini: 6 lessons from 3 weeks (NNN) · 4 facts about p*rn and ED (JMIR 3,419 men, ~21%) · 3 types of urges (bored/stressed/autopilot) · 5 rules home alone (NNN, harsh) · 5 signs p*rn affects your mental health
 - 21-11-26 Tanmay: 5 reasons you're irritable at 3 weeks (NNN) · 4 reasons you keep searching for something new (39B searches) · 6 ways p*rn steals your weekend (harsh) · 4 kinds of friends who make quitting harder · 8 numbers to track for the last 9 days (NNN)
 - 21-11-26 Yash: 5 skills built in 21 days (NNN) · 4 things research says about p*rn and your sex life (meta-analysis 138,192) · 6 phrases when negotiating with p*rn addiction (harsh) · 6 p*rn backdoors to delete before NNN ends (NNN) · 6 ways p*rn kills your ambition (harsh)
+- 22-11-26 Shalini: 6 rewards for finishing NNN that aren't p*rn (NNN) · 5 bedtime rules (Frontiers 59%) · 5 stages of quitting p*rn · 4 reasons "I'll restart in December" keeps you stuck (NNN, harsh) · 7 things your p*rn addiction doesn't say about you
+- 22-11-26 Tanmay: 6 notes to keep from NNN / playbook (NNN) · 6 barriers that keep men silent (Kraus 2016: 14% vs 6.4%) · 4 signs you're not quitting, just feeling better about it (harsh) · 6 relapse myths that turn a slip into a binge · 8 challenges for the last 8 days (NNN)
+- 22-11-26 Yash: 4 danger hours (NNN) · 5 myths about who struggles (JAMA 10.3%/7.0%) · 4 signs p*rn hurts your friendships · 4 reasons you're not "fine" just because you haven't watched (NNN, harsh) · 5 overrated hacks for quitting p*rn (cold showers, blockers alone…)
 
 ## Archive: Reddit inspiration (retired 19-11-26 — did not perform; reference only)
 Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
