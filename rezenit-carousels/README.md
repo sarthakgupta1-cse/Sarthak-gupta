@@ -87,6 +87,7 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
 - About 21% of 3,419 men aged 18–35 who'd tried sex in the past 4 weeks reported some degree of erectile dysfunction; how often they watched p*rn was NOT linked to ED, but problematic (out-of-control) use was (JMIR Public Health and Surveillance, Belgian survey, 2021/22).
 - A 2025 meta-analysis of 21 studies (138,192 adults, North America/Europe/Asia): men who used p*rn reported worse sexual function and lower satisfaction than women who used it. Can't prove cause — say so.
 - About 14% of 1,298 men said they were interested in treatment for their p*rn use, but only 6.4% had ever sought it; more past quit attempts went with more interest in treatment (Kraus et al., 2016, "Clinical characteristics of men interested in seeking treatment for use of pornography").
+- 64% of young men (and 13% of young women) aged 20 used online p*rn; male users reported lower life satisfaction, more depressive symptoms and a poorer self-image, even accounting for earlier wellbeing (ESRI, Growing Up in Ireland, ~4,500 20-year-olds, March 2024). Correlational.
 
 ## No repeats (user feedback 17-11-26)
 The user noticed repeated posts. Before committing, run `python3 check_repeats.py content/<today>-*.json` — it must
@@ -172,6 +173,9 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 22-11-26 Shalini: 6 rewards for finishing NNN that aren't p*rn (NNN) · 5 bedtime rules (Frontiers 59%) · 5 stages of quitting p*rn · 4 reasons "I'll restart in December" keeps you stuck (NNN, harsh) · 7 things your p*rn addiction doesn't say about you
 - 22-11-26 Tanmay: 6 notes to keep from NNN / playbook (NNN) · 6 barriers that keep men silent (Kraus 2016: 14% vs 6.4%) · 4 signs you're not quitting, just feeling better about it (harsh) · 6 relapse myths that turn a slip into a binge · 8 challenges for the last 8 days (NNN)
 - 22-11-26 Yash: 4 danger hours (NNN) · 5 myths about who struggles (JAMA 10.3%/7.0%) · 4 signs p*rn hurts your friendships · 4 reasons you're not "fine" just because you haven't watched (NNN, harsh) · 5 overrated hacks for quitting p*rn (cold showers, blockers alone…)
+- 23-11-26 Shalini: 5 thoughts in the final week + what to say back (NNN) · 4 risk factors when casual use becomes addiction (Rhode Island 1 in 13) · 5 things therapy actually involves · 5 changes partners notice (NNN) · 4 excuses that sound mature (harsh)
+- 23-11-26 Tanmay: 3 reasons the last 7 days matter most (NNN) · 6 things to do in the 10 minutes (P*rnhub 10:28) · 7 truths about p*rn and being a man (harsh) · 3 reasons p*rn feels better than real life · 4 reasons guys lie about finishing NNN (NNN, harsh)
+- 23-11-26 Yash: 4 ways to stay off p*rn on a long holiday weekend (NNN) · 6 ways to rebuild your self-image (ESRI 64%) · 6 gym lessons for quitting · 8 lock-screen lines for the last 7 days (NNN) · 5 signs your perfect routine hides a p*rn problem (harsh)
 
 ## Archive: Reddit inspiration (retired 19-11-26 — did not perform; reference only)
 Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
