@@ -398,7 +398,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .contact-side { display: grid; gap: 28px; min-width: 0; }
 .email-box { display: grid; gap: 10px; padding: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 .email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-.email-addr { font-family: var(--font-serif); font-size: var(--step-2); overflow-wrap: anywhere; user-select: all; }
+.email-addr { font-family: var(--font-serif); font-size: clamp(1.05rem, 4.6vw, var(--step-2)); overflow-wrap: anywhere; user-select: all; }
 .copy-btn { font: inherit; font-size: 0.85rem; padding: 6px 12px; border-radius: var(--radius); border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
 .copy-btn:hover { border-color: var(--oak); }
 .topics { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }

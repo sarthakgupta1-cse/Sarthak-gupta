@@ -1,4 +1,4 @@
-// Oakridge Media site scripts: mobile menu, footer year, copy email, contact form.
+// Oakridge Media site scripts: mobile menu, footer year, copy email.
 (function () {
   var toggle = document.getElementById("nav-toggle");
   var nav = document.getElementById("site-nav");
@@ -34,40 +34,6 @@
       try {
         navigator.clipboard.writeText(text).then(done, fallback);
       } catch (e) { fallback(); }
-    });
-  }
-
-  var form = document.getElementById("contact-form");
-  if (form) {
-    var status = document.getElementById("form-status");
-    var show = function (msg, ok) {
-      status.textContent = msg;
-      status.classList.toggle("ok", !!ok);
-      status.hidden = false;
-    };
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        show("Please fill in your name, a valid email address and a message.");
-        return;
-      }
-      var endpoint = form.getAttribute("data-endpoint");
-      if (!endpoint) {
-        show("This form isn't connected yet. Please email us at hello@oakridgemedia.com instead.");
-        return;
-      }
-      var btn = form.querySelector("button[type=submit]");
-      btn.disabled = true;
-      fetch(endpoint, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
-        .then(function (r) {
-          if (!r.ok) throw new Error("bad status");
-          form.reset();
-          show("Thanks, your message was sent. We'll reply within two business days.", true);
-        })
-        .catch(function () {
-          show("Your message couldn't be sent. Please try again, or email hello@oakridgemedia.com.");
-        })
-        .finally(function () { btn.disabled = false; });
     });
   }
 })();
