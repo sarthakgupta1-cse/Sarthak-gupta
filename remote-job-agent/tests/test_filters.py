@@ -82,3 +82,19 @@ def test_part_time_title_beats_board_type():
 
 def test_mid_level_text_is_unclear():
     assert check_experience(job(title="Marketing Coordinator", description="Experience: Mid-level experience in marketing."), EXP)[0] == UNCLEAR
+
+
+def test_years_in_field_counts_as_experience():
+    assert check_experience(job(description="Requirements - 4+ years in content marketing or editorial management"), EXP)[0] == REJECT
+
+
+def test_strictest_years_requirement_wins():
+    d = "1+ years with HubSpot. Required: 3+ years in marketing automation."
+    assert check_experience(job(description=d), EXP)[0] == REJECT
+
+
+def test_optional_and_salary_band_years_ignored():
+    d = "Requirements: 1+ years in email marketing. Good to have: 3+ years in CRM marketing."
+    assert check_experience(job(description=d), EXP)[0] == OK
+    d2 = "1 year of experience required. Salary: Entry Level (1-3 years of experience) up to INR 40,000; Intermediate Level (3-5 years of experience)"
+    assert check_experience(job(description=d2), EXP)[0] == OK

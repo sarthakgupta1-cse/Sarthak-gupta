@@ -42,3 +42,10 @@ def test_columns():
     assert len(S.JOB_COLUMNS) == 29 and S.LAST_JOB_COL == "AC"
     assert S.VERIFIED_COL == "U" and S.STATUS_COL == "V"
     assert S.col_of("Monthly Salary Equivalent") == "O" and S.col_of("Category") == "F"
+
+
+def test_updates_as_requests():
+    r = S.updates_as_requests([{"op": "update", "range": "'Needs Verification'!U5:V6", "values": [["'2026-11-25", "Open"], ["'2026-11-25", "x"]]}])[0]["updateCells"]
+    assert r["start"] == {"sheetId": 7, "rowIndex": 4, "columnIndex": 20}
+    assert r["rows"][0]["values"][0] == {"userEnteredValue": {"stringValue": "2026-11-25"}}
+    assert S.updates_as_requests([{"op": "update", "range": "'_Index'!AB3", "values": [[1]]}])[0]["updateCells"]["start"]["columnIndex"] == 27

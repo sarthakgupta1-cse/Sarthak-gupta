@@ -185,10 +185,14 @@ def discover(index_file=None, all_ids_file=None, nv_ids_file=None, settings_path
         best.append(top)
 
     # ---- compare with history
-    new_jobs, seen_existing, promoted = [], {}, []
+    new_jobs, seen_existing, promoted, existing_nv = [], {}, [], []
+    requalified: dict[str, str] = {}
     for job in best:
         if job.ev.decision == REJECTED:
             counts["rej_" + (job.ev.reject_bucket or "type")] = counts.get("rej_" + (job.ev.reject_bucket or "type"), 0) + 1
+            hit = idx.match(job.job_id, job.title_key, job.url_key.split(","), job.scope)  # type: ignore[attr-defined]
+            if hit and idx.by_id[hit].tab in ("N", "NR") and idx.by_id[hit].status.startswith("Open"):
+                requalified[hit] = "; ".join(job.ev.reasons)[:100]     # an earlier lead now fails a rule
             continue
         hit = idx.match(job.job_id, job.title_key, job.url_key.split(","), job.scope)  # type: ignore[attr-defined]
         if hit:
@@ -198,6 +202,9 @@ def discover(index_file=None, all_ids_file=None, nv_ids_file=None, settings_path
             if entry and entry.tab == "N" and job.ev.decision == QUALIFIED:   # "NR" = reviewer kept it in NV
                 job.job_id = hit
                 promoted.append(job)
+            elif entry and entry.tab in ("N", "NR"):
+                job.job_id = hit
+                existing_nv.append(job)          # reviewable: `override <id> qualified` can promote it
             continue
         new_jobs.append(job)
 
@@ -229,7 +236,11 @@ def discover(index_file=None, all_ids_file=None, nv_ids_file=None, settings_path
     status_changes: dict[str, tuple[str, str]] = {}     # job_id -> (status, note)
     for jid in seen_existing:
         status_changes[jid] = ("Open", "seen again today")
-    to_check = [e for e in idx.by_id.values() if e.status.startswith("Open") and e.job_id not in seen_existing]
+    for jid, why in requalified.items():
+        if jid not in seen_existing:
+            status_changes[jid] = ("Rejected", why)
+    to_check = [e for e in idx.by_id.values() if e.status.startswith("Open") and e.job_id not in seen_existing
+                and e.job_id not in requalified]
     to_check.sort(key=lambda e: e.last_verified or "")
     budget = settings["liveness"]["max_checks_per_run"]
 
@@ -256,6 +267,7 @@ def discover(index_file=None, all_ids_file=None, nv_ids_file=None, settings_path
         "sources": src_stats, "counts": counts, "http_calls": http.calls,
         "new_jobs": [j.to_dict() | {"title_key": j.title_key, "scope": j.scope} for j in new_jobs],  # type: ignore[attr-defined]
         "promoted": [j.to_dict() | {"title_key": j.title_key, "scope": j.scope} for j in promoted],  # type: ignore[attr-defined]
+        "existing_nv": [j.to_dict() | {"title_key": j.title_key, "scope": j.scope} for j in existing_nv],  # type: ignore[attr-defined]
         "status_changes": status_changes,
         "history": {"all_ids": all_ids, "nv_ids": nv_ids, "index_rows": index_rows,
                     "tracker_ids": [str((r or [""])[0]) for r in _values(tracker_ids_file)],
@@ -325,13 +337,16 @@ def plan(settings_path=None, sheet_url: str = "") -> dict:
     ops += S.append_op(S.TRACKER, new_rows[S.TRACKER], S.col_letter(len(S.TRACKER_COLUMNS) - 1))
 
     # 2. Last Verified Date + Job Status on existing rows (by live row order)
-    closed_labels, changes_all, changes_nv, idx_changes, idx_dates = [], {}, {}, {}, {}
+    closed_labels, changes_all, changes_nv, idx_changes, idx_dates, dropped_labels = [], {}, {}, {}, {}, []
     for jid, (st, note) in state["status_changes"].items():
         e = index.get(jid)
         if st == "Closed":
             status, verified = f"Closed (detected {run_date})", run_date
         elif st == "Unverified":
             status, verified = f"Unverified – {note}", (e.last_verified if e else run_date)
+        elif st == "Rejected":
+            status, verified = f"No longer qualifies – {note}", run_date
+            dropped_labels.append(f"{e.label if e else jid} ({note})")
         else:
             status, verified = "Open", run_date
         if e and e.status.startswith("Open") and st == "Closed":
@@ -339,13 +354,13 @@ def plan(settings_path=None, sheet_url: str = "") -> dict:
         target = changes_nv if (e and e.tab in ("N", "NR")) else changes_all
         target[jid] = [verified, status]
         if e:
-            new_status = status if st != "Unverified" else "Unverified"
+            new_status = {"Unverified": "Unverified", "Rejected": "Rejected"}.get(st, status)
             if new_status == e.status:              # unchanged: only the date moves (small write)
                 if e.last_verified != verified:
                     idx_dates[jid] = [verified]
             else:
-                keep_url = "" if st == "Closed" else e.check_url
-                idx_changes[jid] = [new_status, keep_url, verified, e.label if st != "Closed" else ""]
+                gone = st in ("Closed", "Rejected")
+                idx_changes[jid] = [new_status, "" if gone else e.check_url, verified, "" if gone else e.label]
         if e and e.last_verified == verified and target.get(jid) and e.status.startswith(status.split(" ")[0]):
             target.pop(jid)                          # same-day retry: nothing to write
     new_index_rows = []
@@ -381,26 +396,29 @@ def plan(settings_path=None, sheet_url: str = "") -> dict:
         "sources_searched": sum(s["sub_sources"] for s in srcs),
         "sources_failed": sum(1 for s in srcs if not s["ok"]) + sum(s["n_errors"] for s in srcs if s["ok"]),
         "listings": c["listings"], "relevant": c["relevant"], "duplicates": c["duplicates"],
-        "companies": len({j.raw.company for j in new_q}),
+        "companies": len({j.raw.company for j in new_q + promoted}),
         "rej_salary": c.get("rej_salary", 0), "rej_location": c.get("rej_location", 0),
         "rej_experience": c.get("rej_experience", 0), "rej_type": c.get("rej_type", 0),
         "rej_relevance": c.get("rej_relevance", 0), "rej_closed": c.get("rej_closed", 0),
         "new_qualified": len(new_q), "new_nv": len(new_nv), "promoted": len(promoted),
         "closed": len(closed_labels),
-        "high_paying": sum(1 for j in new_q if (j.ev.monthly_usd or 0) > settings["salary"]["high_pay_usd"]),
-        "priority_band": sum(1 for j in new_q if j.ev.monthly_usd and 500 <= j.ev.monthly_usd <= 1000),
+        "high_paying": sum(1 for j in new_q + promoted if (j.ev.monthly_usd or 0) > settings["salary"]["high_pay_usd"]),
+        "priority_band": sum(1 for j in new_q + promoted if j.ev.monthly_usd and 500 <= j.ev.monthly_usd <= 1000),
         "fx": state["fx"] + (f" (1 USD = ₹{state['fx_inr_per_usd']:.2f})" if state.get("fx_inr_per_usd") else ""),
         "source_detail": srcs,
     }
     tz = ZoneInfo(settings["timezone"])
     date_label = datetime.fromisoformat(run_date).strftime(settings["report"]["date_format"]).lstrip("0")
     subject = settings["report"]["subject_template"].format(date=date_label)
-    text, html_body = build_report(date_label, subject, new_q, new_nv, closed_labels,
-                                   [f"{j.raw.company} — {j.raw.title}" for j in promoted], stats, sheet_url, LIMITATIONS)
+    stats["dropped"] = len(dropped_labels)
+    # a lead verified today is a new verified opportunity for the reader, wherever it was first seen
+    text, html_body = build_report(date_label, subject, new_q + promoted, new_nv,
+                                   closed_labels + [f"no longer meets your rules: {d}" for d in dropped_labels],
+                                   [], stats, sheet_url, LIMITATIONS)
     errors = "; ".join(f"{s['name']}: {s['n_errors']} errors" for s in srcs if s["n_errors"])[:450]
     stats_row = [run_date, state["started"], stats["sources_searched"], stats["sources_failed"], stats["listings"],
                  stats["companies"], stats["duplicates"], stats["rej_salary"], stats["rej_location"],
-                 stats["rej_experience"], stats["rej_type"], stats["rej_relevance"], stats["new_qualified"],
+                 stats["rej_experience"], stats["rej_type"], stats["rej_relevance"], stats["new_qualified"] + stats["promoted"],
                  stats["new_nv"], stats["closed"], stats["high_paying"], stats["priority_band"],
                  "{SHEETS_STATUS}", "{EMAIL_STATUS}", errors or "none"]
 
@@ -481,6 +499,16 @@ def override(job_id: str, decision: str, reason: str) -> bool:
             d["ev"]["notes"].append(f"reviewed: {reason}")
             if decision == REJECTED:
                 state["new_jobs"].remove(d)
+            p.write_text(json.dumps(state, indent=1, ensure_ascii=False), encoding="utf-8")
+            return True
+    # a job already in Needs Verification: a reviewer can promote it after checking the posting
+    for d in state.get("existing_nv", []):
+        if d["job_id"] == job_id and decision == QUALIFIED:
+            d["ev"]["decision"] = QUALIFIED
+            d["ev"]["reasons"] = []
+            d["ev"]["notes"].append(f"reviewed: {reason}")
+            state["existing_nv"].remove(d)
+            state["promoted"].append(d)
             p.write_text(json.dumps(state, indent=1, ensure_ascii=False), encoding="utf-8")
             return True
     return False

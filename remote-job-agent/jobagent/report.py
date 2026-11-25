@@ -55,7 +55,7 @@ def build(date_label: str, subject: str, new_q: list, new_nv: list, closed: list
         t.append("")
     if closed or promoted:
         t.append("Changes to earlier vacancies:")
-        t += [f"  • Closed: {c}" for c in closed]
+        t += [f"  • {'Removed' if c.startswith('no longer') else 'Closed'}: {c}" for c in closed]
         t += [f"  • Now verified (moved to All Jobs): {p}" for p in promoted]
         t.append("")
     t += ["Run summary:",
@@ -99,7 +99,7 @@ def build(date_label: str, subject: str, new_q: list, new_nv: list, closed: list
         h.append("</ul>")
     if closed or promoted:
         h.append("<h3 style=\"margin:18px 0 6px\">Changes to earlier vacancies</h3><ul style=\"margin:0;padding-left:20px\">")
-        h += [f"<li>Closed: {e(c)}</li>" for c in closed] + [f"<li>Now verified: {e(p)}</li>" for p in promoted]
+        h += [f"<li>{'Removed' if c.startswith('no longer') else 'Closed'}: {e(c)}</li>" for c in closed] + [f"<li>Now verified: {e(p)}</li>" for p in promoted]
         h.append("</ul>")
     h.append("<h3 style=\"margin:18px 0 6px\">Run summary</h3><table style=\"border-collapse:collapse;font-size:13px\">")
     rows = [("Sources searched", f"{stats['sources_searched']} ({stats['sources_failed']} failed)"),

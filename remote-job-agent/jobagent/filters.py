@@ -141,7 +141,8 @@ _YEARS = re.compile(
     r"(?P<a>\d{1,2}|one|two|three|four|five|six|seven|eight|ten)\s*(?:\+|plus)?\s*"
     r"(?:(?:-|–|to)\s*(?P<b>\d{1,2})\s*\+?\s*)?(?:years?|yrs?)", re.I)
 _WORDNUM = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "ten": 10}
-_EXP_CTX = re.compile(r"experience|exp\b|background|track record|working (?:in|as|with)|professional", re.I)
+_EXP_CTX = re.compile(r"experience|exp\b|background|track record|working (?:in|as|with)|professional|"
+                      r"(?:years?|yrs?)\+? (?:in|of|as|doing|managing|running|writing)\b", re.I)
 _FRESHER_OK = re.compile(r"fresher|entry[- ]level|\bjunior\b|early[- ]career|recent graduate|new grad|"
                          r"no (?:prior )?experience (?:required|needed)|graduates? (?:are )?welcome|0\s*[-–]\s*[12]\s*years?", re.I)
 _MID_TEXT = re.compile(r"mid[- ]level experience|mid[- ]senior|intermediate[- ]level|experienced (?:professional|marketer|writer)", re.I)
@@ -157,11 +158,14 @@ def _min_years(desc: str) -> int | None:
             continue
         if re.search(r"(?:founded|old|ago|history|anniversary|since|over the (?:past|last)|in business)", ctx, re.I):
             continue
+        before = desc[max(0, m.start() - 60): m.start()]
+        if re.search(r"good to have|nice to have|nice-to-have|preferred|bonus|a plus|ideally|level\s*\($|salary", before, re.I):
+            continue          # optional extras and salary-band tables are not the requirement
         a = m.group("a").lower()
         n = _WORDNUM.get(a, None) if not a.isdigit() else int(a)
         if n is not None and n <= 20:
             found.append(n)
-    return min(found) if found else None
+    return max(found) if found else None      # the strictest stated requirement is the real bar
 
 
 def check_experience(job: RawJob, cfg: dict) -> tuple[str, str, str]:

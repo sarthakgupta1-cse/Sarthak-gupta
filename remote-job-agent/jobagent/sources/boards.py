@@ -106,6 +106,8 @@ class HimalayasSource(Source):
                         description=html_to_text(j.get("description", "")),
                         posted_at=_epoch_date(j.get("pubDate")),
                         tags=_listish(j.get("categories")),
+                        # "Originally posted on Himalayas" = the employer posted it there: that page IS the original
+                        is_official="originally posted on himalayas" in (j.get("description") or "").lower(),
                     ))
                 if len(jobs) < 20:
                     break

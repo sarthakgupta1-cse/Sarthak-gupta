@@ -144,7 +144,7 @@ def setup_format_requests(sheet_ids: dict[str, int]) -> list[dict]:
             id_col = {"sheetId": sid, "startRowIndex": 1, "startColumnIndex": 0, "endColumnIndex": 1}
             reqs.append(_cf_rule(0, id_col, '=OR($B2=TODAY(),$B2=TEXT(TODAY(),"yyyy-mm-dd"))',
                                  {"backgroundColorStyle": {"rgbColor": _rgb("#CFE2F3")}, "textFormat": {"bold": True}}))
-            reqs.append(_cf_rule(1, rng, f'=REGEXMATCH(${STATUS_COL}2,"^(Closed|Moved)")',
+            reqs.append(_cf_rule(1, rng, f'=REGEXMATCH(${STATUS_COL}2,"^(Closed|Moved|No longer)")',
                                  {"textFormat": {"strikethrough": True, "foregroundColorStyle": {"rgbColor": _rgb("#999999")}}}))
             if tab == ALL_JOBS:   # pay bands only for confirmed jobs
               reqs.append(_cf_rule(2, rng, f"=AND(ISNUMBER(${m}2),${m}2>1000)",
@@ -258,4 +258,36 @@ def bulk_requests(manifest: list[dict], temp_ids: dict[str, int]) -> list[dict]:
             "pasteType": "PASTE_VALUES"}})
     for tid in temp_ids.values():
         reqs.append({"deleteSheet": {"sheetId": tid}})
+    return reqs
+
+
+def _a1_start(a1: str) -> tuple[str, int, int]:
+    import re
+    m = re.match(r"^'((?:[^']|'')+)'!([A-Z]+)(\d+)", a1)
+    tab, col, row = m.group(1).replace("''", "'"), m.group(2), int(m.group(3))
+    ci = 0
+    for ch in col:
+        ci = ci * 26 + (ord(ch) - 64)
+    return tab, row - 1, ci - 1
+
+
+def _cell_value(v) -> dict:
+    if isinstance(v, bool):
+        return {"userEnteredValue": {"boolValue": v}}
+    if isinstance(v, (int, float)):
+        return {"userEnteredValue": {"numberValue": v}}
+    v = "" if v is None else str(v)
+    return {"userEnteredValue": {"stringValue": v[1:] if v.startswith("'") else v}}   # stringValue is literal
+
+
+def updates_as_requests(ops: list[dict]) -> list[dict]:
+    """Turn the plan's update ops into updateCells requests, so they join the bulk batch (one atomic call)."""
+    reqs = []
+    for op in ops:
+        if op["op"] != "update":
+            continue
+        tab, r0, c0 = _a1_start(op["range"])
+        reqs.append({"updateCells": {"start": {"sheetId": SHEET_IDS[tab], "rowIndex": r0, "columnIndex": c0},
+                                     "rows": [{"values": [_cell_value(v) for v in row]} for row in op["values"]],
+                                     "fields": "userEnteredValue"}})
     return reqs

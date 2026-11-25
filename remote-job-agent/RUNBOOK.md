@@ -75,6 +75,9 @@ Read `out/review.md`.
   employer's own posting (careers page or ATS), up to 10 jobs, highest salary first. Then run
   `python -m jobagent set-original <ID> <url>`. If that URL is open, the job is promoted automatically.
 - A job you keep in Needs Verification with `override` is marked `NR` in `_Index` and is never promoted automatically later.
+- Existing Needs Verification leads are in `state.json` → `existing_nv`. For the 5–10 most promising ones (salary
+  disclosed, one open question), read the full posting text there. If the posting itself settles every rule, run
+  `python -m jobagent override <ID> qualified "<the exact evidence>"` and the job moves to All Jobs. Never promote on a guess.
 - Skim `out/rejected.jsonl` for obvious false rejections. If you find one, override it only after reading the posting.
 Then run `python -m jobagent plan --sheet-url "$SHEET_URL"`.
 
@@ -86,12 +89,11 @@ Then run `python -m jobagent plan --sheet-url "$SHEET_URL"`.
 2. `get_spreadsheet(<temp id>, fields=["sheets.properties"])` → the sheetId of each tab (`AJ`, `NV`, `TRK`, `IDX`).
 3. For each tab: `copy_sheet_to_another_spreadsheet(<temp id>, <tab sheetId>, SHEET_ID)` → note the new sheetId.
 4. `python -m jobagent bulk-requests '{"NV": <new id>, "IDX": <new id>, ...}'` → apply the printed list with one
-   `update_spreadsheet(SHEET_ID, requests)` call. It appends rows, pastes values under the existing data, and deletes the temp tabs.
+   `update_spreadsheet(SHEET_ID, requests)` call. It appends and pastes the new rows, writes every status/date update
+   on existing rows (`updateCells`, located by Job ID), and deletes the temp tabs, all in one atomic batch.
 5. Drive `trash_file(<temp id>)`.
-(Skip the bulk path when `out/bulk.json` is `[]`. For a handful of rows, `python -m jobagent ops` append ops also work.)
-
-**Existing rows:** `python -m jobagent ops --updates-only` prints the remaining small `update` ops (dates, statuses).
-Apply each with `update_values(SHEET_ID, range, values)`, copying the values exactly. A leading `'` keeps text as text.
+If `out/bulk.json` is `[]` (no new rows), skip 1–3 and run `python -m jobagent bulk-requests '{}'`: the output
+then holds only the row updates. Apply it the same way. Don't apply `jobagent ops` as well: that would repeat the same updates.
 
 Retry a failed call once. If it fails again, stop syncing, set SHEETS_STATUS = `Failed at <step>`, upload `out/plan.json` and
 `out/sync.xlsx` (step 8), and carry on. Nothing is lost: tomorrow's run reads the sheet, and anything that didn't get in is discovered again.

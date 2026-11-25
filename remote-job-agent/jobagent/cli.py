@@ -110,7 +110,11 @@ def main(argv=None) -> int:
     elif a.cmd == "bulk-requests":
         from . import sheets as S
         manifest = json.loads((ROOT / "out" / "bulk.json").read_text())
-        print(json.dumps(S.bulk_requests(manifest, json.loads(a.temp_ids))))
+        ops = json.loads((ROOT / "out" / "plan.json").read_text(encoding="utf-8"))["ops"]
+        reqs = S.bulk_requests(manifest, json.loads(a.temp_ids))
+        # row updates go before the temp-tab deletes; all in one atomic batch
+        dels = [r for r in reqs if "deleteSheet" in r]
+        print(json.dumps([r for r in reqs if "deleteSheet" not in r] + S.updates_as_requests(ops) + dels, ensure_ascii=False))
     elif a.cmd == "docs":
         from .applications.generate import generate_all
         print(json.dumps(generate_all(limit=a.limit), indent=1, ensure_ascii=False))
