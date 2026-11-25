@@ -32,6 +32,7 @@ from .monitoring.budget_tracker import BudgetExceeded, BudgetTracker
 from .providers.llm_provider import LLMConfigError, LLMError
 from .qualification.opportunity_scoring import score_profile
 from .qualification.reddketing_fit import exclusion_reason
+from .qualification.scale_signals import assume_floor, scale_signals
 from .reporting.report_generator import ReportData, render_daily_report, render_failure_report
 from .research.company_research import research_company
 from .research.funding_research import funding_is_recent
@@ -98,15 +99,21 @@ def now_ist() -> datetime:
     return datetime.now(IST)
 
 
-def month_spend(sheets, run_date: str) -> float:
-    total = 0.0
+def month_spend(sheets, run_date: str, settings=None) -> float:
+    """Month-to-date spend from the run log, minus the search provider's free monthly credit."""
+    total = queries = 0.0
     for r in sheets.read_records(schema.RUN_LOG):
         if str(r.get("Execution Date", "")).startswith(run_date[:7]):
             try:
                 total += float(r.get("Estimated API Cost (USD)") or 0)
+                queries += float(r.get("Search Queries") or 0)
             except ValueError:
                 pass
-    return total
+    if settings is not None:
+        price = float(settings.get(f"pricing.search_per_query.{settings.search_provider}", 0) or 0)
+        credit = float(settings.get("search.monthly_free_credit_usd", 0) or 0)
+        total -= min(credit, queries * price)
+    return max(0.0, total)
 
 
 def revenue_qualifies(p: CompanyProfile, settings) -> bool:
@@ -197,6 +204,7 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
     per_company_q = int(s.get("search.research_queries_per_company", 2))
 
     llm_failures = fresh = 0
+    backups: list[CompanyProfile] = []
     for c in chosen:
         if fresh >= 3 and llm_failures == fresh:
             # The first companies all failed in the LLM: stop and report a failure (a retry resumes here).
@@ -259,12 +267,8 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
             profile.list_type = "funded"
             out.funded.append(profile)
         else:
-            why = ("Revenue evidence insufficient" if profile.revenue.confidence == Confidence.INSUFFICIENT
-                   else f"Estimated revenue below threshold or score too low ({profile.scores.total}/100)")
-            out.insufficient.append(f"{ex.company_name}: {why}")
-            profile.list_type = "rejected"
-            out.rejected.append(rejected_row(profile, run_date.isoformat(), why, reconsiderable=True,
-                                             reconsider_after=reconsider_date(run_date, reconsider_days)))
+            # Not proven from evidence: kept as a reserve to fill the daily quota with an assumed $50K floor.
+            backups.append(profile)
         # Make same-run duplicates impossible (e.g. two names for one company).
         index.add(KnownCompany(ex.company_name, set(profile.all_domains) | {profile.domain},
                                {normalize_name(ex.company_name)} | {normalize_name(a) for a in ex.aliases},
@@ -273,6 +277,25 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
     # Final selection with quota overflow deferred (not lost, not emailed).
     n_rev = int(s.get("targets.revenue_qualified_per_day", 15))
     n_fund = int(s.get("targets.funded_per_day", 5))
+    # Fill the revenue list to the daily target: companies without public revenue evidence are assumed
+    # to meet the floor, strongest business-scale signals first. Labelled "Assumed" everywhere.
+    floor = float(s.get("targets.revenue_threshold_mrr_usd", 50000))
+    min_signals = int(s.get("qualification.min_scale_signals_for_assumption", 1))
+    ranked = sorted(((scale_signals(p), p) for p in backups),
+                    key=lambda t: (len(t[0]), t[1].scores.total), reverse=True)
+    for signals, p in ranked:
+        if len(out.revenue) < n_rev and len(signals) >= min_signals:
+            assume_floor(p, floor, signals)
+            p.list_type = "revenue"
+            out.revenue.append(p)
+            out.insufficient.append(f"{p.extraction.company_name}: revenue assumed at the ${floor:,.0f} floor "
+                                    f"({len(signals)} business-scale signal(s))")
+        else:
+            why = (f"Fewer business-scale signals than the companies selected ({len(signals)})"
+                   if len(out.revenue) >= n_rev else "No business-scale signals found in public sources")
+            p.list_type = "rejected"
+            out.rejected.append(rejected_row(p, run_date.isoformat(), why, reconsiderable=True,
+                                             reconsider_after=reconsider_date(run_date, 7)))
     out.revenue.sort(key=lambda p: p.scores.total, reverse=True)
     out.funded.sort(key=lambda p: p.scores.total, reverse=True)
     for overflow in out.revenue[n_rev:] + out.funded[n_fund:]:
@@ -388,7 +411,7 @@ def run_pipeline(svc: Services, *, run_date: date | None = None, force_lock: boo
             result.status, result.message = "already_completed", f"Run for {rd} already emailed; nothing to do."
             return result
         state = store.acquire(rd, run_id, force=force_lock)
-        svc.budget.set_month_before(month_spend(sheets, rd))
+        svc.budget.set_month_before(month_spend(sheets, rd, s))
 
         if not state.reached("sheets_written"):
             if svc.budget.mode == BudgetTracker.STOPPED:

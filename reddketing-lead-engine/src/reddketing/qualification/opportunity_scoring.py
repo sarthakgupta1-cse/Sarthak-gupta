@@ -17,7 +17,8 @@ from ..models import ComponentScore, CompanyProfile, Confidence, ScoreBreakdown
 from ..research.funding_research import funding_is_recent
 from ..research.revenue_estimator import usd
 
-CONF_MULT = {Confidence.HIGH: 1.0, Confidence.MEDIUM: 0.9, Confidence.LOW: 0.75, Confidence.INSUFFICIENT: 0.5}
+CONF_MULT = {Confidence.HIGH: 1.0, Confidence.MEDIUM: 0.9, Confidence.LOW: 0.75,
+             Confidence.ASSUMED: 0.6, Confidence.INSUFFICIENT: 0.5}
 AUDIENCE_POINTS = {"consumer": 8, "prosumer": 8, "developer": 8, "smb_self_serve": 6, "mixed": 5, "enterprise_only": 1}
 
 
