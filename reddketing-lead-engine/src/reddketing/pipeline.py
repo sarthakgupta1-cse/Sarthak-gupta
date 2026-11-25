@@ -26,10 +26,10 @@ from .database.records import daily_row, funded_row, master_row, rejected_row
 from .database.run_state import LockHeld, RunState, RunStateStore
 from .discovery.candidate_filter import filter_candidates, prioritise
 from .discovery.funding_discovery import collect_funding_items
-from .discovery.startup_discovery import collect_launch_items, extract_candidates
+from .discovery.startup_discovery import DiscoveryFailed, collect_launch_items, extract_candidates
 from .models import Candidate, CompanyProfile, Confidence
 from .monitoring.budget_tracker import BudgetExceeded, BudgetTracker
-from .providers.llm_provider import LLMError
+from .providers.llm_provider import LLMConfigError, LLMError
 from .qualification.opportunity_scoring import score_profile
 from .qualification.reddketing_fit import exclusion_reason
 from .reporting.report_generator import ReportData, render_daily_report, render_failure_report
@@ -165,12 +165,22 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
     launch_items = collect_launch_items(s, svc.free, svc.search, run_date, n_queries)
     logger.info("discovery items collected", extra={"data": {"funding": len(funding_items), "launch": len(launch_items)}})
     cands: list[Candidate] = []
-    try:
-        batch = int(s.llm_setting("discovery_batch_size", 45))
-        cands += extract_candidates(svc.llm, funding_items, blocklist, funding=True, batch_size=batch)
-        cands += extract_candidates(svc.llm, launch_items, blocklist, batch_size=batch)
-    except BudgetExceeded as exc:
-        out.errors.append(str(exc))
+    batch = int(s.llm_setting("discovery_batch_size", 45))
+    discovery_failures: list[str] = []
+    for group, kwargs in ((funding_items, {"funding": True}), (launch_items, {})):
+        if not group:
+            continue
+        try:
+            cands += extract_candidates(svc.llm, group, blocklist, batch_size=batch, **kwargs)
+        except BudgetExceeded as exc:
+            out.errors.append(str(exc))
+            break
+        except DiscoveryFailed as exc:
+            discovery_failures.append(str(exc))
+            out.errors.append(str(exc))
+    if discovery_failures and not cands:
+        # Nothing could be read: report a failure rather than an empty "success".
+        raise LLMError("AI model unavailable during discovery: " + discovery_failures[-1])
     cands = cands[: int(s.get("targets.max_discovery_candidates", 150))]
     out.discovered = len(cands)
 
@@ -186,12 +196,17 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
     reconsider_days = int(s.get("targets.reconsider_after_days", 90))
     per_company_q = int(s.get("search.research_queries_per_company", 2))
 
+    llm_failures = fresh = 0
     for c in chosen:
+        if fresh >= 3 and llm_failures == fresh:
+            # The first companies all failed in the LLM: stop and report a failure (a retry resumes here).
+            raise LLMError(f"AI model failed for the first {fresh} companies researched; last error: {out.errors[-1]}")
         if not budget.llm_allowed():
             out.errors.append("LLM budget/run cap reached; remaining candidates deferred to a later run")
             break
         profile = checkpoint.load(c.domain or c.name)
         if profile is None:
+            fresh += 1
             reserve = 4  # keep a few queries for funding/domain lookups later in the run
             q_budget = max(0, min(per_company_q, budget.remaining_queries() - reserve))
             try:
@@ -200,9 +215,16 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
             except BudgetExceeded as exc:
                 out.errors.append(str(exc))
                 break
+            except LLMConfigError:
+                raise
             except LLMError as exc:
                 out.errors.append(f"{c.name}: {exc}")
-                profile = f"research failed ({exc})"
+                llm_failures += 1
+                out.rejected.append(rejected_row(c.name, run_date.isoformat(), f"research failed ({exc})",
+                                                 website=c.website, domain=c.domain, reconsiderable=True,
+                                                 reconsider_after=reconsider_date(run_date, 1)))
+                out.researched += 1
+                continue  # not checkpointed, so a retry researches it again
             except Exception as exc:  # noqa: BLE001 — one bad site must not kill the run
                 logger.exception("research crashed for %s", c.name)
                 out.errors.append(f"{c.name}: unexpected {exc.__class__.__name__}: {exc}")

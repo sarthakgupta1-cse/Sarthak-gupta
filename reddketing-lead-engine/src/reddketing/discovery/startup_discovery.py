@@ -5,7 +5,7 @@ import logging
 from datetime import date
 
 from ..models import Candidate, CandidateExtraction
-from ..providers.llm_provider import LLMError
+from ..providers.llm_provider import LLMConfigError, LLMError
 from ..providers.news_feeds import FeedItem, FreeSources
 from ..providers.search_provider import SearchProvider
 from ..research.prompts import DISCOVERY_SYSTEM, discovery_user_prompt
@@ -26,16 +26,26 @@ def collect_launch_items(settings, free: FreeSources, search: SearchProvider, ru
     return items
 
 
+class DiscoveryFailed(LLMError):
+    """No batch of discovery items could be read by the LLM."""
+
+
 def extract_candidates(llm, items: list[FeedItem], blocklist: set[str], *, batch_size: int = 45,
                        funding: bool = False) -> list[Candidate]:
     """LLM turns noisy items into named companies. Item URLs are mapped back deterministically."""
     out: list[Candidate] = []
+    batches = failed = 0
+    last_error = ""
     for start in range(0, len(items), batch_size):
         batch = items[start:start + batch_size]
+        batches += 1
         try:
             result = llm.complete_json(DISCOVERY_SYSTEM, discovery_user_prompt(batch), CandidateExtraction)
+        except LLMConfigError:
+            raise
         except LLMError as exc:
             logger.warning("candidate extraction failed for a batch: %s", exc)
+            failed, last_error = failed + 1, str(exc)
             continue
         for c in result.candidates:
             idx = [int(i[1:]) for i in c.item_ids if i.startswith("I") and i[1:].isdigit() and int(i[1:]) < len(batch)]
@@ -58,4 +68,6 @@ def extract_candidates(llm, items: list[FeedItem], blocklist: set[str], *, batch
                 discovery_channels=sorted({r.source for r in refs}) or ["unknown"],
                 discovery_urls=[r.url for r in refs][:5], discovery_note=c.why_relevant[:300],
                 funding_hint=hint, is_funding_lead=funding or c.is_funding_announcement))
+    if batches and failed == batches:
+        raise DiscoveryFailed(f"every discovery batch failed ({failed}/{batches}); last error: {last_error}")
     return out
