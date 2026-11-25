@@ -1,0 +1,64 @@
+{{ subject }}
+{{ "=" * 60 }}
+
+1. DAILY SUMMARY
+- New revenue-qualified companies: {{ s.revenue_count }}
+- Recently funded companies: {{ s.funded_count }}
+- Duplicates avoided: {{ s.duplicates }}
+- Rejected after research: {{ s.rejected }}
+- Highest / average opportunity score: {{ s.highest }} / {{ s.average }}
+- Revenue confidence: High {{ s.confidence.High }}, Medium {{ s.confidence.Medium }}, Low {{ s.confidence.Low }}
+{% if s.revenue_count < 15 %}
+Note: fewer than 15 companies met the evidence bar today; no quota-filling.
+{% endif %}
+
+2. NEW REVENUE-QUALIFIED COMPANIES
+{% for r in d.revenue_rows %}
+{{ loop.index }}. {{ r["Company Name"] }} — {{ r["Total Opportunity Score"] }}/100 ({{ r["Opportunity Tier"] }})
+   Website: {{ r["Website"] }}
+   Sells: {{ r["Product Description"] }}
+   Industry: {{ r["Industry"] }} | HQ: {{ r["Headquarters"] }}
+   Est. monthly revenue: {{ r | mrr_range }} (confidence {{ r["Revenue Confidence"] }})
+   Method: {{ r["Revenue Calculation"] }}
+   Evidence: {{ (r["Revenue Evidence"] | lines)[:5] | join(" | ") }}
+   Pricing: {{ r["Pricing"] }}
+   Funding: {{ r["Total Funding"] }} / {{ r["Latest Funding Round"] }} ({{ r["Latest Funding Date"] }})
+   Traffic: {{ r["Estimated Monthly Traffic"] }}
+   Adoption: {{ r["Customer Evidence"] | lines | join(" | ") }}
+   Why Reddketing: {{ r["Reddketing Opportunity Explanation"] }}
+   Audience: {{ r["Relevant Audience"] }} | Subreddits: {{ r["Relevant Subreddits"] }}
+   Decision-makers: {{ r["Decision-Maker Designations"] | lines | join("; ") }}
+   LinkedIn: {{ r["LinkedIn URLs"] | lines | join("; ") }}
+   Public email: {{ r["Public Business Email"] | lines | join("; ") }}
+   Sources: {{ (r["Primary Sources"] | lines)[:5] | join(" ") }}
+{% else %}
+No company met the revenue-qualification bar today.
+{% endfor %}
+
+3. RECENTLY FUNDED COMPANIES (funding does not imply revenue)
+{% for r in d.funded_rows %}
+- {{ r["Company Name"] }} — {{ r["Total Opportunity Score"] }}/100 — {{ r["Website"] }}
+   Product: {{ r["Product Description"] }}
+   Funding: {{ r["Amount Raised (USD)"] | money }} {{ r["Funding Round"] }}, announced {{ r["Announcement Date"] }}; investors: {{ r["Lead Investors"] }}
+   Founders: {{ r["Founders"] }}
+   Est. revenue: {{ r | mrr_range }} ({{ r["Revenue Confidence"] }})
+   Opportunity: {{ r["Reddit Marketing Opportunity"] }}
+   Decision-makers: {{ r["Decision-Maker Designations"] | lines | join("; ") }}
+   Sources: {{ (r["Sources"] | lines)[:4] | join(" ") }}
+{% else %}
+None today.
+{% endfor %}
+
+4. TOP OPPORTUNITIES
+{% for r in top %}
+{{ loop.index }}. {{ r["Company Name"] }} ({{ r["Total Opportunity Score"] }}/100, {{ r._list }}): {{ r["Reddketing Opportunity Explanation"] }}
+{% endfor %}
+
+5. RESEARCH NOTES
+Rejected: {% for r in d.rejected_rows[:25] %}{{ r["Company Name"] }} ({{ r["Reason for Rejection"] }}){% if not loop.last %}; {% endif %}{% endfor %}
+
+Limitations: {{ d.limitations | join(" ") }}
+{% if d.api_errors %}API errors: {{ d.api_errors[:10] | join(" | ") }}{% endif %}
+
+6. DATABASE
+{{ d.sheet_url }}

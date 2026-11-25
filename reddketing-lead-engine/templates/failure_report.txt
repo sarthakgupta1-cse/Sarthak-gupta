@@ -1,0 +1,9 @@
+Reddketing lead engine run failed — {{ run_date }}
+
+No daily report was sent.
+Stage: {{ stage }}
+Error: {{ error }}
+{% for x in details %}- {{ x }}
+{% endfor %}
+Saved research is preserved; the next run resumes from the last completed step.
+{{ sheet_url }}

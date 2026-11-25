@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ subject }}</title></head>
+<body style="margin:0;padding:0;background:#f4f4f5;font-family:Arial,Helvetica,sans-serif;color:#18181b;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f5;"><tr><td align="center" style="padding:16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:760px;background:#ffffff;border-radius:8px;">
+<tr><td style="padding:20px 24px;border-bottom:3px solid #ff4500;">
+  <div style="font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:1px;">Reddketing Lead Intelligence</div>
+  <div style="font-size:22px;font-weight:bold;margin-top:4px;">Daily report — {{ d.run_date }}</div>
+</td></tr>
+
+<!-- SECTION 1 -->
+<tr><td style="padding:20px 24px;">
+  <h2 style="font-size:17px;margin:0 0 12px;">1. Daily summary</h2>
+  <table role="presentation" cellpadding="6" cellspacing="0" style="font-size:14px;border-collapse:collapse;width:100%;">
+    <tr><td style="color:#52525b;">New revenue-qualified companies</td><td style="font-weight:bold;">{{ s.revenue_count }}</td></tr>
+    <tr><td style="color:#52525b;">Recently funded companies</td><td style="font-weight:bold;">{{ s.funded_count }}</td></tr>
+    <tr><td style="color:#52525b;">Duplicates avoided</td><td style="font-weight:bold;">{{ s.duplicates }}</td></tr>
+    <tr><td style="color:#52525b;">Companies rejected after research</td><td style="font-weight:bold;">{{ s.rejected }}</td></tr>
+    <tr><td style="color:#52525b;">Highest / average opportunity score</td><td style="font-weight:bold;">{{ s.highest }} / {{ s.average }}</td></tr>
+    <tr><td style="color:#52525b;">Revenue confidence (revenue list)</td><td style="font-weight:bold;">High {{ s.confidence.High }} · Medium {{ s.confidence.Medium }} · Low {{ s.confidence.Low }}</td></tr>
+  </table>
+  {% if s.revenue_count < 15 %}<p style="font-size:13px;color:#92400e;background:#fffbeb;padding:8px 10px;border-radius:4px;">Fewer than 15 companies met the evidence bar today. The engine reports only companies it can support with sources and never fills the quota with guesses.</p>{% endif %}
+</td></tr>
+
+<!-- SECTION 2 -->
+<tr><td style="padding:4px 24px 12px;">
+  <h2 style="font-size:17px;margin:0 0 12px;">2. New revenue-qualified companies ({{ s.revenue_count }})</h2>
+  {% for r in d.revenue_rows %}
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e4e7;border-radius:6px;margin-bottom:14px;">
+  <tr><td style="padding:12px 14px;background:#fafafa;border-bottom:1px solid #e4e4e7;">
+    <span style="font-size:16px;font-weight:bold;">{{ loop.index }}. {{ r["Company Name"] }}</span>
+    <span style="float:right;background:#ff4500;color:#fff;font-size:12px;font-weight:bold;padding:3px 8px;border-radius:10px;">{{ r["Total Opportunity Score"] }}/100</span><br>
+    <a href="{{ r['Website'] }}" style="font-size:13px;color:#2563eb;">{{ r["Website"] }}</a>
+    <span style="font-size:12px;color:#71717a;"> · {{ r["Industry"] }} · {{ r["Headquarters"] }} · {{ r["Opportunity Tier"] }}</span>
+  </td></tr>
+  <tr><td style="padding:10px 14px;font-size:13px;line-height:1.5;">
+    <b>What it sells:</b> {{ r["Product Description"] }}<br>
+    <b>Estimated monthly revenue:</b> {{ r | mrr_range }} <span style="color:#71717a;">(confidence: <b>{{ r["Revenue Confidence"] }}</b>)</span><br>
+    <b>How it was estimated:</b> {{ r["Revenue Calculation"] }}<br>
+    {% if r["Revenue Assumptions"] and r["Revenue Assumptions"] != "None" %}<b>Assumptions:</b> {{ r["Revenue Assumptions"] | lines | join("; ") }}<br>{% endif %}
+    <b>Evidence:</b>
+    <ul style="margin:2px 0 6px 18px;padding:0;">{% for e in (r["Revenue Evidence"] | lines)[:6] %}<li>{{ e }}</li>{% endfor %}</ul>
+    <b>Pricing:</b> {{ r["Pricing"] }}<br>
+    <b>Funding:</b> {{ r["Total Funding"] }}{% if r["Latest Funding Round"] != "Not publicly available" %} · latest {{ r["Latest Funding Round"] }} ({{ r["Latest Funding Date"] }}){% endif %}<br>
+    <b>Website traffic:</b> {{ r["Estimated Monthly Traffic"] }}<br>
+    <b>Adoption signals:</b> {{ r["Customer Evidence"] | lines | join("; ") }}<br>
+    <b>Why Reddketing:</b> {{ r["Reddketing Opportunity Explanation"] }}<br>
+    <b>Relevant audience:</b> {{ r["Relevant Audience"] }} · <b>Subreddits:</b> {{ r["Relevant Subreddits"] }}<br>
+    <b>Decision-makers:</b> {{ r["Decision-Maker Designations"] | lines | join("; ") }}<br>
+    <b>LinkedIn:</b> {{ r["LinkedIn URLs"] | lines | join("; ") }}<br>
+    <b>Public business email:</b> {{ r["Public Business Email"] | lines | join("; ") }}<br>
+    <details><summary style="cursor:pointer;color:#52525b;">Score breakdown and sources</summary>
+      <div style="white-space:pre-line;color:#3f3f46;margin-top:4px;">{{ r["Score Reasons"] }}</div>
+      <div style="white-space:pre-line;color:#3f3f46;margin-top:4px;">{{ r["Primary Sources"] }}</div>
+    </details>
+    <div style="color:#71717a;font-size:12px;margin-top:4px;">Sources: {% for u in (r["Primary Sources"] | lines)[:5] %}{{ u }}{% if not loop.last %} · {% endif %}{% endfor %}</div>
+  </td></tr></table>
+  {% else %}
+  <p style="font-size:13px;color:#52525b;">No company met the revenue-qualification bar today.</p>
+  {% endfor %}
+</td></tr>
+
+<!-- SECTION 3 -->
+<tr><td style="padding:4px 24px 12px;">
+  <h2 style="font-size:17px;margin:0 0 6px;">3. Recently funded companies ({{ s.funded_count }})</h2>
+  <p style="font-size:12px;color:#71717a;margin:0 0 10px;">Funding does not imply revenue. These are funding-backed prospects, kept separate from the revenue list.</p>
+  {% for r in d.funded_rows %}
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e4e7;border-radius:6px;margin-bottom:14px;">
+  <tr><td style="padding:12px 14px;background:#fafafa;border-bottom:1px solid #e4e4e7;">
+    <span style="font-size:16px;font-weight:bold;">{{ r["Company Name"] }}</span>
+    <span style="float:right;background:#2563eb;color:#fff;font-size:12px;font-weight:bold;padding:3px 8px;border-radius:10px;">{{ r["Total Opportunity Score"] }}/100</span><br>
+    <a href="{{ r['Website'] }}" style="font-size:13px;color:#2563eb;">{{ r["Website"] }}</a>
+  </td></tr>
+  <tr><td style="padding:10px 14px;font-size:13px;line-height:1.5;">
+    <b>Product:</b> {{ r["Product Description"] }}<br>
+    <b>Funding:</b> {{ r["Amount Raised (USD)"] | money }} · {{ r["Funding Round"] }} · announced {{ r["Announcement Date"] }}<br>
+    <b>Investors:</b> {{ r["Lead Investors"] }}<br>
+    <b>Founders:</b> {{ r["Founders"] }}<br>
+    <b>Estimated revenue:</b> {{ r | mrr_range }} (confidence: {{ r["Revenue Confidence"] }})<br>
+    <b>Reddketing opportunity:</b> {{ r["Reddit Marketing Opportunity"] }}<br>
+    <b>Decision-makers:</b> {{ r["Decision-Maker Designations"] | lines | join("; ") }}<br>
+    <b>LinkedIn:</b> {{ r["LinkedIn URLs"] | lines | join("; ") }}<br>
+    <b>Public business email:</b> {{ r["Public Business Email"] | lines | join("; ") }}<br>
+    <div style="color:#71717a;font-size:12px;margin-top:4px;">Sources: {% for u in (r["Sources"] | lines)[:5] %}{{ u }}{% if not loop.last %} · {% endif %}{% endfor %}</div>
+  </td></tr></table>
+  {% else %}
+  <p style="font-size:13px;color:#52525b;">No new funded prospect met the bar today.</p>
+  {% endfor %}
+</td></tr>
+
+<!-- SECTION 4 -->
+<tr><td style="padding:4px 24px 12px;">
+  <h2 style="font-size:17px;margin:0 0 10px;">4. Top opportunities</h2>
+  {% for r in top %}
+  <p style="font-size:13px;line-height:1.5;margin:0 0 10px;"><b>{{ loop.index }}. {{ r["Company Name"] }}</b> — {{ r["Total Opportunity Score"] }}/100 ({{ r._list }}).<br>
+  {{ r["Reddketing Opportunity Explanation"] }}<br><span style="color:#52525b;">Strongest factors: {{ (r["Score Reasons"] | lines)[:2] | join(" | ") }}</span></p>
+  {% else %}<p style="font-size:13px;">None today.</p>{% endfor %}
+</td></tr>
+
+<!-- SECTION 5 -->
+<tr><td style="padding:4px 24px 12px;">
+  <h2 style="font-size:17px;margin:0 0 10px;">5. Research notes</h2>
+  <div style="font-size:13px;line-height:1.5;">
+  <b>Rejected after research ({{ d.rejected_rows | length }}):</b>
+  <ul style="margin:2px 0 8px 18px;padding:0;">{% for r in d.rejected_rows[:25] %}<li>{{ r["Company Name"] }} — {{ r["Reason for Rejection"] }}</li>{% endfor %}</ul>
+  {% if d.insufficient %}<b>Insufficient evidence:</b><ul style="margin:2px 0 8px 18px;padding:0;">{% for x in d.insufficient[:20] %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+  <b>Research limitations:</b><ul style="margin:2px 0 8px 18px;padding:0;">{% for x in d.limitations %}<li>{{ x }}</li>{% endfor %}</ul>
+  {% if d.api_errors %}<b>API errors:</b><ul style="margin:2px 0 8px 18px;padding:0;">{% for x in d.api_errors[:15] %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+  {% if d.usage %}<b>API usage this run:</b> {{ d.usage.get("search_queries", 0) }} searches, {{ d.usage.get("llm_calls", 0) }} LLM calls, est. ${{ "%.3f"|format(d.usage.get("run_cost_usd", 0)) }} (month to date ${{ "%.2f"|format(d.usage.get("month_to_date_usd", 0)) }} of ${{ "%.2f"|format(d.usage.get("monthly_budget_usd", 0)) }}).{% endif %}
+  </div>
+</td></tr>
+
+<!-- SECTION 6 -->
+<tr><td style="padding:4px 24px 22px;">
+  <h2 style="font-size:17px;margin:0 0 10px;">6. Database</h2>
+  <p style="font-size:13px;"><a href="{{ d.sheet_url }}" style="color:#2563eb;">Open the Reddketing Company Intelligence Database</a></p>
+  <p style="font-size:11px;color:#a1a1aa;">Estimates are derived from public signals and labelled with confidence. No outreach has been sent to any company. Contact details are limited to publicly listed professional information.</p>
+</td></tr>
+</table></td></tr></table></body></html>

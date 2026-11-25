@@ -1,0 +1,153 @@
+# Reddketing Lead Intelligence Engine — runtime settings.
+# Secrets (and the report recipient address) are NOT stored here; see .env.example.
+
+business:
+  name: Reddketing
+  website: https://reddketing.com/
+  # Summary used in LLM prompts (derived from reddketing.com, read 2026-11-25).
+  summary: >
+    Reddketing is a Reddit-only organic marketing agency. It runs managed Reddit
+    posting and in-thread commenting, builds client-owned subreddits, and offers
+    Reddit strategy consultation. It positions Reddit as a source of referral
+    traffic, branded search and citations in AI answers (ChatGPT, Gemini,
+    Perplexity, Google AI Overviews). It works with SaaS, eCommerce and B2B
+    companies whose buyers research purchases on Reddit. No bots, no bought upvotes.
+
+schedule:
+  timezone: Asia/Kolkata
+  # 08:00 IST == 02:30 UTC. The cron lives in .github/workflows/daily-discovery.yml.
+  local_time: "08:00"
+  utc_cron: "30 2 * * *"
+
+targets:
+  revenue_qualified_per_day: 15
+  funded_per_day: 5
+  revenue_threshold_mrr_usd: 50000
+  funding_lookback_days: 180
+  preferred_min_funding_usd: 1000000
+  # Research more candidates than we need so qualification is real.
+  max_candidates_to_research: 40
+  max_discovery_candidates: 150
+  # Rejected companies may be re-researched after this many days if flagged reconsiderable.
+  reconsider_after_days: 90
+
+email:
+  # The recipient comes from the REPORT_RECIPIENT secret only.
+  recipient_env: REPORT_RECIPIENT
+  subject_template: "Reddketing Daily Lead Intelligence Report - {date}"
+  failure_subject_template: "[ACTION NEEDED] Reddketing lead engine run failed - {date}"
+
+sheets:
+  spreadsheet_name: "Reddketing - Company Intelligence Database"
+
+llm:
+  provider_env: LLM_PROVIDER
+  default_provider: anthropic
+  models:
+    anthropic: claude-haiku-5-5
+    gemini: gemini-3.5-flash-lite
+    openai: gpt-5-nano
+  # Per-provider overrides of any llm.* key below. Gemini keys on the free tier are refused at random
+  # ("high demand", HTTP 503) more often for long prompts, so Gemini gets smaller prompts and quick retries.
+  # fallback_models: tried in order when the main model keeps answering overloaded/rate-limited.
+  provider_overrides:
+    gemini:
+      discovery_batch_size: 15
+      max_chars_per_document: 3000
+      max_documents_per_company: 6
+      max_retries: 12
+      retry_base_seconds: 1
+      retry_cap_seconds: 15
+      fallback_models: []
+  max_output_tokens: 8000
+  max_calls_per_run: 90
+  # Characters of page text passed per source document (keeps tokens and cost bounded).
+  max_chars_per_document: 6000
+  max_documents_per_company: 9
+
+search:
+  provider_env: SEARCH_PROVIDER
+  default_provider: brave
+  max_queries_per_run: 60
+  discovery_queries_per_run: 12
+  research_queries_per_company: 2
+  results_per_query: 10
+  cache_ttl_days: 14
+
+http:
+  timeout_seconds: 20
+  max_retries: 3
+  per_host_delay_seconds: 1.0
+  respect_robots_txt: true
+  user_agent: "ReddketingLeadResearchBot/1.0 (+https://reddketing.com/)"
+  page_cache_ttl_days: 7
+
+# Prices in USD. Verify against provider pricing pages before changing the budget.
+# Checked 2026-11-25 (see docs/COSTS.md for sources).
+pricing:
+  llm_per_million_tokens:
+    claude-haiku-5-5: {input: 0.10, output: 0.50}
+    gemini-3.5-flash-lite: {input: 0.30, output: 2.50}
+    gpt-5-nano: {input: 0.05, output: 0.40}
+  search_per_query:
+    brave: 0.005
+    serper: 0.001
+    none: 0.0
+
+budget:
+  monthly_budget_inr: 2000
+  inr_per_usd: 88.0
+  # Above this fraction of the monthly budget, optional research calls are cut.
+  reduce_at_fraction: 0.8
+  # At this fraction, paid APIs stop entirely for the rest of the month.
+  stop_at_fraction: 1.0
+  reduced_max_candidates: 20
+  reduced_max_queries: 25
+
+revenue_assumptions:
+  # Used ONLY when a company does not disclose the input. Every use is labelled as an assumption.
+  freemium_paid_conversion: [0.02, 0.05]
+  free_trial_paid_conversion: [0.10, 0.25]
+  ecommerce_visit_to_order: [0.01, 0.03]
+  app_downloads_to_paying_monthly: [0.002, 0.01]
+  visitors_to_signups: [0.02, 0.05]
+  marketplace_take_rate: [0.05, 0.15]
+  # Share of the "users" figure assumed active when only a lifetime user count is public.
+  active_share_of_total_users: [0.15, 0.35]
+
+qualification:
+  min_independent_indicators_low_confidence: 2
+  min_total_score_revenue_list: 45
+  min_total_score_funded_list: 45
+
+discovery:
+  free_feeds:
+    - {name: TechCrunch Venture, url: "https://techcrunch.com/category/venture/feed/", kind: funding}
+    - {name: TechCrunch Startups, url: "https://techcrunch.com/category/startups/feed/", kind: funding}
+    - {name: EU-Startups, url: "https://www.eu-startups.com/feed/", kind: funding}
+    - {name: VentureBeat, url: "https://venturebeat.com/feed/", kind: funding}
+    - {name: Tech in Asia, url: "https://www.techinasia.com/feed", kind: funding}
+    - {name: Inc42 Buzz, url: "https://inc42.com/buzz/feed/", kind: funding}
+  google_news_funding_queries:
+    - '"raises" "seed round" app'
+    - '"raises" "Series A" consumer app'
+    - '"Series B" startup raises subscription'
+    - '"raised" funding DTC brand'
+    - '"pre-seed" AI app raises'
+    - '"funding round" fintech app consumers'
+    - '"raises" developer tool startup'
+    - '"secures" funding skincare OR wellness brand'
+  hacker_news_min_points: 150
+  # Domains that are directories / news / platforms, never a candidate's own site.
+  non_company_domains: [techcrunch.com, venturebeat.com, eu-startups.com, techinasia.com, sifted.eu,
+    crunchbase.com, producthunt.com, ycombinator.com, wellfound.com, f6s.com, dealroom.co, g2.com,
+    capterra.com, alternativeto.net, saashub.com, github.com, apple.com, play.google.com,
+    chromewebstore.google.com, shopify.com, wordpress.org, linkedin.com, twitter.com, x.com,
+    facebook.com, instagram.com, youtube.com, reddit.com, medium.com, substack.com, forbes.com,
+    bloomberg.com, reuters.com, businessinsider.com, wikipedia.org, google.com, similarweb.com,
+    semrush.com, ahrefs.com, inc42.com, yourstory.com, prnewswire.com, businesswire.com,
+    globenewswire.com, tracxn.com, pitchbook.com, cbinsights.com, zoominfo.com, apollo.io,
+    rocketreach.co, getlatka.com, trustpilot.com, tiktok.com, cnbc.com, theverge.com, wired.com,
+    techradar.com, zapier.com, hn.algolia.com, ycombinator.com, news.ycombinator.com, bing.com,
+    brave.com, quora.com, pcmag.com, tomsguide.com, nytimes.com, wsj.com, ft.com, economictimes.indiatimes.com,
+    entrackr.com, vccircle.com, fortune.com, axios.com, sifted.eu, finsmes.com, siliconangle.com]

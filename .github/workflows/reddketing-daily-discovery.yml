@@ -1,0 +1,112 @@
+# Reddketing Lead Intelligence Engine — daily run.
+#
+# Schedule: 08:00 IST every day. IST = UTC+05:30, so 08:00 IST = 02:30 UTC -> cron "30 2 * * *".
+# GitHub cron is always UTC and can start several minutes late at busy times; the run date is
+# computed in IST inside the app, so a late start still files under the right day.
+name: Reddketing daily discovery
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (in-memory sheet, no email; report uploaded as an artifact)"
+        type: boolean
+        default: false
+      run_date:
+        description: "Override run date YYYY-MM-DD (IST). Leave empty for today."
+        type: string
+        default: ""
+      force:
+        description: "Take over a stale lock / re-send today's already-emailed report"
+        type: boolean
+        default: false
+
+# Single writer: never run two copies at once; a second trigger waits instead of cancelling.
+concurrency:
+  group: reddketing-daily-discovery
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    defaults:
+      run:
+        working-directory: reddketing-lead-engine
+    env:
+      PYTHONPATH: src
+      REDDKETING_CACHE_DIR: ${{ github.workspace }}/reddketing-lead-engine/.cache
+      GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+      SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+      REPORT_RECIPIENT: ${{ secrets.REPORT_RECIPIENT }}
+      EMAIL_TRANSPORT: ${{ vars.EMAIL_TRANSPORT || 'gmail_api' }}
+      GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+      GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+      GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+      GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
+      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+      SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
+      LLM_PROVIDER: ${{ vars.LLM_PROVIDER || 'anthropic' }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      SEARCH_PROVIDER: ${{ vars.SEARCH_PROVIDER || 'brave' }}
+      BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+      SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+      PRODUCT_HUNT_TOKEN: ${{ secrets.PRODUCT_HUNT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: reddketing-lead-engine/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Page/search/LLM caches and per-day research checkpoints survive between runs, so a
+      # retry never pays twice for the same research. Each run saves a new cache entry.
+      - name: Restore research cache
+        uses: actions/cache@v4
+        with:
+          path: reddketing-lead-engine/.cache
+          key: reddketing-cache-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: reddketing-cache-
+
+      - name: Configuration check
+        run: python -m reddketing.main doctor ${{ inputs.dry_run && '--offline' || '' }} || ${{ inputs.dry_run && 'true' || 'false' }}
+
+      - name: Run pipeline
+        id: run1
+        continue-on-error: true
+        run: >
+          python -m reddketing.main run
+          ${{ inputs.dry_run && '--dry-run' || '' }}
+          ${{ inputs.force && '--force' || '' }}
+          ${{ inputs.run_date && format('--date {0}', inputs.run_date) || '' }}
+
+      # One automatic retry for transient failures (network, rate limits, Gmail hiccups).
+      # The app resumes from its saved stage, so this never re-researches or re-inserts.
+      - name: Retry once after 10 minutes
+        if: steps.run1.outcome == 'failure'
+        run: |
+          sleep 600
+          python -m reddketing.main run \
+            ${{ inputs.dry_run && '--dry-run' || '' }} \
+            ${{ inputs.run_date && format('--date {0}', inputs.run_date) || '' }}
+
+      - name: Upload dry-run report
+        if: always() && inputs.dry_run
+        uses: actions/upload-artifact@v4
+        with:
+          name: reddketing-dry-run-report
+          path: reddketing-lead-engine/out/
+          if-no-files-found: ignore
+          retention-days: 7
