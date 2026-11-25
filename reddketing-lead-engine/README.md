@@ -75,7 +75,7 @@ Optional repository **variables** (not secrets): `LLM_PROVIDER` (`anthropic`|`ge
 
 ## Cost
 
-Estimated **₹450–₹950 per month** (about $5–$11) at default settings; the hard cap is ₹2,000.
+Estimated **₹300–₹450 per month** with Claude Haiku 5.5 at default settings; the hard cap is ₹1,000.
 Details and the pricing sources are in [docs/COSTS.md](docs/COSTS.md). The budget tracker reads
 month-to-date spend from the Daily Run Log tab, cuts optional research at 80% and stops paid calls
 at 100%. It never buys or upgrades anything.
