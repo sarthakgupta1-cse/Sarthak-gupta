@@ -103,18 +103,21 @@ class LLMProvider:
                     pass
         user_msg = user
         last_error = ""
-        for attempt in range(3):  # 1 call + up to 2 repairs/retries
+        repairs = transient = 0
+        while repairs <= 2 and transient <= 5:
             self.budget.require_llm()
             try:
                 resp = self._call(system, user_msg, schema)
             except (httpx.TimeoutException, httpx.TransportError) as exc:
                 last_error = f"network: {exc}"
-                backoff_sleep(attempt)
+                transient += 1
+                backoff_sleep(transient, base=4, cap=60)
                 continue
             except LLMError as exc:
                 last_error = str(exc)
                 if "retryable" in last_error:
-                    backoff_sleep(attempt, base=2)
+                    transient += 1
+                    backoff_sleep(transient, base=4, cap=60)  # ~8s, 16s, 32s, 60s, 60s
                     continue
                 break
             self.budget.record_llm(self.model, resp.input_tokens, resp.output_tokens)
@@ -125,9 +128,10 @@ class LLMProvider:
                     self.cache.set(key, result.model_dump(mode="json"))
                 return result
             except (json.JSONDecodeError, ValidationError) as exc:
+                repairs += 1
                 last_error = f"malformed output: {str(exc)[:500]}"
-                user_msg = (user + "\n\nYour previous answer was invalid JSON for the schema. Error:\n"
-                            + str(exc)[:1500] + "\nReturn ONLY corrected JSON.")
+                user_msg = (user + "\n\nYour previous answer did not match the required JSON schema. Error:\n"
+                            + str(exc)[:1500] + "\nReturn ONLY corrected JSON using exactly the schema's field names.")
         msg = f"{self.name} LLM call failed: {last_error}"
         self.errors.append(msg)
         raise LLMError(msg)
@@ -198,12 +202,24 @@ class OpenAIProvider(LLMProvider):
     def available(self) -> bool:
         return bool(env(self.KEY_ENV))
 
+    _use_json_schema = True
+
     def _call(self, system, user, schema):
-        body = {"model": self.model, self.MAX_TOKENS_FIELD: self.max_output_tokens,
-                "response_format": {"type": "json_object"},
-                "messages": [{"role": "system", "content": system},
-                             {"role": "user", "content": user + "\n\nRespond with a single JSON object."}]}
+        # The schema is always stated in the prompt (some endpoints ignore response_format schemas),
+        # and also sent as a structured-output constraint where the endpoint accepts it.
+        schema_text = json.dumps(schema, separators=(",", ":")) if schema else ""
+        content = user + ("\n\nRespond with a single JSON object that validates against this JSON schema "
+                          "(use exactly these field names):\n" + schema_text if schema else
+                          "\n\nRespond with a single JSON object.")
+        fmt = ({"type": "json_schema", "json_schema": {"name": "result", "schema": schema, "strict": True}}
+               if schema and self._use_json_schema else {"type": "json_object"})
+        body = {"model": self.model, self.MAX_TOKENS_FIELD: self.max_output_tokens, "response_format": fmt,
+                "messages": [{"role": "system", "content": system}, {"role": "user", "content": content}]}
         resp = self.client.post(self.URL, json=body, headers={"Authorization": f"Bearer {env(self.KEY_ENV) or ''}"})
+        if resp.status_code == 400 and self._use_json_schema and schema:
+            logger.warning("%s rejected json_schema response_format; using json_object + schema in prompt", self.name)
+            self._use_json_schema = False
+            return self._call(system, user, schema)
         if resp.status_code == 429 or resp.status_code >= 500:
             raise LLMError(f"{self.name} HTTP {resp.status_code} (retryable)")
         if resp.status_code != 200:
