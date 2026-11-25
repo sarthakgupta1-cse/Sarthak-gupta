@@ -351,6 +351,28 @@ def test_llm_hard_failure_raises(settings, tmp_path):
         Down("m", BudgetTracker(settings), tmp_path).complete_json("s", "u", CandidateExtraction, cache=False)
 
 
+def test_llm_switches_to_fallback_model_when_overloaded(settings, tmp_path, monkeypatch):
+    from reddketing.models import CandidateExtraction
+    from reddketing.providers import llm_provider as lp
+
+    monkeypatch.setattr(lp, "backoff_sleep", lambda *a, **k: None)
+    seen = []
+
+    class Busy(lp.LLMProvider):
+        name = "fake"
+        def _call(self, system, user, schema):
+            seen.append(self.model)
+            if self.model == "main":
+                raise lp.LLMError("fake HTTP 503 (retryable)")
+            return lp.LLMResponse('{"candidates": [{"name": "Acme"}]}', 10, 5)
+
+    p = Busy("main", BudgetTracker(settings), tmp_path, fallback_models=["backup"])
+    out = p.complete_json("s", "u", CandidateExtraction, cache=False)
+    assert out.candidates[0].name == "Acme" and seen == ["main", "main", "backup"]
+    p.complete_json("s", "u2", CandidateExtraction, cache=False)
+    assert seen[-1] == "backup"  # stays on the working model for the rest of the run
+
+
 def test_strict_schema_is_self_contained():
     from reddketing.providers.llm_provider import strict_json_schema
     schema = strict_json_schema(ResearchExtraction)

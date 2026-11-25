@@ -76,8 +76,12 @@ def extract_json(text: str) -> str:
 class LLMProvider:
     name = "base"
 
-    def __init__(self, model: str, budget: BudgetTracker, cache_root, max_output_tokens: int = 8000):
+    def __init__(self, model: str, budget: BudgetTracker, cache_root, max_output_tokens: int = 8000,
+                 fallback_models: list[str] | None = None):
         self.model = model
+        self.primary_model = model
+        # Tried in order when the current model keeps returning overload/rate-limit errors.
+        self.models = [model] + [m for m in (fallback_models or []) if m and m != model]
         self.budget = budget
         self.max_output_tokens = max_output_tokens
         self.cache = DiskCache(cache_root, "llm")
@@ -93,7 +97,7 @@ class LLMProvider:
 
     def complete_json(self, system: str, user: str, output_model: Type[T], *, cache: bool = True) -> T:
         schema = strict_json_schema(output_model)
-        key = hashlib.sha256(f"{self.name}|{self.model}|{system}|{user}|{json.dumps(schema, sort_keys=True)}".encode()).hexdigest()
+        key = hashlib.sha256(f"{self.name}|{self.primary_model}|{system}|{user}|{json.dumps(schema, sort_keys=True)}".encode()).hexdigest()
         if cache:
             cached = self.cache.get(key, ttl_seconds=30 * 86400)
             if cached:
@@ -103,23 +107,31 @@ class LLMProvider:
                     pass
         user_msg = user
         last_error = ""
-        repairs = transient = 0
+        repairs = transient = consecutive = 0
         while repairs <= 2 and transient <= 5:
+            if consecutive >= 2 and len(self.models) > 1:
+                # The model is overloaded: move to the next one and stay there for the rest of the run.
+                nxt = self.models[(self.models.index(self.model) + 1) % len(self.models)]
+                logger.warning("%s model %s overloaded; switching to %s", self.name, self.model, nxt)
+                self.model, consecutive = nxt, 0
             self.budget.require_llm()
             try:
                 resp = self._call(system, user_msg, schema)
             except (httpx.TimeoutException, httpx.TransportError) as exc:
                 last_error = f"network: {exc}"
                 transient += 1
+                consecutive += 1
                 backoff_sleep(transient, base=4, cap=60)
                 continue
             except LLMError as exc:
                 last_error = str(exc)
                 if "retryable" in last_error:
                     transient += 1
+                    consecutive += 1
                     backoff_sleep(transient, base=4, cap=60)  # ~8s, 16s, 32s, 60s, 60s
                     continue
                 break
+            consecutive = 0
             self.budget.record_llm(self.model, resp.input_tokens, resp.output_tokens)
             try:
                 data = json.loads(extract_json(resp.text))
@@ -242,7 +254,9 @@ def build_llm_provider(settings, budget, cache_root) -> LLMProvider:
     cls = {"anthropic": AnthropicProvider, "gemini": GeminiProvider, "openai": OpenAIProvider}.get(settings.llm_provider)
     if cls is None:
         raise LLMError(f"Unknown LLM_PROVIDER {settings.llm_provider!r}")
-    provider = cls(settings.llm_model, budget, cache_root, int(settings.get("llm.max_output_tokens", 8000)))
+    fallbacks = list(settings.get(f"llm.fallback_models.{settings.llm_provider}", []) or [])
+    provider = cls(settings.llm_model, budget, cache_root, int(settings.get("llm.max_output_tokens", 8000)),
+                   fallback_models=fallbacks)
     if not provider.available:
         raise LLMError(f"LLM provider {settings.llm_provider} has no API key configured")
     return provider

@@ -75,7 +75,8 @@ and `SMTP_APP_PASSWORD` (16 characters, no spaces).
 2. **API keys → Create key** → copy it (`sk-ant-...`).
 
 Alternatives: Gemini (`GEMINI_API_KEY` from <https://aistudio.google.com/apikey>; set variable
-`LLM_PROVIDER=gemini`) or OpenAI (`OPENAI_API_KEY`; `LLM_PROVIDER=openai`). Note that free-tier
+`LLM_PROVIDER=gemini`; uses `gemini-3.5-flash-lite`, falling back to `gemini-3.5-flash` when it is
+overloaded; costs more than Haiku, see COSTS.md) or OpenAI (`OPENAI_API_KEY`; `LLM_PROVIDER=openai`). Note that free-tier
 Gemini usage may be used by Google to improve its products; a billed key is not.
 
 ## 5. Search API key (default: Brave Search)
@@ -107,7 +108,7 @@ Repository → **Settings → Secrets and variables → Actions**.
 | `REPORT_RECIPIENT` | The address that should receive the daily report |
 | `GMAIL_CLIENT_ID` / `GMAIL_CLIENT_SECRET` / `GMAIL_REFRESH_TOKEN` | From step 3 |
 | `GMAIL_SENDER` | The Gmail address that authorised the token |
-| `ANTHROPIC_API_KEY` | From step 4 |
+| `ANTHROPIC_API_KEY` (or `GEMINI_API_KEY` / `OPENAI_API_KEY`) | From step 4 |
 | `BRAVE_SEARCH_API_KEY` | From step 5 |
 | `PRODUCT_HUNT_TOKEN` | Optional |
 
