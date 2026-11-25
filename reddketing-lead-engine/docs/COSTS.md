@@ -7,7 +7,7 @@ Prices checked on 2026-11-25. They change; update `config/settings.yaml → pric
 | Model | Input | Output | Notes |
 |---|---|---|---|
 | **Claude Haiku 5.5** (`claude-haiku-5-5`) — default | 0.10 | 0.50 | Prompts up to 100K tokens; structured JSON output supported. Anthropic pricing table. |
-| Gemini 2.5 Flash-Lite | 0.10 | 0.40 | Third-party trackers; one reports 2.5 models limited to existing users. Free tier exists but data may be used to improve Google products. |
+| Gemini 3.5 Flash-Lite (`gemini-3.5-flash-lite`) | 0.30 | 2.50 | Gemini 2.5 Flash-Lite now returns "no longer available to new users" (seen 2026-11-25). Called via Google's OpenAI-compatible endpoint with a Bearer key. |
 | GPT-5 nano | 0.05 | 0.40 | OpenAI model page. |
 | GPT-5 mini | 0.25 | 2.00 | Third-party trackers. |
 

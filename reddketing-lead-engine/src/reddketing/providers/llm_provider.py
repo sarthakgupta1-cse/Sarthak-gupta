@@ -183,40 +183,12 @@ class AnthropicProvider(LLMProvider):
         return LLMResponse(text, msg.usage.input_tokens, msg.usage.output_tokens)
 
 
-class GeminiProvider(LLMProvider):
-    name = "gemini"
-    URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.client = httpx.Client(timeout=180)
-
-    @property
-    def available(self) -> bool:
-        return bool(env("GEMINI_API_KEY"))
-
-    def _call(self, system, user, schema):
-        body = {
-            "systemInstruction": {"parts": [{"text": system}]},
-            "contents": [{"role": "user", "parts": [{"text": user}]}],
-            "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": self.max_output_tokens},
-        }
-        resp = self.client.post(self.URL.format(model=self.model), json=body,
-                                headers={"x-goog-api-key": env("GEMINI_API_KEY") or ""})
-        if resp.status_code == 429 or resp.status_code >= 500:
-            raise LLMError(f"gemini HTTP {resp.status_code} (retryable)")
-        if resp.status_code != 200:
-            raise LLMError(f"gemini HTTP {resp.status_code}: {resp.text[:300]}")
-        data = resp.json()
-        parts = (data.get("candidates") or [{}])[0].get("content", {}).get("parts", [])
-        usage = data.get("usageMetadata", {})
-        out_tokens = usage.get("candidatesTokenCount", 0) + usage.get("thoughtsTokenCount", 0)
-        return LLMResponse("".join(p.get("text", "") for p in parts), usage.get("promptTokenCount", 0), out_tokens)
-
-
 class OpenAIProvider(LLMProvider):
+    """OpenAI Chat Completions; also the base for other OpenAI-compatible endpoints."""
     name = "openai"
     URL = "https://api.openai.com/v1/chat/completions"
+    KEY_ENV = "OPENAI_API_KEY"
+    MAX_TOKENS_FIELD = "max_completion_tokens"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -224,21 +196,30 @@ class OpenAIProvider(LLMProvider):
 
     @property
     def available(self) -> bool:
-        return bool(env("OPENAI_API_KEY"))
+        return bool(env(self.KEY_ENV))
 
     def _call(self, system, user, schema):
-        body = {"model": self.model, "max_completion_tokens": self.max_output_tokens,
+        body = {"model": self.model, self.MAX_TOKENS_FIELD: self.max_output_tokens,
                 "response_format": {"type": "json_object"},
-                "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
-        resp = self.client.post(self.URL, json=body, headers={"Authorization": f"Bearer {env('OPENAI_API_KEY') or ''}"})
+                "messages": [{"role": "system", "content": system},
+                             {"role": "user", "content": user + "\n\nRespond with a single JSON object."}]}
+        resp = self.client.post(self.URL, json=body, headers={"Authorization": f"Bearer {env(self.KEY_ENV) or ''}"})
         if resp.status_code == 429 or resp.status_code >= 500:
-            raise LLMError(f"openai HTTP {resp.status_code} (retryable)")
+            raise LLMError(f"{self.name} HTTP {resp.status_code} (retryable)")
         if resp.status_code != 200:
-            raise LLMError(f"openai HTTP {resp.status_code}: {resp.text[:300]}")
+            raise LLMError(f"{self.name} HTTP {resp.status_code}: {resp.text[:300]}")
         data = resp.json()
         usage = data.get("usage", {})
         return LLMResponse(data["choices"][0]["message"].get("content") or "",
                            usage.get("prompt_tokens", 0), usage.get("completion_tokens", 0))
+
+
+class GeminiProvider(OpenAIProvider):
+    """Gemini through Google's OpenAI-compatible endpoint (API key sent as a Bearer token)."""
+    name = "gemini"
+    URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    KEY_ENV = "GEMINI_API_KEY"
+    MAX_TOKENS_FIELD = "max_tokens"
 
 
 def build_llm_provider(settings, budget, cache_root) -> LLMProvider:
