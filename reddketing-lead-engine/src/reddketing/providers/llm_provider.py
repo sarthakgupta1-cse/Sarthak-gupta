@@ -63,6 +63,39 @@ def strict_json_schema(model: Type[BaseModel]) -> dict:
     return resolve(schema)
 
 
+def optional_instead_of_nullable(schema: dict) -> dict:
+    """Turn `anyOf: [X, null]` properties into optional (non-required) X.
+
+    Anthropic structured outputs allow at most 16 union-typed parameters; every nullable field in
+    the models has a default, so leaving it out is equivalent to null."""
+    node = copy.deepcopy(schema)
+
+    def walk(n):
+        if isinstance(n, dict):
+            props = n.get("properties")
+            if isinstance(props, dict):
+                for name, p in list(props.items()):
+                    opts = p.get("anyOf") if isinstance(p, dict) else None
+                    if opts and len(opts) == 2 and {"type": "null"} in opts:
+                        props[name] = next(o for o in opts if o != {"type": "null"})
+                        if name in n.get("required", []):
+                            n["required"] = [r for r in n["required"] if r != name]
+            for v in n.values():
+                walk(v)
+        elif isinstance(n, list):
+            for v in n:
+                walk(v)
+    walk(node)
+    return node
+
+
+def schema_instruction(schema: dict | None) -> str:
+    if not schema:
+        return "\n\nRespond with a single JSON object."
+    return ("\n\nRespond with a single JSON object that validates against this JSON schema "
+            "(use exactly these field names):\n" + json.dumps(schema, separators=(",", ":")))
+
+
 def extract_json(text: str) -> str:
     text = (text or "").strip()
     fence = re.search(r"```(?:json)?\s*(.*?)```", text, re.S)
@@ -197,7 +230,9 @@ class AnthropicProvider(LLMProvider):
         a = self._anthropic
         output_config: dict = {"effort": "low"}
         if schema and self._use_format:
-            output_config["format"] = {"type": "json_schema", "schema": schema}
+            output_config["format"] = {"type": "json_schema", "schema": optional_instead_of_nullable(schema)}
+        elif schema:
+            user = user + schema_instruction(schema)  # prompt-only mode: the model still needs the field list
         try:
             msg = self.client.messages.create(
                 model=self.model, max_tokens=self.max_output_tokens, system=system,
@@ -210,7 +245,7 @@ class AnthropicProvider(LLMProvider):
             if self._use_format and "format" in output_config:
                 logger.warning("Structured output rejected (%s); falling back to prompt-only JSON.", exc.message)
                 self._use_format = False
-                return self._call(system, user, None)
+                return self._call(system, user, schema)
             raise LLMError(f"anthropic bad request: {exc.message}")
         except a.AuthenticationError:
             raise LLMConfigError("anthropic authentication failed — check ANTHROPIC_API_KEY")
@@ -258,10 +293,7 @@ class OpenAIProvider(LLMProvider):
     def _call(self, system, user, schema):
         # The schema is always stated in the prompt (some endpoints ignore response_format schemas),
         # and also sent as a structured-output constraint where the endpoint accepts it.
-        schema_text = json.dumps(schema, separators=(",", ":")) if schema else ""
-        content = user + ("\n\nRespond with a single JSON object that validates against this JSON schema "
-                          "(use exactly these field names):\n" + schema_text if schema else
-                          "\n\nRespond with a single JSON object.")
+        content = user + schema_instruction(schema)
         fmt = ({"type": "json_schema", "json_schema": {"name": "result", "schema": schema, "strict": True}}
                if schema and self._use_json_schema else {"type": "json_object"})
         body = {"model": self.model, self.MAX_TOKENS_FIELD: self.max_output_tokens, "response_format": fmt,

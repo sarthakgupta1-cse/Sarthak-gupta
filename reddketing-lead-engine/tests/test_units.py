@@ -437,3 +437,16 @@ def test_email_transport_auto_detects_smtp(monkeypatch):
     assert email_transport() == "smtp"
     monkeypatch.setenv("EMAIL_TRANSPORT", "gmail_api")
     assert email_transport() == "gmail_api"
+
+
+def test_anthropic_schema_fits_union_limit_and_fallback_carries_schema(settings, tmp_path):
+    import json as _json
+    from reddketing.models import ResearchExtraction
+    from reddketing.providers.llm_provider import optional_instead_of_nullable, schema_instruction, strict_json_schema
+
+    schema = optional_instead_of_nullable(strict_json_schema(ResearchExtraction))
+    text = _json.dumps(schema)
+    assert text.count('"anyOf"') <= 16 and '"null"' not in text
+    assert "company_name" in schema["required"] and "country" not in schema["required"]
+    # An object with only the required fields still validates (nullable fields default to None).
+    assert "official_website_confirmed" in schema_instruction(strict_json_schema(ResearchExtraction))
