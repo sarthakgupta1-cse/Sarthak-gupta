@@ -1,0 +1,90 @@
+# Remote Job Agent — filter rules and run settings.
+# Every rule here maps to a requirement in README.md ("Filter rules").
+
+timezone: Asia/Kolkata
+
+report:
+  recipient_env: REPORT_RECIPIENT          # address comes from the environment, not the repo
+  subject_template: "Daily Remote Job Opportunities - {date}"
+  date_format: "%d %B %Y"                  # 25 November 2026
+
+salary:
+  # Fixed base pay must clear these on its own. Commission/bonus/equity never count.
+  min_monthly_inr: 50000                   # India-based / INR-paid roles
+  min_monthly_usd: 500                     # everything else (USD equivalent)
+  priority_band_usd: [500, 1000]           # highlighted green in the sheet
+  high_pay_usd: 1000                       # above this = "high-paying", highlighted gold
+  hours_per_month: 173.33                  # 40 h/week, used only for full-time hourly pay
+  weeks_per_month: 4.33
+  fx_url: "https://open.er-api.com/v6/latest/USD"
+
+experience:
+  max_years_any: 1            # 0–1 years always OK
+  max_years_if_fresher_ok: 2  # 1–2 years only when the posting welcomes freshers/juniors
+
+http:
+  timeout: 25
+  retries: 3
+  backoff: 2.0
+  user_agent: "remote-job-agent/1.0 (+personal job search; respects robots and rate limits)"
+  min_interval_seconds:        # polite per-host spacing
+    himalayas.app: 3.0
+    remotive.com: 2.0
+    remoteok.com: 2.0
+    default: 0.6
+
+liveness:
+  max_checks_per_run: 150     # re-verify open jobs; oldest-verified first
+
+description_max_chars: 600    # kept in the sheet; full text goes to Job_Description.txt
+
+sources:
+  himalayas:
+    enabled: true
+    country: IN               # Himalayas returns India-eligible + worldwide roles for this
+    max_pages_per_query: 3
+    queries:
+      - content writer
+      - seo content writer
+      - copywriter
+      - content marketing
+      - content strategist
+      - technical writer
+      - blog writer
+      - content editor
+      - social media
+      - community manager
+      - affiliate marketing
+      - partnerships marketing
+      - influencer marketing
+      - digital marketing
+      - growth marketing
+      - performance marketing
+      - seo specialist
+      - paid ads
+      - ppc
+      - email marketing
+      - marketing automation
+      - user acquisition
+      - brand marketing
+      - marketing associate
+      - marketing operations
+  remotive:
+    enabled: true             # free feed is small (≈15 jobs) — max 4 calls/day per their terms
+  remoteok:
+    enabled: true
+  jobicy:
+    enabled: true
+    industries: [marketing, copywriting, seo, smm]
+  weworkremotely:
+    enabled: true
+    feeds:
+      - https://weworkremotely.com/categories/remote-sales-and-marketing-jobs.rss
+  workingnomads:
+    enabled: true
+  ats_boards:
+    enabled: true             # company career pages via public Greenhouse/Lever/Ashby APIs
+    companies_file: config/companies.yaml
+  manual:
+    enabled: true             # candidates researched by the Claude session (LinkedIn posts, Wellfound, career pages)
+    file: out/manual_candidates.json
