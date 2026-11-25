@@ -25,6 +25,8 @@ def build(date_label: str, subject: str, new_q: list, new_nv: list, closed: list
     for j in sorted(new_q, key=lambda j: -(j.ev.monthly_usd or 0)):
         by_tab[j.ev.category].append(j)
     companies = sorted({j.raw.company for j in new_q})
+    # most promising first: salary known, then fewest open questions
+    new_nv = sorted(new_nv, key=lambda j: (j.ev.monthly_usd is None, len(j.ev.reasons), -(j.ev.monthly_usd or 0)))
     high = stats.get("high_paying", 0)
     band = stats.get("priority_band", 0)
 
@@ -41,6 +43,9 @@ def build(date_label: str, subject: str, new_q: list, new_nv: list, closed: list
         t.append("Companies hiring: " + ", ".join(companies))
     else:
         t.append("No new verified opportunities were found today.")
+        if new_nv:
+            t.append("Most matching listings don't publish a fixed salary or don't say whether India is eligible. "
+                     "Under your rules they stay in Needs Verification instead of being counted as verified.")
     t.append("")
     if new_nv:
         t.append(f"Needs Verification (salary or India eligibility unclear): {len(new_nv)} new. See the 'Needs Verification' tab.")
@@ -82,7 +87,9 @@ def build(date_label: str, subject: str, new_q: list, new_nv: list, closed: list
                 h += [f"<li><b>{e(j.raw.company)}</b> — {e(j.raw.title)} — {e(_pay(j))}</li>" for j in by_tab[tab]]
                 h.append("</ul>")
     else:
-        h.append("<p style=\"margin:16px 0;padding:12px;background:#F6F6F6\">No new verified opportunities were found today.</p>")
+        h.append("<p style=\"margin:16px 0;padding:12px;background:#F6F6F6\">No new verified opportunities were found today."
+                 + (" Most matching listings don't publish a fixed salary or don't say whether India is eligible. Under your rules "
+                    "they stay in Needs Verification instead of being counted as verified." if new_nv else "") + "</p>")
     if new_nv:
         h.append(f"<h3 style=\"margin:18px 0 6px;color:#B45F06\">Needs Verification ({len(new_nv)} new)</h3>"
                  "<p style=\"margin:0 0 6px;color:#555\">Salary or India eligibility isn't stated. These are kept apart in the 'Needs Verification' tab.</p><ul style=\"margin:0;padding-left:20px\">")

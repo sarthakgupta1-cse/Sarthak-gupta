@@ -45,6 +45,9 @@ APPLICATION_STATUSES = ["Not Applied", "Ready to Apply", "Applied", "Assessment"
                         "Offer Received", "Closed"]
 
 TAB_ORDER = [ALL_JOBS, *TABS, NEEDS, TRACKER, STATS, INDEX]
+# sheetIds fixed when the spreadsheet was created (see README): used for batch requests
+SHEET_IDS = {ALL_JOBS: 0, **{t: i + 1 for i, t in enumerate(TABS)}, NEEDS: 7, TRACKER: 8, STATS: 9, INDEX: 10}
+BULK_TABS = {"AJ": ALL_JOBS, "NV": NEEDS, "TRK": TRACKER, "IDX": INDEX}
 
 
 def col_letter(idx0: int) -> str:
@@ -213,3 +216,46 @@ def append_op(tab: str, rows: list[list], last_col: str) -> list[dict]:
     if not rows:
         return []
     return [{"op": "append", "range": f"{q(tab)}!A1:{last_col}1", "values": _clean(rows)}]
+
+
+# --------------------------------------------------------------------------- bulk append via Drive upload
+# New rows are written to an .xlsx (typed cells, so text stays text), uploaded with Drive using a file
+# reference, copied into this spreadsheet as temporary tabs, then pasted under the existing rows.
+# The data never has to be retyped through the connector, which keeps large days cheap and exact.
+
+def write_bulk_xlsx(path, new_rows: dict[str, list[list]], existing: dict[str, int]) -> list[dict]:
+    from openpyxl import Workbook
+    wb = Workbook()
+    wb.remove(wb.active)
+    manifest = []
+    for code, tab in BULK_TABS.items():
+        rows = new_rows.get(tab) or []
+        if not rows:
+            continue
+        ws = wb.create_sheet(code)
+        for r in rows:
+            ws.append([("" if v is None else v) for v in r])
+        for row in ws.iter_rows():
+            for c in row:
+                if isinstance(c.value, str):
+                    c.data_type = "s"           # force text, never parsed as number/date
+                    c.number_format = "@"
+        manifest.append({"xlsx_tab": code, "dest_tab": tab, "dest_sheet_id": SHEET_IDS[tab],
+                         "start_row_index": 1 + existing.get(tab, 0), "rows": len(rows), "cols": len(rows[0])})
+    wb.save(path)
+    return manifest
+
+
+def bulk_requests(manifest: list[dict], temp_ids: dict[str, int]) -> list[dict]:
+    reqs = []
+    for m in manifest:
+        tid = temp_ids[m["xlsx_tab"]]
+        reqs.append({"appendDimension": {"sheetId": m["dest_sheet_id"], "dimension": "ROWS", "length": m["rows"]}})
+        reqs.append({"copyPaste": {
+            "source": {"sheetId": tid, "startRowIndex": 0, "endRowIndex": m["rows"], "startColumnIndex": 0, "endColumnIndex": m["cols"]},
+            "destination": {"sheetId": m["dest_sheet_id"], "startRowIndex": m["start_row_index"],
+                            "endRowIndex": m["start_row_index"] + m["rows"], "startColumnIndex": 0, "endColumnIndex": m["cols"]},
+            "pasteType": "PASTE_VALUES"}})
+    for tid in temp_ids.values():
+        reqs.append({"deleteSheet": {"sheetId": tid}})
+    return reqs

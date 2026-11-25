@@ -107,8 +107,8 @@ def check_employment(job: RawJob) -> tuple[str, str, str]:
     desc = job.description or ""
     if _INTERN.search(stated):
         return REJECT, "Internship", "internship"
-    if _PART.search(stated) and not _FULL.search(stated):
-        return REJECT, "Part-time", "part-time"
+    if _PART.search(job.title or "") or (_PART.search(stated) and not _FULL.search(stated)):
+        return REJECT, "Part-time", "part-time"     # a "Part-Time" title beats a board's type field
     if _FREELANCE.search(stated):
         return REJECT, "Freelance", "freelance-only"
     if _TEMP.search(stated):
@@ -144,6 +144,7 @@ _WORDNUM = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "sev
 _EXP_CTX = re.compile(r"experience|exp\b|background|track record|working (?:in|as|with)|professional", re.I)
 _FRESHER_OK = re.compile(r"fresher|entry[- ]level|\bjunior\b|early[- ]career|recent graduate|new grad|"
                          r"no (?:prior )?experience (?:required|needed)|graduates? (?:are )?welcome|0\s*[-–]\s*[12]\s*years?", re.I)
+_MID_TEXT = re.compile(r"mid[- ]level experience|mid[- ]senior|intermediate[- ]level|experienced (?:professional|marketer|writer)", re.I)
 _SENIOR_LEVELS = {"senior", "lead", "director", "executive", "manager", "head", "principal", "vp", "c-level", "staff"}
 _JUNIOR_LEVELS = {"entry-level", "entry level", "junior", "intern", "graduate", "associate"}
 
@@ -173,6 +174,8 @@ def check_experience(job: RawJob, cfg: dict) -> tuple[str, str, str]:
     if levels and levels <= _SENIOR_LEVELS:
         return REJECT, f"{'/'.join(sorted(levels)).title()} level", "board marks the role senior"
 
+    if _MID_TEXT.search(desc) and not _FRESHER_OK.search(desc):
+        return UNCLEAR, "Mid-level (stated in posting)", "posting asks for mid-level experience"
     yrs = _min_years(desc)
     max_any, max_fresh = cfg.get("max_years_any", 1), cfg.get("max_years_if_fresher_ok", 2)
     if yrs is not None:

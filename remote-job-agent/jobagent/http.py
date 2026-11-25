@@ -55,8 +55,10 @@ class Http:
                     raise SourceError(f"HTTP {r.status_code} for {url}")
                 last_exc = SourceError(f"HTTP {r.status_code} for {url}")
                 ra = r.headers.get("Retry-After", "")
+                if r.status_code == 429 and (not ra.isdigit() or int(ra) > 30):
+                    raise SourceError(f"HTTP 429 (rate limited) for {url}")   # don't stall the whole run
                 if ra.isdigit():
-                    time.sleep(min(int(ra), 60))
+                    time.sleep(int(ra))
             if attempt < self.retries:
                 time.sleep(self.backoff * (2 ** attempt))
         raise SourceError(str(last_exc))

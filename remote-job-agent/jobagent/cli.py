@@ -42,6 +42,7 @@ def main(argv=None) -> int:
         p.add_argument("--index", type=Path, help="JSON of _Index!A2:I values")
         p.add_argument("--all-ids", type=Path, help="JSON of 'All Jobs'!A2:A values")
         p.add_argument("--nv-ids", type=Path, help="JSON of 'Needs Verification'!A2:A values")
+        p.add_argument("--tracker-ids", type=Path, help="JSON of 'Applications Tracker'!A2:A values")
         p.add_argument("--only", nargs="*", help="limit to sources whose name contains these words")
         if name == "run":
             p.add_argument("--sheet-url", default="")
@@ -59,6 +60,9 @@ def main(argv=None) -> int:
     p = sub.add_parser("ops")
     p.add_argument("--file", type=Path, default=ROOT / "out" / "plan.json")
     p.add_argument("--max-rows", type=int, default=25, help="split big appends into batches of this many rows")
+    p.add_argument("--updates-only", action="store_true", help="skip appends (rows go in via the bulk path)")
+    p = sub.add_parser("bulk-requests", help="batch requests that paste the uploaded temp tabs into place")
+    p.add_argument("temp_ids", help='JSON map of copied temp tab sheetIds, e.g. {"NV": 123, "IDX": 456}')
     p = sub.add_parser("docs")
     p.add_argument("--limit", type=int, default=0)
 
@@ -67,7 +71,7 @@ def main(argv=None) -> int:
 
     if a.cmd in ("discover", "run"):
         from .pipeline import discover, plan
-        st = discover(a.index, a.all_ids, a.nv_ids, only_sources=a.only)
+        st = discover(a.index, a.all_ids, a.nv_ids, only_sources=a.only, tracker_ids_file=a.tracker_ids)
         print(json.dumps({"new_jobs": len(st["new_jobs"]), "promoted": len(st["promoted"]),
                           "status_changes": len(st["status_changes"]), "counts": st["counts"],
                           "sources": [(s["name"], s["listings"], s["n_errors"]) for s in st["sources"]]}, indent=1))
@@ -93,6 +97,8 @@ def main(argv=None) -> int:
             print(json.dumps(S.setup_values(), ensure_ascii=False, indent=1))
     elif a.cmd == "ops":
         ops = json.loads(a.file.read_text(encoding="utf-8"))["ops"]
+        if a.updates_only:
+            ops = [o for o in ops if o["op"] != "append"]
         batches = []
         for op in ops:
             vals = op["values"]
@@ -101,6 +107,10 @@ def main(argv=None) -> int:
         for i, b in enumerate(batches, 1):
             print(f"### op {i}/{len(batches)}: {b['op']} {b['range']} ({len(b['values'])} rows)")
             print(json.dumps(b["values"], ensure_ascii=False))
+    elif a.cmd == "bulk-requests":
+        from . import sheets as S
+        manifest = json.loads((ROOT / "out" / "bulk.json").read_text())
+        print(json.dumps(S.bulk_requests(manifest, json.loads(a.temp_ids))))
     elif a.cmd == "docs":
         from .applications.generate import generate_all
         print(json.dumps(generate_all(limit=a.limit), indent=1, ensure_ascii=False))

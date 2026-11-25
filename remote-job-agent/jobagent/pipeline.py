@@ -94,7 +94,7 @@ def _values(path: Path | None) -> list[list]:
     return [r for r in d if isinstance(r, list)]
 
 
-def load_history(index_file, all_ids_file, nv_ids_file) -> tuple[DedupIndex, list[str], list[str], list[str]]:
+def load_history(index_file, all_ids_file, nv_ids_file):
     idx = DedupIndex()
     index_rows = []
     for row in _values(index_file):
@@ -112,7 +112,7 @@ def load_history(index_file, all_ids_file, nv_ids_file) -> tuple[DedupIndex, lis
 # --------------------------------------------------------------------------- discover
 
 def discover(index_file=None, all_ids_file=None, nv_ids_file=None, settings_path=None,
-             only_sources: list[str] | None = None) -> dict:
+             only_sources: list[str] | None = None, tracker_ids_file=None) -> dict:
     settings = load_settings(settings_path)
     tz = ZoneInfo(settings["timezone"])
     now = datetime.now(tz)
@@ -195,7 +195,7 @@ def discover(index_file=None, all_ids_file=None, nv_ids_file=None, settings_path
             counts["duplicates"] += 1
             seen_existing[hit] = job
             entry = idx.by_id.get(hit)
-            if entry and entry.tab == "N" and job.ev.decision == QUALIFIED:
+            if entry and entry.tab == "N" and job.ev.decision == QUALIFIED:   # "NR" = reviewer kept it in NV
                 job.job_id = hit
                 promoted.append(job)
             continue
@@ -221,6 +221,7 @@ def discover(index_file=None, all_ids_file=None, nv_ids_file=None, settings_path
 
     with cf.ThreadPoolExecutor(6) as ex:
         new_jobs = list(ex.map(_verify, new_jobs))
+        promoted = [j for j in ex.map(_verify, promoted) if j.ev.decision == QUALIFIED]   # same bar as new jobs
     counts["rej_closed"] = sum(1 for j in new_jobs if j.ev.decision == REJECTED)
     new_jobs = [j for j in new_jobs if j.ev.decision != REJECTED]
 
@@ -257,6 +258,7 @@ def discover(index_file=None, all_ids_file=None, nv_ids_file=None, settings_path
         "promoted": [j.to_dict() | {"title_key": j.title_key, "scope": j.scope} for j in promoted],  # type: ignore[attr-defined]
         "status_changes": status_changes,
         "history": {"all_ids": all_ids, "nv_ids": nv_ids, "index_rows": index_rows,
+                    "tracker_ids": [str((r or [""])[0]) for r in _values(tracker_ids_file)],
                     "index": {k: vars(v) for k, v in idx.by_id.items()}},
     }
     OUT.mkdir(exist_ok=True)
@@ -285,7 +287,7 @@ def job_row(job: Job, run_date: str, settings: dict) -> list:
     if raw.industry:
         notes.append(f"Industry: {raw.industry}")
     notes += [n for n in ev.notes if n]
-    link = job.original_url or raw.apply_url or raw.source_url
+    link = re.sub(r"[?&]utm_[^&]*", "", job.original_url or raw.apply_url or raw.source_url)
     source = raw.source + ("" if not job.original_url else " (original employer posting linked)")
     return [
         job.job_id, run_date, raw.company, raw.company_website or company_site_from(job.original_url or raw.apply_url),
@@ -311,14 +313,19 @@ def plan(settings_path=None, sheet_url: str = "") -> dict:
     new_nv = [j for j in new_jobs if j.ev.decision == NEEDS_VERIFICATION]
 
     ops: list[dict] = []
-    # 1. new rows
-    ops += S.append_op(S.ALL_JOBS, [job_row(j, run_date, settings) for j in new_q + promoted], S.LAST_JOB_COL)
-    ops += S.append_op(S.NEEDS, [job_row(j, run_date, settings) for j in new_nv], S.LAST_JOB_COL)
-    ops += S.append_op(S.TRACKER, [[j.job_id, j.raw.company, j.raw.title, "", "", "", "Not Applied", "", "", j.raw.recruiter or "", ""]
-                                   for j in new_q + promoted], S.col_letter(len(S.TRACKER_COLUMNS) - 1))
+    # 1. new rows (kept raw for the bulk .xlsx path; the append ops are the small-day fallback)
+    new_rows = {
+        S.ALL_JOBS: [job_row(j, run_date, settings) for j in new_q + promoted],
+        S.NEEDS: [job_row(j, run_date, settings) for j in new_nv],
+        S.TRACKER: [[j.job_id, j.raw.company, j.raw.title, "", "", "", "Not Applied", "", "", j.raw.recruiter or "", ""]
+                    for j in new_q + promoted],
+    }
+    ops += S.append_op(S.ALL_JOBS, new_rows[S.ALL_JOBS], S.LAST_JOB_COL)
+    ops += S.append_op(S.NEEDS, new_rows[S.NEEDS], S.LAST_JOB_COL)
+    ops += S.append_op(S.TRACKER, new_rows[S.TRACKER], S.col_letter(len(S.TRACKER_COLUMNS) - 1))
 
     # 2. Last Verified Date + Job Status on existing rows (by live row order)
-    closed_labels, changes_all, changes_nv, idx_changes = [], {}, {}, {}
+    closed_labels, changes_all, changes_nv, idx_changes, idx_dates = [], {}, {}, {}, {}
     for jid, (st, note) in state["status_changes"].items():
         e = index.get(jid)
         if st == "Closed":
@@ -329,12 +336,18 @@ def plan(settings_path=None, sheet_url: str = "") -> dict:
             status, verified = "Open", run_date
         if e and e.status.startswith("Open") and st == "Closed":
             closed_labels.append(e.label or jid)
-        target = changes_nv if (e and e.tab == "N") else changes_all
+        target = changes_nv if (e and e.tab in ("N", "NR")) else changes_all
         target[jid] = [verified, status]
         if e:
-            keep_url = "" if st == "Closed" else e.check_url
-            idx_changes[jid] = [status if st != "Unverified" else "Unverified", keep_url, verified,
-                                e.label if st != "Closed" else ""]
+            new_status = status if st != "Unverified" else "Unverified"
+            if new_status == e.status:              # unchanged: only the date moves (small write)
+                if e.last_verified != verified:
+                    idx_dates[jid] = [verified]
+            else:
+                keep_url = "" if st == "Closed" else e.check_url
+                idx_changes[jid] = [new_status, keep_url, verified, e.label if st != "Closed" else ""]
+        if e and e.last_verified == verified and target.get(jid) and e.status.startswith(status.split(" ")[0]):
+            target.pop(jid)                          # same-day retry: nothing to write
     new_index_rows = []
     for j in promoted:            # NV row is marked moved; index entry re-added under tab A
         changes_nv[j.job_id] = [run_date, "Moved to All Jobs (verified)"]
@@ -347,12 +360,19 @@ def plan(settings_path=None, sheet_url: str = "") -> dict:
 
     # 3. hidden _Index: status updates for known rows, then new rows
     ops += S.range_updates(S.INDEX, "F", "I", hist["index_rows"], idx_changes)
+    ops += S.range_updates(S.INDEX, "H", "H", hist["index_rows"], {k: v for k, v in idx_dates.items() if k not in idx_changes})
     for j in new_q + new_nv:
-        tab = "A" if j.ev.decision == QUALIFIED else "N"
+        reviewed = any(n.startswith("reviewed:") for n in j.ev.notes)
+        tab = "A" if j.ev.decision == QUALIFIED else ("NR" if reviewed else "N")
         check = (j.original_url or j.raw.apply_url or j.raw.source_url).split("?utm")[0]
         new_index_rows.append([j.job_id, j.title_key, j.url_key, j.scope, tab, "Open",  # type: ignore[attr-defined]
                                check, run_date, f"{j.raw.company} — {j.raw.title}"[:90]])
     ops += S.append_op(S.INDEX, new_index_rows, "I")
+    new_rows[S.INDEX] = new_index_rows
+    existing = {S.ALL_JOBS: len(hist["all_ids"]), S.NEEDS: len(hist["nv_ids"]),
+                S.TRACKER: len(hist.get("tracker_ids", [])), S.INDEX: len(hist["index_rows"])}
+    manifest = S.write_bulk_xlsx(OUT / "sync.xlsx", new_rows, existing)
+    (OUT / "bulk.json").write_text(json.dumps(manifest, indent=1), encoding="utf-8")
 
     # 4. stats + report
     c = state["counts"]
@@ -386,7 +406,7 @@ def plan(settings_path=None, sheet_url: str = "") -> dict:
 
     OUT.mkdir(exist_ok=True)
     (OUT / "plan.json").write_text(json.dumps({"run_date": run_date, "ops": ops}, ensure_ascii=False, indent=1), encoding="utf-8")
-    (OUT / "stats_row.json").write_text(json.dumps({"op": "append", "range": f"{S.q(S.STATS)}!A1:T1", "values": [stats_row]},
+    (OUT / "stats_row.json").write_text(json.dumps({"op": "append", "range": f"{S.q(S.STATS)}!A1:T1", "values": S._clean([stats_row])},
                                                    ensure_ascii=False), encoding="utf-8")
     (OUT / "report.txt").write_text(text, encoding="utf-8")
     (OUT / "report.html").write_text(html_body, encoding="utf-8")

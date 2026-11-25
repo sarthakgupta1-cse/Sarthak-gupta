@@ -74,3 +74,11 @@ def test_experience():
     assert check_experience(job(title="Junior Copywriter"), EXP)[0] == OK
     assert check_experience(job(title="Social Media Manager"), EXP)[0] == UNCLEAR
     assert check_experience(job(description="Founded 10 years ago, we have experience..."), EXP)[0] == OK
+
+
+def test_part_time_title_beats_board_type():
+    assert check_employment(job(title="Part-Time Digital Marketing Specialist", employment_type="Full-Time"))[0] == REJECT
+
+
+def test_mid_level_text_is_unclear():
+    assert check_experience(job(title="Marketing Coordinator", description="Experience: Mid-level experience in marketing."), EXP)[0] == UNCLEAR

@@ -39,6 +39,7 @@ Save each result as JSON. If the app saved a large result to a file, use that pa
 - `get_values` `'_Index'!A2:I` → `out/index.json`
 - `get_values` `'All Jobs'!A2:A` → `out/all_ids.json`
 - `get_values` `'Needs Verification'!A2:A` → `out/nv_ids.json`
+- `get_values` `'Applications Tracker'!A2:A` → `out/tracker_ids.json`
 
 If any read fails, retry once. If it still fails, set SHEETS_STATUS to `Failed – could not read history` and skip steps 6–7, but still run discovery, back up the results to Drive and send the email.
 
@@ -62,7 +63,8 @@ Set `is_official: true` only for the employer's own careers page or ATS. Do not 
 
 ## 4. Discover
 ```bash
-python -m jobagent discover --index out/index.json --all-ids out/all_ids.json --nv-ids out/nv_ids.json
+python -m jobagent discover --index out/index.json --all-ids out/all_ids.json --nv-ids out/nv_ids.json \
+    --tracker-ids out/tracker_ids.json
 ```
 
 ## 5. Review (quality gate)
@@ -72,18 +74,28 @@ Read `out/review.md`.
 - For **NEEDS VERIFICATION** jobs whose only reason is `original employer posting not yet located`, search for the
   employer's own posting (careers page or ATS), up to 10 jobs, highest salary first. Then run
   `python -m jobagent set-original <ID> <url>`. If that URL is open, the job is promoted automatically.
+- A job you keep in Needs Verification with `override` is marked `NR` in `_Index` and is never promoted automatically later.
 - Skim `out/rejected.jsonl` for obvious false rejections. If you find one, override it only after reading the posting.
 Then run `python -m jobagent plan --sheet-url "$SHEET_URL"`.
 
 ## 6. Sync the sheet
-`python -m jobagent ops` prints the operations in order. Apply each one:
-- `append` → `append_values(spreadsheetId, range, values)`
-- `update` → `update_values(spreadsheetId, range, values)`
+**New rows: bulk path.** The data never passes through the chat, so it is exact and cheap at any size.
+1. `sha256sum out/sync.xlsx`, then Drive `create_file(title="jobagent-sync-<date>", parentId=BACKUP_FOLDER_ID,
+   contentMimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+   base64Content="sha256:<hex>:<absolute path>")`. Drive converts it to a Google Sheet.
+2. `get_spreadsheet(<temp id>, fields=["sheets.properties"])` → the sheetId of each tab (`AJ`, `NV`, `TRK`, `IDX`).
+3. For each tab: `copy_sheet_to_another_spreadsheet(<temp id>, <tab sheetId>, SHEET_ID)` → note the new sheetId.
+4. `python -m jobagent bulk-requests '{"NV": <new id>, "IDX": <new id>, ...}'` → apply the printed list with one
+   `update_spreadsheet(SHEET_ID, requests)` call. It appends rows, pastes values under the existing data, and deletes the temp tabs.
+5. Drive `trash_file(<temp id>)`.
+(Skip the bulk path when `out/bulk.json` is `[]`. For a handful of rows, `python -m jobagent ops` append ops also work.)
 
-Copy the values exactly. A leading `'` keeps text as text, so keep it.
-Retry a failed op once. If it fails again, stop syncing, set SHEETS_STATUS = `Failed at op N`, upload `out/plan.json` (step 8)
-and carry on. Nothing is lost: tomorrow's run reads the sheet, and anything that didn't get in is discovered again.
-If every op succeeds, SHEETS_STATUS = `Done`.
+**Existing rows:** `python -m jobagent ops --updates-only` prints the remaining small `update` ops (dates, statuses).
+Apply each with `update_values(SHEET_ID, range, values)`, copying the values exactly. A leading `'` keeps text as text.
+
+Retry a failed call once. If it fails again, stop syncing, set SHEETS_STATUS = `Failed at <step>`, upload `out/plan.json` and
+`out/sync.xlsx` (step 8), and carry on. Nothing is lost: tomorrow's run reads the sheet, and anything that didn't get in is discovered again.
+If everything succeeds, SHEETS_STATUS = `Done`.
 
 ## 7. Application documents
 If `profile.yaml` exists in `PROFILE_FOLDER_ID`, download it to `profile/profile.yaml` and run `python -m jobagent docs`.

@@ -20,7 +20,8 @@ It never applies to jobs, never messages recruiters and never pays for anything.
    │      → dedupe (within run + against history) → verify original posting is open
    │      → re-check older open jobs (closed / still open)
    ├─ 5. review ─────── Claude checks every "qualified" job's evidence; overrides if wrong
-   ├─ 6. sync sheet ─── python -m jobagent ops → Google Sheets connector (append / update)
+   ├─ 6. sync sheet ─── new rows: .xlsx → Drive upload → copied into the sheet (bulk, exact)
+   │                    existing rows: small update ops (dates, statuses) via the Sheets connector
    ├─ 7. documents ──── tailored CV + cover letter (once profile.yaml exists)
    ├─ 8. backup ─────── SQLite snapshot, state, plan, report, log → Google Drive
    ├─ 9. email ──────── Gmail connector → daily report (no application links)
@@ -92,7 +93,8 @@ python -m jobagent set-original RJ-XXXX https://company.com/careers/123
 python -m jobagent plan --sheet-url URL      # sheet ops, report, stats, review, db
 python -m jobagent ops                       # print the sheet operations to apply
 python -m jobagent docs                      # CVs + cover letters (needs profile/profile.yaml)
-python -m pytest -q                          # 27 tests
+python -m jobagent bulk-requests '{"NV": 123}' # paste uploaded rows into place (see RUNBOOK step 6)
+python -m pytest -q                          # 29 tests
 ```
 
 ## CVs and cover letters

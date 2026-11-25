@@ -74,11 +74,16 @@ class HimalayasSource(Source):
                     d = self.http.json(self.URL, params={"q": q, "country": self.cfg.get("country", "IN"), "page": page})
                 except Exception as exc:  # noqa: BLE001
                     res.errors.append(f"query '{q}' p{page}: {exc}")
+                    if "429" in str(exc):          # rate-limited: stop now, keep what we have
+                        res.errors.append("rate limit reached. Remaining queries skipped this run")
+                        return self._done(res)
                     break
                 jobs = d.get("jobs") or []
                 if not jobs:
                     if d.get("ok") is False:
                         res.errors.append(f"query '{q}': {d.get('errors')}")
+                        if "rate limit" in str(d.get("errors", "")).lower():
+                            return self._done(res)
                     break
                 for j in jobs:
                     guid = j.get("guid") or j.get("applicationLink", "")
@@ -104,6 +109,9 @@ class HimalayasSource(Source):
                     ))
                 if len(jobs) < 20:
                     break
+        return self._done(res)
+
+    def _done(self, res: SourceResult) -> SourceResult:
         res.sub_sources = len(self.cfg["queries"])
         return res
 
