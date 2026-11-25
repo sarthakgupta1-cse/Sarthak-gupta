@@ -29,6 +29,10 @@ class LLMError(Exception):
     pass
 
 
+class LLMConfigError(LLMError):
+    """The key or account is misconfigured: every call will fail the same way, so the run must stop."""
+
+
 @dataclass
 class LLMResponse:
     text: str
@@ -95,6 +99,9 @@ class LLMProvider:
     def available(self) -> bool:
         return True
 
+    def verify_key(self) -> None:
+        """Free request (model listing) that raises LLMConfigError if the key or account is unusable."""
+
     # Subclasses implement one raw call.
     def _call(self, system: str, user: str, schema: dict | None) -> LLMResponse:
         raise NotImplementedError
@@ -127,6 +134,9 @@ class LLMProvider:
                 consecutive += 1
                 backoff_sleep(transient, base=self.retry_base, cap=self.retry_cap)
                 continue
+            except LLMConfigError as exc:
+                self.errors.append(str(exc))
+                raise
             except LLMError as exc:
                 last_error = str(exc)
                 if "retryable" in last_error:
@@ -160,12 +170,28 @@ class AnthropicProvider(LLMProvider):
         super().__init__(*args, **kwargs)
         import anthropic  # local import keeps tests free of the dependency when unused
         self._anthropic = anthropic
-        self.client = anthropic.Anthropic(api_key=env("ANTHROPIC_API_KEY"), max_retries=2, timeout=180)
+        # Keys created outside a workspace must name one on every request.
+        workspace = env("ANTHROPIC_WORKSPACE_ID")
+        headers = {"anthropic-workspace-id": workspace} if workspace else None
+        self.client = anthropic.Anthropic(api_key=env("ANTHROPIC_API_KEY"), max_retries=2, timeout=180,
+                                          default_headers=headers)
         self._use_format = True
 
     @property
     def available(self) -> bool:
         return bool(env("ANTHROPIC_API_KEY"))
+
+    def verify_key(self) -> None:
+        a = self._anthropic
+        try:
+            self.client.models.list(limit=1)
+        except a.BadRequestError as exc:
+            if "workspace" in str(exc.message).lower():
+                raise LLMConfigError("this API key is not scoped to a workspace — create a key inside a workspace "
+                                     "or add the ANTHROPIC_WORKSPACE_ID secret")
+            raise LLMConfigError(f"anthropic rejected the request: {exc.message}")
+        except (a.AuthenticationError, a.PermissionDeniedError) as exc:
+            raise LLMConfigError(f"anthropic rejected the key: {exc.message}")
 
     def _call(self, system, user, schema):
         a = self._anthropic
@@ -178,15 +204,18 @@ class AnthropicProvider(LLMProvider):
                 messages=[{"role": "user", "content": user}], output_config=output_config,
             )
         except a.BadRequestError as exc:
+            if "workspace" in str(exc.message).lower():
+                raise LLMConfigError("anthropic: this API key is not scoped to a workspace. Create a key inside a "
+                                     "workspace in the Anthropic Console, or add the ANTHROPIC_WORKSPACE_ID secret")
             if self._use_format and "format" in output_config:
                 logger.warning("Structured output rejected (%s); falling back to prompt-only JSON.", exc.message)
                 self._use_format = False
                 return self._call(system, user, None)
             raise LLMError(f"anthropic bad request: {exc.message}")
         except a.AuthenticationError:
-            raise LLMError("anthropic authentication failed — check ANTHROPIC_API_KEY")
+            raise LLMConfigError("anthropic authentication failed — check ANTHROPIC_API_KEY")
         except a.PermissionDeniedError:
-            raise LLMError("anthropic permission denied for this model/key")
+            raise LLMConfigError("anthropic permission denied for this model/key")
         except a.RateLimitError:
             raise LLMError("anthropic rate limited (retryable)")
         except a.APIStatusError as exc:
@@ -220,6 +249,12 @@ class OpenAIProvider(LLMProvider):
 
     _use_json_schema = True
 
+    def verify_key(self) -> None:
+        resp = self.client.get(self.URL.rsplit("/chat/completions", 1)[0] + "/models",
+                               headers={"Authorization": f"Bearer {env(self.KEY_ENV) or ''}"})
+        if resp.status_code in (400, 401, 403):
+            raise LLMConfigError(f"{self.name} rejected the key (HTTP {resp.status_code}): {resp.text[:200]}")
+
     def _call(self, system, user, schema):
         # The schema is always stated in the prompt (some endpoints ignore response_format schemas),
         # and also sent as a structured-output constraint where the endpoint accepts it.
@@ -236,6 +271,8 @@ class OpenAIProvider(LLMProvider):
             logger.warning("%s rejected json_schema response_format; using json_object + schema in prompt", self.name)
             self._use_json_schema = False
             return self._call(system, user, schema)
+        if resp.status_code in (401, 403):
+            raise LLMConfigError(f"{self.name} HTTP {resp.status_code}: API key rejected — check {self.KEY_ENV}")
         if resp.status_code == 429 or resp.status_code >= 500:
             raise LLMError(f"{self.name} HTTP {resp.status_code} (retryable)")
         if resp.status_code != 200:

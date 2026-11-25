@@ -72,7 +72,10 @@ and `SMTP_APP_PASSWORD` (16 characters, no spaces).
 1. <https://console.anthropic.com/> → sign up → **Billing**: add a small prepaid credit (for
    example $5, which lasts more than a month at default settings). Optionally set a monthly spend
    limit in the console as a second safety net.
-2. **API keys → Create key** → copy it (`sk-ant-...`).
+2. **API keys → Create key**, choose a **workspace** (for example "Default") → copy it (`sk-ant-...`).
+   A key that is not scoped to a workspace fails with "must include the anthropic-workspace-id
+   header". Either create a new key inside a workspace, or add the workspace's ID (Console →
+   Settings → Workspaces) as the secret `ANTHROPIC_WORKSPACE_ID`.
 
 Alternatives: Gemini (`GEMINI_API_KEY` from <https://aistudio.google.com/apikey>; set variable
 `LLM_PROVIDER=gemini`; uses `gemini-3.5-flash-lite`, falling back to `gemini-3.5-flash` when it is

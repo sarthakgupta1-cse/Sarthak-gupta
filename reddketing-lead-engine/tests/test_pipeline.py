@@ -183,3 +183,38 @@ def test_concurrent_run_is_locked_out(settings, tmp_path):
     other.acquire("2026-11-20", "other")
     res = run_pipeline(svc, run_date=D1)
     assert res.status == "locked" and llm.calls == 0 and not sender.sent
+
+
+def test_total_llm_outage_in_discovery_sends_failure_not_empty_report(settings, tmp_path):
+    from reddketing.providers.llm_provider import LLMError
+    svc, llm, sender = build_world(settings, tmp_path, make_companies(3))
+
+    def down(*a, **k):
+        raise LLMError("gemini HTTP 503 (retryable)")
+    llm.complete_json = down
+    res = run_pipeline(svc, run_date=D1)
+    assert res.status == "failed" and "discovery" in res.message
+    assert "failed" in sender.sent[0]["subject"].lower()
+
+
+def test_llm_key_misconfiguration_stops_run_immediately(settings, tmp_path):
+    from reddketing.providers.llm_provider import LLMConfigError
+    svc, llm, sender = build_world(settings, tmp_path, make_companies(3))
+    calls = []
+
+    def bad_key(*a, **k):
+        calls.append(1)
+        raise LLMConfigError("anthropic: this API key is not scoped to a workspace")
+    llm.complete_json = bad_key
+    res = run_pipeline(svc, run_date=D1)
+    assert res.status == "failed" and "workspace" in res.message and len(calls) == 1
+    assert "failed" in sender.sent[0]["subject"].lower()
+
+
+def test_research_stops_when_first_companies_all_fail(settings, tmp_path):
+    companies = make_companies(6)
+    svc, llm, sender = build_world(settings, tmp_path, companies)
+    llm.fail_for.update(c["name"] for c in companies)
+    res = run_pipeline(svc, run_date=D1)
+    assert res.status == "failed" and "first 3 companies" in res.message
+    assert "failed" in sender.sent[0]["subject"].lower()

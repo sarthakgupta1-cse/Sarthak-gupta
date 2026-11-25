@@ -61,7 +61,7 @@ def cmd_doctor(args, settings) -> int:
         ok = ok and status != "MISSING" and status != "ERROR"
         print(f"  [{status:^7}] {name}{(' — ' + detail) if detail else ''}")
 
-    print("Reddketing lead engine — configuration check (no paid API calls are made)\n")
+    print("Reddketing lead engine — configuration check (no paid API calls are made; free key checks only)\n")
     line("REPORT_RECIPIENT", "ok" if settings.recipient else "MISSING")
     line("SPREADSHEET_ID", "ok" if env("SPREADSHEET_ID") else "MISSING")
     line("GOOGLE_SERVICE_ACCOUNT_JSON", "ok" if env("GOOGLE_SERVICE_ACCOUNT_JSON") else "MISSING")
@@ -79,6 +79,14 @@ def cmd_doctor(args, settings) -> int:
          "ok" if (skey and env(skey)) else ("warn" if settings.search_provider == "none" else "MISSING"),
          "free sources only" if settings.search_provider == "none" else (skey or ""))
     line("Product Hunt token (optional)", "ok" if env("PRODUCT_HUNT_TOKEN") else "skip")
+    if key and env(key) and not args.offline:
+        try:
+            from .monitoring.budget_tracker import BudgetTracker
+            from .providers.llm_provider import build_llm_provider
+            build_llm_provider(settings, BudgetTracker(settings), settings.cache_dir).verify_key()
+            line("LLM key accepted", "ok", "free model-list request")
+        except Exception as exc:  # noqa: BLE001
+            line("LLM key accepted", "ERROR", str(exc)[:300])
     if env("SPREADSHEET_ID") and env("GOOGLE_SERVICE_ACCOUNT_JSON") and not args.offline:
         try:
             from .database.google_sheets import GoogleSheets

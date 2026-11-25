@@ -13,6 +13,8 @@ the GitHub Actions log. `python -m reddketing.main doctor` checks configuration 
 | Run status `locked` | Another run for the same date is in progress, or one crashed in the last 3 hours | Wait, or run manually with **force** ticked |
 | Status `already_completed` | Today's report was already sent | Expected; use **force** only to re-send |
 | Few or zero revenue-qualified companies | Strict evidence bar, search key missing, or many duplicates | Check Rejected tab reasons; confirm `BRAVE_SEARCH_API_KEY`; this is by design rather than padding the list |
+| `this API key is not scoped to a workspace` | The Anthropic key was created outside a workspace | Create a new key inside a workspace in the Anthropic Console, or add the secret `ANTHROPIC_WORKSPACE_ID` |
+| Failure email "AI model unavailable during discovery" / "AI model failed for the first 3 companies" | The LLM refused or was overloaded for every request | Read the error in the email; re-run later with **force** ticked. Companies are not marked as researched, so nothing is lost |
 | `anthropic authentication failed` | Bad or revoked key / no credit | Replace the key; add billing credit |
 | `Brave HTTP 401/403` | Bad key or plan not active | Check the Brave dashboard subscription |
 | `Brave HTTP 429` | Rate or credit limit | Lower `search.max_queries_per_run` |
