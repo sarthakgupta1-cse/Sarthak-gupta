@@ -164,6 +164,7 @@ class GoogleSheets:
                                 self._retry(lambda: ws.add_cols(len(new_header) - ws.col_count))
                             self._retry(lambda: ws.update(range_name="A1", values=[new_header], value_input_option="RAW"))
             self._ws_cache[tab] = ws
+        self.apply_layout()
         # Remove the default empty "Sheet1" if it exists and is empty.
         if "Sheet1" in existing and len(existing) >= 1:
             try:
@@ -171,6 +172,23 @@ class GoogleSheets:
                     self._retry(lambda: self.sh.del_worksheet(existing["Sheet1"]))
             except SheetsError:
                 pass
+
+    def apply_layout(self, tabs: list[str] | None = None) -> None:
+        """One line per row, styled frozen header, frozen name column, set widths (see layout.py).
+
+        Cosmetic only: a failure is logged and never stops a run."""
+        from .layout import all_layout_requests
+        try:
+            meta = self._retry(lambda: self.sh.fetch_sheet_metadata())
+            sheets = {s["properties"]["title"]: (s["properties"]["sheetId"],
+                                                 s["properties"]["gridProperties"]["rowCount"])
+                      for s in meta.get("sheets", [])
+                      if tabs is None or s["properties"]["title"] in tabs}
+            reqs = all_layout_requests(sheets)
+            if reqs:
+                self._retry(lambda: self.sh.batch_update({"requests": reqs}))
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("sheet layout not applied: %s", exc)
 
     def _header(self, tab: str) -> list[str]:
         if tab not in self._header_cache:
@@ -192,6 +210,7 @@ class GoogleSheets:
         values = [[_cell(row.get(h)) for h in header] for row in rows]
         self._retry(lambda: self._ws(tab).append_rows(values, value_input_option="RAW",
                                                       insert_data_option="INSERT_ROWS", table_range="A1"))
+        self.apply_layout([tab])  # inserted rows get the one-line height too
         return len(rows)
 
     def update_where(self, tab: str, key_col: str, key_value: str, updates: dict[str, Any]) -> bool:
