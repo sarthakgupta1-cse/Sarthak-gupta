@@ -96,6 +96,13 @@ class SmtpSender:
         raise EmailError(f"SMTP send failed: {last}")
 
 
+def email_transport() -> str:
+    """EMAIL_TRANSPORT if set; otherwise SMTP when only an App Password is configured, else the Gmail API."""
+    chosen = env("EMAIL_TRANSPORT")
+    if chosen:
+        return chosen.lower()
+    return "smtp" if env("SMTP_APP_PASSWORD") and not env("GMAIL_REFRESH_TOKEN") else "gmail_api"
+
+
 def build_sender():
-    transport = (env("EMAIL_TRANSPORT") or "gmail_api").lower()
-    return SmtpSender() if transport == "smtp" else GmailApiSender()
+    return SmtpSender() if email_transport() == "smtp" else GmailApiSender()

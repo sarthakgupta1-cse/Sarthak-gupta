@@ -426,3 +426,14 @@ def test_secrets_redacted_in_logs(monkeypatch):
     monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-secretvalue1234567890")
     assert "secretvalue" not in redact("calling with sk-ant-secretvalue1234567890")
     assert "AIza" not in redact("key=AIzaSyA1234567890abcdefghijklmnop")
+
+
+def test_email_transport_auto_detects_smtp(monkeypatch):
+    from reddketing.reporting.gmail_client import email_transport
+    for k in ("EMAIL_TRANSPORT", "SMTP_APP_PASSWORD", "GMAIL_REFRESH_TOKEN"):
+        monkeypatch.delenv(k, raising=False)
+    assert email_transport() == "gmail_api"
+    monkeypatch.setenv("SMTP_APP_PASSWORD", "x")
+    assert email_transport() == "smtp"
+    monkeypatch.setenv("EMAIL_TRANSPORT", "gmail_api")
+    assert email_transport() == "gmail_api"
