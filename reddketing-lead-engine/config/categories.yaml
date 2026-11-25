@@ -1,0 +1,117 @@
+# Categories the discovery engine rotates through. Each run picks a date-seeded
+# subset so that, over a few weeks, every category is covered.
+#
+# Query templates: {category} is replaced with a phrase from `phrases`.
+# {year} is replaced with the current year.
+
+query_templates:
+  - 'best {category} {year} reddit'
+  - '{category} alternatives {year}'
+  - 'fastest growing {category} startups {year}'
+  - '{category} "paying customers" OR "ARR" OR "MRR"'
+  - '{category} "users" "pricing" "per month"'
+  - 'top {category} apps downloads {year}'
+  - '{category} hiring "growth marketing" OR "head of growth"'
+  - '{category} compared review {year}'
+
+categories:
+  software_technology:
+    reddit_relevance: high
+    phrases:
+      - AI writing tool
+      - AI image generator
+      - AI video generator
+      - AI agent platform
+      - AI productivity app
+      - AI automation platform
+      - browser extension productivity
+      - developer tool
+      - no-code app builder
+      - website builder
+      - web hosting provider
+      - design tool
+      - note-taking app
+      - password manager
+      - consumer VPN
+      - email client
+      - screen recording software
+      - self-serve SaaS for creators
+      - API platform for developers
+      - open source developer tool company
+  consumer_apps:
+    reddit_relevance: high
+    phrases:
+      - fitness app
+      - meditation app
+      - mental health app
+      - personal budgeting app
+      - investing education app
+      - dating app
+      - travel planning app
+      - language learning app
+      - habit tracker app
+      - sleep tracking app
+      - gaming app studio
+      - personal development app
+      - nutrition tracking app
+      - journaling app
+  ecommerce_consumer_brands:
+    reddit_relevance: medium
+    phrases:
+      - DTC skincare brand
+      - DTC beauty brand
+      - men's grooming brand
+      - home fitness equipment brand
+      - consumer electronics brand
+      - DTC clothing brand
+      - home goods DTC brand
+      - pet products brand
+      - subscription box
+      - supplement brand
+      - mechanical keyboard brand
+      - outdoor gear DTC brand
+      - sleep products brand
+  other_opportunities:
+    reddit_relevance: medium
+    phrases:
+      - online course platform
+      - creator economy platform
+      - consumer fintech app
+      - travel booking platform
+      - online marketplace for consumers
+      - online community platform
+      - freelancer marketplace
+      - digital product marketplace
+      - tutoring platform
+      - resume builder
+
+# Purely enterprise-procurement categories that are rejected unless the company
+# shows a real self-serve, developer, prosumer or consumer audience.
+enterprise_red_flags:
+  - ERP
+  - procurement software
+  - supply chain management
+  - core banking
+  - clinical trial management
+  - defense contractor
+  - government contracting
+  - industrial IoT
+  - mainframe
+
+# Restricted categories: never prospect.
+restricted_categories:
+  - gambling
+  - online casino
+  - sports betting
+  - adult content
+  - firearms
+  - tobacco
+  - vaping
+  - cannabis
+  - crypto token presale
+  - payday loans
+  - prescription drugs without prescription
+  - fake reviews
+  - upvote selling
+  - account selling
+  - essay mills
