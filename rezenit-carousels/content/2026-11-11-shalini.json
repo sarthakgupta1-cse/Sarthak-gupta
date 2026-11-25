@@ -1,0 +1,71 @@
+{
+  "date": "11-11-26",
+  "owner": "Shalini",
+  "carousels": [
+    {
+      "name": "No Nut November week by week",
+      "seed": 1601,
+      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 11", "title": "What quitting p*rn feels like [[week by week]] in No Nut November.", "sub": "You're in week 2. Here's what's coming — so it doesn't catch you off guard." },
+        { "type": "point", "phase": "Week 1 · Days 1–7", "progress": 1, "title": "The [[easy]] start — then the wave", "body": "Motivation is high. Then around day 4–5, many people describe a sudden wave of p*rn urges.\n\n<b>If you made it through, the hardest surprise is behind you.</b>" },
+        { "type": "point", "phase": "Week 2 · Days 8–14", "progress": 2, "title": "The [[restless]] week", "body": "Irritable, bored, can't sleep, thinking about p*rn more than you expected.\n\nThis is where most people quit NNN. <b>You're in it right now.</b>" },
+        { "type": "point", "phase": "Week 3 · Days 15–21", "progress": 3, "title": "The [[flat]] week", "body": "Low energy, low drive, \"is this even working?\"\n\nMany describe this flat phase before things improve. <b>Don't mistake it for failure.</b>" },
+        { "type": "point", "phase": "Week 4 · Days 22–30", "progress": 4, "title": "The [[clear]] week", "body": "Many people report more focus, more energy and fewer p*rn urges by the last week.\n\nEveryone's different — <b>but the people who reach it rarely regret it.</b>", "note": "What week are you in? Comment 1, 2, 3 or 4 👇" },
+        { "type": "cta", "title": "Make it to Day 30.\n[[Then keep going.]]", "lead": "RezenIt's guided p*rn recovery program, streak tracking and a panic button get you through every week of NNN — and beyond.", "features": ["Recovery program", "Streaks", "Panic button"] }
+      ]
+    },
+    {
+      "name": "You failed No Nut November. Now what?",
+      "seed": 1603,
+      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "Failed NNN already?", "title": "You failed No Nut November by Day 5. [[Stop pretending it doesn't matter.]]", "sub": "Laughing it off is easier than admitting p*rn has more control than you thought." },
+        { "type": "point", "num": "01", "title": "\"It was just a [[joke]] anyway.\"", "body": "No. You tried to go 30 days without p*rn and couldn't make 5.\n\n<b>That's not a joke. That's information.</b>" },
+        { "type": "point", "num": "02", "title": "Stop [[waiting]] for December", "body": "\"I'll try again next year.\" That's 12 more months of p*rn running your nights.\n\n<b>You don't need November to start. You need today.</b>" },
+        { "type": "point", "num": "03", "title": "Restart [[right now]]", "body": "Day 1 can be November 11 just as easily as November 1.\n\nThe challenge ends on the 30th. <b>Your p*rn addiction doesn't care about the calendar.</b>" },
+        { "type": "list", "title": "Your [[restart]] plan", "items": ["<b>Today is Day 1.</b> No waiting.", "<b>Block p*rn</b> on every device tonight.", "<b>Find what broke you</b> on Day 5 — time, place, mood.", "<b>Aim for 19 days</b>, then keep going past Nov 30."], "note": "Restarting today? Comment \"DAY 1\" and hold yourself to it 👇" },
+        { "type": "cta", "title": "Failed NNN?\n[[Start over with RezenIt.]]", "lead": "A p*rn blocker, a daily streak tracker and a step-by-step recovery program that works beyond November.", "features": ["P*rn blocker", "Streaks", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "9 signs you're more addicted to p*rn than you think",
+      "seed": 1607,
+      "theme": { "bg": "#0B1A3A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Be brutally honest", "title": "9 signs you're more addicted to p*rn [[than you think.]]", "sub": "If you hit 4 or more, it's time to stop calling it \"just a habit.\"" },
+        { "type": "list", "title": "Signs [[1–3]]", "items": ["<b>You plan your day</b> around when you'll be alone.", "<b>You open p*rn</b> even when you're not in the mood — just out of habit.", "<b>You have tabs or folders</b> you'd die if anyone saw."] },
+        { "type": "list", "marks": ["4", "5", "6"], "title": "Signs [[4–6]]", "items": ["<b>You use p*rn to fall asleep</b> most nights.", "<b>You get irritable</b> when you can't access it.", "<b>You've watched p*rn</b> somewhere risky — work, class, family home."] },
+        { "type": "list", "marks": ["7", "8", "9"], "title": "Signs [[7–9]]", "items": ["<b>Real intimacy feels</b> like more effort than it's worth.", "<b>You've lied</b> about how much p*rn you watch.", "<b>You've tried to quit 3+ times</b> and couldn't."] },
+        { "type": "point", "title": "Counted [[4+]]?", "body": "Then this isn't a phase or a quirk. It's p*rn addiction — and it's treatable.\n\n<b>Naming it honestly is the first real step.</b>", "note": "How many did you count? Save this and come back in 30 days 🔖" },
+        { "type": "cta", "title": "Counted 4+?\n[[RezenIt can help.]]", "lead": "Learn what p*rn addiction does to your brain, block it completely and follow a guided recovery program.", "features": ["Learn the truth", "P*rn blocker", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "Only 4-10% ever get help for p*rn addiction",
+      "seed": 1609,
+      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "slides": [
+        { "type": "hook", "kicker": "82,243 people. 42 countries.", "title": "Most people struggling with p*rn [[never ask for help.]]", "sub": "What the biggest international study found." },
+        { "type": "point", "num": "4–10%", "title": "Almost [[nobody]] seeks help", "body": "In the International Sex Survey (Bőthe et al., 2024), only <b>4–10% of people with problematic p*rn use</b> had ever sought treatment." },
+        { "type": "point", "num": "01", "title": "Why people [[stay quiet]]", "body": "Shame. Fear of judgment. Thinking \"it's not that bad.\" Believing they should handle p*rn alone.\n\n<b>Silence feels safer — but it keeps you stuck.</b>" },
+        { "type": "point", "num": "02", "title": "You're [[not]] the only one", "body": "The same study of 42 countries found men reported the highest levels of problematic p*rn use.\n\n<b>Millions are fighting this quietly.</b>" },
+        { "type": "list", "title": "Be in the [[4–10%]]", "items": ["<b>Tell one person</b> you trust about your p*rn use.", "<b>Talk to a therapist</b> or doctor — it's their job.", "<b>Join a support group</b> — anonymous is fine.", "<b>Use tools</b> that keep you accountable."], "note": "Send this to someone who's been fighting p*rn alone ↗" },
+        { "type": "cta", "title": "Don't fight p*rn alone.\n[[Get support today.]]", "lead": "RezenIt gives you an anonymous community, 1-on-1 accountability and an AI coach — private by design.", "features": ["Community", "Accountability", "AI coach"] }
+      ]
+    },
+    {
+      "name": "Week 2 of No Nut November is the hardest",
+      "seed": 1611,
+      "theme": { "bg": "#0A1A30", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Week 2", "title": "Week 2 of NNN is where [[most p*rn quitters break.]]", "sub": "5 reasons it's so hard — and how to get through it." },
+        { "type": "list", "title": "Why it's [[hard]]", "items": ["<b>The novelty is gone.</b> Day 11 doesn't feel exciting.", "<b>The p*rn urges are louder</b> than week 1.", "<b>Everyone else already quit</b> — so it feels pointless."] },
+        { "type": "list", "marks": ["4", "5"], "title": "And [[worse]]", "items": ["<b>You start bargaining:</b> \"I've done 10 days, one p*rn session won't matter.\"", "<b>You haven't felt the benefits yet</b> — so you doubt it's working."] },
+        { "type": "point", "title": "Here's the [[truth]]", "body": "The bargaining voice gets loudest right before p*rn urges start to ease.\n\n<b>Week 2 is the toll you pay to reach week 3.</b>" },
+        { "type": "list", "title": "Survive [[week 2]]", "items": ["<b>Expect it to be hard</b> — that's normal, not failure.", "<b>Remove all p*rn access</b> tonight.", "<b>Fill your evenings</b> — train, see people, go out.", "<b>Count down:</b> 19 days left."], "note": "Still in? Comment \"DAY 11\" so others know they're not alone 👇" },
+        { "type": "cta", "title": "Get through week 2\n[[with RezenIt.]]", "lead": "A panic button for the hardest NNN moments, guided audio sessions and streaks that keep you going.", "features": ["Panic button", "Guided audio", "Streaks"] }
+      ]
+    }
+  ]
+}

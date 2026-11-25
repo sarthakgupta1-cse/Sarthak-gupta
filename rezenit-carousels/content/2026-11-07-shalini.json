@@ -1,0 +1,71 @@
+{
+  "date": "07-11-26",
+  "owner": "Shalini",
+  "carousels": [
+    {
+      "name": "'I've got this' - overconfidence is a trigger",
+      "seed": 401,
+      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Week 1 of November", "title": "The first few days felt easy. [[That's the trap.]]", "sub": "Why \"I've got this\" is one of the most dangerous thoughts in recovery." },
+        { "type": "point", "num": "01", "title": "The [[easy]] start", "body": "Motivation is high. Urges are quiet. It feels like you've already won.\n\nMany people say this is exactly <b>when they drop their guard.</b>" },
+        { "type": "point", "num": "02", "title": "Then the [[wave]] hits", "body": "Around day 4 or 5, many describe a sudden surge of urges.\n\nIt feels like it came out of nowhere. <b>It didn't — the habit was waiting.</b>" },
+        { "type": "point", "num": "03", "title": "Confidence ≠ [[protection]]", "body": "Feeling strong doesn't mean the blocker can come off or the phone can come back to bed.\n\n<b>Keep the guardrails up on the good days too.</b>" },
+        { "type": "list", "title": "Stay humble, [[stay clean]]", "items": ["<b>Keep every guardrail</b> — even when it feels unnecessary.", "<b>Expect the day-5 wave</b> and plan for it.", "<b>Check in daily</b>, not just on hard days.", "<b>Treat good streaks</b> as practice, not proof."], "note": "When did your first big wave hit? Comment the day 👇" },
+        { "type": "cta", "title": "Strong days build habits.\n[[Systems protect them.]]", "lead": "A blocker that stays on, daily check-ins and a panic button for the wave you didn't see coming.", "features": ["P*rn blocker", "Check-ins", "Panic button"] }
+      ]
+    },
+    {
+      "name": "Flatline or something more? When to get help",
+      "seed": 403,
+      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "Read this if you feel numb", "title": "Is it the flatline — or [[something more?]]", "sub": "How to tell, and when it's time to talk to someone." },
+        { "type": "point", "num": "01", "title": "What people [[call]] the flatline", "body": "Low libido, low energy, feeling flat — often a few weeks in.\n\nIt's a <b>community term, not a medical diagnosis</b>, and many describe it as temporary." },
+        { "type": "point", "num": "02", "title": "When it might be [[more]]", "body": "Feeling hopeless, losing interest in everything, or struggling to get through the day for weeks.\n\nThat can look like the flatline — <b>but it can also be depression.</b>" },
+        { "type": "point", "num": "03", "title": "Asking for help is [[strength]]", "body": "A doctor or therapist can help you figure out what's going on.\n\n<b>You don't have to tough out low mood alone.</b> Recovery is easier with support." },
+        { "type": "list", "title": "Talk to a professional [[if]]", "items": ["<b>Low mood lasts</b> more than two weeks.", "<b>You've lost interest</b> in things you used to enjoy.", "<b>Sleep or appetite</b> has changed a lot.", "<b>You have thoughts</b> of hurting yourself — reach out today."], "note": "Save this and send it to someone who might need it." },
+        { "type": "cta", "title": "Recovery isn't\n[[a solo mission.]]", "lead": "An AI coach to talk things through, an anonymous community and guided lessons. RezenIt is self-help, not a substitute for professional care.", "features": ["AI coach", "Community", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "Talk to yourself like your best friend",
+      "seed": 407,
+      "theme": { "bg": "#0B1A3A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "After a hard night", "title": "You'd never talk to a friend [[the way you talk to yourself.]]", "sub": "Why self-hate keeps you stuck — and what to say instead." },
+        { "type": "point", "num": "01", "title": "\"I'm [[disgusting.]]\"", "body": "That voice feels like accountability. It isn't.\n\nShame tends to push people back to the habit for relief — <b>it feeds the loop.</b>" },
+        { "type": "point", "num": "02", "title": "What you'd tell a [[friend]]", "body": "\"You slipped. That doesn't erase your progress. What happened, and what do you need?\"\n\n<b>Kind and honest, at the same time.</b>" },
+        { "type": "point", "num": "03", "title": "Compassion is [[not]] an excuse", "body": "Being kind to yourself doesn't mean pretending it's fine.\n\nIt means <b>staying in the fight</b> instead of quitting on yourself." },
+        { "type": "list", "title": "Rewrite the [[voice]]", "items": ["<b>\"I'm weak\"</b> → \"I'm learning.\"", "<b>\"I'll never change\"</b> → \"I'm changing slowly.\"", "<b>\"I ruined it\"</b> → \"I can restart right now.\"", "<b>\"I'm disgusting\"</b> → \"I'm a person with a habit.\""], "note": "Which line do you need to hear today? Comment it 👇" },
+        { "type": "cta", "title": "Shame-free progress.\n[[That's the whole idea.]]", "lead": "Journal honestly, track progress without judgment and lean on a community that gets it.", "features": ["Journaling", "Community", "Streaks"] }
+      ]
+    },
+    {
+      "name": "You don't need fewer urges. You need more people.",
+      "seed": 409,
+      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "slides": [
+        { "type": "hook", "kicker": "The quiet trigger", "title": "You don't need fewer urges. [[You need more people.]]", "sub": "Why isolation and this habit go hand in hand." },
+        { "type": "point", "num": "01", "title": "The habit [[loves]] isolation", "body": "Alone in your room, nobody to talk to, nothing on.\n\nMany people say their urges were <b>loudest when they felt most disconnected.</b>" },
+        { "type": "point", "num": "02", "title": "Connection [[fills]] the gap", "body": "Real conversations, shared plans, people who expect you somewhere.\n\nThe need underneath the urge often <b>is the need to feel connected.</b>" },
+        { "type": "point", "num": "03", "title": "Start [[smaller]] than you think", "body": "You don't need a big friend group tomorrow.\n\nOne call. One plan. One message that says <b>\"want to grab food?\"</b>" },
+        { "type": "list", "title": "This week, [[try]]", "items": ["<b>Text one old friend</b> you've lost touch with.", "<b>Join one group:</b> gym class, sport, club.", "<b>Work from a café</b> or library once.", "<b>Say yes</b> to one plan you'd normally skip."], "note": "Who's one person you'll message today? (No names needed) 👇" },
+        { "type": "cta", "title": "Never feel alone\n[[in this again.]]", "lead": "An anonymous community, 1-on-1 accountability with real people and daily check-ins.", "features": ["Community", "Accountability", "Check-ins"] }
+      ]
+    },
+    {
+      "name": "Working from home alone? The 3 PM trap",
+      "seed": 411,
+      "theme": { "bg": "#0A1A30", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "For remote workers", "title": "Working from home alone is a [[relapse setup.]]", "sub": "Nobody around, a laptop all day, and the 3 PM slump." },
+        { "type": "point", "num": "01", "title": "No one [[around]]", "body": "No coworkers, no commute, no one walking past your screen.\n\nThe privacy that makes remote work comfortable <b>also removes the brakes.</b>" },
+        { "type": "point", "num": "02", "title": "The [[3 PM]] slump", "body": "Tired, bored, procrastinating on a hard task.\n\nA \"quick break\" on the same device you work on <b>is one click away from trouble.</b>" },
+        { "type": "point", "num": "03", "title": "Your [[bed]] is your office", "body": "Working from bed blurs every line.\n\nYour brain stops knowing what that space is for — <b>and the old habit fills the blank.</b>" },
+        { "type": "list", "title": "Remote-work [[rules]]", "items": ["<b>Work at a desk</b>, never in bed.", "<b>Blocker on</b> during work hours too.", "<b>Take breaks away</b> from screens — walk, stretch, water.", "<b>Leave the house</b> once a day, no matter what."], "note": "WFH people: when's your hardest hour? Comment it 👇" },
+        { "type": "cta", "title": "Make your home\n[[a safe space.]]", "lead": "Turn your devices into a safe, distraction-free space and track every clean workday.", "features": ["P*rn blocker", "Streaks", "Daily actions"] }
+      ]
+    }
+  ]
+}

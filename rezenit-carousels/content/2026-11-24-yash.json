@@ -1,0 +1,328 @@
+{
+  "date": "24-11-26",
+  "owner": "Yash",
+  "carousels": [
+    {
+      "name": "6 rules for Black Friday weekend so p*rn doesn't sneak back in (NNN)",
+      "seed": 7801,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#6FF0C4",
+        "a2": "#7DB8FF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Day 24",
+          "title": "6 rules for Black Friday weekend [[so p*rn doesn't sneak back in.]]",
+          "sub": "Endless scrolling, endless ads, endless triggers."
+        },
+        {
+          "type": "list",
+          "title": "Rules [[1–2]]",
+          "items": [
+            "<b>Shop with a list.</b> Browsing is how scrolling starts.",
+            "<b>Close the tab</b> when the ads get suggestive."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Rules [[3–4]]",
+          "items": [
+            "<b>No shopping in bed</b> late at night — that's where p*rn waits.",
+            "<b>Set a time limit</b> on deal-hunting."
+          ],
+          "marks": [
+            "3",
+            "4"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Rules [[5–6]]",
+          "items": [
+            "<b>Unsubscribe</b> from brands whose ads trigger you.",
+            "<b>Spend the weekend</b> away from the screen too."
+          ],
+          "marks": [
+            "5",
+            "6"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "The [[real deal]]",
+          "items": [
+            "<b>6 days left</b> without p*rn.",
+            "<b>Nothing in a sale</b> is worth a relapse.",
+            "<b>Treat yourself</b> to something that helps — running shoes, a book.",
+            "<b>Log off</b> by 10 PM all weekend."
+          ],
+          "note": "Shopping this weekend? Save this 🔖"
+        },
+        {
+          "type": "cta",
+          "title": "Best deal this week:\n[[a month without p*rn.]]",
+          "lead": "RezenIt's p*rn blocker, panic button and streaks protect your progress through the busiest scrolling weekend.",
+          "features": [
+            "P*rn blocker",
+            "Panic button",
+            "Streaks"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5 reasons 'everyone watches p*rn' still isn't a reason (Ofcom 18%)",
+      "seed": 7803,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#7FE7FF",
+        "a2": "#A98BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Ofcom, 2023",
+          "title": "5 reasons \"everyone watches p*rn\" [[still isn't a reason.]]",
+          "sub": "P*rnhub alone reached 18% of UK adults in one month."
+        },
+        {
+          "type": "point",
+          "title": "Of UK [[adults]]",
+          "body": "According to Ofcom (2023), P*rnhub reached <b>18% of UK adults</b> in May 2023 — the most popular p*rn service there.\n\n<b>Common? Yes. Harmless? That's a different question.</b>",
+          "num": "18%"
+        },
+        {
+          "type": "list",
+          "title": "Reasons [[1–2]]",
+          "items": [
+            "<b>Common isn't healthy.</b> Lots of people don't sleep enough either.",
+            "<b>\"Everyone\" isn't you.</b> Your life, your cost."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Reasons [[3–5]]",
+          "items": [
+            "<b>Most people never check</b> what it's doing to them.",
+            "<b>The crowd won't pay</b> your price — sleep, focus, relationships.",
+            "<b>Being different</b> is the whole point of changing."
+          ],
+          "marks": [
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Decide for [[yourself]]",
+          "items": [
+            "<b>Stop using the crowd</b> as your excuse.",
+            "<b>Look at your own life</b> honestly.",
+            "<b>Ask:</b> is p*rn making it better or worse?",
+            "<b>Start today.</b>"
+          ],
+          "note": "Send this to the guy who says \"everyone does it\" ↗"
+        },
+        {
+          "type": "cta",
+          "title": "Don't follow the crowd.\n[[Quit with RezenIt.]]",
+          "lead": "A p*rn blocker, streaks and a community of people who chose differently.",
+          "features": [
+            "P*rn blocker",
+            "Streaks",
+            "Community"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4 reasons accountability partners fail at keeping you off p*rn",
+      "seed": 7807,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#9EF0C8",
+        "a2": "#7BA7FF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Fix your system",
+          "title": "4 reasons accountability partners fail [[at keeping you off p*rn.]]",
+          "sub": "It's usually not the idea. It's the setup."
+        },
+        {
+          "type": "point",
+          "title": "Too [[vague]]",
+          "body": "\"Let me know if you slip\" isn't a plan.\n\n<b>No schedule, no questions, no follow-up.</b>",
+          "num": "01"
+        },
+        {
+          "type": "point",
+          "title": "Too [[polite]]",
+          "body": "They don't want to pry. You don't want to admit it.\n\n<b>So nobody mentions p*rn at all.</b>",
+          "num": "02"
+        },
+        {
+          "type": "list",
+          "title": "Reasons [[3–4]]",
+          "items": [
+            "<b>Only after slips.</b> Check-ins should happen on good days too.",
+            "<b>Wrong person</b> — someone who jokes it off or judges."
+          ],
+          "marks": [
+            "3",
+            "4"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Fix [[it]]",
+          "items": [
+            "<b>Set a fixed check-in</b> — same day, same time.",
+            "<b>Agree on 3 questions</b> about p*rn you'll always answer.",
+            "<b>Report good days</b>, not just bad ones.",
+            "<b>Switch partners</b> if it isn't working."
+          ],
+          "note": "Send this to your accountability partner ↗"
+        },
+        {
+          "type": "cta",
+          "title": "Accountability that works.\n[[That's RezenIt.]]",
+          "lead": "1-on-1 accountability with real people, scheduled check-ins and habit tracking they can see.",
+          "features": [
+            "Accountability",
+            "Check-ins",
+            "Habit tracking"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "8 things you won't miss about p*rn (NNN Day 24)",
+      "seed": 7809,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#5EE7E0",
+        "a2": "#B79BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Day 24",
+          "title": "8 things you won't miss [[about p*rn.]]",
+          "sub": "24 days in. Look what's gone."
+        },
+        {
+          "type": "list",
+          "title": "Gone [[1–3]]",
+          "items": [
+            "<b>Clearing your p*rn history</b> every night.",
+            "<b>The 2 AM guilt.</b>",
+            "<b>Checking the door</b> is locked."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Gone [[4–6]]",
+          "items": [
+            "<b>Lying</b> about why you're tired.",
+            "<b>The search</b> that takes longer than the video.",
+            "<b>Feeling weird</b> around people the next day."
+          ],
+          "marks": [
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Gone [[7–8]]",
+          "items": [
+            "<b>Promising yourself</b> \"last time.\"",
+            "<b>That empty feeling</b> right after."
+          ],
+          "marks": [
+            "7",
+            "8"
+          ]
+        },
+        {
+          "type": "point",
+          "title": "Remember [[this list]]",
+          "body": "Urges make p*rn look good. They never show you the after.\n\n<b>Read this list when the urge starts selling.</b>",
+          "note": "What won't you miss? Comment it 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Don't go back.\n[[RezenIt keeps you here.]]",
+          "lead": "Streaks, a panic button and journaling to remember why you left p*rn behind.",
+          "features": [
+            "Streaks",
+            "Panic button",
+            "Journaling"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3 mindset shifts that make quitting p*rn stick",
+      "seed": 7811,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#7DE3F5",
+        "a2": "#8B7BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Think differently",
+          "title": "3 mindset shifts that make quitting p*rn [[actually stick.]]",
+          "sub": "Same goal. A different way of thinking about it."
+        },
+        {
+          "type": "point",
+          "title": "From \"can't\" to [[\"don't\"]]",
+          "body": "\"I can't watch p*rn\" feels like a rule someone gave you.\n\n<b>\"I don't watch p*rn\" is who you are.</b>",
+          "num": "01"
+        },
+        {
+          "type": "point",
+          "title": "From punishment to [[practice]]",
+          "body": "A p*rn slip isn't proof you're bad. They're reps you learn from.\n\n<b>Practice gets better. Punishment gets you stuck.</b>",
+          "num": "02"
+        },
+        {
+          "type": "point",
+          "title": "From days to [[life]]",
+          "body": "Counting days is a start.\n\n<b>Building a life you don't want to escape from is the finish.</b>",
+          "num": "03"
+        },
+        {
+          "type": "list",
+          "title": "Try it [[today]]",
+          "items": [
+            "<b>Say \"I don't watch p*rn\"</b> out loud once.",
+            "<b>Write one lesson</b> from your last slip.",
+            "<b>Add one good thing</b> to your day — not just one rule.",
+            "<b>Skip counting</b> for a day and notice how it feels."
+          ],
+          "note": "Which shift do you need most? Comment 1, 2 or 3 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Change how you think.\n[[RezenIt helps it stick.]]",
+          "lead": "A guided p*rn recovery program, daily actions and an AI coach to rebuild how you see yourself.",
+          "features": [
+            "Recovery program",
+            "Daily actions",
+            "AI coach"
+          ]
+        }
+      ]
+    }
+  ]
+}

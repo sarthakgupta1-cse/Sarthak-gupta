@@ -1,0 +1,71 @@
+{
+  "date": "13-11-26",
+  "owner": "Shalini",
+  "carousels": [
+    {
+      "name": "13 truths about p*rn addiction (Day 13, Friday the 13th)",
+      "seed": 2201,
+      "theme": { "bg": "#0C1633", "a1": "#6FE3F0", "a2": "#9B87FF" },
+      "slides": [
+        { "type": "hook", "kicker": "Friday the 13th · NNN Day 13", "title": "13 truths about [[p*rn addiction]] nobody wants to hear.", "sub": "Day 13 of No Nut November. Save this one." },
+        { "type": "list", "title": "Truths [[1–4]]", "items": ["<b>P*rn is designed</b> to keep you clicking.", "<b>\"Just once\"</b> is how every relapse starts.", "<b>Willpower alone</b> runs out by midnight.", "<b>Shame keeps you hiding</b>, and hiding keeps p*rn going."] },
+        { "type": "list", "marks": ["5", "6", "7", "8"], "title": "Truths [[5–8]]", "items": ["<b>Boredom</b> causes more relapses than desire.", "<b>Your phone in bed</b> is the biggest risk you own.", "<b>Quitting p*rn feels worse</b> before it feels better.", "<b>Nobody else</b> can do it for you."] },
+        { "type": "list", "marks": ["9", "10", "11", "12", "13"], "title": "Truths [[9–13]]", "items": ["<b>You can't out-think</b> a craving — move your body.", "<b>A slip</b> is not the end.", "<b>Hiding it</b> hurts more than admitting it.", "<b>November ends.</b> Recovery doesn't.", "<b>You can actually quit p*rn.</b> People do every day."] },
+        { "type": "point", "title": "Which one [[hit]]?", "body": "Pick the truth that stung the most. That's the one you need to work on.\n\n<b>The truth about p*rn hurts. Lies hurt longer.</b>", "note": "Comment the number that hit hardest 👇" },
+        { "type": "cta", "title": "Face the truth.\n[[Quit p*rn with RezenIt.]]", "lead": "Learn the truth about p*rn addiction, follow a guided recovery program and track every day you stay free.", "features": ["Learn the truth", "Recovery program", "Streaks"] }
+      ]
+    },
+    {
+      "name": "7 signs you're doing No Nut November wrong",
+      "seed": 2203,
+      "theme": { "bg": "#1A1036", "a1": "#C4B5FF", "a2": "#7DE3F5" },
+      "slides": [
+        { "type": "hook", "kicker": "No Nut November · Day 13", "title": "7 signs you're doing No Nut November wrong — [[and p*rn will win in December.]]", "sub": "Counting days isn't the same as quitting p*rn." },
+        { "type": "list", "title": "Signs [[1–4]]", "items": ["<b>You only count days</b> — no plan, no tools.", "<b>You swapped p*rn</b> for \"almost p*rn\" scrolling.", "<b>Your phone</b> still sleeps next to you.", "<b>Nobody knows</b> you're doing it."] },
+        { "type": "list", "marks": ["5", "6", "7"], "title": "Signs [[5–7]]", "items": ["<b>You're white-knuckling</b> every night.", "<b>You plan to \"celebrate\"</b> on Dec 1 with p*rn.", "<b>You've never asked why</b> you watch p*rn in the first place."] },
+        { "type": "point", "title": "NNN is a [[test run]].", "body": "30 days shows you your triggers, your weak hours and your excuses.\n\n<b>Use it to build a plan to quit p*rn for good — not just survive a month.</b>" },
+        { "type": "list", "title": "Fix it [[today]]", "items": ["<b>Write down</b> your top 3 p*rn triggers.", "<b>Remove the \"almost p*rn\"</b> accounts.", "<b>Phone out</b> of the bedroom tonight.", "<b>Decide now:</b> what happens on Dec 1?"], "note": "How many did you see in yourself? Send this to your NNN group ↗" },
+        { "type": "cta", "title": "Do NNN right\n[[with RezenIt.]]", "lead": "Turn No Nut November into a real p*rn recovery: a blocker, journaling for triggers and a guided program.", "features": ["P*rn blocker", "Journaling", "Recovery program"] }
+      ]
+    },
+    {
+      "name": "It's in the WHO's ICD-11. Stop calling it just a habit.",
+      "seed": 2207,
+      "theme": { "bg": "#0B1A3A", "a1": "#7FE7FF", "a2": "#A98BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Stop minimizing it", "title": "Compulsive p*rn use is in the WHO's diagnostic manual. [[Stop calling it \"just a habit.\"]]", "sub": "Calling it small is how it stays big." },
+        { "type": "point", "num": "ICD-11", "title": "It's [[official]]", "body": "Since 2019, the World Health Organization's ICD-11 includes <b>compulsive sexual behaviour disorder</b> — and compulsive p*rn use is one of the ways it shows up." },
+        { "type": "point", "num": "8.6%", "title": "Of adults [[screened positive]]", "body": "A JAMA Network Open study (2018) of 2,325 U.S. adults found <b>8.6% screened positive</b> for compulsive sexual behavior.\n\nThat's nearly <b>1 in 12</b>." },
+        { "type": "point", "num": "01", "title": "\"Just a habit\" is a [[lie]]", "body": "You don't lie about a habit. You don't hide a habit. You don't fail to quit a habit 10 times.\n\n<b>Be honest about what p*rn has become.</b>" },
+        { "type": "list", "title": "Treat it [[seriously]]", "items": ["<b>Name it:</b> compulsive p*rn use.", "<b>Use real tools</b>, not just promises.", "<b>Talk to a professional</b> if it's severe.", "<b>Stop minimizing</b> — to yourself and others."], "note": "Send this to someone who keeps saying \"it's not that deep\" ↗" },
+        { "type": "cta", "title": "Take p*rn seriously.\n[[RezenIt does.]]", "lead": "A science-informed p*rn recovery program, an AI coach and guided lessons — built for compulsive p*rn use.", "features": ["Recovery program", "AI coach", "Learn the truth"] }
+      ]
+    },
+    {
+      "name": "The 20 minutes of a p*rn urge, minute by minute",
+      "seed": 2209,
+      "theme": { "bg": "#22102E", "a1": "#FF9EDB", "a2": "#9B8CFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Save this for the next urge", "title": "What happens in the 20 minutes of a [[p*rn urge]] — minute by minute.", "sub": "If you know the shape of the wave, you can ride it." },
+        { "type": "point", "phase": "Minute 0", "progress": 1, "title": "The [[spark]]", "body": "A trigger hits — boredom, a photo, a feeling. The p*rn urge feels sudden and urgent.\n\n<b>This is the moment to move, not think.</b>" },
+        { "type": "point", "phase": "Minutes 1–5", "progress": 2, "title": "The [[peak]]", "body": "Your brain starts bargaining: \"just a quick look.\"\n\nThe p*rn urge feels strongest here. <b>Get up and leave the room.</b>" },
+        { "type": "point", "phase": "Minutes 5–15", "progress": 3, "title": "The [[fade]]", "body": "If you don't feed it, the urge usually starts to drop.\n\nMove, breathe, talk to someone. <b>Watch it shrink.</b>" },
+        { "type": "point", "phase": "Minutes 15–20", "progress": 4, "title": "The [[win]]", "body": "Most urges pass within minutes when you don't act on them.\n\nEvery wave you ride out <b>teaches your brain p*rn isn't the answer.</b>", "note": "Save this and check the clock next time a p*rn urge hits 🔖" },
+        { "type": "cta", "title": "Ride every urge\n[[with RezenIt.]]", "lead": "One tap on the panic button gives you instant tools and guided audio for those first 20 minutes.", "features": ["Panic button", "Guided audio", "Streaks"] }
+      ]
+    },
+    {
+      "name": "What to say to a friend who relapsed on p*rn",
+      "seed": 2211,
+      "theme": { "bg": "#0A1A30", "a1": "#5EE7E0", "a2": "#8B7BFF" },
+      "slides": [
+        { "type": "hook", "kicker": "Send this to your group", "title": "Your friend just relapsed on p*rn. [[Here's what to say.]]", "sub": "And what never to say." },
+        { "type": "point", "num": "✗", "title": "Don't [[say]]", "body": "\"Bro, it's not a big deal.\"\n\"You'll never quit lol.\"\n\"Just use more willpower.\"\n\n<b>Jokes and lectures push people back to p*rn.</b>" },
+        { "type": "point", "num": "✓", "title": "Do [[say]]", "body": "\"Thanks for telling me.\"\n\"One slip doesn't erase your progress.\"\n\"What happened before it — and what can help next time?\"" },
+        { "type": "point", "num": "01", "title": "Then [[show up]]", "body": "Check in the next day. Invite them out. Offer to be their accountability partner for quitting p*rn.\n\n<b>Presence beats advice.</b>" },
+        { "type": "list", "title": "Be the [[friend]]", "items": ["<b>Listen first</b>, fix later.", "<b>No shame</b> — it's already there.", "<b>Help them find</b> the trigger.", "<b>Keep checking in</b> — not just once."], "note": "Tag the friend who'd say the right thing ↗" },
+        { "type": "cta", "title": "Quit p*rn together\n[[with RezenIt.]]", "lead": "1-on-1 accountability, public habit tracking a friend can see and an anonymous community.", "features": ["Accountability", "Habit tracking", "Community"] }
+      ]
+    }
+  ]
+}

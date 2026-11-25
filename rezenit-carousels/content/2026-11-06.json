@@ -1,0 +1,309 @@
+{
+  "date": "06-11-26",
+  "carousels": [
+    {
+      "name": "You slipped - the binge after is the real danger",
+      "seed": 31,
+      "theme": {
+        "bg": "#0D1B3E",
+        "a1": "#5EE7E0",
+        "a2": "#8B7BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Slipped in November?",
+          "title": "You slipped. Now comes the [[dangerous part.]]",
+          "sub": "It's not the slip. It's what you do in the next 24 hours."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "The \"[[screw it]]\" voice",
+          "body": "\"Streak's gone anyway, might as well go all night.\"\n\nMany people say the binge after a slip does more damage than the slip itself."
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "One slip is [[data,]] not a verdict",
+          "body": "A slip tells you <b>when, where and why</b> your defenses failed.\n\nShame tells you nothing. It just makes the next urge louder."
+        },
+        {
+          "type": "chain",
+          "title": "How one slip becomes a [[week]]",
+          "steps": [
+            "Slip",
+            "Shame",
+            "\"Screw it\"",
+            "Binge",
+            "Hide"
+          ],
+          "body": "Break the chain at step 2. <b>Don't feed the shame.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Your first [[24 hours]] after",
+          "items": [
+            "<b>Close the tab,</b> then leave the room.",
+            "<b>Write down the trigger:</b> time, place, mood.",
+            "<b>Eat, drink water, move</b> for 10 minutes.",
+            "<b>Tell one person,</b> or note it in your journal."
+          ],
+          "note": "Be honest: have you binged after a slip before? Drop \"yes\" below 👇"
+        },
+        {
+          "type": "cta",
+          "title": "A slip isn't the end.\n[[Quitting is.]]",
+          "lead": "Panic button for the urge, journaling for the trigger and shame-free support. Private by design.",
+          "features": [
+            "Panic button",
+            "Journaling",
+            "Streak tracking"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HALT - your urge may not be about p*rn",
+      "seed": 47,
+      "theme": {
+        "bg": "#1E0F3D",
+        "a1": "#C4B5FF",
+        "a2": "#7DE3F5"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Check this before you relapse",
+          "title": "That urge isn't about p*rn. It's about [[one of 4 things.]]",
+          "sub": "Most people never check. Do this first."
+        },
+        {
+          "type": "point",
+          "num": "H",
+          "title": "[[Hungry]]",
+          "body": "Low energy makes your brain hunt for a fast reward.\n\nBefore you fight the urge, <b>eat something real.</b> Seriously."
+        },
+        {
+          "type": "point",
+          "num": "A",
+          "title": "[[Angry]]",
+          "body": "Stress and frustration look for relief. P*rn becomes the exit.\n\nName the feeling out loud: <b>\"I am angry.\"</b> Many people find that loosens its grip."
+        },
+        {
+          "type": "point",
+          "num": "L+T",
+          "title": "[[Lonely]] or [[Tired]]",
+          "body": "Late, alone, drained: the classic danger zone. Many people report their worst urges hit right here.\n\n<b>Text someone. Or go to bed.</b> Both beat the tab."
+        },
+        {
+          "type": "list",
+          "title": "Your [[HALT]] reset",
+          "items": [
+            "<b>Pause</b> for 60 seconds. Don't decide yet.",
+            "<b>Ask:</b> hungry, angry, lonely or tired?",
+            "<b>Fix that one thing</b> first.",
+            "<b>Then check</b> if the urge is still there."
+          ],
+          "note": "Which one gets you most? H, A, L or T? Comment your letter 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Meet the urge with a plan,\n[[not panic.]]",
+          "lead": "A panic button for urges, daily guided audio and a community that gets it.",
+          "features": [
+            "Panic button",
+            "Guided audio",
+            "Community"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Quit p*rn, now doomscrolling 6 hours?",
+      "seed": 59,
+      "theme": {
+        "bg": "#062A33",
+        "a1": "#7DE3F5",
+        "a2": "#B79BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Nobody warns you about this",
+          "title": "You quit p*rn. Now you're [[doomscrolling 6 hours.]]",
+          "sub": "Congrats. You swapped one loop for another."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "Same loop, [[new door]]",
+          "body": "Reels, shorts, games, snacks. If it's endless and on-demand, your brain may treat it like the old hit.\n\nMany people in recovery describe exactly this."
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "The tell: you feel [[worse]] after",
+          "body": "Real rest leaves you calmer.\n\nIf you feel numb, foggy or guilty afterward, <b>it's an escape, not a break.</b>"
+        },
+        {
+          "type": "chain",
+          "title": "Why it keeps happening",
+          "steps": [
+            "Discomfort",
+            "Reach for phone",
+            "Numb out",
+            "Time lost",
+            "Discomfort"
+          ],
+          "body": "You removed the habit but not <b>the feeling it was covering.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Fill the [[gap]] on purpose",
+          "items": [
+            "<b>Pick 2 replacements</b> before the urge hits.",
+            "<b>Set app time limits,</b> ask a friend for the passcode.",
+            "<b>Phone charges outside</b> the bedroom.",
+            "<b>Ask what you're avoiding</b> in that moment."
+          ],
+          "note": "What's your replacement habit right now? Confess below 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Don't just quit.\n[[Rebuild your days.]]",
+          "lead": "A step-by-step recovery program with guided audio and daily actions, so empty time has a plan.",
+          "features": [
+            "Recovery program",
+            "Daily actions",
+            "Guided audio"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hiding it hurts more than the p*rn",
+      "seed": 71,
+      "theme": {
+        "bg": "#2A0F33",
+        "a1": "#FFB3E6",
+        "a2": "#8FB4FF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "For anyone in a relationship",
+          "title": "She didn't leave over the p*rn. She left over the [[lying.]]",
+          "sub": "Why secrecy is often the bigger wound."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "The [[betrayal]] is the secret",
+          "body": "Many partners say the dishonesty hurt more than the p*rn itself.\n\nEvery \"I'm fine\" and deleted history adds up."
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "It's not [[about them]]",
+          "body": "Partners often blame themselves, wondering if they weren't enough.\n\n<b>They didn't cause this.</b> And you can't recover while hiding it."
+        },
+        {
+          "type": "chain",
+          "title": "The secrecy [[cycle]]",
+          "steps": [
+            "Hide",
+            "Guilt",
+            "Distance",
+            "Escape",
+            "Hide"
+          ],
+          "body": "Shame feeds the thing you're ashamed of. <b>Honesty breaks it.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Rebuilding [[trust]]",
+          "items": [
+            "<b>Tell the truth</b> before you're caught.",
+            "<b>Don't promise \"never again\".</b> Show a plan.",
+            "<b>Let progress be visible,</b> not just claimed.",
+            "<b>Get support</b> beyond your partner."
+          ],
+          "note": "Partners and quitters: what helped you rebuild trust? Share below 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Recovery works better\n[[out in the open.]]",
+          "lead": "1-on-1 accountability, public habit tracking so a partner can see progress, and an anonymous community.",
+          "features": [
+            "Accountability",
+            "Habit tracking",
+            "Anonymous community"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Day 30 isn't the finish line",
+      "seed": 83,
+      "theme": {
+        "bg": "#101030",
+        "a1": "#9EF0C8",
+        "a2": "#7BA7FF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Before November ends",
+          "title": "Day 30 hits. Then [[December]] hits you.",
+          "sub": "Why the challenge ending is the riskiest moment."
+        },
+        {
+          "type": "point",
+          "num": "01",
+          "title": "The [[reward]] trap",
+          "body": "\"I made it, I deserve it.\"\n\nTreating p*rn as a prize for finishing keeps it at the center of your life."
+        },
+        {
+          "type": "point",
+          "num": "02",
+          "title": "A challenge is [[not]] a plan",
+          "body": "Countdowns end. Habits don't.\n\nIf the only plan was \"white-knuckle till the 30th\", <b>nothing is left for Day 31.</b>"
+        },
+        {
+          "type": "chain",
+          "title": "The post-challenge [[crash]]",
+          "steps": [
+            "Day 30",
+            "Relief",
+            "\"Just once\"",
+            "Binge",
+            "Day 0"
+          ],
+          "body": "Plenty of people report this exact pattern. <b>You can plan around it.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Plan Day [[31]] now",
+          "items": [
+            "<b>Set a new goal</b> before the 30th: 60 or 90 days.",
+            "<b>Keep your blocker on.</b> Don't celebrate by removing it.",
+            "<b>Pick a reward</b> that isn't p*rn.",
+            "<b>Keep your daily routine</b> exactly the same."
+          ],
+          "note": "What's your Day 31 plan? Tell us below 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Don't end at 30.\n[[Keep going.]]",
+          "lead": "A guided daily program that keeps going after the challenge, with streaks and support when urges hit.",
+          "features": [
+            "Streak tracking",
+            "Recovery program",
+            "P*rn blocker"
+          ]
+        }
+      ]
+    }
+  ]
+}
