@@ -68,7 +68,7 @@ llm:
 search:
   provider_env: SEARCH_PROVIDER
   default_provider: brave
-  max_queries_per_run: 60
+  max_queries_per_run: 33   # 33 x 30 days ≈ 990 queries, inside Brave's $5 monthly credit
   discovery_queries_per_run: 12
   research_queries_per_company: 2
   results_per_query: 10
@@ -95,7 +95,7 @@ pricing:
     none: 0.0
 
 budget:
-  monthly_budget_inr: 2000
+  monthly_budget_inr: 1000
   inr_per_usd: 88.0
   # Above this fraction of the monthly budget, optional research calls are cut.
   reduce_at_fraction: 0.8

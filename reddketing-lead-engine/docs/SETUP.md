@@ -64,7 +64,7 @@ authorization code for tokens** and copy the refresh token.
 
 **Simpler alternative: SMTP with an App Password.** Turn on 2-Step Verification for the Google
 account, create an App Password at <https://myaccount.google.com/apppasswords>, then set the
-repository variable `EMAIL_TRANSPORT=smtp` and the secrets `SMTP_USERNAME` (the Gmail address)
+secrets `SMTP_USERNAME` (the Gmail address)
 and `SMTP_APP_PASSWORD` (16 characters, no spaces).
 
 ## 4. LLM API key (default: Anthropic, Claude Haiku 5.5)
@@ -112,7 +112,7 @@ Repository → **Settings → Secrets and variables → Actions**.
 | `BRAVE_SEARCH_API_KEY` | From step 5 |
 | `PRODUCT_HUNT_TOKEN` | Optional |
 
-**Variables** tab (optional): `LLM_PROVIDER`, `SEARCH_PROVIDER`, `EMAIL_TRANSPORT`.
+**Variables** (optional, at Settings → Secrets and variables → Actions → Variables): `LLM_PROVIDER` (default `anthropic`), `SEARCH_PROVIDER` (default `brave`), `EMAIL_TRANSPORT` (default: `smtp` when only an App Password is set, otherwise `gmail_api`).
 
 ## 7. First runs
 

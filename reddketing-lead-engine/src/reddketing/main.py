@@ -65,7 +65,8 @@ def cmd_doctor(args, settings) -> int:
     line("REPORT_RECIPIENT", "ok" if settings.recipient else "MISSING")
     line("SPREADSHEET_ID", "ok" if env("SPREADSHEET_ID") else "MISSING")
     line("GOOGLE_SERVICE_ACCOUNT_JSON", "ok" if env("GOOGLE_SERVICE_ACCOUNT_JSON") else "MISSING")
-    transport = (env("EMAIL_TRANSPORT") or "gmail_api").lower()
+    from reddketing.reporting.gmail_client import email_transport
+    transport = email_transport()
     if transport == "smtp":
         line("SMTP credentials", "ok" if env("SMTP_APP_PASSWORD") and (env("SMTP_USERNAME") or env("GMAIL_SENDER")) else "MISSING")
     else:
