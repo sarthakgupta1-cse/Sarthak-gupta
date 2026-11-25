@@ -1,0 +1,7 @@
+# Run output and personal data: these live in the user's private Google Drive, never in this public repo
+out/
+out_run.txt
+logs/*.log
+profile/profile.yaml
+.env
+*.db

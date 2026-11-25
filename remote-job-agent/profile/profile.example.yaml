@@ -1,0 +1,37 @@
+# Copy to profile/profile.yaml (gitignored — it is uploaded to your private Google Drive, never to GitHub)
+# and fill it ONLY with true facts from your current resume. The generator never adds anything
+# that is not in this file: it only selects, orders and emphasises.
+name: Your Name
+headline: Content Writer & Email Marketer
+location: City, India
+email: you@example.com
+phone: "+91 00000 00000"
+links:
+  - https://www.linkedin.com/in/your-profile
+summary: >
+  One or two true sentences about your experience and strengths.
+# Optional summaries tuned per job category (still must be true):
+summaries:
+  Content Writing: >
+    ...
+  Social Media: >
+    ...
+skills: [Copywriting, Email marketing, SEO, Content writing, Klaviyo, Canva]
+experience:
+  - title: Email Marketer
+    company: Example Co
+    location: Remote
+    start: Nov 2022
+    end: Jan 2024
+    bullets:
+      - text: Wrote and scheduled promotional and automated email campaigns.
+        tags: [Email marketing, Copywriting, Marketing automation]
+education:
+  - degree: B.Tech, Computer Science
+    school: University name
+    year: "2022"
+certifications: []
+projects:
+  - name: Project name
+    description: What you did and the outcome.
+    tags: [Email marketing]

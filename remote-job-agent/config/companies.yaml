@@ -1,0 +1,81 @@
+# Company career boards checked directly through their public ATS job-board APIs.
+# These are the employers' own postings, so they rank above aggregator copies.
+# Every slug below returned live jobs when probed on 2026-11-25.
+# Add more: find the company's careers page, see which ATS it uses, add the slug.
+# A slug that starts returning 404 is logged and skipped. It never breaks the run.
+
+greenhouse:   # boards-api.greenhouse.io/v1/boards/<slug>/jobs
+  - {slug: airtable, industry: SaaS}
+  - {slug: automatticcareers, name: Automattic, industry: Media/Publishing}
+  - {slug: bitpanda, industry: Fintech}
+  - {slug: brex, industry: Fintech}
+  - {slug: calendly, industry: SaaS}
+  - {slug: canonical, industry: Technology}
+  - {slug: cloudflare, industry: Technology}
+  - {slug: coinbase, industry: Web3}
+  - {slug: consensys, industry: Web3}
+  - {slug: datadog, industry: SaaS}
+  - {slug: discord, industry: Consumer internet}
+  - {slug: dropbox, industry: SaaS}
+  - {slug: elastic, industry: SaaS}
+  - {slug: figma, industry: SaaS}
+  - {slug: gitlab, industry: SaaS}
+  - {slug: grafanalabs, name: Grafana Labs, industry: SaaS}
+  - {slug: groww, industry: Fintech (India)}
+  - {slug: gusto, industry: SaaS}
+  - {slug: hackerrank, industry: EdTech}
+  - {slug: mongodb, industry: SaaS}
+  - {slug: mozilla, industry: Technology}
+  - {slug: netlify, industry: SaaS}
+  - {slug: okx, industry: Web3}
+  - {slug: pinterest, industry: Consumer internet}
+  - {slug: reddit, industry: Consumer internet}
+  - {slug: tailscale, industry: SaaS}
+  - {slug: twilio, industry: SaaS}
+  - {slug: typeform, industry: SaaS}
+  - {slug: vercel, industry: SaaS}
+  - {slug: wikimedia, name: Wikimedia Foundation, industry: Media/Publishing}
+  - {slug: wise, industry: Fintech}
+
+lever:        # api.lever.co/v0/postings/<slug>?mode=json
+  - {slug: anchorage, name: Anchorage Digital, industry: Web3}
+  - {slug: binance, industry: Web3}
+  - {slug: crypto, name: Crypto.com, industry: Web3}
+  - {slug: matchgroup, name: Match Group, industry: Consumer internet}
+  - {slug: outreach, industry: SaaS}
+  - {slug: spotify, industry: Media/Publishing}
+  - {slug: zeta, industry: Fintech (India)}
+
+ashby:        # api.ashbyhq.com/posting-api/job-board/<slug>?includeCompensation=true
+  - {slug: airbyte, industry: SaaS}
+  - {slug: airwallex, industry: Fintech}
+  - {slug: alchemy, industry: Web3}
+  - {slug: ashby, industry: SaaS}
+  - {slug: cursor, industry: AI}
+  - {slug: elevenlabs, name: ElevenLabs, industry: AI}
+  - {slug: gamma, industry: AI}
+  - {slug: hex, industry: SaaS}
+  - {slug: kit, name: Kit (ConvertKit), industry: Creator economy}
+  - {slug: linear, industry: SaaS}
+  - {slug: livekit, name: LiveKit, industry: AI}
+  - {slug: lovable, industry: AI}
+  - {slug: modal, industry: AI}
+  - {slug: multiverse, industry: EdTech}
+  - {slug: n8n, industry: SaaS}
+  - {slug: notion, industry: SaaS}
+  - {slug: oyster, name: Oyster HR, industry: SaaS}
+  - {slug: perplexity, industry: AI}
+  - {slug: phantom, industry: Web3}
+  - {slug: posthog, name: PostHog, industry: SaaS}
+  - {slug: ramp, industry: Fintech}
+  - {slug: replit, industry: AI}
+  - {slug: resend, industry: SaaS}
+  - {slug: snyk, industry: SaaS}
+  - {slug: substack, industry: Creator economy}
+  - {slug: supabase, industry: SaaS}
+  - {slug: synthesia, industry: AI}
+  - {slug: uniswap, name: Uniswap Labs, industry: Web3}
+  - {slug: vanta, industry: SaaS}
+  - {slug: whop, industry: Creator economy}
+  - {slug: writer, name: Writer, industry: AI}
+  - {slug: zapier, industry: SaaS}
