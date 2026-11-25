@@ -51,6 +51,11 @@ class Settings:
     def search_provider(self) -> str:
         return (os.getenv(self.get("search.provider_env", "SEARCH_PROVIDER")) or self.get("search.default_provider")).lower()
 
+    def llm_setting(self, key: str, default: Any = None) -> Any:
+        """llm.<key>, overridden by llm.provider_overrides.<provider>.<key> when present."""
+        override = self.get(f"llm.provider_overrides.{self.llm_provider}.{key}")
+        return override if override is not None else self.get(f"llm.{key}", default)
+
     @property
     def llm_model(self) -> str:
         override = os.getenv("LLM_MODEL")

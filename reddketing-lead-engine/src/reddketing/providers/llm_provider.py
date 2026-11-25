@@ -77,7 +77,11 @@ class LLMProvider:
     name = "base"
 
     def __init__(self, model: str, budget: BudgetTracker, cache_root, max_output_tokens: int = 8000,
-                 fallback_models: list[str] | None = None):
+                 fallback_models: list[str] | None = None, retry: dict | None = None):
+        retry = retry or {}
+        self.max_transient = int(retry.get("max_retries", 5))
+        self.retry_base = float(retry.get("retry_base_seconds", 4))
+        self.retry_cap = float(retry.get("retry_cap_seconds", 60))
         self.model = model
         self.primary_model = model
         # Tried in order when the current model keeps returning overload/rate-limit errors.
@@ -108,7 +112,7 @@ class LLMProvider:
         user_msg = user
         last_error = ""
         repairs = transient = consecutive = 0
-        while repairs <= 2 and transient <= 5:
+        while repairs <= 2 and transient <= self.max_transient:
             if consecutive >= 2 and len(self.models) > 1:
                 # The model is overloaded: move to the next one and stay there for the rest of the run.
                 nxt = self.models[(self.models.index(self.model) + 1) % len(self.models)]
@@ -121,14 +125,14 @@ class LLMProvider:
                 last_error = f"network: {exc}"
                 transient += 1
                 consecutive += 1
-                backoff_sleep(transient, base=4, cap=60)
+                backoff_sleep(transient, base=self.retry_base, cap=self.retry_cap)
                 continue
             except LLMError as exc:
                 last_error = str(exc)
                 if "retryable" in last_error:
                     transient += 1
                     consecutive += 1
-                    backoff_sleep(transient, base=4, cap=60)  # ~8s, 16s, 32s, 60s, 60s
+                    backoff_sleep(transient, base=self.retry_base, cap=self.retry_cap)
                     continue
                 break
             consecutive = 0
@@ -254,9 +258,11 @@ def build_llm_provider(settings, budget, cache_root) -> LLMProvider:
     cls = {"anthropic": AnthropicProvider, "gemini": GeminiProvider, "openai": OpenAIProvider}.get(settings.llm_provider)
     if cls is None:
         raise LLMError(f"Unknown LLM_PROVIDER {settings.llm_provider!r}")
-    fallbacks = list(settings.get(f"llm.fallback_models.{settings.llm_provider}", []) or [])
+    fallbacks = list(settings.llm_setting("fallback_models", []) or [])
+    retry = {k: settings.llm_setting(k) for k in ("max_retries", "retry_base_seconds", "retry_cap_seconds")
+             if settings.llm_setting(k) is not None}
     provider = cls(settings.llm_model, budget, cache_root, int(settings.get("llm.max_output_tokens", 8000)),
-                   fallback_models=fallbacks)
+                   fallback_models=fallbacks, retry=retry)
     if not provider.available:
         raise LLMError(f"LLM provider {settings.llm_provider} has no API key configured")
     return provider

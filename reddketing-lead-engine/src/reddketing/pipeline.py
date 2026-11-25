@@ -166,8 +166,9 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
     logger.info("discovery items collected", extra={"data": {"funding": len(funding_items), "launch": len(launch_items)}})
     cands: list[Candidate] = []
     try:
-        cands += extract_candidates(svc.llm, funding_items, blocklist, funding=True)
-        cands += extract_candidates(svc.llm, launch_items, blocklist)
+        batch = int(s.llm_setting("discovery_batch_size", 45))
+        cands += extract_candidates(svc.llm, funding_items, blocklist, funding=True, batch_size=batch)
+        cands += extract_candidates(svc.llm, launch_items, blocklist, batch_size=batch)
     except BudgetExceeded as exc:
         out.errors.append(str(exc))
     cands = cands[: int(s.get("targets.max_discovery_candidates", 150))]

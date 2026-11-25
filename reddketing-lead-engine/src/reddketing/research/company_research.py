@@ -42,8 +42,8 @@ class SourceCollector:
 def gather_sources(candidate: Candidate, http: HttpClient, search: SearchProvider, free: FreeSources,
                    settings, *, query_budget: int) -> tuple[list[SourceDoc], list[str], str]:
     """Returns (sources, all_domains_seen, homepage_error)."""
-    max_chars = int(settings.get("llm.max_chars_per_document", 6000))
-    max_docs = int(settings.get("llm.max_documents_per_company", 9))
+    max_chars = int(settings.llm_setting("max_chars_per_document", 6000))
+    max_docs = int(settings.llm_setting("max_documents_per_company", 9))
     blocklist = settings.non_company_domains
     col = SourceCollector()
     domains = {candidate.domain}
