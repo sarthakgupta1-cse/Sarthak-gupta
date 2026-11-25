@@ -76,10 +76,11 @@ def test_7_funded_companies_kept_separate(settings, tmp_path):
     funded = {r["Company Name"] for r in svc.sheets.read_records(schema.FUNDED)}
     daily = {r["Company Name"] for r in svc.sheets.read_records(schema.DAILY)}
     assert funded == {companies[0]["name"], companies[1]["name"]}
-    assert daily == {companies[3]["name"]}
+    # Old funding does not make a company "recently funded"; it fills the revenue list as an assumed lead.
+    assert daily == {companies[2]["name"], companies[3]["name"]}
     assert not funded & daily
-    stale = [r for r in svc.sheets.read_records(schema.REJECTED) if r["Company Name"] == companies[2]["name"]]
-    assert stale, "funding older than the 6-month window must not qualify"
+    stale = next(r for r in svc.sheets.read_records(schema.DAILY) if r["Company Name"] == companies[2]["name"])
+    assert stale["Revenue Confidence"] == "Assumed" and "Assumed at least $50,000" in stale["Revenue Calculation"]
     row = next(r for r in svc.sheets.read_records(schema.FUNDED))
     assert row["Revenue Confidence"] == "Insufficient"
     assert "Funding does not imply revenue" in sender.sent[0]["html"]
@@ -218,3 +219,16 @@ def test_research_stops_when_first_companies_all_fail(settings, tmp_path):
     res = run_pipeline(svc, run_date=D1)
     assert res.status == "failed" and "first 3 companies" in res.message
     assert "failed" in sender.sent[0]["subject"].lower()
+
+
+def test_revenue_list_filled_to_target_with_assumed_companies(settings, tmp_path):
+    companies = make_companies(6)
+    for c in companies[2:]:
+        c.update(no_signals=True)  # no public revenue evidence
+    svc, _, sender = build_world(settings, tmp_path, companies)
+    res = run_pipeline(svc, run_date=D1)
+    rows = svc.sheets.read_records(schema.DAILY)
+    assert res.status == "success" and len(rows) == 6
+    assumed = [r for r in rows if r["Revenue Confidence"] == "Assumed"]
+    assert len(assumed) == 4 and all(r["Estimated MRR Minimum"] in ("50000", 50000, "50000.0") for r in assumed)
+    assert "assumed, not verified" in sender.sent[0]["html"]

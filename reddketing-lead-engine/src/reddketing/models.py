@@ -179,6 +179,7 @@ class Confidence(str, Enum):
     HIGH = "High"
     MEDIUM = "Medium"
     LOW = "Low"
+    ASSUMED = "Assumed"  # not estimated from evidence; assumed to meet the $50K MRR floor from business-scale signals
     INSUFFICIENT = "Insufficient"
 
 

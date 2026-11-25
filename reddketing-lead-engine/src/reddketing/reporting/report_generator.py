@@ -35,6 +35,8 @@ def mrr_range(row: dict) -> str:
     lo, hi = row.get("Estimated MRR Minimum"), row.get("Estimated MRR Maximum")
     if not _f(lo) and not _f(hi):
         return "Not publicly available"
+    if row.get("Revenue Confidence") == "Assumed" or not _f(hi):
+        return f"At least {money(lo)} per month (assumed, not verified)"
     return f"{money(lo)}–{money(hi)} per month"
 
 

@@ -450,3 +450,21 @@ def test_anthropic_schema_fits_union_limit_and_fallback_carries_schema(settings,
     assert "company_name" in schema["required"] and "country" not in schema["required"]
     # An object with only the required fields still validates (nullable fields default to None).
     assert "official_website_confirmed" in schema_instruction(strict_json_schema(ResearchExtraction))
+
+
+def test_sheet_layout_keeps_rows_one_line_and_freezes_name_column():
+    from reddketing.database import schema
+    from reddketing.database.layout import ROW_HEIGHT, all_layout_requests
+
+    reqs = all_layout_requests({schema.DAILY: (0, 1000), schema.REJECTED: (3, 50)})
+    clip = [r for r in reqs if "repeatCell" in r
+            and r["repeatCell"]["cell"]["userEnteredFormat"].get("wrapStrategy") == "CLIP"]
+    assert len(clip) == 2
+    heights = [r["updateDimensionProperties"] for r in reqs if "updateDimensionProperties" in r
+               and r["updateDimensionProperties"]["range"]["dimension"] == "ROWS"
+               and r["updateDimensionProperties"]["range"]["startIndex"] == 1]
+    assert {h["properties"]["pixelSize"] for h in heights} == {ROW_HEIGHT}
+    frozen = {r["updateSheetProperties"]["properties"]["sheetId"]:
+              r["updateSheetProperties"]["properties"]["gridProperties"]["frozenColumnCount"]
+              for r in reqs if "updateSheetProperties" in r}
+    assert frozen == {0: 3, 3: 2}  # through "Company Name" on each tab

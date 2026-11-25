@@ -79,6 +79,11 @@ scoring arithmetic, validation of the LLM's claims against sources, budget, Shee
    - Insufficient: otherwise. Funding is never an input.
 4. **Qualification:** High/Medium need the geometric midpoint ≥ $50K MRR; Low needs the *lower*
    bound ≥ $50K and ≥ 2 indicators; all need a total score ≥ 45.
+5. **Daily quota fill:** the revenue list is always filled to 15. Researched companies that are not
+   excluded but lack revenue evidence are ranked by business-scale signals (paid pricing, funding
+   ≥ $3M, customer/user/download counts, press, hiring, operating since ≤ 2023) and then score, and
+   the top ones are assumed to make at least $50K MRR. They show Revenue Confidence "Assumed",
+   minimum $50,000, no maximum, and the signals in "Revenue Calculation". No figure is invented.
 
 ## Lead score (`qualification/opportunity_scoring.py`)
 

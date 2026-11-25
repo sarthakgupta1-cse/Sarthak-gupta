@@ -26,7 +26,7 @@ targets:
   funding_lookback_days: 180
   preferred_min_funding_usd: 1000000
   # Research more candidates than we need so qualification is real.
-  max_candidates_to_research: 40
+  max_candidates_to_research: 45
   max_discovery_candidates: 150
   # Rejected companies may be re-researched after this many days if flagged reconsiderable.
   reconsider_after_days: 90
@@ -71,6 +71,8 @@ search:
   max_queries_per_run: 33   # 33 x 30 days ≈ 990 queries, inside Brave's $5 monthly credit
   discovery_queries_per_run: 12
   research_queries_per_company: 2
+  # Free search credit per calendar month (Brave includes $5). Subtracted from month-to-date spend.
+  monthly_free_credit_usd: 5.0
   results_per_query: 10
   cache_ttl_days: 14
 
@@ -119,6 +121,10 @@ qualification:
   min_independent_indicators_low_confidence: 2
   min_total_score_revenue_list: 45
   min_total_score_funded_list: 45
+  # The revenue list is always filled to targets.revenue_qualified_per_day. Companies without public
+  # revenue evidence are assumed to meet the $50K MRR floor, ranked by business-scale signals
+  # (paid pricing, funding, customer/user counts, press, hiring, age). Minimum signals required:
+  min_scale_signals_for_assumption: 0
 
 discovery:
   free_feeds:
