@@ -9,18 +9,19 @@ from ..providers.llm_provider import LLMConfigError, LLMError
 from ..providers.news_feeds import FeedItem, FreeSources
 from ..providers.search_provider import SearchProvider
 from ..research.prompts import DISCOVERY_SYSTEM, discovery_user_prompt
-from ..utils.normalize import is_non_company_domain, root_domain
+from ..utils.normalize import is_hobby_host, is_non_company_domain, root_domain
+from .candidate_filter import name_matches_domain
 from .search_engine import plan_discovery_queries
 
 logger = logging.getLogger(__name__)
 
 
 def collect_launch_items(settings, free: FreeSources, search: SearchProvider, run_date: date,
-                         n_queries: int) -> list[FeedItem]:
+                         n_queries: int, salt: str = "") -> list[FeedItem]:
     items: list[FeedItem] = []
     items += free.hacker_news_launches(int(settings.get("discovery.hacker_news_min_points", 150)))
     items += free.product_hunt()
-    for category, query in plan_discovery_queries(settings.categories, run_date, n_queries):
+    for category, query in plan_discovery_queries(settings.categories, run_date, n_queries, salt):
         for r in search.search(query):
             items.append(FeedItem(r.title, r.url, r.snippet, r.published, f"search:{category}", "search"))
     return items
@@ -51,11 +52,15 @@ def extract_candidates(llm, items: list[FeedItem], blocklist: set[str], *, batch
             idx = [int(i[1:]) for i in c.item_ids if i.startswith("I") and i[1:].isdigit() and int(i[1:]) < len(batch)]
             refs = [batch[i] for i in idx]
             website = c.website or ""
-            # Prefer a company-owned URL that actually appeared in the items.
+            # An item URL is the company's site only if its domain matches the company name; otherwise it
+            # is the article or listing that mentioned the company (news site, job board, directory).
+            item_hosts = {root_domain(r.url) for r in refs}
+            if website and root_domain(website) in item_hosts and not name_matches_domain(c.name, website):
+                website = ""
             for r in refs:
-                if not is_non_company_domain(r.url, blocklist):
-                    website = website or r.url
-            if website and is_non_company_domain(website, blocklist):
+                if not website and not is_non_company_domain(r.url, blocklist) and name_matches_domain(c.name, r.url):
+                    website = r.url
+            if website and (is_non_company_domain(website, blocklist) or is_hobby_host(website)):
                 website = ""
             hint = {}
             if c.is_funding_announcement:

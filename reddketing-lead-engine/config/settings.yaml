@@ -140,7 +140,7 @@ qualification:
   # The revenue list is always filled to targets.revenue_qualified_per_day. Companies without public
   # revenue evidence are assumed to meet the $50K MRR floor, ranked by business-scale signals
   # (paid pricing, funding, customer/user counts, press, hiring, age). Minimum signals required:
-  min_scale_signals_for_assumption: 0
+  min_scale_signals_for_assumption: 1
 
 discovery:
   free_feeds:

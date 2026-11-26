@@ -160,7 +160,7 @@ class Checkpoint:
 
 
 # ============================================================== research phase
-def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> ResearchOutcome:
+def research_phase(svc: Services, run_date: date, index: DuplicateIndex, query_salt: str = "") -> ResearchOutcome:
     s, budget = svc.settings, svc.budget
     out = ResearchOutcome()
     blocklist = s.non_company_domains
@@ -170,7 +170,7 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
 
     funding_items = collect_funding_items(s, svc.free, svc.search, run_date,
                                           news_queries=2 if budget.start_mode == BudgetTracker.NORMAL else 0)
-    launch_items = collect_launch_items(s, svc.free, svc.search, run_date, n_queries)
+    launch_items = collect_launch_items(s, svc.free, svc.search, run_date, n_queries, salt=query_salt)
     logger.info("discovery items collected", extra={"data": {"funding": len(funding_items), "launch": len(launch_items)}})
     cands: list[Candidate] = []
     batch = int(s.llm_setting("discovery_batch_size", 45))
@@ -192,7 +192,7 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
     cands = cands[: int(s.get("targets.max_discovery_candidates", 150))]
     out.discovered = len(cands)
 
-    fr = filter_candidates(cands, index, svc.search, s, max_domain_lookups=8, today=run_date)
+    fr = filter_candidates(cands, index, svc.search, s, max_domain_lookups=8, today=run_date, http=svc.http)
     for c, m in fr.duplicates:
         out.duplicates.append((c.name, c.domain, m, ", ".join(c.discovery_channels)))
     for c, reason in fr.dropped:
@@ -440,7 +440,7 @@ def run_pipeline(svc: Services, *, run_date: date | None = None, force_lock: boo
             index = DuplicateIndex.from_sheets(hist(schema.MASTER, "First Discovered Date"),
                                                hist(schema.REJECTED, "Rejection Date"),
                                                hist(schema.DAILY, "Discovery Date"), hist(schema.FUNDED, "Discovery Date"))
-            out = research_phase(svc, run_date, index)
+            out = research_phase(svc, run_date, index, query_salt=run_id if add_more else "")
             store.advance(state, "researched")
             stage = "sheets_write"
             counts = write_phase(sheets, out, rd)

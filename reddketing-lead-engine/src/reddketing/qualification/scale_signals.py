@@ -57,6 +57,9 @@ def size_exclusion(p: CompanyProfile, settings) -> str:
     """Reason the company is too large (or owned by another company) to prospect; empty if it fits."""
     lim = settings.get("size_limits", {}) or {}
     ex = p.extraction
+    from ..utils.normalize import is_hobby_host
+    if is_hobby_host(p.domain or "") or is_hobby_host(getattr(p, "website", "") or ""):
+        return "Side project on free hosting, not an operating business"
     users = max_signal(p, *USER_COUNT_TYPES)
     if users >= float(lim.get("max_users", 100_000)):
         return f"Too large: {users:,.0f}+ users/customers/downloads (limit {lim.get('max_users', 100_000):,})"

@@ -468,3 +468,41 @@ def test_sheet_layout_keeps_rows_one_line_and_freezes_name_column():
               r["updateSheetProperties"]["properties"]["gridProperties"]["frozenColumnCount"]
               for r in reqs if "updateSheetProperties" in r}
     assert frozen == {0: 3, 3: 2}  # through "Company Name" on each tab
+
+
+def test_hobby_hosts_and_article_domains_are_not_company_sites():
+    from reddketing.utils.normalize import is_hobby_host
+    assert is_hobby_host("https://exitpath-ruddy.vercel.app") and is_hobby_host("onurgumus.github.io")
+    assert not is_hobby_host("https://acme.com") and not is_hobby_host("shop.myshopify.com")
+
+
+def test_discovery_does_not_use_news_article_domain_as_company_site(settings):
+    from reddketing.discovery.startup_discovery import extract_candidates
+    from reddketing.models import CandidateExtraction, ExtractedCandidate
+    from reddketing.providers.news_feeds import FeedItem
+
+    class LLM:
+        def complete_json(self, *a, **k):
+            return CandidateExtraction(candidates=[
+                ExtractedCandidate(name="Dreamteam", website="https://www.pymnts.com/x", item_ids=["I0"]),
+                ExtractedCandidate(name="Brightloop", item_ids=["I1"])])
+    items = [FeedItem("Dreamteam raises $10M", "https://www.pymnts.com/x", "", "", "news", "funding"),
+             FeedItem("Brightloop launches", "https://brightloop.io/launch", "", "", "hn", "launch")]
+    out = {c.name: c.domain for c in extract_candidates(LLM(), items, set())}
+    assert out == {"Dreamteam": "", "Brightloop": "brightloop.io"}
+
+
+def test_guess_domain_tries_common_tlds_and_checks_the_page():
+    from reddketing.discovery.candidate_filter import guess_domain
+    from reddketing.models import Candidate
+    from reddketing.utils.http import FetchResult
+
+    class Http:
+        def get_text(self, url, **k):
+            if url == "https://brightloop.ai":
+                return FetchResult(url, url, 200, "<html><title>Brightloop – habit app</title></html>")
+            if url == "https://brightloop.com":
+                return FetchResult(url, url, 200, "<html><title>Domain for sale</title></html>")
+            return FetchResult(url, url, 404, "", "HTTP 404")
+    c = Candidate(name="Brightloop")
+    assert guess_domain(c, Http(), set()) and c.domain == "brightloop.ai"

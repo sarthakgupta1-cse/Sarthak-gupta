@@ -7,7 +7,8 @@ from dataclasses import dataclass, field
 from ..database.duplicate_detection import DuplicateIndex, DuplicateMatch
 from ..models import Candidate
 from ..providers.search_provider import SearchProvider
-from ..utils.normalize import core_name, domain_label, is_non_company_domain, normalize_name, root_domain, similarity
+from ..utils.normalize import (core_name, domain_label, is_hobby_host, is_non_company_domain, normalize_name,
+                               root_domain, similarity)
 
 logger = logging.getLogger(__name__)
 
@@ -47,8 +48,39 @@ def name_matches_domain(name: str, domain: str) -> bool:
                           or (len(core) >= 4 and core in lbl))
 
 
-def resolve_domain(c: Candidate, search: SearchProvider, blocklist: set[str], allow_search: bool) -> bool:
-    if c.domain and not is_non_company_domain(c.domain, blocklist):
+GUESS_TLDS = ("com", "ai", "io", "app", "co")
+
+
+def guess_domain(c: Candidate, http, blocklist: set[str]) -> bool:
+    """Free resolution: try name.com/.ai/.io/.app/.co and accept a site whose title or text names the company."""
+    core = core_name(c.name) or normalize_name(c.name)
+    if not http or not core or len(core) < 3:
+        return False
+    name = c.name.lower().strip()
+    for tld in GUESS_TLDS:
+        domain = f"{core}.{tld}"
+        if is_non_company_domain(domain, blocklist):
+            continue
+        res = http.get_text(f"https://{domain}")
+        if not res.ok:
+            continue
+        head = res.html[:20000].lower()
+        title = head.split("<title", 1)[-1].split("</title>", 1)[0] if "<title" in head else ""
+        if name in title or (core in title.replace(" ", "")) or name in head[:5000]:
+            final = root_domain(res.final_url) or domain
+            if is_non_company_domain(final, blocklist) or is_hobby_host(final):
+                continue
+            c.domain, c.website = final, f"https://{final}"
+            return True
+    return False
+
+
+def resolve_domain(c: Candidate, search: SearchProvider, blocklist: set[str], allow_search: bool,
+                   http=None) -> bool:
+    if c.domain and not is_non_company_domain(c.domain, blocklist) and not is_hobby_host(c.domain):
+        return True
+    c.domain = c.website = ""
+    if guess_domain(c, http, blocklist):
         return True
     if not allow_search:
         return False
@@ -63,7 +95,7 @@ def resolve_domain(c: Candidate, search: SearchProvider, blocklist: set[str], al
 
 
 def filter_candidates(cands: list[Candidate], index: DuplicateIndex, search: SearchProvider, settings, *,
-                      max_domain_lookups: int, today) -> FilterResult:
+                      max_domain_lookups: int, today, http=None) -> FilterResult:
     blocklist = settings.non_company_domains
     restricted = [w.lower() for w in settings.categories.get("restricted_categories", [])]
     out = FilterResult()
@@ -80,10 +112,10 @@ def filter_candidates(cands: list[Candidate], index: DuplicateIndex, search: Sea
         if m and not DuplicateIndex.rejected_is_reconsiderable(m, index, today):
             out.duplicates.append((c, m))
             continue
-        if not c.domain:
+        if not c.domain or is_hobby_host(c.domain):
             allow = lookups < max_domain_lookups
             lookups += 1 if allow else 0
-            if not resolve_domain(c, search, blocklist, allow):
+            if not resolve_domain(c, search, blocklist, allow, http):
                 out.dropped.append((c, "no verifiable official website found"))
                 continue
             m = index.match(c.name, c.domain)
