@@ -44,7 +44,8 @@ def cmd_run(args, settings) -> int:
     svc = build_services(settings, dry_run=args.dry_run)
     run_date = date.fromisoformat(args.date) if args.date else None
     out_dir = Path(args.out) if args.dry_run else None
-    result = run_pipeline(svc, run_date=run_date, force_lock=args.force, dry_run_dir=out_dir)
+    result = run_pipeline(svc, run_date=run_date, force_lock=args.force, dry_run_dir=out_dir,
+                          add_more=getattr(args, "add_more", False))
     logger.info("run finished", extra={"data": result.__dict__})
     print(f"status={result.status} revenue={result.revenue_count} funded={result.funded_count} "
           f"duplicates={result.duplicates} email={result.email_status} {result.message}")
@@ -142,6 +143,8 @@ def cli(argv: list[str] | None = None) -> int:
     r.add_argument("--out", default=str(PROJECT_ROOT / "out"))
     r.add_argument("--date", help="override run date (YYYY-MM-DD, IST)")
     r.add_argument("--force", action="store_true", help="take over a stale lock / re-run a completed date")
+    r.add_argument("--add-more", action="store_true",
+                   help="keep the date's existing leads and add a fresh set (they count as already found)")
     d = sub.add_parser("doctor")
     d.add_argument("--offline", action="store_true", help="skip the live Google Sheets check")
     sub.add_parser("init-sheet")

@@ -22,6 +22,10 @@ on:
         description: "Take over a stale lock / re-send today's already-emailed report"
         type: boolean
         default: false
+      add_leads:
+        description: "Keep today's leads and add a fresh set (re-emails the day's full list)"
+        type: boolean
+        default: false
 
 # Single writer: never run two copies at once; a second trigger waits instead of cancelling.
 concurrency:
@@ -91,6 +95,7 @@ jobs:
           python -m reddketing.main run
           ${{ inputs.dry_run && '--dry-run' || '' }}
           ${{ inputs.force && '--force' || '' }}
+          ${{ inputs.add_leads && '--add-more' || '' }}
           ${{ inputs.run_date && format('--date {0}', inputs.run_date) || '' }}
 
       # One automatic retry for transient failures (network, rate limits, Gmail hiccups).
