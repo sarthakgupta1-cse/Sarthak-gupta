@@ -9,7 +9,7 @@ the GitHub Actions log. `python -m reddketing.main doctor` checks configuration 
 | `SPREADSHEET_ID and GOOGLE_SERVICE_ACCOUNT_JSON must be set` | Missing secrets | Add both secrets (paste the whole JSON file) |
 | `Gmail OAuth refresh failed … revoked or expired` | OAuth app still in "Testing" (7-day tokens), password changed, or grant revoked | Publish the consent screen to "In production", re-run the token script, update `GMAIL_REFRESH_TOKEN` |
 | `SMTP authentication failed` | Wrong App Password or 2-Step Verification off | Create a new App Password |
-| Failure email "Monthly API budget exhausted" | Month-to-date estimate ≥ ₹1,000 | Wait for the new month or raise `budget.monthly_budget_inr` deliberately |
+| Failure email "Monthly API budget exhausted" | Month-to-date estimate ≥ ₹1,500 | Wait for the new month or raise `budget.monthly_budget_inr` deliberately |
 | Run status `locked` | Another run for the same date is in progress, or one crashed in the last 3 hours | Wait, or run manually with **force** ticked |
 | Status `already_completed` | Today's report was already sent | Expected; use **force** only to re-send |
 | Few or zero revenue-qualified companies | Strict evidence bar, search key missing, or many duplicates | Check Rejected tab reasons; confirm `BRAVE_SEARCH_API_KEY`; this is by design rather than padding the list |

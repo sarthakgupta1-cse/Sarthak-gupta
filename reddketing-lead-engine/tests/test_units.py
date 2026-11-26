@@ -506,3 +506,23 @@ def test_guess_domain_tries_common_tlds_and_checks_the_page():
             return FetchResult(url, url, 404, "", "HTTP 404")
     c = Candidate(name="Brightloop")
     assert guess_domain(c, Http(), set()) and c.domain == "brightloop.ai"
+
+
+def test_agencies_excluded_but_software_for_agencies_is_not(settings):
+    from types import SimpleNamespace
+    from reddketing.qualification.reddketing_fit import exclusion_reason
+
+    def profile(category, industry, desc, reason="none"):
+        ex = SimpleNamespace(exclusion=SimpleNamespace(excluded=reason != "none", reason=reason, explanation=""),
+                             product_category=category, industry=industry, one_line_description=desc,
+                             audience_type="smb_self_serve", reddit=SimpleNamespace(consumer_or_prosumer=3),
+                             official_website_confirmed=True)
+        return SimpleNamespace(extraction=ex)
+    agency = profile("Game and software development services (agency / outsourced studio)", "Game development",
+                     "Digital product development agency")
+    assert exclusion_reason(agency, settings).startswith("Agency or service business")
+    flagged = profile("Marketing", "Marketing", "Growth partner", reason="service_business")
+    assert exclusion_reason(flagged, settings).startswith("Agency or service business")
+    travel_sw = profile("Travel itinerary builder and travel agency operations software", "Travel technology",
+                        "Itinerary software for travel advisors and agencies")
+    assert exclusion_reason(travel_sw, settings) == ""

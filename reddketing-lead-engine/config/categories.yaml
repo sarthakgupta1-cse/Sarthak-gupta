@@ -99,6 +99,28 @@ enterprise_red_flags:
   - mainframe
 
 # Restricted categories: never prospect.
+# Agencies and service firms sell hours, not a product people recommend on Reddit: never leads.
+service_business_phrases:
+  - development services
+  - software development services
+  - app development services
+  - game development services
+  - software development company
+  - development agency
+  - marketing agency
+  - digital agency
+  - creative agency
+  - design agency
+  - dev shop
+  - outsourcing
+  - outsourced development
+  - staff augmentation
+  - consulting services
+  - consulting firm
+  - consultancy
+  - it services
+  - managed services provider
+
 restricted_categories:
   - gambling
   - online casino
