@@ -61,7 +61,7 @@ def guess_domain(c: Candidate, http, blocklist: set[str]) -> bool:
         domain = f"{core}.{tld}"
         if is_non_company_domain(domain, blocklist):
             continue
-        res = http.get_text(f"https://{domain}")
+        res = http.get_text(f"https://{domain}", quick=True)
         if not res.ok:
             continue
         head = res.html[:20000].lower()
@@ -99,7 +99,8 @@ def filter_candidates(cands: list[Candidate], index: DuplicateIndex, search: Sea
     blocklist = settings.non_company_domains
     restricted = [w.lower() for w in settings.categories.get("restricted_categories", [])]
     out = FilterResult()
-    lookups = 0
+    lookups = guesses = 0
+    max_guesses = int(settings.get("discovery.max_domain_guesses", 40))
     for c in merge_in_batch(cands):
         c.name = " ".join(c.name.split())[:120]
         text = f"{c.name} {c.discovery_note}".lower()
@@ -115,7 +116,9 @@ def filter_candidates(cands: list[Candidate], index: DuplicateIndex, search: Sea
         if not c.domain or is_hobby_host(c.domain):
             allow = lookups < max_domain_lookups
             lookups += 1 if allow else 0
-            if not resolve_domain(c, search, blocklist, allow, http):
+            guess_http = http if guesses < max_guesses else None
+            guesses += 1 if guess_http else 0
+            if not resolve_domain(c, search, blocklist, allow, guess_http):
                 out.dropped.append((c, "no verifiable official website found"))
                 continue
             m = index.match(c.name, c.domain)

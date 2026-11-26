@@ -63,7 +63,7 @@ class HttpClient:
                 time.sleep(self.delay - gap)
         self._last_hit[host] = time.monotonic()
 
-    def _allowed(self, url: str) -> bool:
+    def _allowed(self, url: str, timeout: float = 10) -> bool:
         if not self.respect_robots:
             return True
         parsed = urlparse(url)
@@ -71,7 +71,7 @@ class HttpClient:
         if base not in self._robots:
             rp = urllib.robotparser.RobotFileParser()
             try:
-                resp = self.client.get(base + "/robots.txt", timeout=10)
+                resp = self.client.get(base + "/robots.txt", timeout=timeout)
                 if resp.status_code == 200:
                     rp.parse(resp.text.splitlines())
                 else:
@@ -82,20 +82,21 @@ class HttpClient:
         rp = self._robots[base]
         return True if rp is None else rp.can_fetch(self.user_agent, url)
 
-    def get_text(self, url: str, *, use_cache: bool = True) -> FetchResult:
+    def get_text(self, url: str, *, use_cache: bool = True, quick: bool = False) -> FetchResult:
+        """quick=True: one attempt with short timeouts (used for cheap checks such as guessing a domain)."""
         if use_cache:
             cached = self.cache.get(url, self.ttl)
             if cached:
                 return FetchResult(**cached, from_cache=True)
-        if not self._allowed(url):
+        if not self._allowed(url, timeout=5 if quick else 10):
             return FetchResult(url, url, 0, "", error="disallowed by robots.txt")
         host = urlparse(url).netloc
         last_error = None
-        for attempt in range(self.max_retries):
+        for attempt in range(1 if quick else self.max_retries):
             self._wait_for_host(host)
             try:
                 self.requests_made += 1
-                resp = self.client.get(url)
+                resp = self.client.get(url, timeout=6) if quick else self.client.get(url)
                 if resp.status_code in (429, 500, 502, 503, 504):
                     raise TransientHTTPError(f"HTTP {resp.status_code}")
                 ctype = resp.headers.get("content-type", "")
