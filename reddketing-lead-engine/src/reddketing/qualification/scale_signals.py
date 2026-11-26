@@ -63,8 +63,9 @@ def size_exclusion(p: CompanyProfile, settings) -> str:
     mid = p.revenue.mrr_mid
     if mid and p.revenue.confidence.value != "Assumed" and mid > float(lim.get("max_mrr_usd", 5_000_000)):
         return f"Too large: estimated MRR ${mid / 1e6:,.1f}M (limit ${float(lim.get('max_mrr_usd', 5e6)) / 1e6:,.0f}M)"
+    funding_cap = lim.get("max_total_funding_usd")  # null = no funding limit
     funding = ex.funding.total_funding_usd or 0
-    if funding >= float(lim.get("max_total_funding_usd", 100_000_000)):
+    if funding_cap and funding >= float(funding_cap):
         return f"Too large: ${funding / 1e6:,.0f}M total funding"
     employees = max_signal(p, "employees")
     if employees >= float(lim.get("max_employees", 500)):

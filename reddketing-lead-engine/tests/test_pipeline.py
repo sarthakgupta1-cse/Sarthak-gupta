@@ -261,3 +261,13 @@ def test_scaled_value_fixes_unit_numbers():
     assert scaled_value(10, "10k users") == 10_000
     assert scaled_value(25000, "25,000 users") == 25000
     assert scaled_value(3, "3 plans") == 3
+
+
+def test_heavy_funding_alone_does_not_exclude(settings):
+    from types import SimpleNamespace
+    from reddketing.models import Confidence
+    from reddketing.qualification.scale_signals import size_exclusion
+    p = SimpleNamespace(domain="newco.example", revenue=SimpleNamespace(mrr_mid=200_000, confidence=Confidence.MEDIUM),
+                        extraction=SimpleNamespace(signals=[], parent_company=None,
+                                                   funding=SimpleNamespace(total_funding_usd=400_000_000)))
+    assert size_exclusion(p, settings) == ""

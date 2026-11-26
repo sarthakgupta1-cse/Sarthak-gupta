@@ -123,7 +123,8 @@ size_limits:
   max_users: 100000            # total users (free + paid), customers, or app downloads
   max_mrr_usd: 5000000
   target_max_mrr_usd: 1000000
-  max_total_funding_usd: 100000000
+  # No funding limit: recently, heavily funded companies are often still unknown on Reddit.
+  max_total_funding_usd: null
   max_employees: 500
   max_monthly_traffic: 2000000
   exclude_owned_by_other_company: true
