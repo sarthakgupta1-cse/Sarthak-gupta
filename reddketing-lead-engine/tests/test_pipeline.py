@@ -271,3 +271,15 @@ def test_heavy_funding_alone_does_not_exclude(settings):
                         extraction=SimpleNamespace(signals=[], parent_company=None,
                                                    funding=SimpleNamespace(total_funding_usd=400_000_000)))
     assert size_exclusion(p, settings) == ""
+
+
+def test_add_more_keeps_todays_leads_and_adds_new_ones(settings, tmp_path):
+    first, second = make_companies(3, "Alpha"), make_companies(3, "Beta")
+    svc, _, sender = build_world(settings, tmp_path, first)
+    assert run_pipeline(svc, run_date=D1).status == "success"
+    svc2, llm2, sender2 = build_world(settings, tmp_path, first + second, sheets=svc.sheets)
+    assert run_pipeline(svc2, run_date=D1).status == "already_completed"
+    res = run_pipeline(svc2, run_date=D1, add_more=True)
+    names = [r["Company Name"] for r in svc2.sheets.read_records(schema.DAILY)]
+    assert res.status == "success" and len(names) == 6 and len(set(names)) == 6
+    assert set(c["name"] for c in second) <= set(names)

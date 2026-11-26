@@ -403,7 +403,7 @@ def mark_emailed(sheets, data: ReportData, run_date: str) -> None:
 
 # ============================================================== orchestration
 def run_pipeline(svc: Services, *, run_date: date | None = None, force_lock: bool = False,
-                 dry_run_dir: Path | None = None) -> RunResult:
+                 dry_run_dir: Path | None = None, add_more: bool = False) -> RunResult:
     s, sheets = svc.settings, svc.sheets
     started = now_ist()
     run_date = run_date or started.date()
@@ -419,10 +419,13 @@ def run_pipeline(svc: Services, *, run_date: date | None = None, force_lock: boo
     try:
         sheets.ensure_schema()
         existing = store.get(rd)
-        if existing and existing.get("Stage") in ("emailed", "completed") and not force_lock:
+        if existing and existing.get("Stage") in ("emailed", "completed") and not (force_lock or add_more):
             result.status, result.message = "already_completed", f"Run for {rd} already emailed; nothing to do."
             return result
-        state = store.acquire(rd, run_id, force=force_lock)
+        state = store.acquire(rd, run_id, force=force_lock or add_more)
+        if add_more:
+            # Top-up run: keep today's rows, count them as already found, and add a fresh set of leads.
+            store.advance(state, "started")
         svc.budget.set_month_before(month_spend(sheets, rd, s))
 
         if not state.reached("sheets_written"):
@@ -433,7 +436,7 @@ def run_pipeline(svc: Services, *, run_date: date | None = None, force_lock: boo
             # Rows written earlier *today* by a partially failed attempt are not "history":
             # excluding them lets the retry re-select the same companies (writes are idempotent).
             def hist(tab, col):
-                return [r for r in sheets.read_records(tab) if r.get(col) != rd]
+                return [r for r in sheets.read_records(tab) if add_more or r.get(col) != rd]
             index = DuplicateIndex.from_sheets(hist(schema.MASTER, "First Discovered Date"),
                                                hist(schema.REJECTED, "Rejection Date"),
                                                hist(schema.DAILY, "Discovery Date"), hist(schema.FUNDED, "Discovery Date"))
