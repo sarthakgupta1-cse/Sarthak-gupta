@@ -91,6 +91,7 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
 - In a randomized study of 176 regular p*rn users (undergraduates), a 7-day abstinence group did not report more craving or withdrawal-type symptoms than controls; possible effects only in very heavy, problematic users (Fernandez et al., Archives of Sexual Behavior, 2023). Use it to defuse "withdrawal" fear — note the student sample.
 - P*rnhub reached 18% of UK adults in May 2023, the most-used p*rn service there (Ofcom, Online Nation 2023).
 - 23.3% of 614 Egyptian medical students had problematic p*rn use; they reported fewer study hours, lower test scores and more depression, anxiety and stress (International Journal of Psychiatry in Medicine, 2025). Correlational.
+- About 10% of U.S. adults under 40 watch p*rn at least daily; men are about twice as likely as women to be daily users (Institute for Family Studies / YouGov, 2,000 adults 18–39, Sept 2024).
 
 ## No repeats (user feedback 17-11-26)
 The user noticed repeated posts. Before committing, run `python3 check_repeats.py content/<today>-*.json` — it must
@@ -185,6 +186,9 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 25-11-26 Shalini: 6 things to tell a friend quitting in December (NNN) · 5 conversations couples should have (Willoughby 1,755) · 4 body signals an urge is coming · "not ready to quit" is a lie (harsh) · 5 clues your reason is now your own (NNN)
 - 25-11-26 Tanmay: 4 relapse traps on the final NNN weekend (NNN, harsh) · 6 habits that keep you out of the 42% (IFS 2026) · 4 reasons arguments end in p*rn · 6 escape spots when a craving hits at home · 5 promises to make before NNN ends (NNN)
 - 25-11-26 Yash: 5 habits to lock in for the last 5 days (NNN) · 4 ways p*rn may cost your grades (23.3% of 614 med students, 2025) · 5 reasons not to quit just for her · 4 tells your NNN is a performance (NNN, harsh) · 6 ways p*rn wrecks your patience
+- 26-11-26 Shalini: 7 compliments after 26 days (NNN) · 5 things partners should know about men and p*rn (IFS 2024 ~10% daily) · 6 partner questions answered · 8 words for the guy who quits (NNN) · 6 things you'd notice from the outside (harsh)
+- 26-11-26 Tanmay: 5 sweat sessions for the final stretch (NNN) · 5 habits for sexual health (Capogrosso 1 in 4) · 3 triggers you can't avoid · 5 signs you're romanticising p*rn (harsh) · 6 ways to spend the last night of NNN (NNN)
+- 26-11-26 Yash: 6 cheap plans for the final NNN weekend (NNN) · 4 ways p*rn sites keep you coming back (115M/day, harsh) · 5 reasons you feel worse after · 4 ways to help your accountability partner finish (NNN) · 7 things to say when friends joke about p*rn
 
 ## Archive: Reddit inspiration (retired 19-11-26 — did not perform; reference only)
 Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
