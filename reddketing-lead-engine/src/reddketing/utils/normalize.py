@@ -69,6 +69,18 @@ def root_domain(url_or_domain: str) -> str:
     return f"{ext.domain}.{ext.suffix}"
 
 
+HOBBY_HOSTS = {"vercel.app", "netlify.app", "github.io", "gitlab.io", "pages.dev", "herokuapp.com", "web.app",
+               "firebaseapp.com", "onrender.com", "glitch.me", "replit.app", "repl.co", "framer.website",
+               "framer.ai", "carrd.co", "notion.site", "wixsite.com", "webflow.io", "bubbleapps.io",
+               "blogspot.com", "wordpress.com", "substack.com", "medium.com", "streamlit.app", "fly.dev"}
+
+
+def is_hobby_host(url_or_domain: str) -> bool:
+    """A site on free hosting (e.g. name.vercel.app) is a side project, not an operating business."""
+    host = (urlparse(ensure_url(url_or_domain)).hostname or "").lower()
+    return any(host == h or host.endswith("." + h) for h in HOBBY_HOSTS)
+
+
 def domain_label(url_or_domain: str) -> str:
     """example.co.uk -> 'example' (used to match country-specific domains)."""
     rd = root_domain(url_or_domain)

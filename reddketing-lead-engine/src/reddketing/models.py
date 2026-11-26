@@ -116,7 +116,7 @@ class FundingInfo(BaseModel):
 
 class Person(BaseModel):
     name: str
-    title: str
+    title: str = ""
     linkedin_url: Optional[str] = None
     email: Optional[str] = None
     source_id: str

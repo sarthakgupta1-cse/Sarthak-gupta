@@ -11,9 +11,10 @@ def daily_rng(run_date: date, salt: str = "") -> random.Random:
     return random.Random(seed)
 
 
-def plan_discovery_queries(categories_cfg: dict, run_date: date, n_queries: int) -> list[tuple[str, str]]:
-    """Returns [(category_key, query)] — deterministic per date, rotating across categories."""
-    rng = daily_rng(run_date, "queries")
+def plan_discovery_queries(categories_cfg: dict, run_date: date, n_queries: int,
+                           salt: str = "") -> list[tuple[str, str]]:
+    """Returns [(category_key, query)] — deterministic per date (and salt), rotating across categories."""
+    rng = daily_rng(run_date, "queries" + salt)
     templates = categories_cfg.get("query_templates", [])
     pool: list[tuple[str, str]] = []
     for key, cat in categories_cfg.get("categories", {}).items():
