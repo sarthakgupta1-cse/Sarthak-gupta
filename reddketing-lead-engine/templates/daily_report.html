@@ -8,6 +8,42 @@
   <div style="font-size:22px;font-weight:bold;margin-top:4px;">Daily report — {{ d.run_date }}</div>
 </td></tr>
 
+<!-- AT A GLANCE: the owner's preferred summary table, always first -->
+<tr><td style="padding:20px 24px 8px;">
+  <h2 style="font-size:17px;margin:0 0 6px;">New leads at a glance ({{ s.revenue_count }}{% if s.funded_count %} + {{ s.funded_count }} funded{% endif %})</h2>
+  <p style="font-size:12px;color:#71717a;margin:0 0 10px;">Only leads that have never been emailed before. Full details for each company follow below and are in the <a href="{{ d.sheet_url }}" style="color:#2563eb;">Company Intelligence Database</a>.</p>
+  {% if d.revenue_rows %}
+  <table role="presentation" cellpadding="7" cellspacing="0" style="border-collapse:collapse;width:100%;font-size:13px;">
+    <tr style="background:#1f385f;color:#ffffff;text-align:left;"><th>Company</th><th>What it does</th><th>Monthly revenue</th><th>Score</th><th>Subreddits / contacts</th></tr>
+    {% for r in d.revenue_rows %}{% set c = r | contact_summary %}{% set subs = r | subreddits_short %}
+    <tr style="border-bottom:1px solid #dddddd;{% if loop.index is even %}background:#f7f9fc;{% endif %}vertical-align:top;">
+      <td><b>{{ r["Company Name"] }}</b><br><a href="{{ r['Website'] }}" style="color:#2563eb;">{{ r["Official Domain"] or r["Website"] }}</a></td>
+      <td>{{ r["Product Description"] }}</td>
+      <td>{{ r | mrr_short }}</td>
+      <td>{{ r["Total Opportunity Score"] }}</td>
+      <td>{% if subs %}{{ subs }}<br>{% endif %}
+        {% if c.person %}{{ c.person }}{% if c.linkedin %} (<a href="{{ c.linkedin }}" style="color:#2563eb;">LinkedIn</a>){% endif %}{% if c.more %} and {{ c.more }} more in the sheet{% endif %}{% if c.email %}; {% endif %}{% endif %}
+        {% if c.email %}<a href="mailto:{{ c.email }}" style="color:#2563eb;">{{ c.email }}</a>{% endif %}
+        {% if not c.person and not c.email %}No named contacts found{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  {% if d.funded_rows %}
+  <table role="presentation" cellpadding="7" cellspacing="0" style="border-collapse:collapse;width:100%;font-size:13px;margin-top:12px;">
+    <tr style="background:#1f385f;color:#ffffff;text-align:left;"><th>Recently funded</th><th>What it does</th><th>Funding</th></tr>
+    {% for r in d.funded_rows %}
+    <tr style="border-bottom:1px solid #dddddd;vertical-align:top;">
+      <td><b>{{ r["Company Name"] }}</b><br><a href="{{ r['Website'] }}" style="color:#2563eb;">{{ r["Official Domain"] or r["Website"] }}</a></td>
+      <td>{{ r["Product Description"] }}</td>
+      <td>{{ r["Amount Raised (USD)"] | money }} {{ r["Funding Round"] }}, announced {{ r["Announcement Date"] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  {% if not d.revenue_rows and not d.funded_rows %}<p style="font-size:13px;color:#52525b;">No new leads today.</p>{% endif %}
+</td></tr>
+
 <!-- SECTION 1 -->
 <tr><td style="padding:20px 24px;">
   <h2 style="font-size:17px;margin:0 0 12px;">1. Daily summary</h2>
@@ -19,7 +55,8 @@
     <tr><td style="color:#52525b;">Highest / average opportunity score</td><td style="font-weight:bold;">{{ s.highest }} / {{ s.average }}</td></tr>
     <tr><td style="color:#52525b;">Revenue confidence (revenue list)</td><td style="font-weight:bold;">High {{ s.confidence.High }} · Medium {{ s.confidence.Medium }} · Low {{ s.confidence.Low }}</td></tr>
   </table>
-  {% if s.revenue_count < 15 %}<p style="font-size:13px;color:#92400e;background:#fffbeb;padding:8px 10px;border-radius:4px;">Fewer than 15 companies met the evidence bar today. The engine reports only companies it can support with sources and never fills the quota with guesses.</p>{% endif %}
+  {% if s.revenue_count < 15 %}<p style="font-size:13px;color:#92400e;background:#fffbeb;padding:8px 10px;border-radius:4px;">Fewer than 15 new leads today: not enough suitable companies were found after excluding duplicates, agencies and companies that are too large.</p>{% endif %}
+  <p style="font-size:12px;color:#71717a;">"Assumed ≥ $50K" means the company shows signs of an established business but no public revenue figure was found. It is an estimate, not a verified number.</p>
 </td></tr>
 
 <!-- SECTION 2 -->

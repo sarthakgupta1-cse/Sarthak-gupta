@@ -1,6 +1,17 @@
 {{ subject }}
 {{ "=" * 60 }}
 
+NEW LEADS AT A GLANCE
+{% for r in d.revenue_rows %}{% set c = r | contact_summary %}
+{{ loop.index }}. {{ r["Company Name"] }} ({{ r["Official Domain"] or r["Website"] }}) - {{ r | mrr_short }} - score {{ r["Total Opportunity Score"] }}
+   {{ r["Product Description"] }}
+   {{ r | subreddits_short }}{% if c.person %} | {{ c.person }}{% endif %}{% if c.email %} | {{ c.email }}{% endif %}
+
+{% endfor %}
+{% for r in d.funded_rows %}
+Funded: {{ r["Company Name"] }} ({{ r["Official Domain"] or r["Website"] }}) - {{ r["Amount Raised (USD)"] | money }} {{ r["Funding Round"] }}, {{ r["Announcement Date"] }}
+{% endfor %}
+
 1. DAILY SUMMARY
 - New revenue-qualified companies: {{ s.revenue_count }}
 - Recently funded companies: {{ s.funded_count }}
@@ -9,7 +20,7 @@
 - Highest / average opportunity score: {{ s.highest }} / {{ s.average }}
 - Revenue confidence: High {{ s.confidence.High }}, Medium {{ s.confidence.Medium }}, Low {{ s.confidence.Low }}
 {% if s.revenue_count < 15 %}
-Note: fewer than 15 companies met the evidence bar today; no quota-filling.
+Note: fewer than 15 new leads today (after excluding duplicates, agencies and companies that are too large).
 {% endif %}
 
 2. NEW REVENUE-QUALIFIED COMPANIES

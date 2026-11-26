@@ -237,7 +237,8 @@ def test_report_rendering_escapes_untrusted_text_and_has_text_fallback():
            "Revenue Confidence": "Medium", "Revenue Evidence": "a\nb", "Primary Sources": "[official site] https://e"}
     html, text = render_daily_report(ReportData("2026-11-20", [row], [], sheet_url="https://sheet"), "Subj")
     assert "<script>" not in html and "&lt;script&gt;" in html
-    assert "$60.0K–$90.0K per month" in html and "$60.0K–$90.0K per month" in text
+    assert "$60K–$90K per month" in html and "$60K–$90K per month" in text
+    assert "New leads at a glance" in html and "NEW LEADS AT A GLANCE" in text
     assert "6. DATABASE" in text and "https://sheet" in text
 
 
@@ -526,3 +527,19 @@ def test_agencies_excluded_but_software_for_agencies_is_not(settings):
     travel_sw = profile("Travel itinerary builder and travel agency operations software", "Travel technology",
                         "Itinerary software for travel advisors and agencies")
     assert exclusion_reason(travel_sw, settings) == ""
+
+
+def test_email_summary_table_formats():
+    from reddketing.reporting.report_generator import contact_summary, money, mrr_short, subreddits_short
+    assert money(60000) == "$60K" and money(979200) == "$979K" and money(2625000) == "$2.6M" and money(5e6) == "$5M"
+    assert mrr_short({"Estimated MRR Minimum": "50000", "Estimated MRR Maximum": "Not publicly available",
+                      "Revenue Confidence": "Assumed"}) == "Assumed ≥ $50K"
+    assert mrr_short({"Estimated MRR Minimum": "300000", "Estimated MRR Maximum": "366667",
+                      "Revenue Confidence": "Medium"}) == "$300K–$367K (medium confidence)"
+    assert subreddits_short({"Relevant Subreddits": "r/SaaS (audience fit, not source-verified); r/ObsidianMD"}) \
+        == "r/SaaS, r/ObsidianMD"
+    c = contact_summary({"Decision-Maker Designations": "Nirbhay Handa — CEO\nLee Smith — Co-Founder",
+                         "LinkedIn URLs": "Nirbhay Handa: https://www.linkedin.com/in/nh",
+                         "Public Business Email": "General: press@multipolitan.com (listed on https://x)"})
+    assert c == {"person": "Nirbhay Handa, CEO", "linkedin": "https://www.linkedin.com/in/nh", "more": 1,
+                 "email": "press@multipolitan.com"}
