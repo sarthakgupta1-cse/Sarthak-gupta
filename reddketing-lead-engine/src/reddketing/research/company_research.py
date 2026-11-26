@@ -1,6 +1,8 @@
 """Per-company research: gather sources, let the LLM synthesise, then validate deterministically."""
 from __future__ import annotations
 
+import re
+
 import logging
 from datetime import date, datetime, timezone
 from urllib.parse import urlparse
@@ -101,6 +103,33 @@ def gather_sources(candidate: Candidate, http: HttpClient, search: SearchProvide
     return pages + small, sorted(d for d in domains if d and not is_non_company_domain(d, blocklist)), ""
 
 
+_SCALE = {"thousand": 1e3, "k": 1e3, "million": 1e6, "mn": 1e6, "mm": 1e6, "m": 1e6,
+          "billion": 1e9, "bn": 1e9, "b": 1e9}
+_AMOUNT = re.compile(r"(\d+(?:[.,]\d+)?)\s*(thousand|million|billion|mn|mm|bn|k|m|b)\b", re.I)
+
+
+def scaled_value(numeric: float | None, text: str) -> float | None:
+    """Fix numbers given in units ("$2B" sent as 2, "10k users" as 10) using the signal's own text."""
+    if numeric is None or numeric <= 0 or numeric >= 1000:
+        return numeric
+    for num, unit in _AMOUNT.findall(text or ""):
+        try:
+            n = float(num.replace(",", "."))
+        except ValueError:
+            continue
+        if abs(n - numeric) <= max(0.01 * numeric, 0.001):
+            return numeric * _SCALE[unit.lower()]
+    return numeric
+
+
+def _normalise_amounts(ex: ResearchExtraction, notes: list[str]) -> None:
+    for s in ex.signals:
+        fixed = scaled_value(s.numeric_value, s.value_text)
+        if fixed != s.numeric_value:
+            notes.append(f"Scaled '{s.value_text}' from {s.numeric_value:g} to {fixed:,.0f}")
+            s.numeric_value = fixed
+
+
 def _verify_numbers(ex: ResearchExtraction, by_id: dict[str, SourceDoc], notes: list[str]) -> None:
     for s in ex.signals:
         src = by_id.get(s.source_id)
@@ -125,6 +154,7 @@ def validate_extraction(ex: ResearchExtraction, sources: list[SourceDoc], compan
         notes.append(f"Dropped {before - len(ex.signals)} signals citing unknown sources")
     ex.pricing = [p for p in ex.pricing if p.source_id in by_id and
                   (p.price_usd_per_month is None or 0 <= p.price_usd_per_month < 100_000)]
+    _normalise_amounts(ex, notes)
     _verify_numbers(ex, by_id, notes)
     if ex.revenue_inputs.paying_customers_source_id not in by_id:
         ex.revenue_inputs.paying_customers_source_id = None

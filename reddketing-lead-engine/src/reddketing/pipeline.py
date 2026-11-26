@@ -32,7 +32,8 @@ from .monitoring.budget_tracker import BudgetExceeded, BudgetTracker
 from .providers.llm_provider import LLMConfigError, LLMError
 from .qualification.opportunity_scoring import score_profile
 from .qualification.reddketing_fit import exclusion_reason
-from .qualification.scale_signals import assume_floor, scale_signals
+from .qualification.scale_signals import (assume_floor, below_floor_by_own_data, has_10k_users, scale_signals,
+                                          size_exclusion)
 from .reporting.report_generator import ReportData, render_daily_report, render_failure_report
 from .research.company_research import research_company
 from .research.funding_research import funding_is_recent
@@ -253,12 +254,14 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
             continue
 
         score_profile(profile, run_date, lookback)
-        reason = exclusion_reason(profile, s)
+        too_big = size_exclusion(profile, s)
+        reason = exclusion_reason(profile, s) or too_big
         permanent = any(k in reason.lower() for k in ("restricted", "shut down", "spam", "not an operating"))
         if reason:
             profile.list_type, profile.rejection_reason = "rejected", reason
             out.rejected.append(rejected_row(profile, run_date.isoformat(), reason, reconsiderable=not permanent,
-                                             reconsider_after=reconsider_date(run_date, reconsider_days)))
+                                             reconsider_after=reconsider_date(run_date, 365 if too_big
+                                                                              else reconsider_days)))
         elif revenue_qualifies(profile, s):
             profile.list_type = "revenue"
             out.revenue.append(profile)
@@ -282,8 +285,15 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
     floor = float(s.get("targets.revenue_threshold_mrr_usd", 50000))
     min_signals = int(s.get("qualification.min_scale_signals_for_assumption", 1))
     ranked = sorted(((scale_signals(p), p) for p in backups),
-                    key=lambda t: (len(t[0]), t[1].scores.total), reverse=True)
+                    key=lambda t: (has_10k_users(t[1]), len(t[0]), t[1].scores.total), reverse=True)
     for signals, p in ranked:
+        if below_floor_by_own_data(p, floor):
+            p.list_type = "rejected"
+            out.rejected.append(rejected_row(p, run_date.isoformat(),
+                                             f"Own data shows below ${floor:,.0f}/month "
+                                             f"(up to ${p.revenue.mrr_high:,.0f})", reconsiderable=True,
+                                             reconsider_after=reconsider_date(run_date, 90)))
+            continue
         if len(out.revenue) < n_rev and len(signals) >= min_signals:
             assume_floor(p, floor, signals)
             p.list_type = "revenue"
@@ -296,7 +306,9 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex) -> Rese
             p.list_type = "rejected"
             out.rejected.append(rejected_row(p, run_date.isoformat(), why, reconsiderable=True,
                                              reconsider_after=reconsider_date(run_date, 7)))
-    out.revenue.sort(key=lambda p: p.scores.total, reverse=True)
+    # Prefer the $50K-$1M band; $1M-$5M companies rank after it.
+    band_max = float(s.get("size_limits.target_max_mrr_usd", 1_000_000))
+    out.revenue.sort(key=lambda p: ((p.revenue.mrr_mid or 0) <= band_max, p.scores.total), reverse=True)
     out.funded.sort(key=lambda p: p.scores.total, reverse=True)
     for overflow in out.revenue[n_rev:] + out.funded[n_fund:]:
         out.rejected.append(rejected_row(overflow, run_date.isoformat(), "Qualified but daily quota reached — deferred",

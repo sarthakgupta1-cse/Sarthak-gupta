@@ -117,6 +117,22 @@ revenue_assumptions:
   # Share of the "users" figure assumed active when only a lifetime user count is public.
   active_share_of_total_users: [0.15, 0.35]
 
+# Companies too large to prospect: people already discuss them on Reddit, and they are hard to reach.
+# Target band is $50K-$1M MRR; anything above max_mrr_usd is excluded, $1M-$5M ranks last.
+size_limits:
+  max_users: 100000            # total users (free + paid), customers, or app downloads
+  max_mrr_usd: 5000000
+  target_max_mrr_usd: 1000000
+  # No funding limit: recently, heavily funded companies are often still unknown on Reddit.
+  max_total_funding_usd: null
+  max_employees: 500
+  max_monthly_traffic: 2000000
+  exclude_owned_by_other_company: true
+  big_company_domains: [microsoft.com, google.com, alphabet.com, amazon.com, aws.amazon.com, apple.com,
+                        meta.com, facebook.com, adobe.com, salesforce.com, oracle.com, ibm.com, sap.com,
+                        intuit.com, atlassian.com, shopify.com, hubspot.com, zoom.us, dropbox.com, openai.com,
+                        anthropic.com, nvidia.com, intel.com, samsung.com, tiktok.com, bytedance.com, x.com]
+
 qualification:
   min_independent_indicators_low_confidence: 2
   min_total_score_revenue_list: 45

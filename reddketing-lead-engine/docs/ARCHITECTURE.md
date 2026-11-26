@@ -84,6 +84,14 @@ scoring arithmetic, validation of the LLM's claims against sources, budget, Shee
    ≥ $3M, customer/user/download counts, press, hiring, operating since ≤ 2023) and then score, and
    the top ones are assumed to make at least $50K MRR. They show Revenue Confidence "Assumed",
    minimum $50,000, no maximum, and the signals in "Revenue Calculation". No figure is invented.
+   About 10,000+ users is taken as at least $50K MRR and ranks first. A company whose own data puts
+   it below $50K is not assumed.
+6. **Size limits** (`size_limits` in settings): target band $50K-$1M MRR. Excluded as too large:
+   100,000+ users/customers/downloads, estimated MRR above $5M, 500+ employees, 2M+ monthly visits, a large company's domain, or any product owned by another company.
+   Funding size is not a limit: recently, heavily funded companies are often still unknown on
+   Reddit. Companies between $1M and $5M MRR rank after the target band. The discovery prompt also skips
+   household names, public companies and big-tech products before any research is paid for.
+   Numbers the model gives in units ("$2B" as 2, "10k users" as 10) are scaled from the signal text.
 
 ## Lead score (`qualification/opportunity_scoring.py`)
 
