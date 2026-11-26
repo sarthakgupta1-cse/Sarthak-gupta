@@ -232,3 +232,32 @@ def test_revenue_list_filled_to_target_with_assumed_companies(settings, tmp_path
     assumed = [r for r in rows if r["Revenue Confidence"] == "Assumed"]
     assert len(assumed) == 4 and all(r["Estimated MRR Minimum"] in ("50000", 50000, "50000.0") for r in assumed)
     assert "assumed, not verified" in sender.sent[0]["html"]
+
+
+def test_too_large_owned_and_below_floor_companies_are_not_leads(settings, tmp_path):
+    companies = make_companies(5)
+    companies[0].update(customers=150_000)                       # 150K paying customers: too large
+    companies[1].update(parent="Microsoft")                     # product of a large company
+    companies[2].update(customers=40)                           # own data: ~$1.2K-$3K MRR, below floor
+    companies[3].update(no_signals=True, extra_signals=[        # "20k users" sent as 20: scaled, 10K+ rule
+        {"signal_type": "total_users", "value_text": "Over 20k users", "numeric_value": 20,
+         "as_of": "", "claim_type": "company_reported", "source_id": "S1"}])
+    svc, _, sender = build_world(settings, tmp_path, companies)
+    run_pipeline(svc, run_date=D1)
+    daily = {r["Company Name"]: r for r in svc.sheets.read_records(schema.DAILY)}
+    rejected = {r["Company Name"]: r["Reason for Rejection"] for r in svc.sheets.read_records(schema.REJECTED)}
+    assert rejected[companies[0]["name"]].startswith("Too large: 150,000")
+    assert rejected[companies[1]["name"]] == "Owned by Microsoft"
+    assert rejected[companies[2]["name"]].startswith("Own data shows below $50,000")
+    assumed = daily[companies[3]["name"]]
+    assert assumed["Revenue Confidence"] == "Assumed" and "20,000 users" in assumed["Revenue Calculation"]
+    assert companies[4]["name"] in daily
+
+
+def test_scaled_value_fixes_unit_numbers():
+    from reddketing.research.company_research import scaled_value
+    assert scaled_value(2, "$2B in revenue") == 2e9
+    assert scaled_value(1.5, "$1.5M ARR") == 1.5e6
+    assert scaled_value(10, "10k users") == 10_000
+    assert scaled_value(25000, "25,000 users") == 25000
+    assert scaled_value(3, "3 plans") == 3
