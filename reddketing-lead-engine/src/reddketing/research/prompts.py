@@ -21,7 +21,8 @@ services). Skip: news publishers, directories, VC firms, list articles' authors,
 non-profits, and generic terms. Also skip companies that are too large to prospect: public
 companies, household-name brands, products owned by large companies (Microsoft, Google, Amazon, Apple,
 Meta, Adobe, Salesforce and similar), and companies known to have 100,000+ users or $5M+ monthly
-revenue. Prefer small and mid-sized companies (roughly $50K-$1M monthly revenue). Give the company's official website only if it is visible in the
+revenue. Prefer small and mid-sized companies (roughly $50K-$1M monthly revenue). Skip agencies, consultancies,
+outsourcing and development-services firms: only companies selling their own product. Give the company's official website only if it is visible in the
 items or you are confident of the exact domain; otherwise null. For funding announcements, capture
 round, amount in USD (convert only if the item states the currency amount; else null) and date.
 Return JSON only."""
@@ -53,7 +54,9 @@ Guidance:
 - exclusion: exclude pure enterprise-only software with no self-serve/developer/prosumer/consumer
   audience, shut-down companies, restricted categories ({restricted}), companies with no real
   product, or businesses relying on spam/fake reviews/manipulated engagement. Also use
-  "wrong_website" if the sources show the website belongs to a different company.
+  "wrong_website" if the sources show the website belongs to a different company. Use
+  "service_business" for agencies, consultancies, outsourcing/development shops and other firms that
+  sell services or staff time rather than their own product. Software built FOR agencies is a product.
 - discrepancies: list conflicting numbers between sources instead of picking the attractive one.
 Return JSON only, matching the schema."""
 

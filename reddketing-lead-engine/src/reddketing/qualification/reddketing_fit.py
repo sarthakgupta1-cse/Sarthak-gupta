@@ -11,6 +11,7 @@ EXCLUSION_LABELS = {
     "spam_dependent": "Marketing proposition depends on spam/fake reviews/manipulated engagement",
     "not_a_company": "Not an operating company",
     "wrong_website": "Website could not be confirmed as the company's official site",
+    "service_business": "Agency or service business, not a product",
 }
 
 
@@ -24,6 +25,12 @@ def exclusion_reason(profile: CompanyProfile, settings) -> str:
     for word in settings.categories.get("restricted_categories", []):
         if word.lower() in text:
             return f"Restricted category ({word})"
+    # Backup to the research model's "service_business" flag. Checked on the category and industry only,
+    # so software *for* agencies (e.g. travel-agency software) is not caught.
+    cat = f"{ex.product_category} {ex.industry}".lower()
+    for phrase in settings.categories.get("service_business_phrases", []):
+        if phrase.lower() in cat:
+            return f"Agency or service business ({phrase}), not a product"
     if ex.audience_type == "enterprise_only" and ex.reddit.consumer_or_prosumer <= 1:
         flags = [w for w in settings.categories.get("enterprise_red_flags", []) if w.lower() in text]
         return "Enterprise-only audience" + (f" ({', '.join(flags)})" if flags else "")

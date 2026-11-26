@@ -9,7 +9,7 @@ the GitHub Actions log. `python -m reddketing.main doctor` checks configuration 
 | `SPREADSHEET_ID and GOOGLE_SERVICE_ACCOUNT_JSON must be set` | Missing secrets | Add both secrets (paste the whole JSON file) |
 | `Gmail OAuth refresh failed … revoked or expired` | OAuth app still in "Testing" (7-day tokens), password changed, or grant revoked | Publish the consent screen to "In production", re-run the token script, update `GMAIL_REFRESH_TOKEN` |
 | `SMTP authentication failed` | Wrong App Password or 2-Step Verification off | Create a new App Password |
-| Failure email "Monthly API budget exhausted" | Month-to-date estimate ≥ ₹1,000 | Wait for the new month or raise `budget.monthly_budget_inr` deliberately |
+| Failure email "Monthly API budget exhausted" | Month-to-date estimate ≥ ₹1,500 | Wait for the new month or raise `budget.monthly_budget_inr` deliberately |
 | Run status `locked` | Another run for the same date is in progress, or one crashed in the last 3 hours | Wait, or run manually with **force** ticked |
 | Status `already_completed` | Today's report was already sent | Expected; use **force** only to re-send |
 | Few or zero revenue-qualified companies | Strict evidence bar, search key missing, or many duplicates | Check Rejected tab reasons; confirm `BRAVE_SEARCH_API_KEY`; this is by design rather than padding the list |
@@ -28,7 +28,8 @@ the GitHub Actions log. `python -m reddketing.main doctor` checks configuration 
 - A failed run is retried once automatically after 10 minutes in the same workflow.
 - Research is checkpointed per company; sheet writes are idempotent; the email is rebuilt from
   rows saved in Sheets. Re-running the same date never re-researches stored companies, never
-  inserts duplicates, and never emails a company already sent on an earlier day.
+  inserts duplicates, and never emails a lead that was already emailed. Every email contains only new
+  leads; earlier leads stay in the sheet. An "add more leads" run emails just the leads it added.
 - If the email fails after the sheet update, the next run (manual or the automatic retry) sends
   that day's report from the stored rows.
 - To fully redo a date (rarely needed), delete that date's row in `_RunState` and that date's rows

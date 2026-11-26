@@ -26,8 +26,8 @@ targets:
   funding_lookback_days: 180
   preferred_min_funding_usd: 1000000
   # Research more candidates than we need so qualification is real.
-  max_candidates_to_research: 45
-  max_discovery_candidates: 150
+  max_candidates_to_research: 60
+  max_discovery_candidates: 200
   # Rejected companies may be re-researched after this many days if flagged reconsiderable.
   reconsider_after_days: 90
 
@@ -60,7 +60,7 @@ llm:
       retry_cap_seconds: 15
       fallback_models: []
   max_output_tokens: 8000
-  max_calls_per_run: 90
+  max_calls_per_run: 120
   # Characters of page text passed per source document (keeps tokens and cost bounded).
   max_chars_per_document: 6000
   max_documents_per_company: 9
@@ -68,8 +68,8 @@ llm:
 search:
   provider_env: SEARCH_PROVIDER
   default_provider: brave
-  max_queries_per_run: 33   # 33 x 30 days ≈ 990 queries, inside Brave's $5 monthly credit
-  discovery_queries_per_run: 12
+  max_queries_per_run: 50   # ~1,500 queries/month: $5 Brave credit + ~$2.50
+  discovery_queries_per_run: 20
   research_queries_per_company: 2
   # Free search credit per calendar month (Brave includes $5). Subtracted from month-to-date spend.
   monthly_free_credit_usd: 5.0
@@ -97,13 +97,13 @@ pricing:
     none: 0.0
 
 budget:
-  monthly_budget_inr: 1000
+  monthly_budget_inr: 1500
   inr_per_usd: 88.0
   # Above this fraction of the monthly budget, optional research calls are cut.
   reduce_at_fraction: 0.8
   # At this fraction, paid APIs stop entirely for the rest of the month.
   stop_at_fraction: 1.0
-  reduced_max_candidates: 20
+  reduced_max_candidates: 30
   reduced_max_queries: 25
 
 revenue_assumptions:
@@ -143,6 +143,7 @@ qualification:
   min_scale_signals_for_assumption: 1
 
 discovery:
+  max_domain_guesses: 60
   free_feeds:
     - {name: TechCrunch Venture, url: "https://techcrunch.com/category/venture/feed/", kind: funding}
     - {name: TechCrunch Startups, url: "https://techcrunch.com/category/startups/feed/", kind: funding}
