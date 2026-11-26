@@ -52,7 +52,7 @@ class FakeHttp:
         self.pages = pages
         self.requests_made = 0
 
-    def get_text(self, url, use_cache=True):
+    def get_text(self, url, use_cache=True, **_):
         self.requests_made += 1
         url = url.rstrip("/")
         if url in self.pages:
