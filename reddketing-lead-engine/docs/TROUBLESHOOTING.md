@@ -28,7 +28,8 @@ the GitHub Actions log. `python -m reddketing.main doctor` checks configuration 
 - A failed run is retried once automatically after 10 minutes in the same workflow.
 - Research is checkpointed per company; sheet writes are idempotent; the email is rebuilt from
   rows saved in Sheets. Re-running the same date never re-researches stored companies, never
-  inserts duplicates, and never emails a company already sent on an earlier day.
+  inserts duplicates, and never emails a lead that was already emailed. Every email contains only new
+  leads; earlier leads stay in the sheet. An "add more leads" run emails just the leads it added.
 - If the email fails after the sheet update, the next run (manual or the automatic retry) sends
   that day's report from the stored rows.
 - To fully redo a date (rarely needed), delete that date's row in `_RunState` and that date's rows

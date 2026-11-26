@@ -283,3 +283,6 @@ def test_add_more_keeps_todays_leads_and_adds_new_ones(settings, tmp_path):
     names = [r["Company Name"] for r in svc2.sheets.read_records(schema.DAILY)]
     assert res.status == "success" and len(names) == 6 and len(set(names)) == 6
     assert set(c["name"] for c in second) <= set(names)
+    # The top-up email lists only the new leads; the earlier ones stay in the sheet.
+    html = sender2.sent[-1]["html"]
+    assert all(c["name"] in html for c in second) and not any(c["name"] in html for c in first)

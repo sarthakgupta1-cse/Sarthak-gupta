@@ -368,17 +368,22 @@ def write_phase(sheets, out: ResearchOutcome, run_date: str) -> dict:
 
 
 # ============================================================== email phase
-def build_report_from_sheets(sheets, run_date: str, *, extra_notes: dict | None = None) -> tuple[ReportData, list[str]]:
+def build_report_from_sheets(sheets, run_date: str, *, extra_notes: dict | None = None,
+                             resend_today: bool = False) -> tuple[ReportData, list[str]]:
+    """The email holds only leads never emailed before. All rows stay in the sheet.
+
+    resend_today=True (a forced re-send) also includes leads first emailed on this same date."""
     master = {r.get("Company Key"): r for r in sheets.read_records(schema.MASTER)}
     blocked: list[str] = []
 
     def eligible(row) -> bool:
         m = master.get(row.get("Official Domain"))
         emailed = (m or {}).get("Emailed Date", "")
-        if emailed and emailed != run_date:
+        if not emailed or (resend_today and emailed == run_date):
+            return True
+        if emailed != run_date:
             blocked.append(row.get("Company Name", ""))
-            return False
-        return True
+        return False
 
     rev = [r for r in sheets.read_records(schema.DAILY) if r.get("Discovery Date") == run_date and eligible(r)]
     fund = [r for r in sheets.read_records(schema.FUNDED) if r.get("Discovery Date") == run_date and eligible(r)]
@@ -452,7 +457,8 @@ def run_pipeline(svc: Services, *, run_date: date | None = None, force_lock: boo
         stage = "email"
         notes = {"insufficient": out.insufficient, "errors": out.errors + svc.budget.warnings,
                  "usage": svc.budget.summary()}
-        data, blocked = build_report_from_sheets(sheets, rd, extra_notes=notes)
+        data, blocked = build_report_from_sheets(sheets, rd, extra_notes=notes,
+                                                 resend_today=force_lock and not add_more)
         if blocked:
             data.api_errors.append(f"Final duplicate check removed previously emailed: {', '.join(blocked)}")
         html, text = render_daily_report(data, subject)

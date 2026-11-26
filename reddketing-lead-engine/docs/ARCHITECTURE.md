@@ -37,7 +37,7 @@
          (idempotent by Company Key / Record ID)                              stage = sheets_written
    │
    ▼
- EMAIL   rebuilt from stored rows; rows already emailed on an earlier date are removed;
+ EMAIL   rebuilt from stored rows; only leads never emailed before (sheet keeps all rows);
          HTML + plain text; Master "Emailed Date" set                         stage = emailed
    │
    ▼
