@@ -13,7 +13,7 @@ Prices checked on 2026-11-25. They change; update `config/settings.yaml → pric
 
 Haiku 5.5 and GPT-5 nano cost a few dollars a month at this volume. Gemini 3.5 Flash-Lite costs
 roughly 3–5× as much per call (about $10–$18 a month at default settings), which can exceed
-the ₹1,000 cap. Haiku 5.5 is the default because it supports schema-constrained JSON output, which
+the ₹1,500 cap. Haiku 5.5 is the default because it supports schema-constrained JSON output, which
 cuts malformed responses, and it reads long pages well. Switch with the `LLM_PROVIDER` variable;
 no code changes.
 
