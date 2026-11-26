@@ -25,9 +25,9 @@ def money(v) -> str:
     if not x:
         return str(v) if v else "Not publicly available"
     if x >= 1e6:
-        return f"${x / 1e6:,.2f}M"
+        return f"${x / 1e6:,.1f}M".replace(".0M", "M")
     if x >= 1e3:
-        return f"${x / 1e3:,.1f}K"
+        return f"${x / 1e3:,.0f}K" if x >= 1e4 else f"${x / 1e3:,.1f}K".replace(".0K", "K")
     return f"${x:,.0f}"
 
 
@@ -42,6 +42,53 @@ def mrr_range(row: dict) -> str:
 
 def lines(text) -> list[str]:
     return [l for l in str(text or "").splitlines() if l.strip()]
+
+
+NA_VALUES = {"", "not publicly available", "not found in public sources", "not publicly verified",
+             "no decision-makers identified in public sources", "none identified from public sources"}
+
+
+def _present(v) -> bool:
+    return str(v or "").strip().lower() not in NA_VALUES
+
+
+def mrr_short(row: dict) -> str:
+    """Compact revenue for the summary table: "$60K–$980K (low confidence)" or "Assumed ≥ $50K"."""
+    lo, hi = row.get("Estimated MRR Minimum"), row.get("Estimated MRR Maximum")
+    if not _f(lo) and not _f(hi):
+        return "Not publicly available"
+    conf = str(row.get("Revenue Confidence") or "")
+    if conf == "Assumed" or not _f(hi):
+        return f"Assumed ≥ {money(lo)}"
+    return f"{money(lo)}–{money(hi)} ({conf.lower()} confidence)"
+
+
+def subreddits_short(row: dict) -> str:
+    """Subreddit names without the '(audience fit, not source-verified)' notes."""
+    text = str(row.get("Relevant Subreddits") or "")
+    if not _present(text):
+        return ""
+    return ", ".join(part.split(" (")[0].strip() for part in text.split(";") if part.strip())
+
+
+def contact_summary(row: dict) -> dict:
+    """First named decision-maker with title and LinkedIn, how many more, and the public email."""
+    people = [l for l in lines(row.get("Decision-Maker Designations")) if _present(l)]
+    first = people[0].rstrip(" —-") if people else ""
+    name = first.split(" — ")[0].strip() if first else ""
+    linkedin = ""
+    for l in lines(row.get("LinkedIn URLs")):
+        if ": http" in l and (not name or l.startswith(name)):
+            linkedin = l.split(": ", 1)[1].strip()
+            break
+    email = ""
+    for l in lines(row.get("Public Business Email")):
+        word = next((w for w in l.replace("(", " ").split() if "@" in w), "")
+        if word:
+            email = word.strip(".,;")
+            break
+    return {"person": first.replace(" — ", ", "), "linkedin": linkedin, "more": max(0, len(people) - 1),
+            "email": email}
 
 
 @dataclass
@@ -78,7 +125,8 @@ class ReportData:
 def _env() -> Environment:
     env = Environment(loader=FileSystemLoader(str(TEMPLATE_DIR)), autoescape=select_autoescape(["html"]),
                       trim_blocks=True, lstrip_blocks=True)
-    env.filters.update(money=money, mrr_range=mrr_range, lines=lines)
+    env.filters.update(money=money, mrr_range=mrr_range, lines=lines, mrr_short=mrr_short,
+                       subreddits_short=subreddits_short, contact_summary=contact_summary)
     return env
 
 
