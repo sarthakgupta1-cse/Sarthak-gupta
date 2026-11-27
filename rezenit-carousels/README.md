@@ -189,6 +189,9 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 26-11-26 Shalini: 7 compliments after 26 days (NNN) · 5 things partners should know about men and p*rn (IFS 2024 ~10% daily) · 6 partner questions answered · 8 words for the guy who quits (NNN) · 6 things you'd notice from the outside (harsh)
 - 26-11-26 Tanmay: 5 sweat sessions for the final stretch (NNN) · 5 habits for sexual health (Capogrosso 1 in 4) · 3 triggers you can't avoid · 5 signs you're romanticising p*rn (harsh) · 6 ways to spend the last night of NNN (NNN)
 - 26-11-26 Yash: 6 cheap plans for the final NNN weekend (NNN) · 4 ways p*rn sites keep you coming back (115M/day, harsh) · 5 reasons you feel worse after · 4 ways to help your accountability partner finish (NNN) · 7 things to say when friends joke about p*rn
+- 27-11-26 Shalini: 4 feelings when NNN ends (NNN) · 3 things an 82,243-person study says (Bőthe 3.2–16.6%, 4–10%) · 6 phone rules for couples · 5 rules for the final 72 hours (NNN) · 6 scapegoats you blame instead of p*rn (harsh)
+- 27-11-26 Tanmay: 5 gut-checks before throwing away 27 days (NNN, harsh) · 6 ways to beat holiday loneliness (IFS 36% vs 20%) · 4 differences between guilt and shame · 4 fears about quitting and the truth · No Nut November → No P*rn December (NNN)
+- 27-11-26 Yash: 3 curveballs — sickness, cancelled plans, bad news (NNN) · 5 warning flags your weekly use is creeping up (JSR 46%, harsh) · 4 reasons urges hit harder in winter · 5 skills for December (NNN) · 5 cheap things to buy that make quitting easier
 
 ## Archive: Reddit inspiration (retired 19-11-26 — did not perform; reference only)
 Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
