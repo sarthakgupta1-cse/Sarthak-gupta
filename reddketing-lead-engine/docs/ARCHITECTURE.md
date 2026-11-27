@@ -86,7 +86,11 @@ scoring arithmetic, validation of the LLM's claims against sources, budget, Shee
    minimum $50,000, no maximum, and the signals in "Revenue Calculation". No figure is invented.
    About 10,000+ users is taken as at least $50K MRR and ranks first. A company whose own data puts
    it below $50K is not assumed.
-6. **Size limits** (`size_limits` in settings): target band $50K-$1M MRR. Excluded as too large:
+6. **Reaching 15:** discovery labels each candidate's audience and drops enterprise-only and
+   deep-tech/hardware companies before research; consumer, prosumer, developer and self-serve SMB
+   products are researched first. If a pass ends under 15 leads, up to two extra passes run with
+   fresh search queries (free feeds are not re-read), within the run's LLM and search caps.
+7. **Size limits** (`size_limits` in settings): target band $50K-$1M MRR. Excluded as too large:
    100,000+ users/customers/downloads, estimated MRR above $5M, 500+ employees, 2M+ monthly visits, a large company's domain, or any product owned by another company.
    Funding size is not a limit: recently, heavily funded companies are often still unknown on
    Reddit. Companies between $1M and $5M MRR rank after the target band. The discovery prompt also skips

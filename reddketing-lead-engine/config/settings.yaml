@@ -27,6 +27,9 @@ targets:
   preferred_min_funding_usd: 1000000
   # Research more candidates than we need so qualification is real.
   max_candidates_to_research: 60
+  # When a pass ends with fewer than revenue_qualified_per_day leads, run up to this many extra
+  # discovery + research passes (fresh search queries), within the LLM/search caps above.
+  max_extra_passes: 2
   max_discovery_candidates: 200
   # Rejected companies may be re-researched after this many days if flagged reconsiderable.
   reconsider_after_days: 90
@@ -60,7 +63,7 @@ llm:
       retry_cap_seconds: 15
       fallback_models: []
   max_output_tokens: 8000
-  max_calls_per_run: 120
+  max_calls_per_run: 150
   # Characters of page text passed per source document (keeps tokens and cost bounded).
   max_chars_per_document: 6000
   max_documents_per_company: 9
@@ -68,7 +71,8 @@ llm:
 search:
   provider_env: SEARCH_PROVIDER
   default_provider: brave
-  max_queries_per_run: 50   # ~1,500 queries/month: $5 Brave credit + ~$2.50
+  max_queries_per_run: 70   # first pass ~50; the rest for an extra pass when under 15 leads
+  extra_pass_discovery_queries: 12
   discovery_queries_per_run: 20
   research_queries_per_company: 2
   # Free search credit per calendar month (Brave includes $5). Subtracted from month-to-date spend.
@@ -97,7 +101,7 @@ pricing:
     none: 0.0
 
 budget:
-  monthly_budget_inr: 1500
+  monthly_budget_inr: 2000
   inr_per_usd: 88.0
   # Above this fraction of the monthly budget, optional research calls are cut.
   reduce_at_fraction: 0.8

@@ -17,10 +17,11 @@ logger = logging.getLogger(__name__)
 
 
 def collect_launch_items(settings, free: FreeSources, search: SearchProvider, run_date: date,
-                         n_queries: int, salt: str = "") -> list[FeedItem]:
+                         n_queries: int, salt: str = "", include_free: bool = True) -> list[FeedItem]:
     items: list[FeedItem] = []
-    items += free.hacker_news_launches(int(settings.get("discovery.hacker_news_min_points", 150)))
-    items += free.product_hunt()
+    if include_free:
+        items += free.hacker_news_launches(int(settings.get("discovery.hacker_news_min_points", 150)))
+        items += free.product_hunt()
     for category, query in plan_discovery_queries(settings.categories, run_date, n_queries, salt):
         for r in search.search(query):
             items.append(FeedItem(r.title, r.url, r.snippet, r.published, f"search:{category}", "search"))
@@ -49,6 +50,8 @@ def extract_candidates(llm, items: list[FeedItem], blocklist: set[str], *, batch
             failed, last_error = failed + 1, str(exc)
             continue
         for c in result.candidates:
+            if c.audience in ("enterprise_only", "deep_tech_or_hardware"):
+                continue  # no Reddit-reachable audience: not worth paying to research
             idx = [int(i[1:]) for i in c.item_ids if i.startswith("I") and i[1:].isdigit() and int(i[1:]) < len(batch)]
             refs = [batch[i] for i in idx]
             website = c.website or ""
@@ -72,7 +75,7 @@ def extract_candidates(llm, items: list[FeedItem], blocklist: set[str], *, batch
                 name=c.name.strip(), website=website, domain=root_domain(website) if website else "",
                 discovery_channels=sorted({r.source for r in refs}) or ["unknown"],
                 discovery_urls=[r.url for r in refs][:5], discovery_note=c.why_relevant[:300],
-                funding_hint=hint, is_funding_lead=funding or c.is_funding_announcement))
+                funding_hint=hint, is_funding_lead=funding or c.is_funding_announcement, audience=c.audience))
     if batches and failed == batches:
         raise DiscoveryFailed(f"every discovery batch failed ({failed}/{batches}); last error: {last_error}")
     return out

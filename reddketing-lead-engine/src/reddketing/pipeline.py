@@ -160,17 +160,25 @@ class Checkpoint:
 
 
 # ============================================================== research phase
-def research_phase(svc: Services, run_date: date, index: DuplicateIndex, query_salt: str = "") -> ResearchOutcome:
+def research_phase(svc: Services, run_date: date, index: DuplicateIndex, query_salt: str = "", *,
+                   n_rev_target: int | None = None, n_fund_target: int | None = None,
+                   extra_pass: bool = False) -> ResearchOutcome:
+    """One discovery + research pass. An extra pass (to reach the daily target) skips the free feeds
+    already read in the first pass and uses fresh, differently-seeded search queries."""
     s, budget = svc.settings, svc.budget
     out = ResearchOutcome()
     blocklist = s.non_company_domains
     n_queries = int(s.get("search.discovery_queries_per_run", 12))
+    if extra_pass:
+        n_queries = int(s.get("search.extra_pass_discovery_queries", 12))
     if budget.start_mode == BudgetTracker.REDUCED:
         n_queries = max(3, n_queries // 2)
+    n_queries = max(0, min(n_queries, budget.remaining_queries() - 6))
 
-    funding_items = collect_funding_items(s, svc.free, svc.search, run_date,
-                                          news_queries=2 if budget.start_mode == BudgetTracker.NORMAL else 0)
-    launch_items = collect_launch_items(s, svc.free, svc.search, run_date, n_queries, salt=query_salt)
+    funding_items = [] if extra_pass else collect_funding_items(
+        s, svc.free, svc.search, run_date, news_queries=2 if budget.start_mode == BudgetTracker.NORMAL else 0)
+    launch_items = collect_launch_items(s, svc.free, svc.search, run_date, n_queries, salt=query_salt,
+                                        include_free=not extra_pass)
     logger.info("discovery items collected", extra={"data": {"funding": len(funding_items), "launch": len(launch_items)}})
     cands: list[Candidate] = []
     batch = int(s.llm_setting("discovery_batch_size", 45))
@@ -278,8 +286,8 @@ def research_phase(svc: Services, run_date: date, index: DuplicateIndex, query_s
                                core_name(ex.company_name), normalize_name(ex.parent_company or ""), "this run"))
 
     # Final selection with quota overflow deferred (not lost, not emailed).
-    n_rev = int(s.get("targets.revenue_qualified_per_day", 15))
-    n_fund = int(s.get("targets.funded_per_day", 5))
+    n_rev = n_rev_target if n_rev_target is not None else int(s.get("targets.revenue_qualified_per_day", 15))
+    n_fund = n_fund_target if n_fund_target is not None else int(s.get("targets.funded_per_day", 5))
     # Fill the revenue list to the daily target: companies without public revenue evidence are assumed
     # to meet the floor, strongest business-scale signals first. Labelled "Assumed" everywhere.
     floor = float(s.get("targets.revenue_threshold_mrr_usd", 50000))
@@ -446,6 +454,25 @@ def run_pipeline(svc: Services, *, run_date: date | None = None, force_lock: boo
                                                hist(schema.REJECTED, "Rejection Date"),
                                                hist(schema.DAILY, "Discovery Date"), hist(schema.FUNDED, "Discovery Date"))
             out = research_phase(svc, run_date, index, query_salt=run_id if add_more else "")
+            # Keep going until the daily target is met, within the run's LLM and search caps.
+            n_rev = int(s.get("targets.revenue_qualified_per_day", 15))
+            n_fund = int(s.get("targets.funded_per_day", 5))
+            for extra in range(int(s.get("targets.max_extra_passes", 2))):
+                if len(out.revenue) >= n_rev or not svc.budget.llm_allowed() \
+                        or svc.budget.remaining_queries() < 10:
+                    break
+                logger.info("extra discovery pass", extra={"data": {"pass": extra + 2, "have": len(out.revenue)}})
+                more = research_phase(svc, run_date, index, query_salt=f"{run_id}-pass{extra + 2}",
+                                      n_rev_target=n_rev - len(out.revenue),
+                                      n_fund_target=max(0, n_fund - len(out.funded)), extra_pass=True)
+                out.revenue += more.revenue
+                out.funded += more.funded
+                out.rejected += more.rejected
+                out.duplicates += more.duplicates
+                out.insufficient += more.insufficient
+                out.errors = list(dict.fromkeys(out.errors + more.errors))
+                out.discovered += more.discovered
+                out.researched += more.researched
             store.advance(state, "researched")
             stage = "sheets_write"
             counts = write_phase(sheets, out, rd)

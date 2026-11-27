@@ -286,3 +286,35 @@ def test_add_more_keeps_todays_leads_and_adds_new_ones(settings, tmp_path):
     # The top-up email lists only the new leads; the earlier ones stay in the sheet.
     html = sender2.sent[-1]["html"]
     assert all(c["name"] in html for c in second) and not any(c["name"] in html for c in first)
+
+
+def test_extra_pass_runs_when_under_target_and_adds_no_duplicates(settings, tmp_path):
+    companies = make_companies(3)
+    svc, _, sender = build_world(settings, tmp_path, companies)
+    queries = []
+    orig = svc.search._raw_search
+    def spy(query, **k):
+        queries.append(query)
+        return orig(query, **k)
+    svc.search._raw_search = spy
+    res = run_pipeline(svc, run_date=D1)
+    names = [r["Company Name"] for r in svc.sheets.read_records(schema.DAILY)]
+    assert res.status == "success" and len(names) == len(set(names)) == 3
+    assert len(queries) > int(settings.get("search.discovery_queries_per_run"))  # extra pass searched again
+
+
+def test_enterprise_and_deep_tech_candidates_dropped_before_research(settings):
+    from reddketing.discovery.startup_discovery import extract_candidates
+    from reddketing.models import CandidateExtraction, ExtractedCandidate
+    from reddketing.providers.news_feeds import FeedItem
+
+    class LLM:
+        def complete_json(self, *a, **k):
+            return CandidateExtraction(candidates=[
+                ExtractedCandidate(name="Brightloop", item_ids=["I0"], audience="consumer"),
+                ExtractedCandidate(name="Kalepa", item_ids=["I1"], audience="enterprise_only"),
+                ExtractedCandidate(name="Hypersonica", item_ids=["I2"], audience="deep_tech_or_hardware")])
+    items = [FeedItem(f"{n} news", f"https://{n.lower()}.io", "", "", "news", "launch")
+             for n in ("Brightloop", "Kalepa", "Hypersonica")]
+    out = extract_candidates(LLM(), items, set())
+    assert [c.name for c in out] == ["Brightloop"] and out[0].audience == "consumer"
