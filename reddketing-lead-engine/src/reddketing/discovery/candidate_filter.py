@@ -131,10 +131,14 @@ def filter_candidates(cands: list[Candidate], index: DuplicateIndex, search: Sea
     return out
 
 
-def prioritise(cands: list[Candidate], limit: int, funded_share: float = 0.35) -> list[Candidate]:
-    """Keep a mix of funding leads and growth/launch leads; prefer multi-channel candidates."""
+AUDIENCE_RANK = {"consumer": 0, "prosumer": 0, "smb_self_serve": 1, "developer": 1, "unknown": 2}
+
+
+def prioritise(cands: list[Candidate], limit: int, funded_share: float = 0.25) -> list[Candidate]:
+    """Keep a mix of funding leads and growth/launch leads; prefer Reddit-reachable audiences,
+    then multi-channel candidates."""
     def rank(c: Candidate):
-        return (-len(c.discovery_channels), 0 if c.website else 1)
+        return (AUDIENCE_RANK.get(c.audience, 2), -len(c.discovery_channels), 0 if c.website else 1)
     funded = sorted([c for c in cands if c.is_funding_lead], key=rank)
     other = sorted([c for c in cands if not c.is_funding_lead], key=rank)
     n_f = min(len(funded), max(1, int(limit * funded_share)))

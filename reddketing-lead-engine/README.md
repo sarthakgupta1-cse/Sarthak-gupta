@@ -54,8 +54,9 @@ Full step-by-step instructions are in **[docs/SETUP.md](docs/SETUP.md)**. In sho
    checked, then without.
 
 The workflow file is at the repository root: `.github/workflows/reddketing-daily-discovery.yml`.
-Cron `30 2 * * *` = 02:30 UTC = 08:00 IST (UTC+05:30). GitHub can start scheduled runs a few
-minutes late; the app always files the run under the IST date.
+Main run at cron `23 2 * * *` (07:53 IST), with backup slots at 09:11, 10:43 and 13:17 IST.
+GitHub sometimes starts scheduled runs late or skips them; a backup slot does nothing if the day's
+report was already sent, and otherwise runs or resumes it. The app files every run under the IST date.
 
 ### GitHub Secrets
 
@@ -75,7 +76,7 @@ Optional repository **variables** (not secrets): `LLM_PROVIDER` (`anthropic`|`ge
 
 ## Cost
 
-Estimated **₹800–₹950 per month** with Claude Haiku 5.5 at default settings (up to 60 companies researched a day); the hard cap is ₹1,500.
+Estimated **₹900–₹1,500 per month** with Claude Haiku 5.5 (it researches until it has 15 leads a day); the hard cap is ₹2,000.
 Details and the pricing sources are in [docs/COSTS.md](docs/COSTS.md). The budget tracker reads
 month-to-date spend from the Daily Run Log tab, cuts optional research at 80% and stops paid calls
 at 100%. It never buys or upgrades anything.

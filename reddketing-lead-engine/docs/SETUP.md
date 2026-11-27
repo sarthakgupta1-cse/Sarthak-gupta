@@ -86,7 +86,7 @@ Gemini usage may be used by Google to improve its products; a billed key is not.
 
 1. <https://api-dashboard.search.brave.com/> → sign up → subscribe to the **Search** plan.
    A card is required; the plan includes a $5 monthly credit (about 1,000 queries), and the
-   engine uses at most 50 queries a day by default (about $2.50 a month beyond the credit).
+   engine uses about 50 queries on a normal day and at most 70 (about $2.50–$5.50 a month beyond the credit).
 2. Set a usage limit in the Brave dashboard if offered.
 3. **API keys → Add API key** → copy it.
 

@@ -22,7 +22,11 @@ non-profits, and generic terms. Also skip companies that are too large to prospe
 companies, household-name brands, products owned by large companies (Microsoft, Google, Amazon, Apple,
 Meta, Adobe, Salesforce and similar), and companies known to have 100,000+ users or $5M+ monthly
 revenue. Prefer small and mid-sized companies (roughly $50K-$1M monthly revenue). Skip agencies, consultancies,
-outsourcing and development-services firms: only companies selling their own product. Give the company's official website only if it is visible in the
+outsourcing and development-services firms: only companies selling their own product. For each company set `audience`: consumer, prosumer, developer, smb_self_serve (small businesses sign
+up themselves), enterprise_only (sold through demos/contracts to large organisations, banks,
+governments, hospitals, manufacturers), deep_tech_or_hardware (robotics, chips, space, defence,
+biotech, medical devices, industrial hardware), or unknown. Reddketing wants consumer, prosumer,
+developer and smb_self_serve products. Give the company's official website only if it is visible in the
 items or you are confident of the exact domain; otherwise null. For funding announcements, capture
 round, amount in USD (convert only if the item states the currency amount; else null) and date.
 Return JSON only."""

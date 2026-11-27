@@ -13,7 +13,7 @@ Prices checked on 2026-11-25. They change; update `config/settings.yaml → pric
 
 Haiku 5.5 and GPT-5 nano cost a few dollars a month at this volume. Gemini 3.5 Flash-Lite costs
 roughly 3–5× as much per call (about $10–$18 a month at default settings), which can exceed
-the ₹1,500 cap. Haiku 5.5 is the default because it supports schema-constrained JSON output, which
+the ₹2,000 cap. Haiku 5.5 is the default because it supports schema-constrained JSON output, which
 cuts malformed responses, and it reads long pages well. Switch with the `LLM_PROVIDER` variable;
 no code changes.
 
@@ -39,23 +39,25 @@ the same `SearchProvider` interface. Add a subclass in `providers/search_provide
 
 ## Monthly estimate at default settings
 
-Up to 60 companies researched and 50 search queries a day, to keep the list at 15 leads.
+The engine keeps researching until it has 15 leads: a first pass of up to 60 companies, then up to
+two extra passes with fresh search queries when it is short. Enterprise-only and deep-tech companies
+are dropped at discovery, before any research is paid for.
 
 | Item | Per day | Per month (30 days) |
 |---|---|---|
-| Search: ≤ 50 Brave queries | ≤ $0.25 | ~1,500 queries ≈ $7.50, minus Brave's $5 credit ≈ **$2.50 (₹220)** |
-| LLM, Claude Haiku 5.5: ~60 research + ~15 discovery calls | ~$0.25 | **~$7.50 (₹660)** |
+| Search: ≤ 70 Brave queries (about 50 on a normal day) | $0.25–$0.35 | ~$7.50–$10.50, minus Brave's $5 credit ≈ **$2.50–$5.50** |
+| LLM, Claude Haiku 5.5: 60–100 research + discovery calls | $0.25–$0.40 | **~$7.50–$12** |
 | GitHub Actions, Google Sheets, Gmail | $0 | $0 |
-| **Total** | | **≈ ₹800–₹950**, hard cap ₹1,500 |
+| **Total** | | **≈ ₹900–₹1,500**, hard cap ₹2,000 |
 
 ## Controls in the code
 
-- `budget.monthly_budget_inr: 1500` (converted at `inr_per_usd: 88`).
+- `budget.monthly_budget_inr: 2000` (converted at `inr_per_usd: 88`).
 - Month-to-date spend = sum of "Estimated API Cost (USD)" in the Daily Run Log for the month.
   The tracker counts gross list price and ignores free credits, so it errs high.
 - ≥ 80%: reduced mode (20 candidates, 25 queries, fewer discovery searches).
 - ≥ 100%: no paid calls; the run stops before research and sends a notice email.
-- Per-run caps regardless of budget: `search.max_queries_per_run: 50`, `llm.max_calls_per_run: 120`.
+- Per-run caps regardless of budget: `search.max_queries_per_run: 70`, `llm.max_calls_per_run: 150`.
 - Caching: search results 14 days, pages 7 days, LLM responses 30 days, persisted between runs
   with `actions/cache`, so retries and re-discoveries cost little.
 - Unknown model names are priced conservatively at $1/$5 per million tokens.

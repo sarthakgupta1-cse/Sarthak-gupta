@@ -1,13 +1,19 @@
 # Reddketing Lead Intelligence Engine — daily run.
 #
-# Schedule: 08:00 IST every day. IST = UTC+05:30, so 08:00 IST = 02:30 UTC -> cron "30 2 * * *".
-# GitHub cron is always UTC and can start several minutes late at busy times; the run date is
-# computed in IST inside the app, so a late start still files under the right day.
+# Schedule: about 08:00 IST every day (IST = UTC+05:30; GitHub cron is always UTC).
+# GitHub starts scheduled jobs late at busy times and sometimes drops them entirely, especially
+# at :00 and :30. So the job is scheduled at an off-peak minute, with backup slots later in the
+# morning. A backup does nothing (status already_completed, about 30 seconds) if that day's
+# report was already sent, and resumes the day's run if an earlier attempt failed. The run date
+# is computed in IST inside the app, so a late start still files under the right day.
 name: Reddketing daily discovery
 
 on:
   schedule:
-    - cron: "30 2 * * *"
+    - cron: "23 2 * * *"   # 07:53 IST, main run
+    - cron: "41 3 * * *"   # 09:11 IST, backup
+    - cron: "13 5 * * *"   # 10:43 IST, backup
+    - cron: "47 7 * * *"   # 13:17 IST, last backup
   workflow_dispatch:
     inputs:
       dry_run:

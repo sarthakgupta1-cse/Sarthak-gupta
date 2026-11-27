@@ -9,7 +9,7 @@ the GitHub Actions log. `python -m reddketing.main doctor` checks configuration 
 | `SPREADSHEET_ID and GOOGLE_SERVICE_ACCOUNT_JSON must be set` | Missing secrets | Add both secrets (paste the whole JSON file) |
 | `Gmail OAuth refresh failed … revoked or expired` | OAuth app still in "Testing" (7-day tokens), password changed, or grant revoked | Publish the consent screen to "In production", re-run the token script, update `GMAIL_REFRESH_TOKEN` |
 | `SMTP authentication failed` | Wrong App Password or 2-Step Verification off | Create a new App Password |
-| Failure email "Monthly API budget exhausted" | Month-to-date estimate ≥ ₹1,500 | Wait for the new month or raise `budget.monthly_budget_inr` deliberately |
+| Failure email "Monthly API budget exhausted" | Month-to-date estimate ≥ ₹2,000 | Wait for the new month or raise `budget.monthly_budget_inr` deliberately |
 | Run status `locked` | Another run for the same date is in progress, or one crashed in the last 3 hours | Wait, or run manually with **force** ticked |
 | Status `already_completed` | Today's report was already sent | Expected; use **force** only to re-send |
 | Few or zero revenue-qualified companies | Strict evidence bar, search key missing, or many duplicates | Check Rejected tab reasons; confirm `BRAVE_SEARCH_API_KEY`; this is by design rather than padding the list |
@@ -19,7 +19,7 @@ the GitHub Actions log. `python -m reddketing.main doctor` checks configuration 
 | `Brave HTTP 401/403` | Bad key or plan not active | Check the Brave dashboard subscription |
 | `Brave HTTP 429` | Rate or credit limit | Lower `search.max_queries_per_run` |
 | Feed errors like `eu-startups.com: HTTP 403` in notes | That site blocks automated feed readers on some days | Harmless; other sources continue |
-| Scheduled run started late | GitHub delays scheduled jobs at busy times | Expected; the run still uses the IST date |
+| Scheduled run started late or not at all | GitHub delays or drops scheduled jobs at busy times | The backup slots (09:11, 10:43, 13:17 IST) catch a missed run; or run it by hand: Actions → Run workflow |
 | Scheduled runs stopped | GitHub disables schedules in repos with no activity for 60 days | Actions tab → re-enable the workflow (any commit also resets the timer) |
 | Email went to spam | First messages from a new OAuth app | Mark as "Not spam" once and add a filter |
 

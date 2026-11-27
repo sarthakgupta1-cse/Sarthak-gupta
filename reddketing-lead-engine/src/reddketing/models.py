@@ -36,6 +36,7 @@ class Candidate(BaseModel):
     discovery_note: str = ""
     funding_hint: dict = Field(default_factory=dict)  # round, amount_usd, date, source_url
     is_funding_lead: bool = False
+    audience: str = "unknown"
 
 
 class ExtractedCandidate(BaseModel):
@@ -47,6 +48,10 @@ class ExtractedCandidate(BaseModel):
     funding_round: Optional[str] = None
     funding_amount_usd: Optional[float] = None
     announcement_date: Optional[str] = None
+    # Who buys it, as far as the items show. "enterprise_only" and "deep_tech_or_hardware" are
+    # dropped before research (no Reddit audience); "unknown" is kept.
+    audience: Literal["consumer", "prosumer", "developer", "smb_self_serve", "enterprise_only",
+                      "deep_tech_or_hardware", "unknown"] = "unknown"
 
 
 class CandidateExtraction(BaseModel):
