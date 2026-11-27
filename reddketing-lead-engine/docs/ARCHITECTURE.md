@@ -3,7 +3,7 @@
 ## Pipeline
 
 ```
- GitHub Actions cron 02:30 UTC (08:00 IST) / manual dispatch      concurrency group = single writer
+ GitHub Actions cron 07:53 IST + backups 09:11/10:43/13:17 IST / manual   concurrency = single writer
    │
    ▼
  setup ─ ensure tabs ─ _RunState lock for the IST date ─ month-to-date spend → budget mode

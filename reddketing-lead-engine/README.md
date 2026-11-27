@@ -54,8 +54,9 @@ Full step-by-step instructions are in **[docs/SETUP.md](docs/SETUP.md)**. In sho
    checked, then without.
 
 The workflow file is at the repository root: `.github/workflows/reddketing-daily-discovery.yml`.
-Cron `30 2 * * *` = 02:30 UTC = 08:00 IST (UTC+05:30). GitHub can start scheduled runs a few
-minutes late; the app always files the run under the IST date.
+Main run at cron `23 2 * * *` (07:53 IST), with backup slots at 09:11, 10:43 and 13:17 IST.
+GitHub sometimes starts scheduled runs late or skips them; a backup slot does nothing if the day's
+report was already sent, and otherwise runs or resumes it. The app files every run under the IST date.
 
 ### GitHub Secrets
 

@@ -19,7 +19,7 @@ the GitHub Actions log. `python -m reddketing.main doctor` checks configuration 
 | `Brave HTTP 401/403` | Bad key or plan not active | Check the Brave dashboard subscription |
 | `Brave HTTP 429` | Rate or credit limit | Lower `search.max_queries_per_run` |
 | Feed errors like `eu-startups.com: HTTP 403` in notes | That site blocks automated feed readers on some days | Harmless; other sources continue |
-| Scheduled run started late | GitHub delays scheduled jobs at busy times | Expected; the run still uses the IST date |
+| Scheduled run started late or not at all | GitHub delays or drops scheduled jobs at busy times | The backup slots (09:11, 10:43, 13:17 IST) catch a missed run; or run it by hand: Actions → Run workflow |
 | Scheduled runs stopped | GitHub disables schedules in repos with no activity for 60 days | Actions tab → re-enable the workflow (any commit also resets the timer) |
 | Email went to spam | First messages from a new OAuth app | Mark as "Not spam" once and add a filter |
 
