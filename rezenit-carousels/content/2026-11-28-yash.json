@@ -1,0 +1,328 @@
+{
+  "date": "28-11-26",
+  "owner": "Yash",
+  "carousels": [
+    {
+      "name": "6 things to do on the morning of Day 30",
+      "seed": 9001,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#6FF0C4",
+        "a2": "#7DB8FF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Day 28",
+          "title": "6 things to do on the morning of Day 30 [[— before p*rn gets a chance.]]",
+          "sub": "2 days left. Plan the finish now."
+        },
+        {
+          "type": "list",
+          "title": "Morning [[1–3]]",
+          "items": [
+            "<b>Get up</b> with your first alarm.",
+            "<b>Train</b> before breakfast.",
+            "<b>Write 3 lines:</b> how you feel, what changed, what's next."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Morning [[4–6]]",
+          "items": [
+            "<b>Message one person</b> who helped.",
+            "<b>Set your December goal</b> on paper.",
+            "<b>Plan your evening</b> — people, not p*rn."
+          ],
+          "marks": [
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "type": "point",
+          "title": "Why the [[morning]]",
+          "body": "How you start Day 30 decides how you end it.\n\n<b>A strong morning makes \"one last p*rn video\" tonight much less likely.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Set it up [[now]]",
+          "items": [
+            "<b>Alarm set</b> for Monday.",
+            "<b>Gym clothes</b> laid out.",
+            "<b>Notebook</b> by the bed.",
+            "<b>Evening plan</b> booked."
+          ],
+          "note": "Day 30 plan ready? Comment \"READY\" 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Finish with intent.\n[[Keep going with RezenIt.]]",
+          "lead": "Streaks past 30, daily actions and journaling for the next chapter.",
+          "features": [
+            "Streaks",
+            "Daily actions",
+            "Journaling"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4 facts that make p*rn addiction a real health issue (ICD-11)",
+      "seed": 9003,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#7FE7FF",
+        "a2": "#A98BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "World Health Organization · ICD-11",
+          "title": "4 facts that make p*rn addiction [[a real health issue.]]",
+          "sub": "It's not a joke, a phase or a moral failing."
+        },
+        {
+          "type": "point",
+          "title": "WHO [[recognises]] it",
+          "body": "The World Health Organization's ICD-11 includes <b>compulsive sexual behaviour disorder</b> (since 2019) — covering sexual behaviour people struggle to control, which for many includes p*rn.",
+          "num": "ICD-11"
+        },
+        {
+          "type": "list",
+          "title": "Facts [[1–2]]",
+          "items": [
+            "<b>It's about control</b> — not how often, but whether you can stop.",
+            "<b>It causes real distress</b> — in work, relationships and mental health."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Facts [[3–4]]",
+          "items": [
+            "<b>It's treatable</b> — therapy and support help many people quit p*rn.",
+            "<b>Only a professional</b> can diagnose it — but you can take it seriously now."
+          ],
+          "marks": [
+            "3",
+            "4"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "What to [[do]]",
+          "items": [
+            "<b>Stop calling it a joke</b> if it's hurting you.",
+            "<b>Talk to a GP</b> or therapist.",
+            "<b>Use structure</b> — blockers, routines, support.",
+            "<b>Don't wait</b> for it to get worse."
+          ],
+          "note": "Send this to someone who thinks it's \"not a real thing\" ↗"
+        },
+        {
+          "type": "cta",
+          "title": "Take it seriously.\n[[Start with RezenIt.]]",
+          "lead": "A science-informed p*rn recovery program, an AI coach and 1-on-1 accountability.",
+          "features": [
+            "Recovery program",
+            "AI coach",
+            "Accountability"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Introverts and recovery: 5 obstacles",
+      "seed": 9007,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#9EF0C8",
+        "a2": "#7BA7FF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "For introverts",
+          "title": "5 obstacles introverts face [[when they try to give up p*rn.]]",
+          "sub": "Quiet isn't the problem. Isolation is."
+        },
+        {
+          "type": "list",
+          "title": "Obstacles [[1–2]]",
+          "items": [
+            "<b>Lots of alone time</b> — the setting p*rn needs most.",
+            "<b>Recharging at home</b> often means recharging on screens."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Obstacles [[3–4]]",
+          "items": [
+            "<b>Hard to ask for help</b> — talking feels like effort.",
+            "<b>Big groups feel draining</b>, so you skip them."
+          ],
+          "marks": [
+            "3",
+            "4"
+          ]
+        },
+        {
+          "type": "point",
+          "title": "You [[overthink]]",
+          "body": "You replay urges, slips and p*rn memories in your head.\n\n<b>Thinking about it isn't the same as dealing with it.</b>",
+          "num": "05"
+        },
+        {
+          "type": "list",
+          "title": "Introvert-friendly [[fixes]]",
+          "items": [
+            "<b>One-on-one</b> time over big groups.",
+            "<b>Recharge offline</b> — books, walks, music, building something.",
+            "<b>Text check-ins</b> instead of calls if that's easier.",
+            "<b>Write it down</b> instead of replaying it."
+          ],
+          "note": "Introverts: which one hits home? Comment 1–5 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Quiet, not alone.\n[[RezenIt fits you.]]",
+          "lead": "Anonymous community, text-based check-ins and an AI coach — support without the crowd.",
+          "features": [
+            "Community",
+            "Check-ins",
+            "AI coach"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4 types of guys at the end of NNN, which are you? (harsh)",
+      "seed": 9009,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#5EE7E0",
+        "a2": "#B79BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "No Nut November · Brutal honesty",
+          "title": "4 types of guys at the end of No Nut November [[— and only one stays off p*rn.]]",
+          "sub": "2 days left. Be honest about which one you are."
+        },
+        {
+          "type": "point",
+          "title": "The [[binger]]",
+          "body": "Counts down to Dec 1, then makes up for lost time.\n\n<b>30 days of work, gone in a weekend of p*rn.</b>",
+          "num": "01"
+        },
+        {
+          "type": "point",
+          "title": "The [[coaster]]",
+          "body": "Finishes, relaxes, drops every routine.\n\n<b>Slides back to p*rn slowly — and doesn't notice until it's daily again.</b>",
+          "num": "02"
+        },
+        {
+          "type": "list",
+          "title": "Types [[3–4]]",
+          "items": [
+            "<b>The restarter:</b> slipped, quit, waits for \"a fresh month.\"",
+            "<b>The builder:</b> finishes, sets the next goal, keeps the routines."
+          ],
+          "marks": [
+            "3",
+            "4"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Be the [[builder]]",
+          "items": [
+            "<b>Set your next goal</b> before Day 30 ends.",
+            "<b>Keep every routine</b> into December.",
+            "<b>If you slipped,</b> restart today — not on the 1st.",
+            "<b>Tell someone</b> your plan."
+          ],
+          "note": "Which type are you? Comment 1–4 — honestly 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Be the builder.\n[[Build with RezenIt.]]",
+          "lead": "A guided p*rn recovery program, daily actions and streaks for life after the challenge.",
+          "features": [
+            "Recovery program",
+            "Daily actions",
+            "Streaks"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6 signs your evenings are built for p*rn",
+      "seed": 9011,
+      "theme": {
+        "bg": "#04241A",
+        "a1": "#7DE3F5",
+        "a2": "#8B7BFF"
+      },
+      "slides": [
+        {
+          "type": "hook",
+          "kicker": "Check your evenings",
+          "title": "6 signs your evenings [[are built for p*rn.]]",
+          "sub": "Most relapses don't start with an urge. They start with a setup."
+        },
+        {
+          "type": "list",
+          "title": "Signs [[1–3]]",
+          "items": [
+            "<b>No plan</b> after dinner.",
+            "<b>Alone</b> for hours — p*rn's favourite condition.",
+            "<b>Lights low</b>, phone in hand."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Signs [[4–6]]",
+          "items": [
+            "<b>Bed is your couch</b> — you scroll there.",
+            "<b>Late snacks</b> and later nights.",
+            "<b>Nobody expects</b> to hear from you."
+          ],
+          "marks": [
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "type": "point",
+          "title": "Change the [[setup]]",
+          "body": "You don't need more willpower at 11 PM.\n\n<b>You need an evening that doesn't end alone in bed with p*rn one tap away.</b>"
+        },
+        {
+          "type": "list",
+          "title": "Rebuild your [[evenings]]",
+          "items": [
+            "<b>Plan one thing</b> after dinner.",
+            "<b>Lights bright</b> until an hour before bed.",
+            "<b>Couch for scrolling</b>, bed for sleep.",
+            "<b>Text someone</b> at 9 PM every night."
+          ],
+          "note": "How many signs fit you? Comment the number 👇"
+        },
+        {
+          "type": "cta",
+          "title": "Better evenings.\n[[Free with RezenIt.]]",
+          "lead": "Daily actions for every evening, a p*rn blocker and check-ins that keep you connected.",
+          "features": [
+            "Daily actions",
+            "P*rn blocker",
+            "Check-ins"
+          ]
+        }
+      ]
+    }
+  ]
+}

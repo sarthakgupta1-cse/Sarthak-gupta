@@ -92,6 +92,7 @@ you in 1 week / 1 month / 1 year", "Signs your brain is healing", "The 5 stages 
 - P*rnhub reached 18% of UK adults in May 2023, the most-used p*rn service there (Ofcom, Online Nation 2023).
 - 23.3% of 614 Egyptian medical students had problematic p*rn use; they reported fewer study hours, lower test scores and more depression, anxiety and stress (International Journal of Psychiatry in Medicine, 2025). Correlational.
 - About 10% of U.S. adults under 40 watch p*rn at least daily; men are about twice as likely as women to be daily users (Institute for Family Studies / YouGov, 2,000 adults 18–39, Sept 2024).
+- 54% of Britons say p*rn's impact on real-life relationships between men and women is a problem, rising to 62% of men aged 18–34 (Ipsos UK for JOE, 2025).
 
 ## No repeats (user feedback 17-11-26)
 The user noticed repeated posts. Before committing, run `python3 check_repeats.py content/<today>-*.json` — it must
@@ -192,6 +193,9 @@ Every carousel is about **p*rn addiction** and must say so — nobody should hav
 - 27-11-26 Shalini: 4 feelings when NNN ends (NNN) · 3 things an 82,243-person study says (Bőthe 3.2–16.6%, 4–10%) · 6 phone rules for couples · 5 rules for the final 72 hours (NNN) · 6 scapegoats you blame instead of p*rn (harsh)
 - 27-11-26 Tanmay: 5 gut-checks before throwing away 27 days (NNN, harsh) · 6 ways to beat holiday loneliness (IFS 36% vs 20%) · 4 differences between guilt and shame · 4 fears about quitting and the truth · No Nut November → No P*rn December (NNN)
 - 27-11-26 Yash: 3 curveballs — sickness, cancelled plans, bad news (NNN) · 5 warning flags your weekly use is creeping up (JSR 46%, harsh) · 4 reasons urges hit harder in winter · 5 skills for December (NNN) · 5 cheap things to buy that make quitting easier
+- 28-11-26 Shalini: 5 things to tell your partner when NNN ends (NNN) · 5 relationship habits (Ipsos 2025 62% of men 18–34) · 5 things to say instead of "I'm fine" · 4 signs NNN changed your phone use (NNN) · 6 harmless-looking habits that keep p*rn close (harsh)
+- 28-11-26 Tanmay: 7 things December-you will thank you for (NNN) · 5 steps to recruit an accountability ally (Barna 84%) · 6 small daily choices · 4 lies behind "I'll quit when I'm in a relationship" (harsh) · 7 moves before Monday (NNN)
+- 28-11-26 Yash: 6 things on the morning of Day 30 (NNN) · 4 facts that make it a real health issue (ICD-11) · 5 obstacles introverts face · 4 types of guys at the end of NNN (NNN, harsh) · 6 signs your evenings are built for p*rn
 
 ## Archive: Reddit inspiration (retired 19-11-26 — did not perform; reference only)
 Threads: r/AskMen "What are some signs of an actual p*rn addiction?" (149 comments), r/whatdoIdo "boyfriend has a
