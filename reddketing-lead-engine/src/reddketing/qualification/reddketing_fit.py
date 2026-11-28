@@ -12,6 +12,7 @@ EXCLUSION_LABELS = {
     "not_a_company": "Not an operating company",
     "wrong_website": "Website could not be confirmed as the company's official site",
     "service_business": "Agency or service business, not a product",
+    "too_well_known": "Too large / already well known on Reddit",
 }
 
 

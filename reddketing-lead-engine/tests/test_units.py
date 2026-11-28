@@ -543,3 +543,13 @@ def test_email_summary_table_formats():
                          "Public Business Email": "General: press@multipolitan.com (listed on https://x)"})
     assert c == {"person": "Nirbhay Handa, CEO", "linkedin": "https://www.linkedin.com/in/nh", "more": 1,
                  "email": "press@multipolitan.com"}
+
+
+def test_too_well_known_flag_excludes(settings):
+    from types import SimpleNamespace
+    from reddketing.qualification.reddketing_fit import exclusion_reason
+    ex = SimpleNamespace(exclusion=SimpleNamespace(excluded=True, reason="too_well_known", explanation="Category leader"),
+                         product_category="AI code editor", industry="Developer tools", one_line_description="",
+                         audience_type="developer", reddit=SimpleNamespace(consumer_or_prosumer=3),
+                         official_website_confirmed=True)
+    assert exclusion_reason(SimpleNamespace(extraction=ex), settings).startswith("Too large / already well known")

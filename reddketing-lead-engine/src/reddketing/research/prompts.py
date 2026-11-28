@@ -19,7 +19,8 @@ Task: from the listed items (headlines, search results, launch posts), identify 
 companies or products that sell something (software, apps, consumer brands, marketplaces, education,
 services). Skip: news publishers, directories, VC firms, list articles' authors, government bodies,
 non-profits, and generic terms. Also skip companies that are too large to prospect: public
-companies, household-name brands, products owned by large companies (Microsoft, Google, Amazon, Apple,
+companies, household-name brands and category leaders already widely discussed on Reddit (e.g.
+Cursor, Vercel, Linear, Supabase, Notion, Canva, Hostinger), companies valued at $1B or more, products owned by large companies (Microsoft, Google, Amazon, Apple,
 Meta, Adobe, Salesforce and similar), and companies known to have 100,000+ users or $5M+ monthly
 revenue. Prefer small and mid-sized companies (roughly $50K-$1M monthly revenue). Skip agencies, consultancies,
 outsourcing and development-services firms: only companies selling their own product. For each company set `audience`: consumer, prosumer, developer, smb_self_serve (small businesses sign
@@ -61,6 +62,10 @@ Guidance:
   "wrong_website" if the sources show the website belongs to a different company. Use
   "service_business" for agencies, consultancies, outsourcing/development shops and other firms that
   sell services or staff time rather than their own product. Software built FOR agencies is a product.
+  Use "too_well_known" when, from the sources or your general knowledge, the company is a widely known
+  brand already discussed on Reddit: a category leader or household name (e.g. Cursor, Vercel, Linear,
+  Supabase, Hostinger, Notion, Canva), a public company, valued at $1B or more, or likely to have
+  100,000+ users or $5M+ monthly revenue. Reddketing targets small and mid-sized companies.
 - discrepancies: list conflicting numbers between sources instead of picking the attractive one.
 Return JSON only, matching the schema."""
 
