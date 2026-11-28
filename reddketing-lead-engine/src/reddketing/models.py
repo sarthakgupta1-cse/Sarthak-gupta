@@ -149,7 +149,7 @@ class RedditAssessment(BaseModel):
 class Exclusion(BaseModel):
     excluded: bool
     reason: Literal["none", "pure_enterprise", "shut_down", "restricted_category", "no_product",
-                    "spam_dependent", "not_a_company", "wrong_website", "service_business"]
+                    "spam_dependent", "not_a_company", "wrong_website", "service_business", "too_well_known"]
     explanation: str = ""
 
 
